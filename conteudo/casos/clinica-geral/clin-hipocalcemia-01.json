@@ -1,0 +1,135 @@
+{
+  "id": "clin-hipocalcemia-01",
+  "materia": "clinica-geral",
+  "tema": "Distúrbios metabólicos de vacas leiteiras",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Mimosa",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "6 anos",
+    "pesoKg": 500,
+    "sprite": "vaca-holandesa",
+    "postura": "deitado"
+  },
+  "tutor": { "nome": "Seu Jorge", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Mimosa pariu ontem à noite e hoje cedo amanheceu caída. Não levanta de jeito nenhum!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "parto", "rotulo": "Quando ela pariu?", "resultado": "Ontem à noite, um bezerro grande. Foi o terceiro parto dela.", "importante": true },
+        { "id": "producao", "rotulo": "Ela produz muito leite?", "resultado": "É a melhor vaca daqui. Dava mais de 30 litros por dia na outra cria.", "importante": true },
+        { "id": "historico", "rotulo": "Já aconteceu em outro parto?", "resultado": "No parto passado ela ficou meio bamba, mas levantou sozinha.", "importante": true },
+        { "id": "comida", "rotulo": "Comeu algo diferente?", "resultado": "Não, comeu a ração de sempre até o parto.", "importante": false },
+        { "id": "fezes", "rotulo": "Ela está com diarreia?", "resultado": "Não, o esterco tá normal, só pouquinho.", "importante": false },
+        { "id": "vacinas", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, sim. A última foi no começo do ano.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,2 °C, abaixo do normal.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Rúmen quase parado; coração acelerado (96 bpm) e com bulhas abafadas.", "importante": true },
+        { "id": "palpacao", "ferramenta": "mao", "rotulo": "Palpação e postura", "resultado": "Orelhas e patas frias. Está deitada de peito, com a cabeça virada para o flanco.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e pupilas", "resultado": "Mucosas rosadas; pupilas um pouco dilatadas.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratação normal: a pele volta rápido.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 200,
+      "itens": [
+        { "id": "calcio", "rotulo": "Cálcio sérico", "custo": 60, "resultado": "4,8 mg/dL (referência: 8,5 a 10 mg/dL).", "importante": true },
+        { "id": "bhb", "rotulo": "Beta-hidroxibutirato (BHB)", "custo": 40, "resultado": "0,8 mmol/L, normal (abaixo de 1,2).", "importante": false },
+        { "id": "magnesio", "rotulo": "Magnésio sérico", "custo": 60, "resultado": "2,0 mg/dL, normal.", "importante": false },
+        { "id": "glicose", "rotulo": "Glicose", "custo": 30, "resultado": "Normal.", "importante": false },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 80, "resultado": "Leucograma de estresse, sem sinais de infecção.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Hipocalcemia puerperal (febre do leite)", "correta": true, "explicacao": "Vaca leiteira de alta produção, no terceiro parto, caída menos de 24 horas depois de parir, com hipotermia, extremidades frias, rúmen parado e cálcio muito baixo." },
+        { "texto": "Cetose", "correta": false, "explicacao": "A cetose costuma aparecer nas primeiras semanas de lactação, com BHB alto. Aqui o BHB está normal e o cálcio, muito baixo." },
+        { "texto": "Hipomagnesemia (tetania das pastagens)", "correta": false, "explicacao": "Causa excitação, tremores e tetania, não uma vaca flácida e caída, e o magnésio está normal." },
+        { "texto": "Deslocamento de abomaso à esquerda", "correta": false, "explicacao": "Causa queda de apetite e de produção, com o som de 'ping' na percussão do lado esquerdo; a vaca costuma ficar em pé." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a hipocalcemia deixa a vaca flácida, se na cadela ela causa tetania?",
+      "opcoes": [
+        { "texto": "Na vaca predomina a falha da junção neuromuscular; na cadela, a hiperexcitabilidade dos nervos", "correta": true, "explicacao": "O cálcio é necessário para liberar acetilcolina na junção neuromuscular: na vaca, a falta dele causa fraqueza. Na cadela, predomina o efeito do cálcio baixo nos nervos, que disparam sozinhos." },
+        { "texto": "A vaca tem mais cálcio nos ossos do que a cadela", "correta": false, "explicacao": "As duas espécies mobilizam cálcio do osso. A diferença está no efeito do cálcio baixo nos nervos e na junção neuromuscular." },
+        { "texto": "Na vaca falta potássio, e não cálcio", "correta": false, "explicacao": "O exame mostrou cálcio muito baixo; o potássio não explica a hipotermia nem o rúmen parado." },
+        { "texto": "A vaca está com dor e por isso não levanta", "correta": false, "explicacao": "Dor não explica hipotermia, rúmen parado e cálcio baixo. A fraqueza vem da falha neuromuscular." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Quanto cálcio ela precisa",
+      "pergunta": "A Mimosa pesa 500 kg. Usando 1 g de cálcio para cada 45 kg de peso, quantos gramas de cálcio ela precisa?",
+      "unidade": "g",
+      "resposta": 11.1,
+      "tolerancia": 0.05,
+      "explicacao": "500 ÷ 45 = 11,1 g de cálcio."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento no campo",
+      "critica": true,
+      "instrucao": "Prescreva o tratamento da Mimosa (500 kg).",
+      "farmacos": [
+        { "id": "borogluconato", "nome": "Borogluconato de cálcio 23%", "apresentacao": "Solução injetável com 21,4 mg de cálcio por mL", "unidade": "mL", "explicacao": "Repõe o cálcio rapidamente. Deve ser aplicado devagar na veia, ouvindo o coração." },
+        { "id": "propilenoglicol", "nome": "Propilenoglicol", "apresentacao": "Solução oral", "unidade": "mL", "explicacao": "Fonte de energia usada na cetose, que não é o problema da Mimosa." },
+        { "id": "ocitocina", "nome": "Ocitocina", "apresentacao": "Solução injetável 10 UI/mL", "unidade": "mL", "explicacao": "Ajuda na descida do leite e na contração do útero, mas não corrige o cálcio." },
+        { "id": "flunixina", "nome": "Flunixina meglumina", "apresentacao": "Solução injetável 50 mg/mL", "unidade": "mL", "explicacao": "Anti-inflamatório: não trata a causa e não faz a vaca levantar." }
+      ],
+      "correto": {
+        "farmaco": "borogluconato",
+        "doseMgKg": 22.2,
+        "concentracao": 21.4,
+        "tolerancia": 0.1,
+        "via": "Intravenosa, lenta",
+        "frequencia": "Dose única"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Intravenosa, lenta"],
+      "frequencias": ["Dose única", "A cada 8 horas", "A cada 12 horas", "A cada 24 horas"],
+      "explicacao": "22,2 mg/kg × 500 kg = 11.100 mg de cálcio; 11.100 ÷ 21,4 mg/mL ≈ 519 mL. Na prática, um frasco de 500 mL na veia, devagar (10 a 20 minutos), auscultando o coração e parando se aparecer arritmia."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita no dia seguinte",
+      "bom": "A Mimosa levantou cerca de uma hora depois do cálcio e voltou a comer. No dia seguinte, estava sendo ordenhada normalmente.",
+      "falaBom": "Doutora, a Mimosa levantou e já tá comendo! Pensei que ia perder ela.",
+      "ruim": "Sem o cálcio, a Mimosa continuou caída, deitou de lado e teve lesões musculares por ficar tanto tempo no chão.",
+      "falaRuim": "Doutora, ela continua caída e agora nem levanta a cabeça..."
+    }
+  ],
+  "resumo": [
+    "Hipocalcemia puerperal (febre do leite): vacas leiteiras mais velhas e de alta produção, nas primeiras 72 horas após o parto.",
+    "O colostro retira muito cálcio de uma vez, e o PTH e o calcitriol levam dias para aumentar a mobilização óssea e a absorção intestinal.",
+    "Sinais: vaca caída de peito com a cabeça no flanco, hipotermia, extremidades frias, rúmen parado e bulhas abafadas.",
+    "Apesar do nome, não tem febre.",
+    "Tratamento: cálcio na veia, devagar e auscultando o coração. Prevenção: dieta pré-parto ajustada, como a dieta aniônica."
+  ],
+  "referencias": [
+    "Constable et al., Clínica Veterinária: Um Tratado de Doenças dos Bovinos, Ovinos, Suínos e Caprinos",
+    "Cunningham, Tratado de Fisiologia Veterinária"
+  ],
+  "revisado": false
+}

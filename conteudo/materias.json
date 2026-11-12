@@ -1,0 +1,111 @@
+{
+  "versao": 1,
+  "materias": [
+    {
+      "id": "anatomia",
+      "nome": "Anatomia",
+      "prefixo": "anat",
+      "cobra": "Localizar e identificar estruturas a partir de um problema clínico",
+      "temas": [
+        "Nervos dos membros",
+        "Vasos para punção",
+        "Locais de injeção",
+        "Topografia das vísceras",
+        "Ossos e articulações no raio-X"
+      ],
+      "referencias": [
+        "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+        "König e Liebich, Anatomia dos Animais Domésticos"
+      ]
+    },
+    {
+      "id": "fisiologia",
+      "nome": "Fisiologia",
+      "prefixo": "fisi",
+      "cobra": "Explicar o mecanismo por trás do quadro",
+      "temas": [
+        "Homeostase do cálcio",
+        "Termorregulação",
+        "Líquidos corporais",
+        "Digestão dos ruminantes",
+        "Cardiovascular e respiratória",
+        "Lactação"
+      ],
+      "referencias": [
+        "Cunningham, Tratado de Fisiologia Veterinária",
+        "Reece, Dukes: Fisiologia dos Animais Domésticos"
+      ]
+    },
+    {
+      "id": "semiologia",
+      "nome": "Semiologia",
+      "prefixo": "semi",
+      "cobra": "Conduzir anamnese e exame físico e interpretar os achados",
+      "temas": [
+        "Anamnese",
+        "Contenção",
+        "Parâmetros vitais",
+        "Hidratação",
+        "Exame dos sistemas",
+        "Exames complementares"
+      ],
+      "referencias": [
+        "Feitosa, Semiologia Veterinária: A Arte do Diagnóstico",
+        "Rosenberger, Exame Clínico dos Bovinos"
+      ]
+    },
+    {
+      "id": "farmacologia",
+      "nome": "Farmacologia",
+      "prefixo": "farm",
+      "cobra": "Escolher o fármaco pelo mecanismo e conhecer efeitos adversos e diferenças entre espécies",
+      "temas": [
+        "Farmacocinética e vias",
+        "AINEs",
+        "Antimicrobianos",
+        "Antiparasitários",
+        "Sistema nervoso autônomo",
+        "Toxicidade por espécie e raça"
+      ],
+      "referencias": [
+        "Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"
+      ]
+    },
+    {
+      "id": "terapeutica",
+      "nome": "Terapêutica",
+      "prefixo": "tera",
+      "cobra": "Montar a prescrição: fármaco, dose pelo peso, via, frequência e duração",
+      "temas": [
+        "Receituário",
+        "Cálculo de dose",
+        "Analgesia e anti-inflamatórios",
+        "Fluidoterapia",
+        "Antimicrobianos",
+        "Emergência"
+      ],
+      "referencias": [
+        "Andrade, Manual de Terapêutica Veterinária",
+        "Viana, Fundamentos de Terapêutica Veterinária"
+      ]
+    },
+    {
+      "id": "clinica-geral",
+      "nome": "Clínica Geral",
+      "prefixo": "clin",
+      "cobra": "Atendimento completo, do diagnóstico ao retorno",
+      "temas": [
+        "Vômito e diarreia em cães",
+        "Afecções respiratórias",
+        "Afecções de pele",
+        "Afecções urinárias",
+        "Distúrbios metabólicos de vacas leiteiras",
+        "Neonatos"
+      ],
+      "referencias": [
+        "Jericó, Andrade Neto e Kogika, Tratado de Medicina Interna de Cães e Gatos",
+        "Constable et al., Clínica Veterinária: Um Tratado de Doenças dos Bovinos, Ovinos, Suínos e Caprinos"
+      ]
+    }
+  ]
+}

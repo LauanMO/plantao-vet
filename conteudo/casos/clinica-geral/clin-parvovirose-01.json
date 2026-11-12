@@ -1,0 +1,122 @@
+{
+  "id": "clin-parvovirose-01",
+  "materia": "clinica-geral",
+  "tema": "Vômito e diarreia em cães",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Pipoca",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "fêmea",
+    "idade": "4 meses",
+    "pesoKg": 5,
+    "sprite": "cao-pequeno-caramelo"
+  },
+  "tutor": { "nome": "Rita", "sprite": "tutora-1" },
+  "chegada": "Boa noite, doutora! A Pipoca vomita tudo desde ontem, e hoje começou uma diarreia com sangue. Ela tá muito quietinha...",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Ela tomou só a primeira dose da vacina, faz um mês.", "importante": true },
+        { "id": "contato", "rotulo": "Ela teve contato com outros cães?", "resultado": "A gente adotou ela numa feira de adoção, faz 10 dias.", "importante": true },
+        { "id": "inicio", "rotulo": "Quando começou e como evoluiu?", "resultado": "O vômito começou ontem. A diarreia com sangue, hoje cedo.", "importante": true },
+        { "id": "objeto", "rotulo": "Pode ter engolido algum objeto?", "resultado": "Acho que não... pelo menos ninguém viu.", "importante": false },
+        { "id": "vermifugo", "rotulo": "Ela foi vermifugada?", "resultado": "Foi, com 45 dias de vida.", "importante": false },
+        { "id": "passeio", "rotulo": "Ela gosta de passear?", "resultado": "Ela ainda não sai de casa.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "40,1 °C.", "importante": true },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Pele demora a voltar e olhos levemente afundados: cerca de 8% de desidratação.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas pálidas e secas; TPC de 3 segundos.", "importante": true },
+        { "id": "abdome", "ferramenta": "mao", "rotulo": "Palpação abdominal", "resultado": "Dor difusa e alças com líquido; nenhuma massa palpável.", "importante": false },
+        { "id": "pulmao", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Pulmões sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 250,
+      "itens": [
+        { "id": "parvo", "rotulo": "Teste rápido de parvovírus (fezes)", "custo": 90, "resultado": "Positivo.", "importante": true },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Leucopenia (2.100/µL) com neutropenia.", "importante": true },
+        { "id": "copro", "rotulo": "Coproparasitológico", "custo": 40, "resultado": "Negativo.", "importante": false },
+        { "id": "bioquimica", "rotulo": "Bioquímica sérica", "custo": 120, "resultado": "Albumina levemente baixa; ureia levemente alta.", "importante": false },
+        { "id": "raiox", "rotulo": "Raio-X abdominal", "custo": 150, "resultado": "Alças com gás e líquido; sem corpo estranho.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Parvovirose canina", "correta": true, "explicacao": "Filhote com vacinação incompleta, contato recente com outros cães, febre, diarreia com sangue, leucopenia e teste de antígeno positivo." },
+        { "texto": "Corpo estranho intestinal", "correta": false, "explicacao": "Não há histórico de ingestão, e corpo estranho não explica febre com leucopenia nem o teste positivo." },
+        { "texto": "Cinomose", "correta": false, "explicacao": "Faltam sinais respiratórios, oculares ou neurológicos, e o teste de parvovírus deu positivo." },
+        { "texto": "Giardíase", "correta": false, "explicacao": "Costuma causar diarreia sem febre nem leucopenia, e o coproparasitológico foi negativo." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a parvovirose deixa a Pipoca com leucopenia?",
+      "opcoes": [
+        { "texto": "O vírus se multiplica em células que se dividem rápido, como as da medula óssea", "correta": true, "explicacao": "O parvovírus precisa de células em divisão: ataca as precursoras da medula óssea e as criptas intestinais." },
+        { "texto": "A desidratação dilui o sangue", "correta": false, "explicacao": "A desidratação concentra o sangue, não dilui; ela não explica a queda dos leucócitos." },
+        { "texto": "O vírus destrói os rins e a produção de eritropoetina", "correta": false, "explicacao": "Eritropoetina regula hemácias, não leucócitos, e o parvovírus não tem os rins como alvo." },
+        { "texto": "A primeira dose da vacina destruiu os leucócitos", "correta": false, "explicacao": "A vacina não causa leucopenia; o problema é a proteção incompleta com uma dose só." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Prescrição na internação",
+      "critica": true,
+      "instrucao": "Prescreva o antiemético para a Pipoca (5 kg).",
+      "farmacos": [
+        { "id": "maropitant", "nome": "Maropitant", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Antiemético de ação central (antagonista NK1), indicado para controlar o vômito." },
+        { "id": "meloxicam", "nome": "Meloxicam", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "AINE: contraindicado em paciente desidratado e com lesão gastrointestinal, pelo risco de lesão renal e úlcera." },
+        { "id": "loperamida", "nome": "Loperamida", "apresentacao": "Comprimido 2 mg", "unidade": "comprimido", "explicacao": "Reduz a motilidade intestinal e não é indicada em diarreia infecciosa." },
+        { "id": "prednisolona", "nome": "Prednisolona", "apresentacao": "Comprimido 5 mg", "unidade": "comprimido", "explicacao": "Corticoide imunossupressor, contraindicado numa infecção viral grave com neutropenia." }
+      ],
+      "correto": {
+        "farmaco": "maropitant",
+        "doseMgKg": 1,
+        "concentracao": 10,
+        "tolerancia": 0.1,
+        "via": "Subcutânea",
+        "frequencia": "A cada 24 horas"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Tópica"],
+      "frequencias": ["Dose única", "A cada 8 horas", "A cada 12 horas", "A cada 24 horas"],
+      "explicacao": "1 mg/kg × 5 kg = 5 mg; 5 mg ÷ 10 mg/mL = 0,5 mL, por via subcutânea, a cada 24 horas."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 5 dias",
+      "bom": "Pipoca ficou internada 5 dias com fluidoterapia, antiemético e antibiótico. Voltou a comer no 4º dia e teve alta.",
+      "falaBom": "Doutora, ela voltou a comer! Ficou 5 dias internada e já tá brincando de novo. Muito obrigada!",
+      "ruim": "O vômito não foi controlado e a desidratação piorou. Pipoca precisou de suporte intensivo, e o prognóstico ficou reservado.",
+      "falaRuim": "Doutora, ela continua vomitando e tá cada vez mais fraquinha..."
+    }
+  ],
+  "resumo": [
+    "Parvovirose: filhotes de 6 semanas a 6 meses com vacinação incompleta.",
+    "O vírus ataca as criptas intestinais e a medula óssea: diarreia com sangue, vômito e leucopenia.",
+    "Diagnóstico: teste de antígeno nas fezes e hemograma.",
+    "Tratamento de suporte: fluidoterapia, antiemético, antibiótico se houver neutropenia com febre, analgesia e nutrição precoce.",
+    "Evitar AINE, corticoide e loperamida. Isolar o paciente e limpar o ambiente com hipoclorito."
+  ],
+  "referencias": ["Jericó, Andrade Neto e Kogika, Tratado de Medicina Interna de Cães e Gatos"],
+  "revisado": false
+}
