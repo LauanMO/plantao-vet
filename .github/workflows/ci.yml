@@ -25,6 +25,8 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
+      - name: Casos
+        run: npm run validar
       - name: Testes
         run: npm test
       - name: Build
