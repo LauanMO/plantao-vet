@@ -37,5 +37,5 @@ O script também salva `_folha.png`, com tudo junto em 4x, para conferir. Uma c�
 
 - As cores do topo do `gerar.py` (o dicionário `CORES`) vão para `conteudo/arte/paleta.json`, e o script passa a ler a paleta de lá.
 - O script passa a salvar em `public/arte/` e a registrar cada sprite no manifesto `conteudo/arte/sprites.json`, com o tamanho do quadro, as animações e o ponto do pé.
-- Entram o curral com o tronco de contenção, o produtor, a preceptora, a vaca nos três estados e deitada, e os sons de clique, porta, carimbo, acerto e erro, gerados com o jsfxr.
+- Entram o curral com o tronco de contenção, o produtor, a preceptora, a vaca nos três estados e deitada. Os sons de clique, porta, carimbo, acerto e erro não saem daqui: são sintetizados no jogo, em `src/som/`, com Web Audio.
 - Ajustes de arte são feitos sempre no script, nunca editando os PNGs à mão.
