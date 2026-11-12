@@ -1,0 +1,139 @@
+name: Auto-merge
+
+# Faz o merge de um PR quando a dona do repositório põe a label "automerge". O nome da branch decide o resto:
+#   feature/<nome>, dependabot/*  -> develop; guardada na tag archive/<branch> e depois apagada
+#   main                          -> develop (volta da main depois de uma release); a branch fica
+#   release/X.Y.Z, hotfix/X.Y.Z   -> main; guardada e apagada, tag vX.Y.Z, release no GitHub
+#                                    com o .zip do build, e depois a main volta para a develop
+# Para restaurar uma branch apagada: git push origin archive/<branch>:refs/heads/<branch>
+
+on:
+  pull_request:
+    types: [labeled]
+
+permissions: {}
+
+jobs:
+  merge:
+    if: github.event.label.name == 'automerge' && github.event.sender.login == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pull-requests: write
+      checks: read
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+      # O nome da branch é escolhido por quem a cria, então só chega aos scripts por variável de ambiente
+      HEAD_REF: ${{ github.event.pull_request.head.ref }}
+      BASE_REF: ${{ github.event.pull_request.base.ref }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: Tipo de branch
+        run: |
+          keep=false
+          version=
+          case "$HEAD_REF" in
+          feature/*) base=develop subject="feat: integra ${HEAD_REF#feature/} na develop (#$PR_NUMBER)" ;;
+          dependabot/*) base=develop subject="ci: integra $HEAD_REF (#$PR_NUMBER)" ;;
+          main) base=develop subject="chore: integra a main na develop (#$PR_NUMBER)" keep=true ;;
+          release/* | hotfix/*)
+            base=main
+            version=${HEAD_REF#*/}
+            if ! [[ $version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "::error::A versão '$version' precisa ser X.Y.Z"
+              exit 1
+            fi
+            if [[ $HEAD_REF == release/* ]]; then subject="chore(release): v$version"; else subject="fix: hotfix v$version"; fi
+            ;;
+          *)
+            echo "::error::O auto-merge só conhece feature/*, dependabot/*, main, release/X.Y.Z e hotfix/X.Y.Z, não '$HEAD_REF'"
+            exit 1
+            ;;
+          esac
+          if [[ $BASE_REF != "$base" ]]; then
+            echo "::error::'$HEAD_REF' precisa ir para a $base, mas este PR vai para a $BASE_REF"
+            exit 1
+          fi
+          { echo "SUBJECT=$subject"; echo "KEEP_BRANCH=$keep"; echo "VERSION=$version"; } >> "$GITHUB_ENV"
+
+      - name: Esperar os checks
+        run: |
+          # Última execução de cada check obrigatório no commit do PR, para uma nova execução verde substituir uma falha antiga
+          for _ in $(seq 1 40); do
+            state=$(gh api "repos/$GH_REPO/commits/$HEAD_SHA/check-runs?per_page=100" --jq '
+              [.check_runs[] | select(.name == "check" or .name == "secrets" or .name == "hygiene")]
+              | group_by(.name) | map(max_by(.started_at))
+              | if any(.[]; .status == "completed" and .conclusion != "success") then "failed"
+                elif length == 3 and all(.[]; .conclusion == "success") then "green"
+                else "waiting" end')
+            echo "Checks: $state"
+            case "$state" in
+            green) exit 0 ;;
+            failed)
+              echo "::error::Um check falhou. Corrija, depois tire e ponha de novo a label automerge."
+              exit 1
+              ;;
+            esac
+            sleep 15
+          done
+          echo "::error::Os checks não terminaram em 10 minutos. Tire e ponha de novo a label automerge."
+          exit 1
+
+      - name: Guardar a branch
+        if: env.KEEP_BRANCH == 'false'
+        run: |
+          tag="archive/$HEAD_REF"
+          if existing=$(gh api "repos/$GH_REPO/git/ref/tags/$tag" --jq .object.sha 2>/dev/null); then
+            if [[ $existing != "$HEAD_SHA" ]]; then
+              echo "::error::$tag já existe em outro commit. Renomeie a branch ou mova a tag antiga."
+              exit 1
+            fi
+          else
+            gh api "repos/$GH_REPO/git/refs" -f ref="refs/tags/$tag" -f sha="$HEAD_SHA" --silent
+          fi
+          echo "Backup: $tag -> $HEAD_SHA"
+
+      - name: Merge
+        run: gh pr merge "$PR_NUMBER" --merge --match-head-commit "$HEAD_SHA" --subject "$SUBJECT" --body "Auto-merge de $HEAD_REF"
+
+      - name: Tag de versão
+        id: tag
+        if: env.VERSION != ''
+        run: |
+          merge_sha=$(gh pr view "$PR_NUMBER" --json mergeCommit --jq .mergeCommit.oid)
+          gh api "repos/$GH_REPO/git/refs" -f ref="refs/tags/v$VERSION" -f sha="$merge_sha" --silent
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Apagar a branch
+        if: env.KEEP_BRANCH == 'false'
+        # O Dependabot pode já ter apagado a branch dele
+        run: gh api -X DELETE "repos/$GH_REPO/git/refs/heads/$HEAD_REF" --silent || echo "A branch já não existe"
+
+      - uses: actions/checkout@v7
+        if: env.VERSION != ''
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Trazer a main de volta para a develop
+        if: env.VERSION != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git merge --no-ff origin/main -m "chore: integra a main na develop depois da v$VERSION"
+          git push origin develop
+
+  release:
+    needs: merge
+    # Tags criadas com o token do Actions não disparam outros workflows, então a release é chamada daqui
+    if: ${{ !cancelled() && needs.merge.outputs.tag != '' }}
+    permissions:
+      contents: write
+    uses: ./.github/workflows/release.yml
+    with:
+      tag: ${{ needs.merge.outputs.tag }}

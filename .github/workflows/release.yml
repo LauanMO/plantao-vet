@@ -1,0 +1,46 @@
+name: Release
+
+# Chamado pelo automerge.yml depois do merge de uma release/hotfix, ou rodado à mão para uma tag que já existe.
+on:
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag de versão que já existe na main, por exemplo v0.1.0
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      TAG: ${{ inputs.tag }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: refs/tags/${{ inputs.tag }}
+          fetch-depth: 0
+      - name: A tag precisa estar na main
+        run: git merge-base --is-ancestor HEAD origin/main
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Build do jogo
+        run: |
+          npm ci
+          npm run build
+          cd dist && zip -qr "../plantao-vet-$TAG.zip" .
+      - name: Release no GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$TAG" "plantao-vet-$TAG.zip" --title "$TAG" --generate-notes --verify-tag
