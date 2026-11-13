@@ -19,7 +19,8 @@ const arquivos = readdirSync(pasta, { recursive: true, encoding: 'utf8' })
     }
   })
 
-const resultado = validarBanco(arquivos, JSON.parse(readFileSync(join('conteudo', 'materias.json'), 'utf8')))
+const lerJson = (caminho: string): unknown => JSON.parse(readFileSync(join('conteudo', caminho), 'utf8'))
+const resultado = validarBanco(arquivos, lerJson('materias.json'), lerJson(join('arte', 'sprites.json')))
 const erros = [...errosDeJson, ...resultado.erros]
 
 for (const dose of resultado.doses) console.log(`dose  ${dose}`)

@@ -1,0 +1,59 @@
+{
+  "tutora-1": {
+    "largura": 24,
+    "altura": 64,
+    "pe": {
+      "x": 12,
+      "y": 62
+    },
+    "estados": [
+      "parado"
+    ]
+  },
+  "produtor-1": {
+    "largura": 24,
+    "altura": 64,
+    "pe": {
+      "x": 12,
+      "y": 62
+    },
+    "estados": [
+      "parado"
+    ]
+  },
+  "preceptora": {
+    "largura": 24,
+    "altura": 64,
+    "pe": {
+      "x": 12,
+      "y": 62
+    },
+    "estados": [
+      "parado"
+    ]
+  },
+  "cao-pequeno-caramelo": {
+    "largura": 38,
+    "altura": 26,
+    "pe": {
+      "x": 16,
+      "y": 23
+    },
+    "estados": [
+      "doente",
+      "feliz"
+    ]
+  },
+  "vaca-holandesa": {
+    "largura": 114,
+    "altura": 67,
+    "pe": {
+      "x": 49,
+      "y": 65
+    },
+    "estados": [
+      "deitado",
+      "feliz"
+    ]
+  }
+}

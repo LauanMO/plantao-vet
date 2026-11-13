@@ -101,6 +101,21 @@ export const materiasSchema = z.strictObject({
     .min(1),
 })
 
+/** O manifesto conteudo/arte/sprites.json, escrito pelo ferramentas-arte/gerar.py. */
+export const spritesSchema = z.record(
+  texto,
+  z.strictObject({
+    largura: z.number().int().positive(),
+    altura: z.number().int().positive(),
+    /** pixel do desenho que encosta no chão: é por ele que a cena posiciona o personagem */
+    pe: z.strictObject({ x: z.number().int().min(0), y: z.number().int().min(0) }),
+    /** cada estado é o arquivo public/arte/<id>-<estado>.png */
+    estados: z.array(texto).min(1),
+  }),
+)
+
+export type Sprites = z.infer<typeof spritesSchema>
+
 /** Um caso de conteudo/casos/<materia>/<id>.json, com as regras que dependem só dele. */
 export const casoSchema = z
   .strictObject({
