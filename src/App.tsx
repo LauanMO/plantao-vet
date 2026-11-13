@@ -13,8 +13,8 @@ export default function App() {
       cena={
         <>
           <Sprite src="arte/consultorio.png" alt="" x={0} y={0} largura={320} altura={180} />
-          <Sprite src="arte/tutora.png" alt="Tutora em pé ao lado da mesa" x={88} y={66} largura={24} altura={64} />
-          <Sprite src="arte/pipoca-doente.png" alt="Pipoca abatida em cima da mesa de exame" x={142} y={79} largura={38} altura={26} />
+          <Sprite src="arte/tutora-1-parado.png" alt="Tutora em pé ao lado da mesa" x={88} y={66} largura={24} altura={64} />
+          <Sprite src="arte/cao-pequeno-caramelo-doente.png" alt="Pipoca abatida em cima da mesa de exame" x={142} y={79} largura={38} altura={26} />
         </>
       }
     >
