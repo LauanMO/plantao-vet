@@ -1,5 +1,10 @@
 import { createContext, useContext, useEffect, useState, type CSSProperties, type ReactNode } from 'react'
+import manifesto from '../../conteudo/arte/sprites.json'
+import type { Sprites } from '../modelo/caso'
 import { ALTURA, FAIXA, LARGURA, calcularPalco } from './escala'
+
+// o npm run validar confere o manifesto contra o schema no CI; aqui só se aproveita o tipo
+const sprites: Sprites = manifesto
 
 const EscalaContexto = createContext(1)
 
@@ -67,4 +72,30 @@ interface PropsSprite {
 export function Sprite({ src, alt, x, y, largura, altura }: PropsSprite) {
   const e = useContext(EscalaContexto)
   return <img src={src} alt={alt} style={{ left: x * e, top: y * e, width: largura * e, height: altura * e }} />
+}
+
+interface PropsPersonagem {
+  /** id do manifesto conteudo/arte/sprites.json */
+  id: string
+  estado: string
+  alt: string
+  /** onde fica o pé, em pixels de arte */
+  x: number
+  y: number
+}
+
+export function Personagem({ id, estado, alt, x, y }: PropsPersonagem) {
+  const s = sprites[id]
+  return (
+    // a key troca a <img> junto com o personagem; sem ela, a imagem antiga aparece esticada enquanto a nova carrega
+    <Sprite
+      key={id}
+      src={`arte/${id}-${estado}.png`}
+      alt={alt}
+      x={x - s.pe.x}
+      y={y - s.pe.y}
+      largura={s.largura}
+      altura={s.altura}
+    />
+  )
 }
