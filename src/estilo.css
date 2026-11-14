@@ -39,6 +39,40 @@ body {
   image-rendering: pixelated;
 }
 
+.personagem {
+  position: absolute;
+  overflow: hidden;
+}
+
+/* respiração: a folha tem 2 quadros, e steps(2) mostra um de cada vez */
+.personagem img {
+  left: 0;
+  top: 0;
+  animation: respirar 1.6s steps(2) infinite;
+}
+
+@keyframes respirar {
+  to {
+    translate: -100% 0;
+  }
+}
+
+.entra {
+  animation: entrar 1s steps(var(--passos)) both;
+}
+
+@keyframes entrar {
+  from {
+    translate: var(--de) 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .palco * {
+    animation: none !important;
+  }
+}
+
 .interface {
   position: absolute;
   box-sizing: border-box;

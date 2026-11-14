@@ -1,44 +1,48 @@
 {
   "tutora-1": {
     "largura": 24,
-    "altura": 64,
+    "altura": 65,
     "pe": {
       "x": 12,
-      "y": 62
+      "y": 63
     },
+    "quadros": 2,
     "estados": [
       "parado"
     ]
   },
   "produtor-1": {
     "largura": 24,
-    "altura": 64,
+    "altura": 65,
     "pe": {
       "x": 12,
-      "y": 62
+      "y": 63
     },
+    "quadros": 2,
     "estados": [
       "parado"
     ]
   },
   "preceptora": {
     "largura": 24,
-    "altura": 64,
+    "altura": 65,
     "pe": {
       "x": 12,
-      "y": 62
+      "y": 63
     },
+    "quadros": 2,
     "estados": [
       "parado"
     ]
   },
   "cao-pequeno-caramelo": {
     "largura": 38,
-    "altura": 26,
+    "altura": 27,
     "pe": {
       "x": 16,
-      "y": 23
+      "y": 24
     },
+    "quadros": 2,
     "estados": [
       "doente",
       "feliz"
@@ -46,11 +50,12 @@
   },
   "vaca-holandesa": {
     "largura": 114,
-    "altura": 67,
+    "altura": 68,
     "pe": {
       "x": 49,
-      "y": 65
+      "y": 66
     },
+    "quadros": 2,
     "estados": [
       "deitado",
       "feliz"

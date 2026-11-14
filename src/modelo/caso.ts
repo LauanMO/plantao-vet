@@ -109,6 +109,8 @@ export const spritesSchema = z.record(
     altura: z.number().int().positive(),
     /** pixel do desenho que encosta no chão: é por ele que a cena posiciona o personagem */
     pe: z.strictObject({ x: z.number().int().min(0), y: z.number().int().min(0) }),
+    /** quadros da respiração, lado a lado no PNG; largura e altura são de um quadro */
+    quadros: z.number().int().positive(),
     /** cada estado é o arquivo public/arte/<id>-<estado>.png */
     estados: z.array(texto).min(1),
   }),

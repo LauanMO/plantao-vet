@@ -567,14 +567,30 @@ def icone(nome):
     return contorno(im)
 
 
+def respirar(im, peito):
+    """Folha com os 2 quadros da respiração, lado a lado. No segundo, tudo acima da linha do peito
+    sobe 1 px e a linha do corte se repete, para não abrir buraco. Ganha 1 linha vazia no topo,
+    onde cabe a subida."""
+    w, h = im.size
+    base = Image.new('RGBA', (w, h + 1), (0, 0, 0, 0))
+    base.paste(im, (0, 1))
+    sobe = base.copy()
+    sobe.paste(base.crop((0, 1, w, peito + 2)), (0, 0))
+    folha = Image.new('RGBA', (w * 2, h + 1), (0, 0, 0, 0))
+    folha.paste(base, (0, 0))
+    folha.paste(sobe, (w, 0))
+    return folha
+
+
 # Personagens que os casos citam pelo id. O ponto do pé é o pixel que encosta no chão:
 # é por ele que a cena posiciona o personagem, igual em todos os estados.
+# Cada estado vem com a linha do peito, onde o corpo se divide para respirar.
 PERSONAGENS = {
-    'tutora-1': ((12, 62), {'parado': tutora()}),
-    'produtor-1': ((12, 62), {'parado': produtor()}),
-    'preceptora': ((12, 62), {'parado': preceptora()}),
-    'cao-pequeno-caramelo': ((16, 23), {'doente': pipoca(False), 'feliz': pipoca(True)}),
-    'vaca-holandesa': ((49, 65), {'deitado': vaca(True), 'feliz': vaca(False)}),
+    'tutora-1': ((12, 62), {'parado': (tutora(), 39)}),
+    'produtor-1': ((12, 62), {'parado': (produtor(), 39)}),
+    'preceptora': ((12, 62), {'parado': (preceptora(), 39)}),
+    'cao-pequeno-caramelo': ((16, 23), {'doente': (pipoca(False), 18), 'feliz': (pipoca(True), 18)}),
+    'vaca-holandesa': ((49, 65), {'deitado': (vaca(True), 52), 'feliz': (vaca(False), 48)}),
 }
 
 
@@ -592,12 +608,16 @@ def main():
 
     manifesto = {}
     for id_, ((pe_x, pe_y), estados) in PERSONAGENS.items():
-        largura, altura = next(iter(estados.values())).size
-        for estado, im in estados.items():
+        largura, altura = next(iter(estados.values()))[0].size
+        for estado, (im, peito) in estados.items():
             assert im.size == (largura, altura), f'{id_}-{estado}: tamanho diferente dos outros estados'
             assert im.getbbox()[3] - 1 == pe_y, f'{id_}-{estado}: o pé não está na última linha do desenho'
-            arquivos[f'{id_}-{estado}.png'] = im
-        manifesto[id_] = {'largura': largura, 'altura': altura, 'pe': {'x': pe_x, 'y': pe_y}, 'estados': list(estados)}
+            arquivos[f'{id_}-{estado}.png'] = respirar(im, peito)
+        # a folha da respiração tem 1 linha a mais no topo, e o pé desce junto
+        manifesto[id_] = {
+            'largura': largura, 'altura': altura + 1, 'pe': {'x': pe_x, 'y': pe_y + 1},
+            'quadros': 2, 'estados': list(estados),
+        }
 
     for nome, im in arquivos.items():
         im.save(os.path.join(saida, nome), optimize=True)

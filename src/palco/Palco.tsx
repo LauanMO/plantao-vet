@@ -82,20 +82,25 @@ interface PropsPersonagem {
   /** onde fica o pé, em pixels de arte */
   x: number
   y: number
+  /** entra em cena deslizando desde essa distância, em pixels de arte (negativa vem da esquerda) */
+  entraDe?: number
 }
 
-export function Personagem({ id, estado, alt, x, y }: PropsPersonagem) {
+export function Personagem({ id, estado, alt, x, y, entraDe }: PropsPersonagem) {
+  const e = useContext(EscalaContexto)
   const s = sprites[id]
+  // um passo por pixel de arte, para a arte não borrar no meio do caminho
+  const entrada = entraDe ? ({ '--de': `${entraDe * e}px`, '--passos': Math.abs(entraDe) } as CSSProperties) : {}
   return (
-    // a key troca a <img> junto com o personagem; sem ela, a imagem antiga aparece esticada enquanto a nova carrega
-    <Sprite
-      key={id}
-      src={`arte/${id}-${estado}.png`}
-      alt={alt}
-      x={x - s.pe.x}
-      y={y - s.pe.y}
-      largura={s.largura}
-      altura={s.altura}
-    />
+    <div
+      className={entraDe ? 'personagem entra' : 'personagem'}
+      role="img"
+      aria-label={alt}
+      style={{ left: (x - s.pe.x) * e, top: (y - s.pe.y) * e, width: s.largura * e, height: s.altura * e, ...entrada }}
+    >
+      {/* os quadros da respiração ficam lado a lado no PNG, e o CSS desliza a folha */}
+      {/* a key troca a <img> junto com o personagem; sem ela, a imagem antiga aparece esticada enquanto a nova carrega */}
+      <img key={id} src={`arte/${id}-${estado}.png`} alt="" style={{ width: s.largura * s.quadros * e, height: s.altura * e }} />
+    </div>
   )
 }
