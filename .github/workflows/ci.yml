@@ -11,7 +11,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -32,6 +32,11 @@ jobs:
       - name: Build
         # o build roda tsc -b antes do vite build, então também checa os tipos
         run: npm run build
+      - name: Navegador do Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Jogar os casos de teste
+        # celular em pé e PC, contra o servidor de desenvolvimento que o próprio Playwright sobe
+        run: npm run e2e
 
   secrets:
     runs-on: ubuntu-latest
