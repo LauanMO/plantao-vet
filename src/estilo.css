@@ -212,6 +212,7 @@ button:focus-visible {
 /* por cima do palco, a fala fica no alto e o resto embaixo, para a cena aparecer no meio */
 .sobre .conteudo {
   flex: 1;
+  justify-content: flex-end;
 }
 
 .sobre .balao {
@@ -348,4 +349,11 @@ input {
   display: flex;
   justify-content: space-between;
   gap: 16px;
+}
+
+.contexto {
+  margin: 0;
+  padding: 8px 12px;
+  background: var(--tinta);
+  border: 4px solid var(--papel);
 }

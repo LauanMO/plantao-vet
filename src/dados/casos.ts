@@ -1,4 +1,5 @@
-import { casoSchema } from '../modelo/caso'
+import materiasJson from '../../conteudo/materias.json'
+import { casoSchema, materiasSchema } from '../modelo/caso'
 
 // Todos de uma vez: 60 casos dão uns 100 KB compactados. O npm run validar já recusa caso quebrado no CI;
 // aqui o mesmo schema confere de novo no carregamento.
@@ -6,3 +7,6 @@ import { casoSchema } from '../modelo/caso'
 const arquivos = import.meta.glob('../../conteudo/casos/*/*.json', { eager: true, import: 'default' })
 
 export const casos = Object.values(arquivos).map((json) => casoSchema.parse(json))
+
+export const materias = materiasSchema.parse(materiasJson).materias
+export type Materia = (typeof materias)[number]
