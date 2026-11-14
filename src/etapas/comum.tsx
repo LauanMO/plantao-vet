@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import type { Caso } from '../modelo/caso'
 import type { EtapaDo, RespostaDo } from '../motor/pontuacao'
-import { tocar } from '../som/som'
+import { definirMudo, estaMudo, tocar } from '../som/som'
 
 export type TipoPontuado = 'coleta' | 'escolha' | 'calculo' | 'receita'
 
@@ -45,5 +45,30 @@ export function Seguir({ seguir, texto = 'Seguir' }: { seguir: () => void; texto
     >
       {texto}
     </button>
+  )
+}
+
+/** O atalho do mudo, no canto de toda tela. */
+export function BotaoMudo() {
+  const [mudo, setMudo] = useState(estaMudo)
+  return (
+    <button
+      type="button"
+      aria-pressed={mudo}
+      onClick={() => {
+        definirMudo(!mudo)
+        setMudo(!mudo)
+      }}
+    >
+      Mudo
+    </button>
+  )
+}
+
+export function Estrelas({ quantas }: { quantas: number }) {
+  return (
+    <span className="estrelas" role="img" aria-label={`${quantas} de 3 estrelas`}>
+      {'★'.repeat(quantas) + '☆'.repeat(3 - quantas)}
+    </span>
   )
 }

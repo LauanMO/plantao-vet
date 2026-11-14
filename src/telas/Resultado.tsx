@@ -1,3 +1,4 @@
+import { Estrelas } from '../etapas/comum'
 import { numero } from '../etapas/texto'
 import type { Caso } from '../modelo/caso'
 import { faltaram, importantes, resultadoDoCaso, type Resposta } from '../motor/pontuacao'
@@ -5,7 +6,14 @@ import { faltaram, importantes, resultadoDoCaso, type Resposta } from '../motor/
 const escolhidos = (r: Resposta | undefined) => (r?.tipo === 'coleta' ? r.escolhidos : [])
 
 /** Painel de nota: estrelas, cada etapa, o que faltou e o resumo do caso. */
-export function Resultado({ caso, respostas, sair }: { caso: Caso; respostas: (Resposta | undefined)[]; sair: () => void }) {
+interface PropsResultado {
+  caso: Caso
+  respostas: (Resposta | undefined)[]
+  proximo: { texto: string; ir: () => void }
+  sair: () => void
+}
+
+export function Resultado({ caso, respostas, proximo, sair }: PropsResultado) {
   const r = resultadoDoCaso(caso, respostas)
   const linhas = caso.etapas.flatMap((etapa, i) => {
     const nota = r.notas[i]
@@ -25,9 +33,7 @@ export function Resultado({ caso, respostas, sair }: { caso: Caso; respostas: (R
       <section className="caixa" aria-label="Resultado do caso">
         <span className="rotulo">Caso concluído</span>
         <p className="nota">
-          <span className="estrelas" role="img" aria-label={`${r.estrelas} de 3 estrelas`}>
-            {'★'.repeat(r.estrelas) + '☆'.repeat(3 - r.estrelas)}
-          </span>{' '}
+          <Estrelas quantas={r.estrelas} />{' '}
           {numero(Math.round(r.nota * 100))}%
         </p>
         <p>
@@ -71,8 +77,11 @@ export function Resultado({ caso, respostas, sair }: { caso: Caso; respostas: (R
           ))}
         </ul>
       </section>
-      <button type="button" className="principal" onClick={sair}>
-        Voltar ao início
+      <button type="button" className="principal" onClick={proximo.ir}>
+        {proximo.texto}
+      </button>
+      <button type="button" onClick={sair}>
+        Voltar à fachada
       </button>
     </>
   )
