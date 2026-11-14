@@ -45,6 +45,8 @@ export function definirMudo(valor: boolean) {
   mudo = valor
 }
 
+export const estaMudo = () => mudo
+
 export function tocar(som: Som) {
   if (mudo || !contexto) return
   const notas: Nota[] = SONS[som]

@@ -13,7 +13,7 @@ export interface ResultadoValidacao {
   revisados: number
 }
 
-const numero = (x: number) => x.toLocaleString('pt-BR', { maximumFractionDigits: 2 })
+export const numero = (x: number) => x.toLocaleString('pt-BR', { maximumFractionDigits: 2 })
 const onde = (path: PropertyKey[]) => (path.length ? `${path.map(String).join('.')}: ` : '')
 
 /** Valida o banco de casos inteiro: cada caso pelo schema, mais as regras que cruzam arquivos. */
