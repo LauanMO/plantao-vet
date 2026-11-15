@@ -45,7 +45,7 @@ export function Palco({ cena, children }: PropsPalco) {
   }
 
   return (
-    <div className={`tela ${l.disposicao}`}>
+    <div className={`tela ${l.disposicao}`} style={{ '--largura-faixa': `${larguraFaixa}px` } as CSSProperties}>
       <div className="palco-janela" style={janela[l.disposicao]}>
         <div className="palco" style={{ left: l.x, top: l.y, width: largura, height: altura }}>
           <EscalaContexto.Provider value={l.escala}>{cena}</EscalaContexto.Provider>
