@@ -1,0 +1,115 @@
+{
+  "id": "fisi-febre-do-leite-01",
+  "materia": "fisiologia",
+  "tema": "Homeostase do cálcio",
+  "dificuldade": 3,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Pintada",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "7 anos",
+    "pesoKg": 600,
+    "sprite": "vaca-holandesa",
+    "postura": "deitado"
+  },
+  "tutor": { "nome": "Seu Valdir", "sprite": "produtor-2" },
+  "chegada": "Doutora, a Pintada pariu de madrugada e agora tá deitada, não firma as pernas. É a segunda vaca do mês que cai assim depois de parir!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "parto", "rotulo": "Quando ela pariu e como foi?", "resultado": "Hoje de madrugada, sem precisar de ajuda. Foi o quarto parto dela.", "importante": true },
+        { "id": "outra", "rotulo": "Como foi com a outra vaca?", "resultado": "A Malhada caiu do mesmo jeito semana passada. Levantou com o soro de cálcio.", "importante": true },
+        { "id": "dieta", "rotulo": "O que as vacas comem antes de parir?", "resultado": "Ficam no piquete adubado com o esterco da ordenha. O capim lá é bem verdinho, e dou silagem.", "importante": true },
+        { "id": "producao", "rotulo": "Quanto leite ela dava?", "resultado": "Uns 35 litros por dia no pico da outra cria.", "importante": false },
+        { "id": "fezes", "rotulo": "Como estão as fezes dela?", "resultado": "Secas e pouquinhas desde cedo.", "importante": false },
+        { "id": "vacinas", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, sim. A última foi no começo do ano.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,5 °C, abaixo do normal.", "importante": true },
+        { "id": "postura", "ferramenta": "mao", "rotulo": "Palpação e postura", "resultado": "Deitada de peito, cabeça no flanco; músculos flácidos, orelhas e patas frias.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação do coração e do rúmen", "resultado": "Rúmen parado; coração a 92 bpm, com bulhas fracas.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e pupilas", "resultado": "Mucosas rosadas; pupilas dilatadas, com reflexo lento.", "importante": false },
+        { "id": "ubere", "ferramenta": "mao", "rotulo": "Palpação do úbere", "resultado": "Úbere cheio, sem calor nem dor; colostro com aspecto normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 220,
+      "itens": [
+        { "id": "calcio", "rotulo": "Cálcio total", "custo": 60, "resultado": "5,1 mg/dL (referência: 8,5 a 10 mg/dL).", "importante": true },
+        { "id": "urina", "rotulo": "pH da urina (fita)", "custo": 20, "resultado": "pH 8,4: urina alcalina.", "importante": true },
+        { "id": "capim", "rotulo": "Potássio no capim do piquete", "custo": 80, "resultado": "3,6% de potássio na matéria seca: alto para vacas no pré-parto.", "importante": true },
+        { "id": "magnesio", "rotulo": "Magnésio sérico", "custo": 60, "resultado": "2,2 mg/dL, normal.", "importante": false },
+        { "id": "bhb", "rotulo": "Beta-hidroxibutirato (BHB)", "custo": 40, "resultado": "0,7 mmol/L, normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Hipocalcemia puerperal (febre do leite)", "correta": true, "explicacao": "Vaca leiteira de quarta cria, caída horas depois do parto, com hipotermia, extremidades frias, músculos flácidos, rúmen parado e cálcio muito baixo." },
+        { "texto": "Lesão do nervo obturador no parto", "correta": false, "explicacao": "Vem de parto difícil, com bezerro grande, e faz as pernas abrirem para os lados. Não explica a hipotermia, o rúmen parado e o cálcio baixo." },
+        { "texto": "Hipomagnesemia (tetania das pastagens)", "correta": false, "explicacao": "Causa excitação, tremores e convulsões, não uma vaca flácida, e o magnésio está normal." },
+        { "texto": "Cetose", "correta": false, "explicacao": "Aparece nas primeiras semanas de lactação, com BHB alto; o BHB da Pintada está normal." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que o capim cheio de potássio no pré-parto deixou as vacas do Seu Valdir mais propensas à febre do leite?",
+      "opcoes": [
+        { "texto": "O potássio alcaliniza o sangue, e na alcalose o osso e o rim respondem menos ao PTH", "correta": true, "explicacao": "Dietas ricas em cátions, como potássio e sódio, causam alcalose metabólica leve (por isso a urina alcalina). Na alcalose, os receptores de PTH do osso e do rim respondem mal: a vaca demora a tirar cálcio do osso e a produzir calcitriol justamente quando o colostro começa." },
+        { "texto": "O potássio inibe a secreção de PTH pela paratireoide", "correta": false, "explicacao": "A paratireoide responde ao cálcio baixo, e o PTH até sobe na febre do leite. O problema é a resposta fraca do osso e do rim ao hormônio." },
+        { "texto": "O potássio se liga ao cálcio no intestino e impede a absorção", "correta": false, "explicacao": "O potássio não prende o cálcio no intestino. O efeito dele é no equilíbrio ácido-base do sangue, que reduz a resposta ao PTH." },
+        { "texto": "O potássio aumenta a perda de cálcio pela urina", "correta": false, "explicacao": "Na alcalose, a vaca perde pouco cálcio pela urina, e essa perda é pequena perto da saída pelo colostro. O que falta é mobilizar cálcio do osso e do intestino." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que, além de caída, a Pintada está com o rúmen parado e com risco de reter a placenta?",
+      "opcoes": [
+        { "texto": "O músculo liso do rúmen e do útero também precisa do cálcio que entra na célula para contrair", "correta": true, "explicacao": "No músculo liso, a contração depende da entrada de cálcio, que se liga à calmodulina e ativa a miosina. Com cálcio baixo, o rúmen para (risco de timpanismo) e o útero contrai pouco (retenção de placenta e prolapso)." },
+        { "texto": "O rúmen parou porque ela não come desde o parto", "correta": false, "explicacao": "Ela come menos, mas o rúmen parado é efeito direto do cálcio baixo no músculo liso; ele volta a funcionar logo depois do cálcio na veia." },
+        { "texto": "O potássio alto do capim paralisa o músculo liso", "correta": false, "explicacao": "O potássio do sangue fica normal com essa dieta. O efeito do potássio é pela alcalose e pela resposta ao PTH." },
+        { "texto": "A ocitocina do parto acabou", "correta": false, "explicacao": "A ocitocina é liberada no parto e na ordenha, mas, sem cálcio, o músculo liso não responde a ela." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 3 semanas",
+      "bom": "A Pintada levantou depois do cálcio na veia. As vacas secas saíram do piquete adubado, a dieta pré-parto foi ajustada, e nenhuma outra vaca caiu no parto.",
+      "falaBom": "Doutora, a Pintada tá ótima, e as vacas que pariram depois nem bambearam. Tirei todas do piquete do esterco!",
+      "ruim": "A Pintada levantou com o cálcio, mas as vacas secas continuaram no capim adubado: mais duas caíram logo depois do parto.",
+      "falaRuim": "Doutora, caiu mais uma vaca que pariu ontem... e a outra que tá pra parir já tá ficando bamba."
+    }
+  ],
+  "resumo": [
+    "No parto, o colostro tira muito mais cálcio do que o sangue tem: a vaca depende do PTH e do calcitriol para tirar cálcio do osso e do intestino.",
+    "Dieta pré-parto rica em potássio e sódio (alta diferença cátion-aniônica) causa alcalose metabólica, que diminui a resposta do osso e do rim ao PTH.",
+    "Sinal no campo: urina alcalina (pH acima de 8) nas vacas secas.",
+    "Prevenção: forragem com pouco potássio no pré-parto e dieta aniônica, buscando urina com pH entre 6 e 7.",
+    "O cálcio baixo também para o músculo liso: rúmen parado, timpanismo e retenção de placenta."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

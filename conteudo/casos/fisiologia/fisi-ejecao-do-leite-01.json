@@ -1,0 +1,113 @@
+{
+  "id": "fisi-ejecao-do-leite-01",
+  "materia": "fisiologia",
+  "tema": "Lactação",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Jade",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "2 anos e meio",
+    "pesoKg": 480,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Zé Carlos", "sprite": "produtor-2" },
+  "chegada": "Doutora, a Jade é novilha de primeira cria. O úbere tá cheio, mas na ordenha ela escoiceia e o leite não desce. Acho que ela tá secando!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "ordenha", "rotulo": "Como vocês preparam a ordenha?", "resultado": "Coloco a máquina direto, sem tirar os primeiros jatos, pra ganhar tempo.", "importante": true },
+        { "id": "sala", "rotulo": "Como é a sala de ordenha?", "resultado": "Tem um ordenhador novo que grita com as vacas, e o cachorro fica latindo lá dentro.", "importante": true },
+        { "id": "bezerro", "rotulo": "Ela solta o leite em outra situação?", "resultado": "Quando o bezerro mama, o leite até escorre pelo canto da boca dele!", "importante": true },
+        { "id": "parto", "rotulo": "Quando ela pariu?", "resultado": "Faz 5 dias. Primeiro parto, tudo normal.", "importante": false },
+        { "id": "apetite", "rotulo": "Ela está comendo bem?", "resultado": "Come bem e rumina normal.", "importante": false },
+        { "id": "febre", "rotulo": "Ela teve febre?", "resultado": "Que eu saiba, não.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "ubere", "ferramenta": "mao", "rotulo": "Palpação do úbere", "resultado": "Úbere cheio e firme por igual, sem calor nem dor; leve edema na frente.", "importante": true },
+        { "id": "caneca", "ferramenta": "mao", "rotulo": "Teste da caneca de fundo escuro", "resultado": "Primeiros jatos com aspecto normal, sem grumos.", "importante": true },
+        { "id": "coracao", "ferramenta": "estetoscopio", "rotulo": "Auscultação do coração", "resultado": "96 bpm na sala de ordenha; 70 bpm no piquete, calma.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,6 °C.", "importante": false },
+        { "id": "rumen", "ferramenta": "estetoscopio", "rotulo": "Auscultação do rúmen", "resultado": "Dois movimentos a cada 2 minutos: normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 120,
+      "itens": [
+        { "id": "cmt", "rotulo": "CMT (teste da raquete)", "custo": 20, "resultado": "Negativo nos quatro tetos.", "importante": true },
+        { "id": "ccs", "rotulo": "Contagem de células somáticas", "custo": 50, "resultado": "90.000 células/mL: normal.", "importante": false },
+        { "id": "calcio", "rotulo": "Cálcio total", "custo": 60, "resultado": "9,1 mg/dL, normal.", "importante": false },
+        { "id": "bhb", "rotulo": "Beta-hidroxibutirato (BHB)", "custo": 40, "resultado": "0,6 mmol/L, normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Falha na ejeção do leite por estresse na ordenha", "correta": true, "explicacao": "Novilha de primeira cria, com úbere cheio e sadio, CMT negativo e leite normal, que solta o leite para o bezerro, mas não numa ordenha estressante e sem estímulo dos tetos." },
+        { "texto": "Mastite subclínica", "correta": false, "explicacao": "O CMT deu negativo nos quatro tetos, e a mastite não impede a descida do leite do úbere todo." },
+        { "texto": "Agalaxia (falta de produção de leite)", "correta": false, "explicacao": "O úbere está cheio e firme, e o leite sai para o bezerro: a produção existe; o que falha é a ejeção." },
+        { "texto": "Edema de úbere", "correta": false, "explicacao": "É comum em novilhas no parto e pode incomodar, mas aqui é leve e não explica o leite que desce para o bezerro e não desce para a máquina." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que o leite da Jade não desce na ordenha, se o úbere está cheio e sadio?",
+      "opcoes": [
+        { "texto": "O medo inibe a liberação de ocitocina, e sem ela as células em volta dos alvéolos não contraem para expulsar o leite", "correta": true, "explicacao": "O estímulo nos tetos sobe pela medula até o hipotálamo, e a neuro-hipófise libera ocitocina. Ela contrai as células mioepiteliais dos alvéolos e empurra o leite para os ductos e a cisterna. Medo e dor inibem a liberação de ocitocina, e a adrenalina ainda contrai os vasos do úbere. Sem ejeção, só sai o leite da cisterna." },
+        { "texto": "Falta prolactina, e o úbere parou de produzir leite", "correta": false, "explicacao": "A prolactina e outros hormônios mantêm a produção do leite. O úbere está cheio: o que falta é a ejeção, que depende da ocitocina." },
+        { "texto": "O esfíncter do teto está contraído e não deixa o leite passar", "correta": false, "explicacao": "O esfíncter se abre com a ordenha. Mesmo com ele aberto, sem ocitocina o leite dos alvéolos não chega à cisterna." },
+        { "texto": "A máquina suga pouco e não alcança o leite dos alvéolos", "correta": false, "explicacao": "A máquina tira o leite da cisterna e dos ductos. O leite dos alvéolos, que é a maior parte, só desce quando a ocitocina contrai as células mioepiteliais." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que estimular os tetos e tirar os primeiros jatos antes de colocar a máquina?",
+      "opcoes": [
+        { "texto": "O estímulo dispara o reflexo da ocitocina, e o leite dos alvéolos leva cerca de 1 a 2 minutos para descer", "correta": true, "explicacao": "O toque nos tetos manda o sinal pela medula até o hipotálamo. A ocitocina chega ao úbere pelo sangue, e a ejeção começa em cerca de 1 a 2 minutos. Colocar a máquina nessa hora aproveita a ejeção e evita ordenhar o teto vazio." },
+        { "texto": "Só para limpar o teto e evitar mastite", "correta": false, "explicacao": "A higiene é importante, mas o estímulo também prepara a ejeção; sem ele, a máquina ordenha o teto vazio no começo." },
+        { "texto": "Para o leite dos alvéolos descer por gravidade", "correta": false, "explicacao": "A gravidade não tira o leite dos alvéolos; quem faz isso é a contração das células mioepiteliais, pela ocitocina." },
+        { "texto": "Para liberar prolactina, que empurra o leite para fora", "correta": false, "explicacao": "A prolactina também sobe na ordenha, mas atua na produção do leite, não na ejeção." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 2 semanas",
+      "bom": "Com ordenha calma, sem gritos nem cachorro, e os tetos estimulados cerca de 1 minuto antes da máquina, a Jade passou a soltar o leite e chegou a 25 litros por dia.",
+      "falaBom": "Doutora, agora a gente prepara os tetos e ordenha com calma. A Jade solta o leite e tá dando 25 litros!",
+      "ruim": "A ordenha continuou estressante e sem preparo. O leite que ficava preso nos alvéolos freou a produção, e a Jade foi secando.",
+      "falaRuim": "Doutora, a Jade continua escoiceando na ordenha, e cada dia dá menos leite..."
+    }
+  ],
+  "resumo": [
+    "A maior parte do leite fica nos alvéolos e só sai com a ejeção; a cisterna guarda uma parte menor.",
+    "Reflexo de ejeção: o estímulo dos tetos vai pela medula até o hipotálamo, a neuro-hipófise libera ocitocina, e as células mioepiteliais contraem.",
+    "A ejeção começa cerca de 1 a 2 minutos depois do estímulo e dura poucos minutos: prepare os tetos e coloque a máquina na hora certa.",
+    "Medo e dor inibem a liberação de ocitocina, e a adrenalina contrai os vasos do úbere: o leite não desce.",
+    "O leite que fica no úbere diminui a produção: ordenha completa e tranquila mantém a lactação."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

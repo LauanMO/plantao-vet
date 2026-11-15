@@ -1,0 +1,114 @@
+{
+  "id": "fisi-hipoalbuminemia-01",
+  "materia": "fisiologia",
+  "tema": "Líquidos corporais",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Tobias",
+    "especie": "cão",
+    "raca": "Yorkshire",
+    "sexo": "macho",
+    "idade": "6 anos",
+    "pesoKg": 3.5,
+    "sprite": "cao-pequeno-caramelo"
+  },
+  "tutor": { "nome": "Cláudia", "sprite": "tutora-3" },
+  "chegada": "Doutora, a barriga do Tobias tá cada vez maior, mas ele tá magrinho. E faz uns dois meses que o cocô vive mole.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "fezes", "rotulo": "Como é o cocô dele?", "resultado": "Mole, volumoso e às vezes meio gorduroso. Faz uns dois meses.", "importante": true },
+        { "id": "peso", "rotulo": "Ele emagreceu?", "resultado": "Muito! Dá pra sentir a coluna e as costelas.", "importante": true },
+        { "id": "apetite", "rotulo": "Como está o apetite?", "resultado": "Come bem, até mais do que antes.", "importante": true },
+        { "id": "urina", "rotulo": "Como estão o xixi e a sede?", "resultado": "Normais, não reparei nada diferente.", "importante": false },
+        { "id": "tosse", "rotulo": "Ele tosse ou cansa?", "resultado": "Não tosse. Só fica ofegante quando a barriga tá muito grande.", "importante": false },
+        { "id": "comida", "rotulo": "O que ele come?", "resultado": "Ração de boa qualidade e um pouco de comida caseira.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "abdome", "ferramenta": "mao", "rotulo": "Palpação abdominal", "resultado": "Abdome distendido, com onda de líquido; sem dor e sem massas.", "importante": true },
+        { "id": "edema", "ferramenta": "mao", "rotulo": "Palpação dos membros", "resultado": "Inchaço nos membros pélvicos que fica marcado ao apertar com o dedo.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração sem sopro e com ritmo normal; pulmões limpos.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosa-claras; TPC de 2 segundos.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,3 °C.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 250,
+      "itens": [
+        { "id": "proteinas", "rotulo": "Proteína total e albumina", "custo": 50, "resultado": "Proteína total 3,1 g/dL; albumina 1,2 g/dL (ref.: 2,6 a 3,3); globulinas também baixas.", "importante": true },
+        { "id": "upc", "rotulo": "Proteína:creatinina na urina", "custo": 60, "resultado": "0,2: sem perda de proteína pela urina (normal: abaixo de 0,5).", "importante": true },
+        { "id": "acidos", "rotulo": "Ácidos biliares (função do fígado)", "custo": 80, "resultado": "Normais em jejum e depois da refeição.", "importante": true },
+        { "id": "liquido", "rotulo": "Análise do líquido abdominal", "custo": 40, "resultado": "Líquido claro, com 0,9 g/dL de proteína e poucas células: transudato puro.", "importante": false },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Linfócitos baixos (linfopenia); o resto, normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é a causa mais provável da albumina baixa do Tobias?",
+      "opcoes": [
+        { "texto": "Perda de proteína pelo intestino (enteropatia perdedora de proteína)", "correta": true, "explicacao": "Diarreia crônica, emagrecimento, albumina e globulinas baixas, urina sem proteína e fígado funcionando: a proteína está sendo perdida pelo intestino. A linfopenia reforça; Yorkshires são predispostos à linfangiectasia." },
+        { "texto": "Perda de proteína pelo rim (síndrome nefrótica)", "correta": false, "explicacao": "A relação proteína:creatinina urinária está normal. Na perda pelo rim, as globulinas costumam ficar normais, porque são maiores e passam menos pelo glomérulo." },
+        { "texto": "Insuficiência hepática", "correta": false, "explicacao": "O fígado produz a albumina, mas os ácidos biliares normais mostram que ele está funcionando. Na insuficiência hepática, as globulinas costumam ficar normais ou altas." },
+        { "texto": "Insuficiência cardíaca direita", "correta": false, "explicacao": "Causaria ascite pela pressão venosa alta, com alteração na auscultação; o coração do Tobias está normal, e a albumina não cairia tanto." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que a albumina baixa enche a barriga do Tobias de líquido?",
+      "opcoes": [
+        { "texto": "A albumina segura a água dentro dos vasos; com pouca albumina, a pressão oncótica cai e o líquido escapa para os tecidos", "correta": true, "explicacao": "Pelas forças de Starling, a pressão hidrostática empurra líquido para fora do capilar, e a pressão oncótica, feita principalmente pela albumina, puxa de volta. Com albumina muito baixa (em geral abaixo de 1,5 g/dL), sai mais líquido do que a linfa consegue drenar: ascite e edema." },
+        { "texto": "A pressão do sangue nos capilares ficou alta demais", "correta": false, "explicacao": "Esse é o mecanismo da insuficiência cardíaca. No Tobias, o coração está normal; o que caiu foi a força que segura a água dentro do vaso." },
+        { "texto": "O intestino doente vaza líquido direto para dentro do abdome", "correta": false, "explicacao": "O líquido sai dos capilares do corpo todo, não da parede do intestino: é um transudato pobre em proteína, e por isso também há edema nas patas." },
+        { "texto": "Os vasos linfáticos produzem líquido demais", "correta": false, "explicacao": "Os linfáticos drenam o líquido do interstício, não produzem. Na linfangiectasia, eles estão dilatados e perdem linfa rica em proteína para o intestino, que é a causa da albumina baixa." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Se o Tobias receber muito soro fisiológico na veia, para onde vai a maior parte dele?",
+      "opcoes": [
+        { "texto": "Para o interstício: o soro se espalha por todo o líquido extracelular, e com albumina baixa isso piora o edema", "correta": true, "explicacao": "O soro fisiológico atravessa livremente a parede do capilar e se distribui pelo líquido extracelular. Como o plasma é só cerca de 1/4 desse compartimento, uns 3/4 do volume saem do vaso em mais ou menos uma hora. Com a pressão oncótica baixa, isso aumenta a ascite e o edema." },
+        { "texto": "Fica quase todo no vaso, porque é isotônico", "correta": false, "explicacao": "Ser isotônico impede que a água entre nas células, mas não que saia do vaso: sódio e água passam livremente para o interstício." },
+        { "texto": "Entra nas células, porque tem sódio", "correta": false, "explicacao": "A bomba de sódio e potássio mantém o sódio fora das células. O soro fisiológico fica no líquido extracelular." },
+        { "texto": "É eliminado na urina em poucos minutos", "correta": false, "explicacao": "O rim elimina o excesso, mas em horas; antes disso, o líquido já se distribuiu para o interstício." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 4 semanas",
+      "bom": "A biópsia confirmou linfangiectasia. Com dieta com pouquíssima gordura e o tratamento indicado, a albumina do Tobias subiu e a barriga desinchou.",
+      "falaBom": "Doutora, a barriga do Tobias desinchou, ele ganhou peso e o cocô tá firme!",
+      "ruim": "Tratado só com diurético para tirar o líquido, sem cuidar da perda de proteína, o Tobias continuou com a albumina baixa, e a ascite voltou.",
+      "falaRuim": "Doutora, a barriga desinchou uns dias, mas encheu tudo de novo, e ele tá mais fraquinho..."
+    }
+  ],
+  "resumo": [
+    "Água corporal: cerca de 60% do peso; 2/3 dentro das células e 1/3 fora. Do líquido extracelular, cerca de 1/4 é plasma e 3/4 é interstício.",
+    "Forças de Starling: a pressão hidrostática empurra líquido para fora do capilar; a pressão oncótica, feita principalmente pela albumina, puxa de volta.",
+    "Com albumina muito baixa (em geral abaixo de 1,5 g/dL), sai mais líquido do que a linfa drena: ascite e edema, com transudato pobre em proteína.",
+    "Causas de albumina baixa: perda pelo intestino (globulinas também baixas), perda pelo rim (proteinúria) ou falta de produção pelo fígado.",
+    "Soro fisiológico se distribui por todo o líquido extracelular: só cerca de 1/4 fica no vaso."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

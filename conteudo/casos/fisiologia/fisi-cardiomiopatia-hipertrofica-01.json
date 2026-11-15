@@ -1,0 +1,115 @@
+{
+  "id": "fisi-cardiomiopatia-hipertrofica-01",
+  "materia": "fisiologia",
+  "tema": "Cardiovascular e respiratória",
+  "dificuldade": 3,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Faísca",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "macho castrado",
+    "idade": "7 anos",
+    "pesoKg": 5.2,
+    "sprite": "gato-cinza"
+  },
+  "tutor": { "nome": "Renato", "sprite": "tutor-2" },
+  "chegada": "Doutora, desde cedo o Faísca respira de boca aberta, mexendo a barriga. Fica agachado no canto e não quer comer nada!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "sopro", "rotulo": "Já ouviram algo no coração dele?", "resultado": "Na última vacina, a veterinária falou de um sopro e mandou acompanhar. Não voltei.", "importante": true },
+        { "id": "tosse", "rotulo": "Ele tosse?", "resultado": "Não, nunca vi ele tossir.", "importante": true },
+        { "id": "estresse", "rotulo": "Aconteceu algo diferente nos últimos dias?", "resultado": "Ficou 3 dias num hotelzinho enquanto a gente viajava. Voltou ontem.", "importante": true },
+        { "id": "rua", "rotulo": "Ele sai de casa?", "resultado": "Não, mora em apartamento com tela.", "importante": false },
+        { "id": "comida", "rotulo": "Quando ele comeu pela última vez?", "resultado": "Ontem à noite comeu pouco. Hoje, nada.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, tomou no ano passado.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "coracao", "ferramenta": "estetoscopio", "rotulo": "Auscultação do coração", "resultado": "Sopro sistólico e ritmo de galope; FC de 240 bpm.", "importante": true },
+        { "id": "pulmao", "ferramenta": "estetoscopio", "rotulo": "Auscultação dos pulmões", "resultado": "Crepitações dos dois lados; 68 movimentos respiratórios por minuto.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas pálidas, levemente arroxeadas; TPC de 3 segundos.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,5 °C.", "importante": false },
+        { "id": "pulso", "ferramenta": "mao", "rotulo": "Pulso femoral e patas", "resultado": "Pulsos femorais fortes; patas mornas, com movimento normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 400,
+      "itens": [
+        { "id": "raiox", "rotulo": "Raio-X de tórax", "custo": 100, "resultado": "Átrio esquerdo aumentado e opacidade pulmonar difusa, compatível com edema.", "importante": true },
+        { "id": "eco", "rotulo": "Ecocardiograma", "custo": 180, "resultado": "Parede do ventrículo esquerdo com 8 mm (normal: até 6 mm); átrio esquerdo dilatado.", "importante": true },
+        { "id": "t4", "rotulo": "T4 total", "custo": 50, "resultado": "2,1 µg/dL, normal.", "importante": true },
+        { "id": "pressao", "rotulo": "Pressão arterial", "custo": 30, "resultado": "Sistólica de 140 mmHg, normal.", "importante": true },
+        { "id": "probnp", "rotulo": "NT-proBNP", "custo": 80, "resultado": "Alto: sinal de estiramento do coração.", "importante": false },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Insuficiência cardíaca congestiva por cardiomiopatia hipertrófica", "correta": true, "explicacao": "Gato macho de meia-idade, com sopro já ouvido antes, galope, crepitações, átrio esquerdo grande, edema pulmonar e ventrículo de parede grossa, com T4 e pressão normais, que descartam as causas secundárias." },
+        { "texto": "Asma felina", "correta": false, "explicacao": "A asma costuma dar tosse e chiado na expiração, com padrão brônquico no raio-X e coração normal." },
+        { "texto": "Hipertireoidismo com hipertrofia secundária do coração", "correta": false, "explicacao": "O hipertireoidismo também engrossa o coração, mas o T4 do Faísca está normal." },
+        { "texto": "Tromboembolismo aórtico", "correta": false, "explicacao": "É uma complicação da cardiomiopatia, com paralisia súbita das patas traseiras, frias e sem pulso. Os pulsos do Faísca estão fortes." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que o coração de parede grossa do Faísca encheu o pulmão de líquido?",
+      "opcoes": [
+        { "texto": "O ventrículo rígido relaxa mal e só enche com pressão alta, que volta para o átrio, as veias e os capilares do pulmão", "correta": true, "explicacao": "Na cardiomiopatia hipertrófica, o problema está na diástole: o ventrículo espesso e rígido não relaxa. Para enchê-lo, a pressão no átrio esquerdo precisa subir, e ele dilata. A pressão sobe nas veias e nos capilares pulmonares e, pelas forças de Starling, o líquido sai para o interstício e os alvéolos." },
+        { "texto": "O coração bate fraco e não consegue bombear o sangue", "correta": false, "explicacao": "Isso descreve a disfunção sistólica, como na cardiomiopatia dilatada. Na hipertrófica, a contração costuma estar preservada; a falha está no relaxamento e no enchimento." },
+        { "texto": "A pressão alta na aorta empurrou sangue de volta para o pulmão", "correta": false, "explicacao": "A pressão arterial do Faísca está normal. O que sobe é a pressão antes do ventrículo esquerdo: no átrio e nas veias pulmonares." },
+        { "texto": "A albumina caiu e o líquido escapou dos vasos", "correta": false, "explicacao": "Esse é o edema por pressão oncótica baixa. Aqui, o que sobe é a pressão hidrostática nos capilares do pulmão." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a frequência de 240 bpm piora o enchimento do coração do Faísca?",
+      "opcoes": [
+        { "texto": "Com o coração acelerado, a diástole encurta, e o ventrículo rígido tem menos tempo para encher", "correta": true, "explicacao": "Quando a frequência sobe, quem encurta é principalmente a diástole. Num ventrículo que já relaxa devagar, menos tempo de enchimento significa pressão ainda maior no átrio. Por isso estresse e dor descompensam esses gatos." },
+        { "texto": "Com o coração acelerado, é a sístole que encurta, e o sangue não sai", "correta": false, "explicacao": "A sístole muda pouco com a frequência; é a diástole que encurta." },
+        { "texto": "Coração mais rápido sempre aumenta o débito, então a taquicardia ajuda", "correta": false, "explicacao": "Débito = frequência × volume sistólico. Num ventrículo rígido, a taquicardia reduz o enchimento, o volume de cada batimento cai, e o débito não melhora." },
+        { "texto": "A frequência alta faz o átrio contrair mais forte e compensar tudo", "correta": false, "explicacao": "A contração do átrio ajuda a encher o ventrículo, mas não compensa a diástole curta, e um átrio dilatado contrai mal." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 7 dias",
+      "bom": "Com oxigênio, furosemida e um ambiente calmo, o edema regrediu em 24 horas. O Faísca foi para casa com medicação, e o Renato passou a contar a respiração dele dormindo.",
+      "falaBom": "Doutora, o Faísca tá respirando tranquilo! Conto a respiração dele dormindo todo dia: sempre abaixo de 30.",
+      "ruim": "Sem diurético e com muito manuseio, o Faísca ficou estressado, o coração acelerou ainda mais, e o edema piorou. Precisou de vários dias no oxigênio.",
+      "falaRuim": "Doutora, ele continua respirando de boca aberta, e agora nem sai da caixinha..."
+    }
+  ],
+  "resumo": [
+    "Cardiomiopatia hipertrófica: a doença do coração mais comum dos gatos; o ventrículo esquerdo fica espesso e rígido.",
+    "Disfunção diastólica: o ventrículo relaxa mal e só enche com pressão alta; o átrio esquerdo dilata, e a pressão sobe nos capilares do pulmão.",
+    "Pelas forças de Starling, a pressão hidrostática alta empurra líquido para fora do capilar: edema pulmonar (no gato, às vezes derrame pleural).",
+    "A taquicardia encurta a diástole e piora o enchimento: estresse descompensa o gato cardiopata.",
+    "Tosse é rara na insuficiência cardíaca do gato. Em casa, mais de 30 respirações por minuto dormindo é sinal de alerta."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

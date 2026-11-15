@@ -1,0 +1,113 @@
+{
+  "id": "fisi-asma-equina-01",
+  "materia": "fisiologia",
+  "tema": "Cardiovascular e respiratória",
+  "dificuldade": 3,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Relâmpago",
+    "especie": "equino",
+    "raca": "Crioulo",
+    "sexo": "macho castrado",
+    "idade": "14 anos",
+    "pesoKg": 450,
+    "sprite": "cavalo-alazao"
+  },
+  "tutor": { "nome": "Seu Bené", "sprite": "produtor-1" },
+  "chegada": "Doutora, o Relâmpago tá com uma tosse que não passa e cansa à toa. Desde que esfriou ele fica na baia, comendo feno, e só piorou.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "baia", "rotulo": "Como é a baia dele?", "resultado": "Fechada, com cama de serragem. Ele fica lá dentro quase o dia todo.", "importante": true },
+        { "id": "feno", "rotulo": "Como é o feno que ele come?", "resultado": "Feno do ano passado. Quando eu sacudo, sobe uma poeira branca.", "importante": true },
+        { "id": "antes", "rotulo": "Isso já aconteceu antes?", "resultado": "Todo inverno é igual. No verão, solto no pasto e ele melhora.", "importante": true },
+        { "id": "febre", "rotulo": "Ele teve febre ou catarro grosso?", "resultado": "Febre, não. Escorre só um pouco de catarro claro.", "importante": false },
+        { "id": "apetite", "rotulo": "Ele está comendo bem?", "resultado": "Come normal, só cansa.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Tomou a de gripe e a de tétano no começo do ano.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação do tórax", "resultado": "Sibilos e crepitações na expiração, dos dois lados do tórax.", "importante": true },
+        { "id": "flanco", "ferramenta": "mao", "rotulo": "Respiração e palpação do flanco", "resultado": "32 respirações por minuto; expiração em dois tempos, com o abdome contraindo forte e linha de esforço.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,9 °C.", "importante": true },
+        { "id": "narinas", "ferramenta": "lanterna", "rotulo": "Narinas e mucosas", "resultado": "Narinas dilatando a cada respiração; mucosas rosadas.", "importante": false },
+        { "id": "linfonodos", "ferramenta": "mao", "rotulo": "Linfonodos da cabeça", "resultado": "Submandibulares normais, sem dor.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 300,
+      "itens": [
+        { "id": "lba", "rotulo": "Lavado broncoalveolar (citologia)", "custo": 150, "resultado": "Neutrófilos 45% (normal: até 5%), muito muco e nenhuma bactéria.", "importante": true },
+        { "id": "gaso", "rotulo": "Gasometria arterial", "custo": 120, "resultado": "PaO2 de 68 mmHg (normal: 85 a 100); PaCO2 de 43 mmHg, normal.", "importante": true },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Sem alterações.", "importante": false },
+        { "id": "endoscopia", "rotulo": "Endoscopia das vias aéreas", "custo": 180, "resultado": "Muco espesso na traqueia; laringe normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Asma equina grave (obstrução recorrente das vias aéreas)", "correta": true, "explicacao": "Cavalo adulto, com crises todo inverno na baia fechada com feno empoeirado e melhora no pasto, sem febre, com esforço expiratório, linha de esforço, sibilos e muitos neutrófilos no lavado." },
+        { "texto": "Pneumonia bacteriana", "correta": false, "explicacao": "Daria febre, prostração, secreção purulenta e bactérias no lavado; o Relâmpago não tem febre e melhora no pasto." },
+        { "texto": "Influenza equina", "correta": false, "explicacao": "É aguda, com febre alta e tosse seca, e passa em semanas; não volta todo inverno junto com a baia." },
+        { "texto": "Hemiplegia da laringe (cavalo roncador)", "correta": false, "explicacao": "Causa ruído na inspiração durante o exercício, sem tosse crônica nem esforço para expirar em repouso; a laringe está normal na endoscopia." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que o Relâmpago faz força para expirar, e não para inspirar?",
+      "opcoes": [
+        { "texto": "Na expiração, a pressão no tórax comprime brônquios que já estão estreitos, e ele precisa do abdome para empurrar o ar", "correta": true, "explicacao": "Broncoconstrição, muco e parede espessada estreitam as vias aéreas pequenas. Na inspiração, o tórax se expande e puxa os brônquios abertos; na expiração, a pressão pleural sobe e comprime vias aéreas já estreitas. O ar fica preso, e o cavalo usa os músculos abdominais, que hipertrofiam e formam a linha de esforço." },
+        { "texto": "A laringe fecha na expiração e segura o ar", "correta": false, "explicacao": "A laringe está normal. A obstrução fica nas vias aéreas pequenas, dentro do tórax." },
+        { "texto": "O diafragma está fraco e não empurra o ar para fora", "correta": false, "explicacao": "O diafragma é o principal músculo da inspiração, e não da expiração. O problema é tirar o ar de brônquios estreitados e comprimidos." },
+        { "texto": "Os alvéolos estão cheios de pus e não esvaziam", "correta": false, "explicacao": "O lavado não tem bactérias. Os neutrófilos e o muco estão nas vias aéreas, e o problema é o estreitamento delas, que melhora com tratamento e ambiente sem poeira." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o oxigênio no sangue do Relâmpago está baixo (PaO2 de 68 mmHg)?",
+      "opcoes": [
+        { "texto": "Áreas do pulmão com brônquios obstruídos recebem sangue, mas pouco ar: desequilíbrio entre ventilação e perfusão", "correta": true, "explicacao": "Os alvéolos atrás de brônquios obstruídos ventilam mal, mas continuam recebendo sangue, que sai deles com pouco oxigênio e se mistura ao resto. O CO2 fica normal porque as áreas sadias ventilam mais e eliminam o excesso; com o oxigênio isso não funciona, porque o sangue delas já sai saturado." },
+        { "texto": "O ar do inverno tem menos oxigênio", "correta": false, "explicacao": "O ar tem cerca de 21% de oxigênio em qualquer estação. O problema está na distribuição do ar dentro do pulmão." },
+        { "texto": "A hemoglobina dele está baixa", "correta": false, "explicacao": "Anemia diminui o conteúdo de oxigênio do sangue, mas não a PaO2; e o hemograma está normal." },
+        { "texto": "O oxigênio não atravessa a parede dos alvéolos, que engrossou", "correta": false, "explicacao": "Na asma, a membrana alveolar não é o problema; a hipoxemia vem das vias aéreas obstruídas. Limitação de difusão aparece em outras situações, como no exercício muito intenso." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 3 semanas",
+      "bom": "O Relâmpago foi para o pasto, o feno passou a ser molhado antes de servir, e ele recebeu corticoide e broncodilatador na crise. Em 3 semanas, a tosse e o esforço sumiram.",
+      "falaBom": "Doutora, soltei ele no pasto e molho o feno. Parou de tossir e já voltou pras cavalgadas!",
+      "ruim": "Tratado com antibiótico como se fosse pneumonia e mantido na baia com o feno empoeirado, o Relâmpago teve outra crise, com mais esforço para respirar.",
+      "falaRuim": "Doutora, ele continua tossindo e batendo o flanco pra respirar, até parado na baia..."
+    }
+  ],
+  "resumo": [
+    "Asma equina grave: inflamação das vias aéreas pequenas por poeira e fungos do feno e da cama, em cavalos adultos estabulados.",
+    "Broncoconstrição, muco e parede espessada estreitam os brônquios; na expiração, a pressão no tórax os comprime ainda mais, e o ar fica preso.",
+    "O cavalo expira com força usando o abdome: expiração em dois tempos e linha de esforço.",
+    "A hipoxemia vem do desequilíbrio entre ventilação e perfusão; o CO2 costuma ficar normal.",
+    "O tratamento principal é o ambiente: pasto, feno molhado e baia ventilada. Corticoide e broncodilatador controlam as crises."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}
