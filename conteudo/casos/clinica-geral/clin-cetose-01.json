@@ -1,0 +1,134 @@
+{
+  "id": "clin-cetose-01",
+  "materia": "clinica-geral",
+  "tema": "Distúrbios metabólicos de vacas leiteiras",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Estrela",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "5 anos",
+    "pesoKg": 500,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Antônio", "sprite": "produtor-2" },
+  "chegada": "Doutora, a Estrela pariu faz duas semanas e o leite caiu de uma vez. Não quer o concentrado, só belisca um pouco de feno.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "parto", "rotulo": "Quando ela pariu?", "resultado": "Faz 15 dias. Foi um parto tranquilo.", "importante": true },
+        { "id": "comida", "rotulo": "O que ela está comendo?", "resultado": "Recusa o concentrado e a silagem. Só come um pouco de feno.", "importante": true },
+        { "id": "escore", "rotulo": "Como ela estava antes de parir?", "resultado": "Bem gorda! Ficou muito tempo seca.", "importante": true },
+        { "id": "leite", "rotulo": "Quanto leite ela está dando?", "resultado": "Caiu de 35 para 20 litros por dia.", "importante": false },
+        { "id": "corrimento", "rotulo": "Ela teve corrimento ou febre?", "resultado": "Não reparei corrimento nenhum.", "importante": false },
+        { "id": "vacinas", "rotulo": "As vacinas estão em dia?", "resultado": "Tá tudo em dia, a veterinária da cooperativa que aplica.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,6 °C.", "importante": true },
+        { "id": "rumen", "ferramenta": "estetoscopio", "rotulo": "Auscultação do rúmen", "resultado": "Movimentos ruminais fracos: um a cada 2 minutos.", "importante": true },
+        { "id": "halito", "ferramenta": "lanterna", "rotulo": "Mucosas e hálito", "resultado": "Mucosas normais; hálito adocicado, com cheiro de acetona.", "importante": true },
+        { "id": "ping", "ferramenta": "estetoscopio", "rotulo": "Percussão do flanco esquerdo", "resultado": "Sem som metálico ('ping'): o abomaso está no lugar.", "importante": false },
+        { "id": "ubere", "ferramenta": "mao", "rotulo": "Palpação do úbere", "resultado": "Úbere macio, leite com aspecto normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 150,
+      "itens": [
+        { "id": "bhb", "rotulo": "Beta-hidroxibutirato no sangue", "custo": 40, "resultado": "3,4 mmol/L (normal: abaixo de 1,2).", "importante": true },
+        { "id": "cetonas", "rotulo": "Fita de cetonas na urina", "custo": 20, "resultado": "Cetonas fortemente positivas.", "importante": true },
+        { "id": "glicemia", "rotulo": "Glicemia", "custo": 20, "resultado": "35 mg/dL (baixa).", "importante": true },
+        { "id": "cmt", "rotulo": "CMT (teste da raquete)", "custo": 20, "resultado": "Negativo nos quatro tetos.", "importante": false },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Cetose clínica", "correta": true, "explicacao": "Vaca gorda no pré-parto, 2 semanas depois de parir, com queda de apetite e de leite, sem febre, hálito de acetona, BHB alto e glicose baixa." },
+        { "texto": "Deslocamento de abomaso à esquerda", "correta": false, "explicacao": "Também aparece logo depois do parto e muitas vezes vem junto com a cetose, mas daria o 'ping' na percussão do flanco esquerdo." },
+        { "texto": "Hipocalcemia puerperal", "correta": false, "explicacao": "A febre do leite aparece nas primeiras 72 horas e deixa a vaca caída; a Estrela pariu há 15 dias e está em pé." },
+        { "texto": "Metrite", "correta": false, "explicacao": "A metrite dá febre e corrimento com mau cheiro; a Estrela está sem febre e sem corrimento." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a vaca que chega gorda ao parto tem mais risco de cetose?",
+      "opcoes": [
+        { "texto": "Ela mobiliza muita gordura, e o fígado não consegue oxidar tudo", "correta": true, "explicacao": "No balanço energético negativo, a vaca gorda mobiliza muita gordura e come menos. O fígado recebe mais ácidos graxos do que consegue oxidar e produz corpos cetônicos em excesso." },
+        { "texto": "A gordura impede a absorção de cálcio", "correta": false, "explicacao": "Isso não explica a cetose, que é um problema de falta de glicose e excesso de gordura mobilizada." },
+        { "texto": "A vaca gorda produz menos leite, e sobra glicose", "correta": false, "explicacao": "Pelo contrário: o leite exige muita glicose, e a vaca gorda come menos depois do parto." },
+        { "texto": "O excesso de proteína da dieta vira acetona", "correta": false, "explicacao": "Os corpos cetônicos vêm principalmente da gordura mobilizada, não da proteína da dieta." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Propilenoglicol para casa",
+      "pergunta": "Depois da glicose na veia, a Estrela vai tomar 300 mL de propilenoglicol por dia, por 5 dias. Quantos litros o Seu Antônio precisa comprar?",
+      "unidade": "L",
+      "resposta": 1.5,
+      "tolerancia": 0.05,
+      "explicacao": "300 mL × 5 dias = 1.500 mL = 1,5 L. O propilenoglicol vira glicose no fígado e mantém o efeito depois da glicose na veia, que dura poucas horas."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento no campo",
+      "critica": true,
+      "instrucao": "Prescreva o tratamento na veia para a Estrela agora (500 kg).",
+      "farmacos": [
+        { "id": "glicose", "nome": "Glicose 50%", "apresentacao": "Solução injetável com 500 mg de glicose por mL", "unidade": "mL", "explicacao": "Repõe a glicose na hora e reduz a produção de corpos cetônicos; o efeito dura poucas horas." },
+        { "id": "borogluconato", "nome": "Borogluconato de cálcio 23%", "apresentacao": "Solução injetável com 21,4 mg de cálcio por mL", "unidade": "mL", "explicacao": "Trata a hipocalcemia; a Estrela está em pé, e o problema dela é energético." },
+        { "id": "ocitocina", "nome": "Ocitocina", "apresentacao": "Solução injetável 10 UI/mL", "unidade": "mL", "explicacao": "Ajuda a descida do leite e a contração do útero; não trata a cetose." },
+        { "id": "flunixina", "nome": "Flunixina meglumina", "apresentacao": "Solução injetável 50 mg/mL", "unidade": "mL", "explicacao": "Anti-inflamatório: a Estrela não tem inflamação nem dor que justifiquem." }
+      ],
+      "correto": {
+        "farmaco": "glicose",
+        "doseMgKg": 500,
+        "concentracao": 500,
+        "tolerancia": 0.1,
+        "via": "Intravenosa, lenta",
+        "frequencia": "Dose única"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Intravenosa, lenta"],
+      "frequencias": ["Dose única", "A cada 8 horas", "A cada 12 horas", "A cada 24 horas"],
+      "explicacao": "Um frasco de 500 mL de glicose 50% (250 g de glicose) na veia, devagar: 500 mg/kg × 500 kg = 250.000 mg ÷ 500 mg/mL = 500 mL. É dose única, porque o efeito passa em poucas horas; a manutenção é o propilenoglicol pela boca. Glicose pela boca não funciona em ruminante, porque o rúmen fermenta tudo."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 5 dias",
+      "bom": "Com a glicose na veia e o propilenoglicol por 5 dias, a Estrela voltou a comer o concentrado e a produção subiu para 30 litros.",
+      "falaBom": "Doutora, a Estrela voltou a comer tudo e já tá dando 30 litros de novo!",
+      "ruim": "Sem repor a glicose, a cetose piorou: a Estrela emagreceu rápido e o fígado acumulou gordura (lipidose hepática).",
+      "falaRuim": "Doutora, ela parou de comer de vez e tá emagrecendo a olho nu..."
+    }
+  ],
+  "resumo": [
+    "Cetose: excesso de corpos cetônicos no balanço energético negativo do início da lactação, em geral entre 2 e 6 semanas depois do parto.",
+    "Risco maior em vacas de alta produção que chegam gordas ao parto.",
+    "Sinais: recusa do concentrado, queda do leite, rúmen lento e hálito de acetona; algumas vacas têm sinais nervosos.",
+    "Diagnóstico: BHB no sangue (subclínica a partir de 1,2 mmol/L; nos casos clínicos, em geral acima de 3) e cetonas na urina ou no leite.",
+    "Tratamento: glicose 50% na veia (dose única) e propilenoglicol pela boca por 3 a 5 dias. Prevenção: escore corporal certo na secagem e no parto."
+  ],
+  "referencias": [
+    "Constable et al., Clínica Veterinária: Um Tratado de Doenças dos Bovinos, Ovinos, Suínos e Caprinos",
+    "Cunningham, Tratado de Fisiologia Veterinária"
+  ],
+  "revisado": false
+}

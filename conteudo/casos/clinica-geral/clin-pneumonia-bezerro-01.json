@@ -1,0 +1,122 @@
+{
+  "id": "clin-pneumonia-bezerro-01",
+  "materia": "clinica-geral",
+  "tema": "Afecções respiratórias",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Malhado",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "macho",
+    "idade": "2 meses",
+    "pesoKg": 70,
+    "sprite": "bezerro-holandes"
+  },
+  "tutor": { "nome": "Seu Antônio", "sprite": "produtor-2" },
+  "chegada": "Doutora, o Malhado tá tossindo, com o nariz escorrendo e respirando rápido. Começou depois que a gente desmamou a turma.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Quando começou?", "resultado": "Faz dois dias, logo depois do desmame e da mudança de galpão.", "importante": true },
+        { "id": "galpao", "rotulo": "Como é o galpão?", "resultado": "Fechado, com muitos bezerros juntos. Tem um cheiro forte de amônia.", "importante": true },
+        { "id": "outros", "rotulo": "Outros bezerros estão doentes?", "resultado": "Mais três estão tossindo.", "importante": true },
+        { "id": "pasto", "rotulo": "Eles já foram para o pasto?", "resultado": "Ainda não, nunca saíram do galpão.", "importante": false },
+        { "id": "colostro", "rotulo": "Ele mamou colostro ao nascer?", "resultado": "Mamou, sim, no balde.", "importante": false },
+        { "id": "comida", "rotulo": "Ele está comendo?", "resultado": "Come pouco do concentrado.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "40,6 °C.", "importante": true },
+        { "id": "pulmao", "ferramenta": "estetoscopio", "rotulo": "Auscultação dos pulmões", "resultado": "Crepitações e sibilos na parte de baixo e da frente dos pulmões.", "importante": true },
+        { "id": "fr", "ferramenta": "estetoscopio", "rotulo": "Frequência respiratória", "resultado": "60 movimentos por minuto, com esforço.", "importante": true },
+        { "id": "narinas", "ferramenta": "lanterna", "rotulo": "Narinas e olhos", "resultado": "Secreção nasal amarelada e olhos lacrimejando.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratação normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 200,
+      "itens": [
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Leucocitose com neutrofilia.", "importante": true },
+        { "id": "lavado", "rotulo": "Lavado traqueal com cultura", "custo": 120, "resultado": "Mannheimia haemolytica, sensível ao florfenicol.", "importante": true },
+        { "id": "baermann", "rotulo": "Coproparasitológico (Baermann)", "custo": 40, "resultado": "Negativo para larvas de verme pulmonar.", "importante": false },
+        { "id": "ultrassom", "rotulo": "Ultrassom de tórax", "custo": 150, "resultado": "Consolidação na parte de baixo e da frente dos pulmões.", "importante": false },
+        { "id": "proteina", "rotulo": "Proteína total no sangue", "custo": 30, "resultado": "6,5 g/dL: normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Broncopneumonia bacteriana (complexo respiratório bovino)", "correta": true, "explicacao": "Bezerros desmamados e levados para um galpão fechado, com febre, tosse, secreção nasal, crepitações na parte cranioventral dos pulmões e Mannheimia na cultura." },
+        { "texto": "Verminose pulmonar (Dictyocaulus)", "correta": false, "explicacao": "A verminose pulmonar exige pasto, onde ficam as larvas; o Malhado nunca saiu do galpão, e o Baermann deu negativo." },
+        { "texto": "Difteria dos bezerros", "correta": false, "explicacao": "A difteria (Fusobacterium) causa lesões na boca e na laringe, com ruído alto ao inspirar." },
+        { "texto": "Timpanismo", "correta": false, "explicacao": "O timpanismo estufa o flanco esquerdo e atrapalha a respiração, mas não dá febre, tosse nem secreção nasal." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o desmame e o galpão abafado fazem os bezerros adoecerem?",
+      "opcoes": [
+        { "texto": "O estresse baixa a imunidade, e a amônia e a lotação lesam as vias aéreas", "correta": true, "explicacao": "Desmame, mudança e lotação aumentam o cortisol e baixam a imunidade. A amônia irrita a mucosa e atrapalha a limpeza das vias aéreas, e as bactérias da nasofaringe descem para o pulmão." },
+        { "texto": "O frio do galpão causa a pneumonia sozinho", "correta": false, "explicacao": "O frio contribui, mas a pneumonia é multifatorial: estresse, ambiente e agentes como vírus e Mannheimia." },
+        { "texto": "O leite do desmame vai para o pulmão", "correta": false, "explicacao": "A pneumonia por aspiração acontece com o bezerro mamando errado no balde, não depois do desmame." },
+        { "texto": "O concentrado traz as bactérias", "correta": false, "explicacao": "As bactérias da pneumonia já vivem na nasofaringe; o estresse e o ambiente deixam que elas desçam." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento no campo",
+      "critica": true,
+      "instrucao": "Prescreva o antibiótico para o Malhado (70 kg).",
+      "farmacos": [
+        { "id": "florfenicol", "nome": "Florfenicol", "apresentacao": "Solução injetável 300 mg/mL", "unidade": "mL", "explicacao": "Antibiótico de amplo espectro, com boa ação contra a Mannheimia do complexo respiratório bovino." },
+        { "id": "ivermectina", "nome": "Ivermectina", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Trata a verminose pulmonar, que foi descartada: o bezerro nunca foi para o pasto." },
+        { "id": "dexametasona", "nome": "Dexametasona", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Corticoide: diminui a defesa contra a infecção bacteriana." },
+        { "id": "ocitocina", "nome": "Ocitocina", "apresentacao": "Solução injetável 10 UI/mL", "unidade": "mL", "explicacao": "Hormônio da descida do leite e da contração do útero: não tem indicação aqui." }
+      ],
+      "correto": {
+        "farmaco": "florfenicol",
+        "doseMgKg": 20,
+        "concentracao": 300,
+        "tolerancia": 0.1,
+        "via": "Intramuscular",
+        "frequencia": "A cada 48 horas (2 doses)"
+      },
+      "vias": ["Oral", "Intramuscular", "Intravenosa", "Tópica"],
+      "frequencias": ["Dose única", "A cada 12 horas", "A cada 48 horas (2 doses)", "A cada 7 dias"],
+      "explicacao": "20 mg/kg × 70 kg = 1.400 mg; 1.400 mg ÷ 300 mg/mL ≈ 4,7 mL no músculo do pescoço, repetindo depois de 48 horas. Junto: anti-inflamatório para a febre e galpão ventilado, com menos bezerros por baia."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 4 dias",
+      "bom": "Com o florfenicol, a febre passou em 24 horas e o Malhado voltou a comer. O galpão ganhou mais ventilação.",
+      "falaBom": "Doutora, o Malhado parou de tossir e já tá disputando o cocho com os outros!",
+      "ruim": "Sem o antibiótico certo, a pneumonia avançou: o Malhado ficou com parte do pulmão comprometida e não cresce como os outros.",
+      "falaRuim": "Doutora, ele continua com febre e tá respirando de boca aberta..."
+    }
+  ],
+  "resumo": [
+    "Complexo respiratório bovino: pneumonia multifatorial, comum depois de desmame, transporte e mistura de lotes.",
+    "Estresse e ambiente (amônia, lotação, pouca ventilação) se somam a vírus e bactérias como Mannheimia haemolytica e Pasteurella multocida.",
+    "Sinais: febre, tosse, secreção nasal, respiração rápida e crepitações na parte cranioventral dos pulmões.",
+    "Tratamento: antibiótico cedo (como o florfenicol, 20 mg/kg no músculo, duas doses com 48 horas de intervalo) e anti-inflamatório; examinar os outros bezerros do lote.",
+    "Prevenção: ventilação, lotação adequada, colostro na hora certa, vacinação e desmame com menos estresse."
+  ],
+  "referencias": ["Constable et al., Clínica Veterinária: Um Tratado de Doenças dos Bovinos, Ovinos, Suínos e Caprinos"],
+  "revisado": false
+}

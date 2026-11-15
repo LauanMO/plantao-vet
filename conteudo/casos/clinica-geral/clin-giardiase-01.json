@@ -1,0 +1,122 @@
+{
+  "id": "clin-giardiase-01",
+  "materia": "clinica-geral",
+  "tema": "Vômito e diarreia em cães",
+  "dificuldade": 1,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Thor",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "5 meses",
+    "pesoKg": 4,
+    "sprite": "cao-pequeno-preto"
+  },
+  "tutor": { "nome": "Marcos", "sprite": "tutor-1" },
+  "chegada": "Boa tarde, doutora. O Thor tá com diarreia faz umas três semanas. Melhora, piora... mas ele continua brincando e comendo.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "diarreia", "rotulo": "Como é a diarreia e desde quando?", "resultado": "Faz três semanas. É mole, com muco e cheiro forte. Vai e volta.", "importante": true },
+        { "id": "origem", "rotulo": "De onde ele veio?", "resultado": "Veio de um canil com muitos filhotes, faz um mês.", "importante": true },
+        { "id": "apetite", "rotulo": "Ele está comendo e brincando?", "resultado": "Come bem e brinca normal. Só não engorda.", "importante": true },
+        { "id": "vomito", "rotulo": "Ele vomitou?", "resultado": "Não, nenhuma vez.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Tomou as três doses no canil, tá tudo na carteirinha.", "importante": false },
+        { "id": "racao", "rotulo": "Trocou a ração recentemente?", "resultado": "Não, é a mesma desde que ele chegou.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,8 °C.", "importante": true },
+        { "id": "escore", "ferramenta": "mao", "rotulo": "Escore corporal", "resultado": "Magro: costelas fáceis de palpar (escore 3 de 9).", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas róseas e úmidas; TPC de 2 segundos.", "importante": true },
+        { "id": "abdome", "ferramenta": "mao", "rotulo": "Palpação abdominal", "resultado": "Alças com um pouco de gás, sem dor e sem massas.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 200,
+      "itens": [
+        { "id": "giardia", "rotulo": "Teste rápido de Giardia (fezes)", "custo": 80, "resultado": "Positivo para antígeno de Giardia.", "importante": true },
+        { "id": "copro", "rotulo": "Coproparasitológico (sulfato de zinco)", "custo": 40, "resultado": "Cistos de Giardia; sem ovos de outros vermes.", "importante": true },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Sem alterações.", "importante": false },
+        { "id": "parvo", "rotulo": "Teste rápido de parvovírus (fezes)", "custo": 90, "resultado": "Negativo.", "importante": false },
+        { "id": "raiox", "rotulo": "Raio-X abdominal", "custo": 150, "resultado": "Alças com gás; sem corpo estranho.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Giardíase", "correta": true, "explicacao": "Filhote de canil com diarreia crônica e intermitente, mole e com muco, sem febre, com antígeno e cistos de Giardia nas fezes." },
+        { "texto": "Parvovirose canina", "correta": false, "explicacao": "A parvovirose dá diarreia aguda com sangue, vômito, febre e prostração; o Thor está ativo, vacinado e com teste negativo." },
+        { "texto": "Intolerância alimentar", "correta": false, "explicacao": "A ração não mudou, e as fezes mostram Giardia; intolerância alimentar é diagnóstico de exclusão." },
+        { "texto": "Corpo estranho intestinal", "correta": false, "explicacao": "Corpo estranho causa vômito e dor abdominal, e não explica os cistos de Giardia nas fezes." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a giardíase volta tanto em canis e em casa?",
+      "opcoes": [
+        { "texto": "Os cistos já saem nas fezes prontos para infectar e resistem no ambiente", "correta": true, "explicacao": "Os cistos são infectantes logo que eliminados e sobrevivem semanas em lugares úmidos; o cão se reinfecta lambendo o pelo e o chão. Por isso, banho no fim do tratamento e limpeza do ambiente." },
+        { "texto": "A Giardia põe ovos que precisam de um hospedeiro intermediário", "correta": false, "explicacao": "A Giardia é um protozoário, não um verme: não tem ovos nem hospedeiro intermediário, e o ciclo é direto." },
+        { "texto": "O parasita se esconde no sangue e volta depois", "correta": false, "explicacao": "A Giardia vive presa à mucosa do intestino delgado e não invade o sangue." },
+        { "texto": "Só passa de um cão para outro por mordida", "correta": false, "explicacao": "A transmissão é fecal-oral: o cão engole cistos na água, no alimento ou ao se lamber." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Receita",
+      "critica": true,
+      "instrucao": "Prescreva o tratamento contra a Giardia para o Thor (4 kg).",
+      "farmacos": [
+        { "id": "fenbendazol", "nome": "Fenbendazol", "apresentacao": "Suspensão oral 100 mg/mL", "unidade": "mL", "explicacao": "Benzimidazol com ação contra a Giardia e os vermes intestinais; é uma das primeiras escolhas na giardíase canina." },
+        { "id": "praziquantel", "nome": "Praziquantel", "apresentacao": "Comprimido 50 mg", "unidade": "comprimido", "explicacao": "Age contra cestódeos (tênias), não contra protozoários como a Giardia." },
+        { "id": "amoxicilina", "nome": "Amoxicilina", "apresentacao": "Suspensão oral 50 mg/mL", "unidade": "mL", "explicacao": "Antibiótico: não age em protozoários, e a diarreia do Thor não é bacteriana." },
+        { "id": "loperamida", "nome": "Loperamida", "apresentacao": "Comprimido 2 mg", "unidade": "comprimido", "explicacao": "Reduz a motilidade intestinal sem tratar a causa e não é indicada em diarreia infecciosa." }
+      ],
+      "correto": {
+        "farmaco": "fenbendazol",
+        "doseMgKg": 50,
+        "concentracao": 100,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 24 horas"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Tópica"],
+      "frequencias": ["Dose única", "A cada 8 horas", "A cada 24 horas", "A cada 7 dias"],
+      "explicacao": "50 mg/kg × 4 kg = 200 mg; 200 mg ÷ 100 mg/mL = 2 mL por via oral, a cada 24 horas, por 5 dias. No último dia, banho com xampu para tirar os cistos do pelo."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 10 dias",
+      "bom": "Thor tomou o fenbendazol por 5 dias, tomou banho no fim do tratamento e a casa foi limpa. As fezes firmaram e ele começou a ganhar peso.",
+      "falaBom": "Doutora, o cocô do Thor tá firminho! E ele já engordou um pouco.",
+      "ruim": "Sem o tratamento certo, a diarreia continuou, o Thor seguiu sem ganhar peso e continuou espalhando cistos pela casa.",
+      "falaRuim": "Doutora, a diarreia continua igual e ele tá cada vez mais magrinho..."
+    }
+  ],
+  "resumo": [
+    "Giardíase: protozoário do intestino delgado, comum em filhotes de canis e abrigos.",
+    "Diarreia crônica ou intermitente, mole, com muco e mau cheiro, sem febre; o cão costuma seguir ativo, mas não ganha peso.",
+    "Diagnóstico: antígeno nas fezes e flutuação com sulfato de zinco. Os cistos saem de forma intermitente, então vale repetir o exame.",
+    "Tratamento: fenbendazol 50 mg/kg a cada 24 horas por 5 dias (o metronidazol é alternativa), banho no fim e limpeza do ambiente.",
+    "É uma zoonose em potencial: lavar as mãos e recolher as fezes logo."
+  ],
+  "referencias": ["Jericó, Andrade Neto e Kogika, Tratado de Medicina Interna de Cães e Gatos"],
+  "revisado": false
+}
