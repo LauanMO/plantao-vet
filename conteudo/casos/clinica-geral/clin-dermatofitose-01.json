@@ -72,7 +72,7 @@
       "quem": "preceptora",
       "pergunta": "Se a lâmpada de Wood desse negativo, por que isso não descartaria a dermatofitose?",
       "opcoes": [
-        { "texto": "Só cerca de metade das cepas de Microsporum canis fluoresce", "correta": true, "explicacao": "A fluorescência vem de um metabólito do M. canis, e só cerca de 50% das cepas fluorescem; o Trichophyton não fluoresce. Quem confirma é a cultura." },
+        { "texto": "Nem todo dermatófito fluoresce, e o exame pode dar negativo mesmo com M. canis", "correta": true, "explicacao": "A fluorescência vem de um metabólito do M. canis no pelo infectado. A maioria dos gatos com M. canis sem tratamento fluoresce, mas o Trichophyton não, e exame mal feito ou gato já tratado também dão negativo. Quem confirma é a cultura." },
         { "texto": "A lâmpada de Wood só mostra ácaros", "correta": false, "explicacao": "A lâmpada de Wood não serve para ácaros; ela mostra a fluorescência de alguns dermatófitos." },
         { "texto": "O fungo fica no sangue, e a luz não chega lá", "correta": false, "explicacao": "O dermatófito vive na queratina do pelo e da pele, não no sangue." },
         { "texto": "Filhote de gato não pega fungo", "correta": false, "explicacao": "Ao contrário: filhotes, gatos de abrigo e imunossuprimidos são os mais afetados." }
@@ -107,14 +107,14 @@
       "bom": "Com o itraconazol em semanas alternadas, os banhos antifúngicos e a limpeza da casa, o pelo da Nina cresceu e as culturas deram negativas. O filho da Bia também sarou.",
       "falaBom": "Doutora, o pelo dela cresceu todinho! E a mancha do meu filho sumiu também.",
       "ruim": "Sem o antifúngico certo, as lesões se espalharam pelo corpo da Nina, e a casa continuou cheia de esporos.",
-      "falaRuim": "Doutora, apareceram mais falhas nela, e agora minha filha também tá com uma mancha..."
+      "falaRuim": "Doutora, apareceram mais falhas nela, e agora eu também tô com uma mancha no braço..."
     }
   ],
   "resumo": [
     "Dermatofitose: infecção da queratina por fungos; nos gatos, quase sempre Microsporum canis.",
     "Lesões circulares com queda de pelo e descamação, com pouca coceira; filhotes e gatos de abrigo são os mais afetados.",
     "É uma zoonose: lesões redondas nas pessoas da casa são uma pista importante.",
-    "Diagnóstico: lâmpada de Wood (só cerca de metade fluoresce), tricograma e cultura fúngica, que confirma.",
+    "Diagnóstico: lâmpada de Wood (a maioria dos M. canis fluoresce, mas o negativo não descarta), tricograma e cultura fúngica, que confirma.",
     "Tratamento: antifúngico oral (itraconazol), banho antifúngico e limpeza do ambiente até as culturas darem negativas; os esporos resistem por meses."
   ],
   "referencias": ["Jericó, Andrade Neto e Kogika, Tratado de Medicina Interna de Cães e Gatos"],

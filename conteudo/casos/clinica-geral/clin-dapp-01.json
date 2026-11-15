@@ -61,7 +61,7 @@
       "pergunta": "Qual é o diagnóstico mais provável?",
       "opcoes": [
         { "texto": "Dermatite alérgica à picada de pulga (DAPP)", "correta": true, "explicacao": "Coceira intensa no fim das costas e na base da cauda, no calor, com fezes de pulga no pente e sem antipulgas nos animais da casa." },
-        { "texto": "Sarna sarcóptica", "correta": false, "explicacao": "A sarna sarcóptica coça nas bordas das orelhas, cotovelos e jarretes, costuma passar para as pessoas, e o raspado foi negativo." },
+        { "texto": "Sarna sarcóptica", "correta": false, "explicacao": "A sarna sarcóptica coça nas bordas das orelhas, cotovelos e jarretes e costuma passar para as pessoas. O raspado negativo não basta para descartá-la, mas a Mel tem lesões no fim das costas e fezes de pulga." },
         { "texto": "Dermatite atópica", "correta": false, "explicacao": "A atopia começa em cães jovens e pega face, orelhas, patas e axilas; a Mel tem lesões no fim das costas e pulgas." },
         { "texto": "Dermatofitose", "correta": false, "explicacao": "A micose dá lesões circulares com pouca coceira, e não explica as fezes de pulga." }
       ]

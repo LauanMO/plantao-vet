@@ -97,7 +97,7 @@
         "via": "Intravenosa",
         "frequencia": "A cada 8 horas"
       },
-      "vias": ["Oral", "Subcutânea", "Intravenosa", "Tópica"],
+      "vias": ["Intradérmica", "Subcutânea", "Intravenosa", "Tópica"],
       "frequencias": ["Dose única", "A cada 8 horas", "A cada 24 horas", "A cada 48 horas"],
       "explicacao": "0,02 mg/kg × 5 kg = 0,1 mg; 0,1 mg ÷ 0,3 mg/mL ≈ 0,33 mL na veia, a cada 8 horas. O tratamento da obstrução é corrigir o potássio, dar soro na veia e desobstruir a uretra com sonda."
     },

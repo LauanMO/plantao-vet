@@ -94,7 +94,7 @@
       "critica": true,
       "instrucao": "Prescreva o tratamento contra o Cryptosporidium para o Pingo (40 kg).",
       "farmacos": [
-        { "id": "halofuginona", "nome": "Lactato de halofuginona", "apresentacao": "Solução oral 0,5 mg/mL", "unidade": "mL", "explicacao": "O único com eficácia comprovada contra o Cryptosporidium em bezerros: reduz a diarreia e a eliminação de oocistos." },
+        { "id": "halofuginona", "nome": "Lactato de halofuginona", "apresentacao": "Solução oral 0,5 mg/mL", "unidade": "mL", "explicacao": "Antiprotozoário com eficácia comprovada contra o Cryptosporidium em bezerros: reduz a diarreia e a eliminação de oocistos." },
         { "id": "oxitetraciclina", "nome": "Oxitetraciclina", "apresentacao": "Solução injetável 200 mg/mL", "unidade": "mL", "explicacao": "Antibiótico: não age contra protozoários como o Cryptosporidium." },
         { "id": "ivermectina", "nome": "Ivermectina", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Age em vermes e ectoparasitas, não no Cryptosporidium." },
         { "id": "dexametasona", "nome": "Dexametasona", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Corticoide: diminui a imunidade de um neonato que já recebeu poucos anticorpos." }

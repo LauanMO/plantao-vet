@@ -107,7 +107,7 @@
         "frequencia": "Dose única"
       },
       "vias": ["Oral", "Subcutânea", "Intramuscular", "Intravenosa, lenta"],
-      "frequencias": ["Dose única", "A cada 8 horas", "A cada 12 horas", "A cada 24 horas"],
+      "frequencias": ["Dose única", "A cada 8 horas", "A cada 12 horas", "A cada 7 dias"],
       "explicacao": "Um frasco de 500 mL de glicose 50% (250 g de glicose) na veia, devagar: 500 mg/kg × 500 kg = 250.000 mg ÷ 500 mg/mL = 500 mL. É dose única, porque o efeito passa em poucas horas; a manutenção é o propilenoglicol pela boca. Glicose pela boca não funciona em ruminante, porque o rúmen fermenta tudo."
     },
     {
@@ -120,7 +120,7 @@
     }
   ],
   "resumo": [
-    "Cetose: excesso de corpos cetônicos no balanço energético negativo do início da lactação, em geral entre 2 e 6 semanas depois do parto.",
+    "Cetose: excesso de corpos cetônicos no balanço energético negativo do início da lactação, em geral nas primeiras 6 semanas depois do parto.",
     "Risco maior em vacas de alta produção que chegam gordas ao parto.",
     "Sinais: recusa do concentrado, queda do leite, rúmen lento e hálito de acetona; algumas vacas têm sinais nervosos.",
     "Diagnóstico: BHB no sangue (subclínica a partir de 1,2 mmol/L; nos casos clínicos, em geral acima de 3) e cetonas na urina ou no leite.",
