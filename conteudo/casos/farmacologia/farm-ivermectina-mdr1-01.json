@@ -1,0 +1,134 @@
+{
+  "id": "farm-ivermectina-mdr1-01",
+  "materia": "farmacologia",
+  "tema": "Toxicidade por espécie e raça",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Lord",
+    "especie": "cão",
+    "raca": "Pastor-australiano",
+    "sexo": "macho",
+    "idade": "2 anos",
+    "pesoKg": 20,
+    "sprite": "cao-pequeno-preto"
+  },
+  "tutor": { "nome": "Fernanda", "sprite": "tutora-3" },
+  "chegada": "Doutora, o Lord não para de coçar a orelha e os cotovelos. O vizinho disse pra dar a ivermectina de gado que eu tenho no sítio. Pode?",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "contato", "rotulo": "Ele teve contato com outros cães?", "resultado": "No sítio, brincou com um cachorro de rua cheio de feridas.", "importante": true },
+        { "id": "remedio", "rotulo": "Ele já tomou algum remédio?", "resultado": "Ainda não. Ia dar a ivermectina hoje, mas quis perguntar antes.", "importante": true },
+        { "id": "familia", "rotulo": "Algum parente dele reagiu a remédio?", "resultado": "O criador contou que a mãe dele quase morreu depois de um vermífugo.", "importante": true },
+        { "id": "pessoas", "rotulo": "Alguém da casa tem coceira?", "resultado": "Eu tô com umas bolinhas que coçam no braço.", "importante": false },
+        { "id": "inicio", "rotulo": "Desde quando ele coça?", "resultado": "Faz umas 3 semanas, e piora à noite.", "importante": false },
+        { "id": "vacinas", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, sim.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 3,
+      "itens": [
+        { "id": "otopodal", "ferramenta": "mao", "rotulo": "Reflexo otopodal", "resultado": "Ao esfregar a borda da orelha, ele coça com a pata de trás: reflexo positivo.", "importante": true },
+        { "id": "pele", "ferramenta": "lanterna", "rotulo": "Inspeção da pele", "resultado": "Crostas e pápulas nas bordas das orelhas, cotovelos e jarretes, com escoriações.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,7 °C.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões sem alterações.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratado.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 200,
+      "itens": [
+        { "id": "raspado", "rotulo": "Raspado de pele", "custo": 40, "resultado": "Sarcoptes scabiei e ovos.", "importante": true },
+        { "id": "mdr1", "rotulo": "Teste genético MDR1 (ABCB1)", "custo": 150, "resultado": "Feito pelo criador: mutação nas duas cópias do gene (homozigoto).", "importante": true },
+        { "id": "tricograma", "rotulo": "Tricograma", "custo": 30, "resultado": "Pelos normais, sem esporos de fungo.", "importante": false },
+        { "id": "cultura", "rotulo": "Cultura para fungos", "custo": 80, "resultado": "Negativa.", "importante": false },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Eosinofilia leve.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Sarna sarcóptica (escabiose)", "correta": true, "explicacao": "Coceira intensa nas bordas das orelhas, cotovelos e jarretes, reflexo otopodal positivo, contato com cão doente, coceira na tutora e Sarcoptes no raspado." },
+        { "texto": "Sarna demodécica", "correta": false, "explicacao": "O Demodex costuma causar queda de pelo com pouca coceira, não passa para pessoas e aparece no raspado profundo." },
+        { "texto": "Dermatite atópica", "correta": false, "explicacao": "Dá coceira crônica em face, patas e axilas, que não passa para pessoas, e o raspado seria negativo." },
+        { "texto": "Dermatofitose", "correta": false, "explicacao": "Causa lesões circulares com queda de pelo e pouca coceira; tricograma e cultura foram negativos." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a ivermectina na dose para sarna pode matar o Lord?",
+      "opcoes": [
+        { "texto": "Com a mutação MDR1, a glicoproteína P da barreira hematoencefálica falha e deixa a ivermectina entrar no cérebro", "correta": true, "explicacao": "A glicoproteína P bombeia a ivermectina de volta para o sangue. Sem ela, o fármaco se acumula no sistema nervoso central, mesmo em doses que outros cães toleram." },
+        { "texto": "O Lord transforma a ivermectina num metabólito tóxico no fígado", "correta": false, "explicacao": "O problema não é metabólico; é a entrada da ivermectina no cérebro." },
+        { "texto": "A mutação impede o fígado de metabolizar qualquer fármaco", "correta": false, "explicacao": "A mutação afeta um transportador de efluxo, a glicoproteína P, e não o metabolismo do fígado." },
+        { "texto": "A ivermectina causa alergia em cães de pastoreio", "correta": false, "explicacao": "Não é alergia: é neurotoxicidade, que depende da dose." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Dentro do cérebro, como a ivermectina causa os sinais de intoxicação?",
+      "opcoes": [
+        { "texto": "Potencializa os receptores GABA e abre canais de cloreto, deprimindo os neurônios", "correta": true, "explicacao": "Nos parasitas, a ivermectina age em canais de cloreto ligados ao glutamato. Nos mamíferos, age nos receptores GABA, que ficam no cérebro, protegidos pela barreira. Sinais: ataxia, pupilas dilatadas, cegueira, tremores e coma." },
+        { "texto": "Inibe a acetilcolinesterase", "correta": false, "explicacao": "Esse é o mecanismo dos organofosforados e carbamatos." },
+        { "texto": "Mantém abertos os canais de sódio dos neurônios", "correta": false, "explicacao": "Esse é o mecanismo dos piretroides." },
+        { "texto": "Estimula receptores α2-adrenérgicos", "correta": false, "explicacao": "Esse é o mecanismo do amitraz e da xilazina." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Prescrição para casa",
+      "critica": true,
+      "instrucao": "Prescreva o tratamento da sarna do Lord (20 kg).",
+      "farmacos": [
+        { "id": "sarolaner", "nome": "Sarolaner", "apresentacao": "Comprimido mastigável 40 mg", "unidade": "comprimido", "explicacao": "Isoxazolina: bloqueia canais de cloreto ligados ao GABA e ao glutamato dos ácaros, muito mais sensíveis que os dos mamíferos. Segura em cães com a mutação MDR1." },
+        { "id": "ivermectina", "nome": "Ivermectina 1% (de bovinos)", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Lactona macrocíclica: na dose para sarna, entra no cérebro de cães com MDR1 e causa intoxicação grave, às vezes fatal." },
+        { "id": "prednisolona", "nome": "Prednisolona", "apresentacao": "Comprimido 20 mg", "unidade": "comprimido", "explicacao": "Corticoide: alivia a coceira, mas não mata o ácaro e reduz a defesa da pele." },
+        { "id": "praziquantel", "nome": "Praziquantel", "apresentacao": "Comprimido 50 mg", "unidade": "comprimido", "explicacao": "Age em cestódeos (tênias), e não em ácaros." }
+      ],
+      "correto": {
+        "farmaco": "sarolaner",
+        "doseMgKg": 2,
+        "concentracao": 40,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 30 dias"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Tópica"],
+      "frequencias": ["A cada 12 horas", "A cada 24 horas", "A cada 7 dias", "A cada 30 dias"],
+      "explicacao": "2 mg/kg × 20 kg = 40 mg; 40 mg ÷ 40 mg = 1 comprimido por via oral, repetido em 30 dias (duas doses para a sarna sarcóptica). Tratar os cães que convivem com ele e lavar a cama; a tutora deve procurar o médico pela coceira. Cuidado com isoxazolinas em cães com histórico de convulsão."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 30 dias",
+      "bom": "O Lord parou de coçar em duas semanas, o pelo voltou a crescer e o raspado de controle deu negativo. A coceira da Fernanda também passou.",
+      "falaBom": "Doutora, o Lord voltou a dormir a noite toda! Ainda bem que eu perguntei antes de dar a ivermectina.",
+      "ruim": "O tratamento não deu certo: o Lord foi internado cambaleando, de pupilas dilatadas e sem enxergar, e a sarna continuou.",
+      "falaRuim": "Doutora, o Lord tá cambaleando, babando e parece que não enxerga..."
+    }
+  ],
+  "resumo": [
+    "Mutação MDR1 (gene ABCB1): a glicoproteína P defeituosa deixa os fármacos que ela transporta entrarem no cérebro. É frequente em Collie, Pastor-australiano, Pastor de Shetland e outras raças de pastoreio.",
+    "Ivermectina: segura na dose preventiva de dirofilariose (6 µg/kg), mas tóxica para cães MDR1 nas doses para sarna (0,2 a 0,4 mg/kg).",
+    "Outros fármacos que pedem cuidado nesses cães: loperamida, acepromazina, butorfanol, vincristina e doxorrubicina.",
+    "Isoxazolinas (sarolaner, afoxolaner, fluralaner) agem em canais de cloreto de artrópodes e são opção segura para cães MDR1.",
+    "Sarna sarcóptica: coceira intensa, reflexo otopodal positivo e zoonose transitória; tratar os contatos e o ambiente."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}

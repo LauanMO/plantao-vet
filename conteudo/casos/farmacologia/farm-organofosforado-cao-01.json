@@ -1,0 +1,122 @@
+{
+  "id": "farm-organofosforado-cao-01",
+  "materia": "farmacologia",
+  "tema": "Sistema nervoso autônomo",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Sansão",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "3 anos",
+    "pesoKg": 8,
+    "sprite": "cao-pequeno-preto"
+  },
+  "tutor": { "nome": "Renato", "sprite": "tutor-1" },
+  "chegada": "Doutora, dei banho no Sansão com o carrapaticida que uso no gado, e agora ele tá babando, tremendo e fazendo cocô mole!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "produto", "rotulo": "Que produto você usou?", "resultado": "Um carrapaticida de gado, organofosforado. Diluí no balde, no olho.", "importante": true },
+        { "id": "tempo", "rotulo": "Quando começaram os sinais?", "resultado": "Uma hora depois do banho, mais ou menos.", "importante": true },
+        { "id": "enxague", "rotulo": "Você enxaguou o produto?", "resultado": "Não, deixei secar no pelo, como faço no gado.", "importante": true },
+        { "id": "comida", "rotulo": "Ele comeu algo diferente?", "resultado": "Não, só a ração.", "importante": false },
+        { "id": "convulsao", "rotulo": "Ele já teve convulsão antes?", "resultado": "Nunca.", "importante": false },
+        { "id": "vacinas", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, sim.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "pupilas", "ferramenta": "lanterna", "rotulo": "Pupilas e boca", "resultado": "Pupilas bem contraídas (miose) e muita saliva escorrendo.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "FC de 56 bpm e chiados nos pulmões, de secreção nos brônquios.", "importante": true },
+        { "id": "musculos", "ferramenta": "mao", "rotulo": "Palpação muscular", "resultado": "Tremores e fasciculações na cabeça e nos membros.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,9 °C.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Desidratação leve, cerca de 5%.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Intoxicação por organofosforado", "correta": true, "explicacao": "Carrapaticida organofosforado deixado no pelo, com sinais muscarínicos (salivação, miose, diarreia, bradicardia e secreção nos brônquios) e nicotínicos (tremores)." },
+        { "texto": "Intoxicação por amitraz", "correta": false, "explicacao": "O amitraz, outro carrapaticida, é agonista α2: causa sedação, bradicardia, hipotermia e pupilas dilatadas, e não salivação intensa com miose e diarreia." },
+        { "texto": "Intoxicação por piretroide", "correta": false, "explicacao": "Piretroides causam tremores e salivação, mas não miose, bradicardia e secreção nos brônquios. E o produto era organofosforado." },
+        { "texto": "Cinomose nervosa", "correta": false, "explicacao": "Causa mioclonias e convulsões que evoluem em dias, com sinais respiratórios e oculares, sem relação com um banho." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o organofosforado causa salivação, miose e diarreia no Sansão?",
+      "opcoes": [
+        { "texto": "Ele inibe a acetilcolinesterase, e a acetilcolina acumulada estimula os receptores muscarínicos", "correta": true, "explicacao": "Sem a enzima, a acetilcolina não é degradada e continua estimulando os receptores muscarínicos das glândulas, da pupila, do intestino, do coração e dos brônquios." },
+        { "texto": "Ele bloqueia os receptores muscarínicos", "correta": false, "explicacao": "Esse é o efeito da atropina, que causaria boca seca e pupilas dilatadas." },
+        { "texto": "Ele aumenta a liberação de noradrenalina", "correta": false, "explicacao": "Excesso de efeito simpático daria pupilas dilatadas e taquicardia, o contrário do que o Sansão tem." },
+        { "texto": "Ele bloqueia os canais de sódio dos nervos", "correta": false, "explicacao": "Esse é o mecanismo dos anestésicos locais. Os piretroides, ao contrário, mantêm os canais de sódio abertos." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "A atropina vai acabar com os tremores musculares do Sansão?",
+      "opcoes": [
+        { "texto": "Não: os tremores vêm dos receptores nicotínicos da junção neuromuscular, que a atropina não bloqueia", "correta": true, "explicacao": "A atropina é antagonista muscarínico. Para os sinais nicotínicos, a pralidoxima pode reativar a enzima se for dada cedo, e o diazepam ajuda a controlar tremores e convulsões." },
+        { "texto": "Sim, a atropina bloqueia todos os receptores da acetilcolina", "correta": false, "explicacao": "A atropina bloqueia só os receptores muscarínicos; os nicotínicos da musculatura continuam estimulados." },
+        { "texto": "Sim, porque os tremores vêm da bradicardia", "correta": false, "explicacao": "Os tremores vêm do excesso de acetilcolina na junção neuromuscular, e não do coração." },
+        { "texto": "Não, porque os tremores são de febre", "correta": false, "explicacao": "O Sansão não tem febre; os tremores são efeito nicotínico do organofosforado." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Prescrição na emergência",
+      "critica": true,
+      "instrucao": "Prescreva o antídoto para o Sansão (8 kg), começando pela menor dose da faixa usada nas intoxicações.",
+      "farmacos": [
+        { "id": "atropina", "nome": "Sulfato de atropina", "apresentacao": "Solução injetável 0,5 mg/mL", "unidade": "mL", "explicacao": "Antagonista competitivo dos receptores muscarínicos: seca a saliva e as secreções dos brônquios e corrige a bradicardia. Na intoxicação, a dose é cerca de 10 vezes a pré-anestésica." },
+        { "id": "neostigmina", "nome": "Neostigmina", "apresentacao": "Solução injetável 0,5 mg/mL", "unidade": "mL", "explicacao": "Também inibe a acetilcolinesterase: somaria o efeito do organofosforado e pioraria a crise colinérgica." },
+        { "id": "acepromazina", "nome": "Acepromazina 0,2%", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Fenotiazínico contraindicado na intoxicação por organofosforado: não trata os sinais muscarínicos e baixa a pressão." },
+        { "id": "metoclopramida", "nome": "Metoclopramida", "apresentacao": "Solução injetável 5 mg/mL", "unidade": "mL", "explicacao": "Procinético que aumenta a ação da acetilcolina no trato digestório: pioraria a diarreia e não trata a causa." }
+      ],
+      "correto": {
+        "farmaco": "atropina",
+        "doseMgKg": 0.2,
+        "concentracao": 0.5,
+        "tolerancia": 0.1,
+        "via": "¼ na veia e o restante subcutâneo",
+        "frequencia": "Repetir se a saliva e a secreção voltarem"
+      },
+      "vias": ["Oral", "¼ na veia e o restante subcutâneo", "Tópica", "Inalatória"],
+      "frequencias": ["Repetir se a saliva e a secreção voltarem", "Repetir até a FC passar de 180 bpm", "A cada 24 horas, por 7 dias", "A cada 7 dias"],
+      "explicacao": "0,2 mg/kg × 8 kg = 1,6 mg; 1,6 mg ÷ 0,5 mg/mL = 3,2 mL: 0,8 mL na veia e 2,4 mL por via subcutânea. O alvo é secar a saliva e a secreção dos brônquios, e não acelerar o coração. Junto: banho com detergente para tirar o produto do pelo, oxigênio e diazepam se houver convulsão."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno no dia seguinte",
+      "bom": "Com a atropina e o banho, a salivação e a diarreia pararam em poucas horas. Os tremores cederam aos poucos, e o Sansão teve alta no dia seguinte.",
+      "falaBom": "Doutora, o Sansão voltou a ser o mesmo! E nunca mais uso produto de gado nele.",
+      "ruim": "Sem o antídoto certo, a secreção nos brônquios aumentou: o Sansão teve insuficiência respiratória e precisou de oxigênio e terapia intensiva.",
+      "falaRuim": "Doutora, ele continua babando e respirando com um chiado horrível..."
+    }
+  ],
+  "resumo": [
+    "Organofosforados e carbamatos inibem a acetilcolinesterase: a acetilcolina se acumula nas sinapses colinérgicas.",
+    "Sinais muscarínicos: salivação, lacrimejamento, miose, vômito, diarreia, bradicardia e secreção nos brônquios. Nicotínicos: tremores, fasciculações e fraqueza. Centrais: convulsões e depressão.",
+    "Atropina, antagonista muscarínico: na intoxicação, 0,2 a 0,5 mg/kg (¼ IV e o restante SC), repetida até secar as secreções. Ela não reverte os sinais nicotínicos.",
+    "Pralidoxima reativa a enzima inibida por organofosforado se for dada cedo; diazepam controla tremores e convulsões. Evitar fenotiazínicos.",
+    "Na exposição pela pele, dar banho com detergente. Carrapaticidas de gado não devem ser usados em cães e gatos."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}

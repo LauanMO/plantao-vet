@@ -1,0 +1,122 @@
+{
+  "id": "farm-paracetamol-gato-01",
+  "materia": "farmacologia",
+  "tema": "Toxicidade por espécie e raça",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Fumaça",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "2 anos",
+    "pesoKg": 4,
+    "sprite": "gato-cinza"
+  },
+  "tutor": { "nome": "Camila", "sprite": "tutora-2" },
+  "chegada": "Doutora, ontem o Fumaça tava quentinho e quieto, e eu dei meio paracetamol. Hoje ele acordou com a cara inchada e a boca roxa!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "dose", "rotulo": "Quanto você deu e quando?", "resultado": "Meio comprimido de 500 mg, ontem às 10 da noite.", "importante": true },
+        { "id": "sinais", "rotulo": "Quando os sinais começaram?", "resultado": "Hoje cedo. A cara e as patas incharam, e ele respira rápido.", "importante": true },
+        { "id": "urina", "rotulo": "Como está o xixi dele?", "resultado": "Saiu escuro, cor de chocolate.", "importante": true },
+        { "id": "vomito", "rotulo": "Ele vomitou?", "resultado": "Vomitou uma vez de manhã.", "importante": false },
+        { "id": "outros", "rotulo": "Ele toma algum outro remédio?", "resultado": "Nenhum.", "importante": false },
+        { "id": "plantas", "rotulo": "Tem plantas ou veneno ao alcance?", "resultado": "Não temos plantas, e não uso veneno em casa.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas", "resultado": "Mucosas acinzentadas, cor de chocolate.", "importante": true },
+        { "id": "edema", "ferramenta": "mao", "rotulo": "Palpação da face e das patas", "resultado": "Edema na face e nas quatro patas.", "importante": true },
+        { "id": "sangue", "ferramenta": "gota", "rotulo": "Gota de sangue no papel", "resultado": "O sangue fica cor de chocolate e não avermelha em contato com o ar.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Taquicardia e respiração rápida; pulmões sem ruídos.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,6 °C.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Intoxicação por paracetamol", "correta": true, "explicacao": "Gato que recebeu cerca de 60 mg/kg de paracetamol e, em horas, apresentou mucosas e sangue cor de chocolate (metemoglobinemia), edema de face e patas e urina escura." },
+        { "texto": "Intoxicação por permetrina", "correta": false, "explicacao": "Causa tremores, contrações musculares e convulsões, e não sangue cor de chocolate nem edema de face." },
+        { "texto": "Asma felina", "correta": false, "explicacao": "Causa tosse e dificuldade para expirar. Se houver cianose, é por falta de oxigênio, e o sangue avermelha ao ar." },
+        { "texto": "Cardiomiopatia hipertrófica", "correta": false, "explicacao": "Dá dificuldade respiratória por edema pulmonar, com sopro ou ritmo de galope, sem edema de face nem sangue cor de chocolate." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que meio comprimido de paracetamol é tão tóxico para o Fumaça?",
+      "opcoes": [
+        { "texto": "O gato quase não conjuga o paracetamol com ácido glicurônico, e sobra mais para formar o metabólito tóxico", "correta": true, "explicacao": "No gato, a glicuronidação é deficiente e a sulfatação satura rápido. O paracetamol é desviado para o citocromo P450, que forma NAPQI: ele esgota a glutationa, oxida a hemoglobina e lesa o fígado." },
+        { "texto": "O gato absorve o paracetamol mais rápido que as pessoas", "correta": false, "explicacao": "A absorção é parecida; a diferença está na conjugação, que é deficiente no gato." },
+        { "texto": "O paracetamol inibe a COX-1 dos rins do gato", "correta": false, "explicacao": "O quadro do Fumaça é de metemoglobinemia, e não de lesão renal por inibição da COX." },
+        { "texto": "O gato não tem enzimas no fígado para metabolizar fármacos", "correta": false, "explicacao": "O gato metaboliza muitos fármacos. Falta a ele, principalmente, a glicuronidação de alguns, como o paracetamol." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Como a acetilcisteína protege o Fumaça?",
+      "opcoes": [
+        { "texto": "Fornece cisteína para refazer a glutationa, que neutraliza o metabólito tóxico", "correta": true, "explicacao": "A acetilcisteína repõe a glutationa e também se liga diretamente ao NAPQI, protegendo as hemácias e o fígado." },
+        { "texto": "Acelera a eliminação do paracetamol pelos rins", "correta": false, "explicacao": "Ela não aumenta a eliminação renal; age repondo a defesa antioxidante." },
+        { "texto": "Impede que o paracetamol seja absorvido no intestino", "correta": false, "explicacao": "Esse é o papel do carvão ativado, útil só nas primeiras horas depois da ingestão." },
+        { "texto": "Bloqueia os receptores do paracetamol nas hemácias", "correta": false, "explicacao": "O paracetamol não age por receptores nas hemácias; o dano vem da oxidação pelo NAPQI." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Prescrição na emergência",
+      "critica": true,
+      "instrucao": "Prescreva a dose de ataque do antídoto para o Fumaça (4 kg).",
+      "farmacos": [
+        { "id": "acetilcisteina", "nome": "Acetilcisteína", "apresentacao": "Solução injetável 100 mg/mL", "unidade": "mL", "explicacao": "Antídoto do paracetamol: repõe a glutationa e neutraliza o NAPQI, protegendo as hemácias e o fígado." },
+        { "id": "vitamina-k1", "nome": "Vitamina K1 (fitomenadiona)", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Antídoto dos raticidas anticoagulantes. Não age na intoxicação por paracetamol." },
+        { "id": "atropina", "nome": "Sulfato de atropina", "apresentacao": "Solução injetável 0,5 mg/mL", "unidade": "mL", "explicacao": "Antídoto dos sinais muscarínicos dos organofosforados e carbamatos. Não age na intoxicação por paracetamol." },
+        { "id": "azul-metileno", "nome": "Azul de metileno 1%", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Reduz a metemoglobina, mas no gato pode causar anemia por corpúsculos de Heinz e não protege o fígado: não substitui a acetilcisteína." }
+      ],
+      "correto": {
+        "farmaco": "acetilcisteina",
+        "doseMgKg": 140,
+        "concentracao": 100,
+        "tolerancia": 0.1,
+        "via": "Intravenosa, diluída e lenta",
+        "frequencia": "Ataque; depois 70 mg/kg a cada 6 horas"
+      },
+      "vias": ["Intravenosa, diluída e lenta", "Subcutânea", "Intramuscular", "Inalatória (nebulização)"],
+      "frequencias": ["Dose única", "Ataque; depois 70 mg/kg a cada 6 horas", "A cada 24 horas", "A cada 7 dias"],
+      "explicacao": "140 mg/kg × 4 kg = 560 mg; 560 mg ÷ 100 mg/mL = 5,6 mL, diluídos em soro e aplicados na veia em 15 a 20 minutos. Depois, 70 mg/kg (2,8 mL) a cada 6 horas, por pelo menos 7 doses. Junto: oxigênio, fluidoterapia e vitamina C."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 3 dias",
+      "bom": "Com a acetilcisteína, o oxigênio e o soro, as mucosas voltaram a ficar rosadas em 24 horas, e o inchaço sumiu em 2 dias. O Fumaça teve alta no 3º dia.",
+      "falaBom": "Doutora, ele tá rosadinho de novo! Prometo: nunca mais dou remédio de gente sem perguntar.",
+      "ruim": "Sem o antídoto, a metemoglobina continuou alta e o fígado foi lesado: o Fumaça ficou amarelo e em estado grave na internação.",
+      "falaRuim": "Doutora, ele tá amarelinho, respirando de boca aberta e não levanta..."
+    }
+  ],
+  "resumo": [
+    "O gato tem glicuronidação deficiente: o paracetamol é desviado para o citocromo P450 e forma NAPQI, que esgota a glutationa.",
+    "Sinais: mucosas e sangue cor de chocolate (metemoglobinemia), corpúsculos de Heinz, edema de face e patas, urina escura e, depois, lesão hepática.",
+    "Não há dose segura de paracetamol para gatos: meio comprimido de 500 mg pode matar um gato adulto.",
+    "Antídoto: acetilcisteína, 140 mg/kg de ataque e 70 mg/kg a cada 6 horas; suporte com oxigênio, fluidos e vitamina C.",
+    "Cães também se intoxicam, mas com doses bem maiores, e neles predomina a lesão hepática."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}

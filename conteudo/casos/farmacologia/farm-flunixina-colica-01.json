@@ -1,0 +1,123 @@
+{
+  "id": "farm-flunixina-colica-01",
+  "materia": "farmacologia",
+  "tema": "AINEs",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Ventania",
+    "especie": "equino",
+    "raca": "Crioulo",
+    "sexo": "macho castrado",
+    "idade": "8 anos",
+    "pesoKg": 450,
+    "sprite": "cavalo-alazao"
+  },
+  "tutor": { "nome": "Seu Nestor", "sprite": "produtor-2" },
+  "chegada": "Doutora, o Ventania tá olhando pra barriga, cava o chão e deita e levanta toda hora. Começou depois do temporal desta madrugada.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Quando começou?", "resultado": "Umas 3 horas atrás, logo depois da chuva forte com vento frio.", "importante": true },
+        { "id": "fezes", "rotulo": "Ele comeu e fez cocô?", "resultado": "Comeu normal ontem e fez cocô hoje cedo, meio mole.", "importante": true },
+        { "id": "remedio", "rotulo": "Ele já tomou algum remédio?", "resultado": "Ainda não, doutora. Fiquei com medo de dar errado.", "importante": true },
+        { "id": "comida", "rotulo": "Mudou alguma coisa na comida?", "resultado": "Não, é a mesma ração e o mesmo capim de sempre.", "importante": false },
+        { "id": "verme", "rotulo": "Quando foi vermifugado?", "resultado": "Faz uns 2 meses.", "importante": false },
+        { "id": "antes", "rotulo": "Ele já teve cólica antes?", "resultado": "Uma vez, faz dois anos, e passou rápido.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 5,
+      "itens": [
+        { "id": "fc", "ferramenta": "estetoscopio", "rotulo": "Frequência cardíaca", "resultado": "48 bpm (referência: 28 a 44 bpm).", "importante": true },
+        { "id": "abdome", "ferramenta": "estetoscopio", "rotulo": "Auscultação do abdome", "resultado": "Borborigmos aumentados dos dois lados, com sons de gás.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosadas e úmidas; TPC de 2 segundos.", "importante": true },
+        { "id": "retal", "ferramenta": "mao", "rotulo": "Palpação retal", "resultado": "Sem alças distendidas, compactação ou deslocamento palpável.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,9 °C.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratado: a pele volta rápido.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Cólica espasmódica", "correta": true, "explicacao": "Dor moderada de início súbito depois de uma mudança de tempo, intestino agitado com sons de gás, frequência cardíaca pouco elevada, mucosas normais e palpação retal sem alterações." },
+        { "texto": "Compactação do cólon maior", "correta": false, "explicacao": "Os sons intestinais estariam diminuídos, com pouca ou nenhuma fezes, e a massa seria sentida na palpação retal." },
+        { "texto": "Vólvulo do cólon maior", "correta": false, "explicacao": "Causa dor violenta, frequência cardíaca alta, mucosas congestas e alças distendidas. É cirúrgico." },
+        { "texto": "Enterite proximal", "correta": false, "explicacao": "Dá febre, refluxo abundante pela sonda nasogástrica e depressão, e não um intestino agitado." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Como a flunixina alivia a dor da cólica do Ventania?",
+      "opcoes": [
+        { "texto": "Inibe a COX e reduz as prostaglandinas que sensibilizam os nociceptores e medeiam os efeitos da endotoxina", "correta": true, "explicacao": "AINEs inibem a ciclo-oxigenase. Na cólica, a flunixina é potente contra a dor visceral e reduz os efeitos das prostaglandinas liberadas pela endotoxina." },
+        { "texto": "Relaxa a musculatura lisa do intestino, como um antiespasmódico", "correta": false, "explicacao": "Esse é o efeito dos antimuscarínicos, como a escopolamina. A flunixina age na síntese de prostaglandinas." },
+        { "texto": "Ativa receptores opioides na medula espinhal", "correta": false, "explicacao": "Esse é o mecanismo dos opioides, como o butorfanol." },
+        { "texto": "Estimula receptores α2 no sistema nervoso central", "correta": false, "explicacao": "Esse é o mecanismo da xilazina e da detomidina, que também aliviam a dor da cólica, mas sedam." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que não repetir a flunixina sem reavaliar o Ventania?",
+      "opcoes": [
+        { "texto": "Ela é potente e pode esconder por horas a dor de uma cólica cirúrgica", "correta": true, "explicacao": "Uma dose controla a dor da cólica simples. Se a dor volta logo, ou se o cavalo piora mesmo com a flunixina, é sinal de lesão grave, que pode precisar de cirurgia." },
+        { "texto": "Ela causa dependência no cavalo", "correta": false, "explicacao": "AINEs não causam dependência." },
+        { "texto": "Ela paralisa o intestino por vários dias", "correta": false, "explicacao": "A flunixina não paralisa o intestino. Quem reduz a motilidade são os antimuscarínicos e, em parte, os agonistas α2 e os opioides." },
+        { "texto": "Uma segunda dose não tem mais efeito", "correta": false, "explicacao": "O efeito não se perde. O problema é mascarar a evolução do quadro e somar toxicidade." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento no campo",
+      "critica": true,
+      "instrucao": "Prescreva o analgésico para o Ventania (450 kg).",
+      "farmacos": [
+        { "id": "flunixina", "nome": "Flunixina meglumina", "apresentacao": "Solução injetável 50 mg/mL", "unidade": "mL", "explicacao": "AINE potente contra a dor visceral e os efeitos da endotoxina: é o anti-inflamatório de escolha na cólica do cavalo." },
+        { "id": "dexametasona", "nome": "Dexametasona", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Corticoide: não alivia a dor da cólica, reduz a defesa contra infecções e, no cavalo, pode favorecer a laminite." },
+        { "id": "acepromazina", "nome": "Acepromazina 1%", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Tranquilizante sem analgesia. Bloqueia receptores α1 e derruba a pressão, o que é perigoso se o cavalo desidratar ou entrar em choque." },
+        { "id": "neostigmina", "nome": "Neostigmina", "apresentacao": "Solução injetável 0,5 mg/mL", "unidade": "mL", "explicacao": "Anticolinesterásico: aumenta as contrações do intestino, o contrário do que se quer numa cólica espasmódica." }
+      ],
+      "correto": {
+        "farmaco": "flunixina",
+        "doseMgKg": 1.1,
+        "concentracao": 50,
+        "tolerancia": 0.1,
+        "via": "Intravenosa",
+        "frequencia": "Dose única"
+      },
+      "vias": ["Subcutânea", "Intramuscular", "Intravenosa", "Tópica"],
+      "frequencias": ["Dose única", "A cada 4 horas", "A cada 72 horas", "A cada 7 dias"],
+      "explicacao": "1,1 mg/kg × 450 kg = 495 mg; 495 mg ÷ 50 mg/mL ≈ 9,9 mL (10 mL) na veia jugular. Dose única e reavaliar: se a dor voltar antes de 8 a 12 horas, pensar em cólica cirúrgica. No cavalo, evite a via intramuscular, que pode causar miosite por clostrídios."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita no dia seguinte",
+      "bom": "A dor passou meia hora depois da flunixina e não voltou. O Ventania ficou algumas horas sem comida, fez cocô normal à tarde e voltou ao pasto no dia seguinte.",
+      "falaBom": "Doutora, ele não teve mais nada! Já tá pastando e fazendo cocô normal.",
+      "ruim": "A dor não foi controlada como devia: o Ventania rolou a noite toda na baia, se machucou e precisou ir para o hospital.",
+      "falaRuim": "Doutora, ele rolou a noite inteira e tá todo ralado... continua com dor."
+    }
+  ],
+  "resumo": [
+    "AINEs inibem a COX e a síntese de prostaglandinas e tromboxanos: efeito analgésico, antipirético e anti-inflamatório.",
+    "Na cólica do cavalo, a flunixina (1,1 mg/kg IV) alivia a dor visceral e reduz os efeitos da endotoxina.",
+    "Por ser potente, pode mascarar uma cólica cirúrgica: dar uma dose e reavaliar. Dor que volta logo é sinal de alerta.",
+    "No cavalo, prefira a via intravenosa: a injeção intramuscular de flunixina pode causar miosite por clostrídios.",
+    "Efeitos adversos dos AINEs no cavalo: úlceras gástricas, colite dorsal direita e lesão renal, maiores com desidratação e com dois AINEs juntos."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}
