@@ -186,5 +186,31 @@
       "doente",
       "feliz"
     ]
+  },
+  "cavalo-alazao": {
+    "largura": 104,
+    "altura": 85,
+    "pe": {
+      "x": 50,
+      "y": 82
+    },
+    "quadros": 2,
+    "estados": [
+      "doente",
+      "feliz"
+    ]
+  },
+  "cavalo-tordilho": {
+    "largura": 104,
+    "altura": 85,
+    "pe": {
+      "x": 50,
+      "y": 82
+    },
+    "quadros": 2,
+    "estados": [
+      "doente",
+      "feliz"
+    ]
   }
 }
