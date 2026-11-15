@@ -5,7 +5,8 @@ import { Personagem, Sprite } from '../palco/Palco'
 // O tutor entra pela porta do consultório (x 48 a 88) ou pela esquerda do curral.
 const LUGARES = {
   consultorio: { fundo: 'consultorio', tutor: [100, 128], paciente: [158, 102], preceptora: [222, 128], entraDe: -32 },
-  campo: { fundo: 'curral', tutor: [84, 140], paciente: [152, 146], preceptora: [234, 146], entraDe: -96 },
+  // no curral, todos ficam um pouco mais no fundo, para a interface por cima do palco não esconder os animais
+  campo: { fundo: 'curral', tutor: [84, 126], paciente: [152, 132], preceptora: [234, 132], entraDe: -96 },
 } as const
 
 export type Momento = 'chegada' | 'atendimento' | 'retorno'

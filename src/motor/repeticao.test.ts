@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import pipocaJson from '../../conteudo/casos/clinica-geral/clin-parvovirose-01.json'
 import { casoSchema, type Caso } from '../modelo/caso.ts'
-import { chaveDoTema, progressoVazio, proximoDoEstudo, proximoDoPlantao, registrar, type Progresso } from './repeticao.ts'
+import { casosDoPlantao, chaveDoTema, progressoVazio, proximoDoEstudo, proximoDoPlantao, registrar, type Progresso } from './repeticao.ts'
 
 const base = casoSchema.parse(pipocaJson)
 const VOMITO = 'Vômito e diarreia em cães'
@@ -98,5 +98,12 @@ describe('repetição dos casos errados', () => {
     expect(proximoDoPlantao(p, dois, [true], () => 0.99).caso.id).toBe('a')
     // com um caso só, ele volta
     expect(proximoDoEstudo(registrar(progressoVazio(), caso('a'), ACERTOU), [caso('a')], TEMAS).id).toBe('a')
+  })
+
+  it('o plantão sorteia só das matérias marcadas, e de todas se nenhuma marcada tiver casos', () => {
+    const banco = [caso('c1'), { ...caso('f1'), materia: 'farmacologia' }, { ...caso('f2'), materia: 'farmacologia' }]
+    expect(casosDoPlantao(banco).map((c) => c.id)).toEqual(['c1', 'f1', 'f2'])
+    expect(casosDoPlantao(banco, ['farmacologia']).map((c) => c.id)).toEqual(['f1', 'f2'])
+    expect(casosDoPlantao(banco, ['anatomia']).map((c) => c.id)).toEqual(['c1', 'f1', 'f2'])
   })
 })
