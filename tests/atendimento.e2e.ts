@@ -5,7 +5,7 @@ import type { Caso } from '../src/modelo/caso.ts'
 import { quantidadeCerta } from '../src/motor/pontuacao.ts'
 import { TURNO } from '../src/motor/repeticao.ts'
 
-// Todos os casos do banco, revisados ou não, como no npm run dev e no build de teste.
+// Todos os casos do banco, revisados ou não, como no jogo publicado.
 // As respostas certas saem do próprio caso, então o teste não carrega conteúdo veterinário.
 const PASTA = join('conteudo', 'casos')
 const CASOS: Caso[] = readdirSync(PASTA, { recursive: true, encoding: 'utf8' })
@@ -77,6 +77,8 @@ for (const caso of CASOS) {
     await botao(page, 'Biblioteca').click()
     await botao(page, caso.paciente.nome).click()
     await jogarAcertandoTudo(page, caso)
+    // o caso que ela ainda não conferiu pede, no resultado, o código para ela mandar as correções
+    await expect(page.getByText(caso.id)).toHaveCount(caso.revisado ? 0 : 1)
     await expect(botao(page, 'Voltar ao arquivo')).toBeVisible()
     expect(erros).toEqual([])
   })

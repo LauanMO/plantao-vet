@@ -26,6 +26,7 @@ export function Biblioteca({ progresso, abrir, voltar }: { progresso: Progresso;
                           · jogado {jogado.vezes}× · última nota {Math.round(jogado.ultimaNota * 100)}%
                         </span>
                       )}
+                      {!c.revisado && <span className="detalhe"> · em revisão</span>}
                     </span>
                   </button>
                 )

@@ -66,6 +66,7 @@ export default function App() {
   }
 
   const { caso, modo } = tela
+  const revisao = caso.revisado ? '' : ' · em revisão'
   // tudo o que ela joga, em qualquer modo, atualiza o progresso e a revisão
   const concluir = (r: ResultadoCaso) => {
     setProgresso((p) => registrar(p, caso, r))
@@ -76,7 +77,7 @@ export default function App() {
   switch (modo.tipo) {
     case 'plantao': {
       const n = turno.length
-      contexto = `Paciente ${n} de ${TURNO}${turno.at(-1)?.revisao ? ' · revisão' : ''}`
+      contexto = `Paciente ${n} de ${TURNO}${turno.at(-1)?.revisao ? ' · revisão' : ''}${revisao}`
       proximo =
         n < TURNO
           ? { texto: `Próximo paciente (${n + 1} de ${TURNO})`, ir: () => proximoPaciente(turno) }
@@ -84,11 +85,11 @@ export default function App() {
       break
     }
     case 'estudo':
-      contexto = `Estudo · ${modo.materia.nome}`
+      contexto = `Estudo · ${modo.materia.nome}${revisao}`
       proximo = { texto: 'Próximo caso', ir: () => estudar(modo.materia) }
       break
     case 'biblioteca':
-      contexto = 'Biblioteca'
+      contexto = `Biblioteca${revisao}`
       proximo = { texto: 'Voltar ao arquivo', ir: ir('biblioteca') }
   }
 
