@@ -52,7 +52,7 @@
         { "id": "aspecto", "rotulo": "Cor, odor e consistência", "custo": 10, "resultado": "Leitoso-acinzentado, aquoso e com cheiro azedo.", "importante": true },
         { "id": "azul", "rotulo": "Prova do azul de metileno", "custo": 25, "resultado": "Demora mais de 10 minutos para descorar: flora pouco ativa.", "importante": false },
         { "id": "cloretos", "rotulo": "Cloretos no líquido ruminal", "custo": 40, "resultado": "22 mmol/L: normal (abaixo de 30).", "importante": false },
-        { "id": "hematocrito", "rotulo": "Hematócrito e proteína total", "custo": 40, "resultado": "Hematócrito de 45% e proteína de 8,6 g/dL: sangue concentrado.", "importante": false }
+        { "id": "hematocrito", "rotulo": "Hematócrito e proteína total", "custo": 40, "resultado": "Hematócrito de 50% e proteína de 8,6 g/dL: sangue concentrado.", "importante": false }
       ]
     },
     {

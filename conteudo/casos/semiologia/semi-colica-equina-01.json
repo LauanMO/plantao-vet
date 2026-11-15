@@ -68,9 +68,9 @@
       "tipo": "escolha",
       "titulo": "Pergunta da preceptora",
       "quem": "preceptora",
-      "pergunta": "Onde se afere o pulso no cavalo?",
+      "pergunta": "Qual é o local de escolha para aferir o pulso no cavalo?",
       "opcoes": [
-        { "texto": "Na artéria facial, na borda de baixo da mandíbula", "correta": true, "explicacao": "A artéria facial cruza a borda ventral da mandíbula e é fácil de palpar, longe dos cascos. A transversa da face, abaixo do olho, também serve." },
+        { "texto": "Na artéria facial, na borda de baixo da mandíbula", "correta": true, "explicacao": "A artéria facial cruza a borda ventral da mandíbula e é fácil de palpar, longe dos cascos. A transversa da face, atrás do canto externo do olho, também serve." },
         { "texto": "Na artéria femoral, na face de dentro da coxa", "correta": false, "explicacao": "É o local de escolha no cão e no gato. No cavalo, a femoral é difícil de alcançar e expõe quem examina aos coices." },
         { "texto": "Na artéria coccígea, embaixo da cauda", "correta": false, "explicacao": "É o local mais usado em bovinos. No cavalo, ficar atrás do animal aumenta o risco de coice." },
         { "texto": "Na veia jugular, no pescoço", "correta": false, "explicacao": "A jugular é veia: serve para coleta de sangue e para ver se está ingurgitada, não para contar o pulso arterial." }
