@@ -62,7 +62,7 @@
       "opcoes": [
         { "texto": "Na parte distal dos membros, abaixo do cotovelo ou do joelho, ou na cauda", "correta": true, "explicacao": "Se um sarcoma surgir ali, a amputação do membro ou da cauda retira o tumor com margem ampla. Anote na ficha o local de cada dose." },
         { "texto": "Entre as escápulas, como sempre", "correta": false, "explicacao": "É o local mais associado ao sarcoma de aplicação e o pior para operar: a margem exige retirar processos espinhosos e parte das escápulas." },
-        { "texto": "Na parede lateral do tórax", "correta": false, "explicacao": "Um tumor ali exige retirar parte das costelas para ter margem, uma cirurgia muito maior do que amputar a ponta de um membro." },
+        { "texto": "Nos músculos da coxa, por via intramuscular", "correta": false, "explicacao": "As diretrizes pedem vacina no subcutâneo: um sarcoma dentro do músculo cresce escondido e é notado tarde. E, na face caudal da coxa, a agulha pode atingir o nervo isquiático." },
         { "texto": "Nos músculos lombares, junto à coluna", "correta": false, "explicacao": "Um tumor junto à coluna lombar não permite margem ampla sem atingir vértebras e medula." }
       ]
     },
