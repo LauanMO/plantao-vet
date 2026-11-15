@@ -27,6 +27,7 @@ O script lê as cores de `conteudo/arte/paleta.json`, salva os PNGs em `public/a
 | `vaca-holandesa-deitado.png`, `-feliz.png` | Vaca deitada de peito, com a cabeça no flanco, e em pé, recuperada | 2 quadros de 114×68 |
 | `coracao.png` | Coração da tela de retorno | 9×8 |
 | `icone-*.png` | Ferramentas: termômetro, estetoscópio, lanterna, mão, gota | 18×18 |
+| `app-192.png`, `app-512.png` | Ícone do app instalado: a cruz da fachada, desenhada em 32×32 e já ampliada | 192×192 e 512×512 |
 
 ## O manifesto
 

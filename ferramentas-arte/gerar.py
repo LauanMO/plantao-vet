@@ -567,6 +567,19 @@ def icone(nome):
     return contorno(im)
 
 
+def icone_do_app():
+    """Ícone do app instalado: a cruz da fachada no céu da noite, em 32x32. O desenho fica no
+    miolo, dentro do círculo que os ícones adaptáveis (maskable) do Android nunca cortam."""
+    im = Image.new('RGB', (32, 32), rgb('sky1'))
+    d = ImageDraw.Draw(im)
+    for (sx, sy) in ((4, 5), (26, 3), (28, 24), (3, 27), (12, 2), (21, 29)):
+        im.putpixel((sx, sy), rgb('star'))
+    d.rectangle([8, 8, 23, 23], fill=rgb('frame'), outline=rgb('out'))
+    d.rectangle([14, 10, 17, 21], fill=rgb('cross'))
+    d.rectangle([10, 14, 21, 17], fill=rgb('cross'))
+    return im
+
+
 def respirar(im, peito):
     """Folha com os 2 quadros da respiração, lado a lado. No segundo, tudo acima da linha do peito
     sobe 1 px e a linha do corte se repete, para não abrir buraco. Ganha 1 linha vazia no topo,
@@ -605,6 +618,9 @@ def main():
     }
     for nome in ('termometro', 'estetoscopio', 'lanterna', 'mao', 'gota'):
         arquivos['icone-' + nome + '.png'] = icone(nome)
+    # o ícone do app já sai ampliado: o celular e o navegador não ampliam com pixels nítidos
+    for lado in (192, 512):
+        arquivos[f'app-{lado}.png'] = icone_do_app().resize((lado, lado), Image.NEAREST)
 
     manifesto = {}
     for id_, ((pe_x, pe_y), estados) in PERSONAGENS.items():
