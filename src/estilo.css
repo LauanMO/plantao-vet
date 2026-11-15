@@ -223,6 +223,23 @@ button:focus-visible {
   margin-bottom: auto;
 }
 
+/* No celular, a interface rola separada da cena: a resposta da coleta fica por cima da cena, sempre à vista. */
+.embaixo .resposta,
+.ao-lado .resposta {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  box-sizing: border-box;
+}
+
+.embaixo .resposta {
+  right: 8px;
+}
+
+.ao-lado .resposta {
+  width: calc(var(--largura-faixa) - 16px);
+}
+
 .etapa-atual {
   margin: 0;
   padding: 8px 12px;

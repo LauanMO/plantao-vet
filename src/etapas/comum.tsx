@@ -14,9 +14,9 @@ export interface PropsEtapa<T extends TipoPontuado> {
   seguir: () => void
 }
 
-export function Fala({ quem, children }: { quem: string; children: ReactNode }) {
+export function Fala({ quem, className = '', children }: { quem: string; className?: string; children: ReactNode }) {
   return (
-    <section className="caixa balao" aria-live="polite" aria-label={`Fala de ${quem}`}>
+    <section className={`caixa balao ${className}`} aria-live="polite" aria-label={`Fala de ${quem}`}>
       <span className="rotulo">{quem}</span>
       <p className="fala">“{children}”</p>
     </section>
