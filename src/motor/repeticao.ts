@@ -1,4 +1,5 @@
 import type { Caso } from '../modelo/caso.ts'
+import type { Progresso } from '../modelo/progresso.ts'
 
 // As regras estão em docs/PLANO.md, na seção Repetição dos casos errados.
 // O relógio é o número de casos jogados, não dias, para funcionar mesmo se ela jogar pouco.
@@ -12,14 +13,7 @@ export const INTERVALOS = [3, 5, 10, 20, 40]
 /** O mesmo caso não volta dentro dos últimos tantos casos jogados (ou metade dos disponíveis). */
 const JANELA = 8
 
-export interface Progresso {
-  versao: 1
-  /** casos terminados, em qualquer modo */
-  jogados: number
-  casos: Record<string, { vezes: number; acertos: number; ultimo: number; ultimaNota: number }>
-  /** pela chave do tema: matéria/tema-em-slug */
-  temas: Record<string, { caixa: number; volta: number; emRevisao: boolean; erros: number; acertos: number; ultimoErrado?: string }>
-}
+export type { Progresso }
 
 export const progressoVazio = (): Progresso => ({ versao: 1, jogados: 0, casos: {}, temas: {} })
 

@@ -30,8 +30,19 @@ const SONS = {
 export type Som = keyof typeof SONS
 
 const VOLUME = 0.15
+const CHAVE_MUDO = 'plantao-vet:mudo'
 let contexto: AudioContext | undefined
-let mudo = false
+let mudo = lerMudo()
+/** o atalho do canto e as configurações mostram o mesmo mudo */
+const ouvintes = new Set<() => void>()
+
+function lerMudo() {
+  try {
+    return localStorage.getItem(CHAVE_MUDO) === 'sim'
+  } catch {
+    return false // sem localStorage, o som começa ligado, como o padrão
+  }
+}
 
 // O navegador só libera o áudio depois de um toque ou tecla, e o iPhone suspende o áudio quando a aba
 // sai de cena; por isso cada gesto cria ou retoma o contexto. Em captura, roda antes do clique do botão.
@@ -43,9 +54,23 @@ for (const evento of ['click', 'keydown']) window.addEventListener(evento, destr
 
 export function definirMudo(valor: boolean) {
   mudo = valor
+  try {
+    localStorage.setItem(CHAVE_MUDO, valor ? 'sim' : 'nao')
+  } catch {
+    // sem localStorage, o mudo vale só até recarregar
+  }
+  for (const avisar of ouvintes) avisar()
 }
 
 export const estaMudo = () => mudo
+
+/** Para o useSyncExternalStore: avisa quando o mudo muda. */
+export function ouvirMudo(avisar: () => void) {
+  ouvintes.add(avisar)
+  return () => {
+    ouvintes.delete(avisar)
+  }
+}
 
 export function tocar(som: Som) {
   if (mudo || !contexto) return
