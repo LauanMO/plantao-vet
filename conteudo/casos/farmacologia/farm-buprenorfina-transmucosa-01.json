@@ -1,0 +1,109 @@
+{
+  "id": "farm-buprenorfina-transmucosa-01",
+  "materia": "farmacologia",
+  "tema": "Farmacocinética e vias",
+  "dificuldade": 3,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Pretinha",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "fêmea",
+    "idade": "2 anos",
+    "pesoKg": 3,
+    "sprite": "gato-preto"
+  },
+  "tutor": { "nome": "Juliana", "sprite": "tutora-1" },
+  "chegada": "Doutora, vim buscar a Pretinha da castração. Ela tá toda encolhida, mas não aceita comprimido de jeito nenhum. Como vou dar remédio pra dor?",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "comprimido", "rotulo": "Ela aceita comprimido?", "resultado": "Nem escondido no sachê. Cospe tudo, baba e foge de mim por dois dias.", "importante": true },
+        { "id": "horario", "rotulo": "Você pode dar remédio em horário fixo?", "resultado": "Posso, trabalho em casa. Dá pra dar de 8 em 8 horas.", "importante": true },
+        { "id": "comendo", "rotulo": "Ela comeu depois da cirurgia?", "resultado": "Não quis nada, e fica escondida no fundo da caixa de transporte.", "importante": true },
+        { "id": "outros", "rotulo": "Tem outros animais em casa?", "resultado": "Tem um cachorro, mas eles ficam em cômodos separados.", "importante": false },
+        { "id": "doencas", "rotulo": "Ela tem alguma doença?", "resultado": "Nenhuma. Os exames antes da cirurgia deram normais.", "importante": false },
+        { "id": "reacao", "rotulo": "Ela já teve reação a algum remédio?", "resultado": "Que eu saiba, não.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 3,
+      "itens": [
+        { "id": "ferida", "ferramenta": "mao", "rotulo": "Palpação perto da ferida", "resultado": "Ferida limpa e sem inchaço, mas ela rosna e tenta morder ao toque.", "importante": true },
+        { "id": "face", "ferramenta": "lanterna", "rotulo": "Expressão facial (escala de dor)", "resultado": "Olhos semicerrados, orelhas afastadas e focinho tenso: dor moderada.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Frequência cardíaca de 220 bpm, um pouco alta; pulmões limpos.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,9 °C.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratada: a pele volta rápido.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a buprenorfina engolida age pouco, mas pingada na gengiva da gata funciona bem?",
+      "opcoes": [
+        { "texto": "Engolida, passa pelo fígado antes de chegar ao sangue; pela mucosa da boca, vai direto à circulação", "correta": true, "explicacao": "É o efeito de primeira passagem: o que o intestino absorve vai pela veia porta ao fígado, que metaboliza boa parte da buprenorfina. A mucosa da boca drena direto para a circulação sistêmica." },
+        { "texto": "O suco gástrico destrói a buprenorfina", "correta": false, "explicacao": "A perda principal não acontece no estômago, e sim no fígado, logo depois da absorção intestinal." },
+        { "texto": "A gengiva tem receptores opioides que tiram a dor no local", "correta": false, "explicacao": "A buprenorfina pingada na boca é absorvida e age nos receptores µ do sistema nervoso central, não na gengiva." },
+        { "texto": "Engolida, ela é eliminada pelos rins antes de agir", "correta": false, "explicacao": "Os rins eliminam o fármaco que já circulou. O que tira a buprenorfina oral do jogo é o fígado." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "A buprenorfina é uma base fraca. Por que a mucosa da boca do gato a absorve tão bem?",
+      "opcoes": [
+        { "texto": "O pH alcalino da boca do gato deixa mais buprenorfina na forma não ionizada, que atravessa a mucosa", "correta": true, "explicacao": "A boca do gato tem pH perto de 9, acima do pKa da buprenorfina (cerca de 8,2). Para uma base fraca, pH mais alto significa mais moléculas sem carga, e só elas atravessam as membranas." },
+        { "texto": "A saliva ácida ioniza a buprenorfina e facilita a absorção", "correta": false, "explicacao": "A boca do gato é alcalina, e a forma ionizada, com carga, atravessa mal as membranas." },
+        { "texto": "O gato produz pouca saliva, e o fármaco fica concentrado", "correta": false, "explicacao": "O que define a absorção aqui é o pH, que decide a fração não ionizada, e não a quantidade de saliva." },
+        { "texto": "O gato não tem efeito de primeira passagem", "correta": false, "explicacao": "O gato tem efeito de primeira passagem. É a via transmucosa que desvia do fígado." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Analgesia em casa",
+      "critica": true,
+      "instrucao": "Prescreva o analgésico que a Juliana vai dar em casa para a Pretinha (3 kg).",
+      "farmacos": [
+        { "id": "buprenorfina", "nome": "Buprenorfina", "apresentacao": "Solução injetável 0,3 mg/mL", "unidade": "mL", "explicacao": "Opioide agonista parcial µ, com efeito de 6 a 8 horas. No gato, a solução pingada na mucosa da boca é bem absorvida e dispensa comprimido e agulha." },
+        { "id": "morfina", "nome": "Morfina", "apresentacao": "Solução oral 10 mg/mL", "unidade": "mL", "explicacao": "Engolida, a maior parte é metabolizada pelo fígado antes de chegar ao sangue: efeito fraco e imprevisível." },
+        { "id": "fentanil", "nome": "Fentanil", "apresentacao": "Adesivo transdérmico 12 µg/h", "unidade": "adesivo", "explicacao": "No gato, a absorção pela pele varia muito e demora horas para começar. Em casa, ainda há risco de intoxicar pessoas e outros animais." },
+        { "id": "acepromazina", "nome": "Acepromazina", "apresentacao": "Gotas orais 10 mg/mL", "unidade": "mL", "explicacao": "Tranquilizante fenotiazínico, sem efeito analgésico: deixaria a gata quieta, mas com dor." }
+      ],
+      "correto": {
+        "farmaco": "buprenorfina",
+        "doseMgKg": 0.02,
+        "concentracao": 0.3,
+        "tolerancia": 0.1,
+        "via": "Transmucosa oral (na gengiva)",
+        "frequencia": "A cada 8 horas"
+      },
+      "vias": ["Transmucosa oral (na gengiva)", "Oral (misturada na comida)", "Tópica (na pele da orelha)", "Retal"],
+      "frequencias": ["Dose única", "A cada 8 horas", "A cada 24 horas", "A cada 72 horas"],
+      "explicacao": "0,02 mg/kg × 3 kg = 0,06 mg; 0,06 mg ÷ 0,3 mg/mL = 0,2 mL, pingados com seringa sem agulha entre a bochecha e a gengiva, a cada 8 horas, por 2 a 3 dias. Misturada na comida, quase toda a dose seria engolida e perdida no fígado."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 10 dias",
+      "bom": "A Pretinha voltou a comer na mesma noite, e a Juliana deu a buprenorfina sem briga. No retorno, a ferida estava cicatrizada e os pontos saíram.",
+      "falaBom": "Doutora, foi facinho! Era só pingar na boquinha, e ela comeu no mesmo dia.",
+      "ruim": "Sem analgesia eficaz, a Pretinha passou dois dias sem comer, escondida e lambendo a ferida, e abriu um ponto.",
+      "falaRuim": "Doutora, ela não come desde a cirurgia e fica escondida debaixo da cama..."
+    }
+  ],
+  "resumo": [
+    "Efeito de primeira passagem: o fármaco absorvido no intestino vai pela veia porta ao fígado, que pode metabolizar boa parte dele antes de chegar à circulação.",
+    "As vias transmucosa oral e parenterais levam o fármaco à circulação sem passar antes pelo fígado.",
+    "Só a forma não ionizada atravessa membranas: bases fracas são mais absorvidas em meio alcalino, e ácidos fracos, em meio ácido.",
+    "No gato, o pH da boca, perto de 9, favorece a absorção transmucosa da buprenorfina.",
+    "Buprenorfina: agonista parcial µ; no gato, 0,02 mg/kg na gengiva a cada 8 horas é uma boa opção de analgesia em casa."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}

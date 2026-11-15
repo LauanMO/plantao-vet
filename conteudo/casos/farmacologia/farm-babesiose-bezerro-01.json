@@ -1,0 +1,134 @@
+{
+  "id": "farm-babesiose-bezerro-01",
+  "materia": "farmacologia",
+  "tema": "Antiparasitários",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Chico",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "macho",
+    "idade": "7 meses",
+    "pesoKg": 150,
+    "sprite": "bezerro-holandes"
+  },
+  "tutor": { "nome": "Seu Benedito", "sprite": "produtor-2" },
+  "chegada": "Doutora, o Chico amanheceu triste, sem comer, e o xixi tá saindo cor de café. Ele foi pro pasto mês passado e tá cheio de carrapato.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "bezerreiro", "rotulo": "Onde ele ficava antes do pasto?", "resultado": "No bezerreiro, sem carrapato nenhum. Foi solto faz uns 40 dias.", "importante": true },
+        { "id": "carrapato", "rotulo": "Como está a infestação de carrapatos?", "resultado": "Esse ano o pasto tá infestado, e ainda não dei banho carrapaticida.", "importante": true },
+        { "id": "outros", "rotulo": "Outros bezerros adoeceram?", "resultado": "Um da mesma turma morreu semana passada, também com o xixi escuro.", "importante": true },
+        { "id": "vacina", "rotulo": "Ele foi vacinado?", "resultado": "Tomou a vacina contra clostridiose.", "importante": false },
+        { "id": "comida", "rotulo": "Desde quando ele não come?", "resultado": "Desde ontem à tarde.", "importante": false },
+        { "id": "agua", "rotulo": "Tem água e sombra no pasto?", "resultado": "Tem um açude e umas árvores.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "41,2 °C.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas", "resultado": "Muito pálidas, quase brancas, levemente amareladas.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Frequência cardíaca de 120 bpm e respiração acelerada.", "importante": true },
+        { "id": "pele", "ferramenta": "mao", "rotulo": "Inspeção da pele", "resultado": "Muitos carrapatos na virilha, na barbela e nas orelhas.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Desidratação leve, cerca de 6%.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 100,
+      "itens": [
+        { "id": "esfregaco", "rotulo": "Esfregaço de sangue (ponta da orelha)", "custo": 30, "resultado": "Babesia: formas em pera, aos pares, dentro das hemácias. Sem Anaplasma.", "importante": true },
+        { "id": "hematocrito", "rotulo": "Hematócrito", "custo": 20, "resultado": "13% (referência: 24 a 46%).", "importante": true },
+        { "id": "urina", "rotulo": "Urinálise", "custo": 30, "resultado": "Hemoglobinúria, sem hemácias no sedimento.", "importante": false },
+        { "id": "bioquimica", "rotulo": "Bioquímica (ureia e AST)", "custo": 80, "resultado": "Ureia e AST levemente altas.", "importante": false },
+        { "id": "copro", "rotulo": "Coproparasitológico", "custo": 40, "resultado": "Poucos ovos de estrongilídeos.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Babesiose (tristeza parasitária bovina)", "correta": true, "explicacao": "Bezerro criado sem carrapato e exposto de repente a um pasto infestado, com febre alta, anemia grave, urina cor de café e Babesia dentro das hemácias no esfregaço." },
+        { "texto": "Anaplasmose", "correta": false, "explicacao": "Também é tristeza parasitária, mas causa anemia com icterícia e sem urina escura, porque as hemácias são destruídas fora dos vasos. O esfregaço mostraria pontos na borda das hemácias." },
+        { "texto": "Leptospirose", "correta": false, "explicacao": "Pode dar febre e urina escura, mas o esfregaço com Babesia explica o quadro do Chico." },
+        { "texto": "Hematúria enzoótica (samambaia)", "correta": false, "explicacao": "Aparece em bovinos adultos depois de meses comendo samambaia, com sangue na urina e sem febre." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a oxitetraciclina, que trata a anaplasmose, não serve para a babesiose do Chico?",
+      "opcoes": [
+        { "texto": "A Babesia é um protozoário, e a oxitetraciclina age no ribossomo de bactérias, como a Anaplasma", "correta": true, "explicacao": "As tetraciclinas se ligam à subunidade 30S do ribossomo bacteriano. A Anaplasma é uma bactéria (riquétsia); a Babesia é um protozoário e precisa de um babesicida." },
+        { "texto": "A oxitetraciclina não chega ao sangue", "correta": false, "explicacao": "Ela chega bem ao sangue e às hemácias infectadas por Anaplasma. O problema é o alvo." },
+        { "texto": "A Babesia vive fora das hemácias", "correta": false, "explicacao": "A Babesia vive dentro das hemácias, como mostrou o esfregaço." },
+        { "texto": "A Babesia é um vírus", "correta": false, "explicacao": "A Babesia é um protozoário, transmitido pelo carrapato Rhipicephalus microplus." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "O imidocarbe, outro babesicida, pode causar salivação, cólica e diarreia logo após a aplicação. Por quê?",
+      "opcoes": [
+        { "texto": "Ele inibe a acetilcolinesterase e causa efeitos colinérgicos, que a atropina reverte", "correta": true, "explicacao": "O imidocarbe tem ação anticolinesterásica: a acetilcolina se acumula e estimula os receptores muscarínicos. Os sinais passam sozinhos ou com uma dose de atropina." },
+        { "texto": "Ele é um agonista α2, como a xilazina", "correta": false, "explicacao": "Um agonista α2 causaria sedação e parada do rúmen, e não salivação com diarreia." },
+        { "texto": "Ele destrói muitas Babesias de uma vez e libera toxinas", "correta": false, "explicacao": "Os sinais aparecem minutos após a aplicação e são colinérgicos, mesmo em animais sem Babesia." },
+        { "texto": "Ele bloqueia os receptores muscarínicos", "correta": false, "explicacao": "Bloquear os receptores muscarínicos secaria a saliva e pararia o intestino, o contrário desses sinais." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento no campo",
+      "critica": true,
+      "instrucao": "Prescreva o tratamento do Chico (150 kg).",
+      "farmacos": [
+        { "id": "diminazeno", "nome": "Diaceturato de diminazeno 7%", "apresentacao": "Solução injetável 70 mg/mL", "unidade": "mL", "explicacao": "Babesicida da classe das diamidinas: liga-se ao DNA do parasito e impede a sua multiplicação. Uma dose costuma bastar." },
+        { "id": "oxitetraciclina", "nome": "Oxitetraciclina LA", "apresentacao": "Solução injetável 200 mg/mL", "unidade": "mL", "explicacao": "Trata a anaplasmose, causada por uma bactéria. Não age sobre a Babesia, que é protozoário." },
+        { "id": "ivermectina", "nome": "Ivermectina 1%", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Endectocida: ajuda no controle do carrapato, mas não mata a Babesia que já está nas hemácias." },
+        { "id": "albendazol", "nome": "Albendazol 10%", "apresentacao": "Suspensão oral 100 mg/mL", "unidade": "mL", "explicacao": "Benzimidazol: age na tubulina de vermes nematódeos, e não em protozoários do sangue." }
+      ],
+      "correto": {
+        "farmaco": "diminazeno",
+        "doseMgKg": 3.5,
+        "concentracao": 70,
+        "tolerancia": 0.1,
+        "via": "Intramuscular",
+        "frequencia": "Dose única"
+      },
+      "vias": ["Oral", "Intramuscular", "Intravenosa", "Pour-on (no dorso)"],
+      "frequencias": ["Dose única", "A cada 12 horas", "A cada 24 horas, por 5 dias", "A cada 7 dias"],
+      "explicacao": "3,5 mg/kg × 150 kg = 525 mg; 525 mg ÷ 70 mg/mL = 7,5 mL no músculo, dose única. Junto: sombra, água, controle dos carrapatos e, se o hematócrito cair muito, transfusão de sangue."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 3 dias",
+      "bom": "A febre baixou em 24 horas, a urina clareou e o Chico voltou a comer. O lote passou a ter controle estratégico de carrapatos.",
+      "falaBom": "Doutora, o Chico voltou a comer, e o xixi já tá clarinho!",
+      "ruim": "Sem um babesicida, as hemácias continuaram sendo destruídas: o Chico ficou prostrado e precisou de transfusão de sangue para sobreviver.",
+      "falaRuim": "Doutora, ele tá deitado, branco que nem papel, e não quer levantar..."
+    }
+  ],
+  "resumo": [
+    "Tristeza parasitária bovina: babesiose (Babesia bovis e B. bigemina, protozoários) e anaplasmose (Anaplasma marginale, bactéria), transmitidas principalmente pelo carrapato.",
+    "Babesiose: febre alta, anemia e urina cor de café, pela destruição das hemácias dentro dos vasos. A B. bovis pode causar sinais nervosos.",
+    "Anaplasmose: anemia e icterícia, sem hemoglobinúria. O esfregaço de sangue diferencia os agentes.",
+    "O fármaco segue o agente: diminazeno (3,5 mg/kg IM, dose única) para Babesia; oxitetraciclina para Anaplasma; o imidocarbe age nos dois e pode causar efeitos colinérgicos.",
+    "Bezerros criados sem carrapato e soltos de repente em pasto infestado adoecem mais. Prevenção: controle estratégico do carrapato."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}

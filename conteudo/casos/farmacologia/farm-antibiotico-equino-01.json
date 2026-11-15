@@ -1,0 +1,122 @@
+{
+  "id": "farm-antibiotico-equino-01",
+  "materia": "farmacologia",
+  "tema": "Antimicrobianos",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Brisa",
+    "especie": "equino",
+    "raca": "Mangalarga Marchador",
+    "sexo": "fêmea",
+    "idade": "10 anos",
+    "pesoKg": 450,
+    "sprite": "cavalo-tordilho"
+  },
+  "tutor": { "nome": "Seu Moacir", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Brisa cortou a canela no arame, e agora a perna inchou toda. Sobrou clindamicina do tratamento do meu cachorro. Posso dar pra ela?",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "ferida", "rotulo": "Quando e como ela se machucou?", "resultado": "Faz 3 dias, no arame farpado. Ontem a perna começou a inchar, e hoje ela quase não apoia.", "importante": true },
+        { "id": "tetano", "rotulo": "Ela é vacinada contra tétano?", "resultado": "É sim. Eu reforço todo ano, a última foi em março.", "importante": true },
+        { "id": "remedio", "rotulo": "Ela já tomou algum remédio?", "resultado": "Ainda não. Só lavei o corte com água e sabão.", "importante": true },
+        { "id": "fezes", "rotulo": "Como estão as fezes dela?", "resultado": "Normais, bem formadas.", "importante": false },
+        { "id": "comida", "rotulo": "Ela está comendo?", "resultado": "Está, mas menos que o normal.", "importante": false },
+        { "id": "prenhe", "rotulo": "Ela está prenhe?", "resultado": "Não, faz tempo que não cubro ela.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "membro", "ferramenta": "mao", "rotulo": "Palpação do membro", "resultado": "Membro posterior esquerdo inchado do casco ao jarrete, quente e dolorido.", "importante": true },
+        { "id": "corte", "ferramenta": "lanterna", "rotulo": "Inspeção da ferida", "resultado": "Corte de 5 cm na canela, com bordas inchadas e secreção purulenta.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,0 °C.", "importante": true },
+        { "id": "abdome", "ferramenta": "estetoscopio", "rotulo": "Auscultação do abdome", "resultado": "Borborigmos normais nos quatro quadrantes.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratada.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Celulite bacteriana secundária à ferida", "correta": true, "explicacao": "Ferida contaminada há 3 dias, com inchaço difuso, quente e dolorido, secreção purulenta e febre." },
+        { "texto": "Tendinite do flexor digital superficial", "correta": false, "explicacao": "Causa inchaço localizado atrás da canela, sem ferida infectada nem febre." },
+        { "texto": "Laminite", "correta": false, "explicacao": "Afeta os cascos, em geral dos membros anteriores, com pulso digital forte e postura de apoio nos talões." },
+        { "texto": "Tétano", "correta": false, "explicacao": "Causaria rigidez muscular, orelhas eretas e prolapso da terceira pálpebra, e não um membro inchado e quente. E a Brisa é vacinada." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a clindamicina, tão usada em cães e gatos, é perigosa para a Brisa?",
+      "opcoes": [
+        { "texto": "Ela destrói a flora do intestino grosso e deixa crescer clostrídios, causando colite grave", "correta": true, "explicacao": "O cavalo depende das bactérias do ceco e do cólon. Lincosamidas desequilibram essa flora e permitem a proliferação de Clostridium difficile e outros patógenos, com colite e diarreia muitas vezes fatais." },
+        { "texto": "Ela lesa os rins do cavalo", "correta": false, "explicacao": "Lesão renal é o problema típico dos aminoglicosídeos, como a gentamicina." },
+        { "texto": "O cavalo não absorve a clindamicina pelo intestino", "correta": false, "explicacao": "O risco não é a falta de absorção, e sim o efeito sobre a flora do intestino grosso." },
+        { "texto": "O suco gástrico do cavalo inativa a clindamicina", "correta": false, "explicacao": "Não é esse o problema: mesmo injetadas, as lincosamidas podem causar colite no cavalo." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Como a sulfa e o trimetoprim agem juntos contra a bactéria?",
+      "opcoes": [
+        { "texto": "Bloqueiam duas etapas seguidas da síntese de ácido fólico, e juntos são bactericidas", "correta": true, "explicacao": "A sulfa compete com o PABA, e o trimetoprim inibe a di-hidrofolato redutase. Cada um sozinho é bacteriostático; juntos, o bloqueio em sequência mata a bactéria." },
+        { "texto": "Inibem a síntese da parede celular", "correta": false, "explicacao": "Esse é o mecanismo dos betalactâmicos, como penicilinas e cefalosporinas." },
+        { "texto": "Ligam-se à subunidade 30S do ribossomo", "correta": false, "explicacao": "Esse é o mecanismo das tetraciclinas e dos aminoglicosídeos." },
+        { "texto": "Rompem a membrana da bactéria", "correta": false, "explicacao": "Esse é o mecanismo das polimixinas." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento em casa",
+      "critica": true,
+      "instrucao": "Prescreva o antibiótico que o Seu Moacir vai dar à Brisa (450 kg) em casa.",
+      "farmacos": [
+        { "id": "sulfa-tmp", "nome": "Sulfametoxazol + trimetoprim", "apresentacao": "Comprimido 800 mg + 160 mg (960 mg)", "unidade": "comprimido", "explicacao": "Associação bactericida, bem absorvida por via oral no cavalo e com baixo risco de colite: é o antibiótico oral mais usado na espécie." },
+        { "id": "clindamicina", "nome": "Clindamicina", "apresentacao": "Cápsula 300 mg", "unidade": "cápsula", "explicacao": "Lincosamida: no cavalo, desequilibra a flora do intestino grosso e pode causar colite fatal. Também é contraindicada para coelhos e roedores." },
+        { "id": "amoxicilina", "nome": "Amoxicilina", "apresentacao": "Comprimido 500 mg", "unidade": "comprimido", "explicacao": "O cavalo adulto absorve muito pouco da amoxicilina oral: ela não atinge nível no sangue, e o resto chega ao intestino grosso." },
+        { "id": "florfenicol", "nome": "Florfenicol", "apresentacao": "Solução injetável 300 mg/mL", "unidade": "mL", "explicacao": "Feito para bovinos e suínos. No cavalo, altera a flora intestinal e pode causar diarreia." }
+      ],
+      "correto": {
+        "farmaco": "sulfa-tmp",
+        "doseMgKg": 30,
+        "concentracao": 960,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 12 horas"
+      },
+      "vias": ["Oral", "Intramuscular", "Intravenosa", "Tópica"],
+      "frequencias": ["Dose única", "A cada 12 horas", "A cada 72 horas", "A cada 7 dias"],
+      "explicacao": "30 mg/kg × 450 kg = 13.500 mg; 13.500 mg ÷ 960 mg por comprimido ≈ 14 comprimidos, triturados no melaço, a cada 12 horas, por 7 a 10 dias. Junto: limpar e debridar a ferida, porque o pus e o tecido morto reduzem a ação da sulfa."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 5 dias",
+      "bom": "A febre passou em 2 dias, e o inchaço quase sumiu em 5. A ferida está granulando bem, e as fezes da Brisa continuaram normais.",
+      "falaBom": "Doutora, a perna desinchou e a Brisa já tá marchando no piquete!",
+      "ruim": "O tratamento não deu certo: a febre voltou, o inchaço subiu até a coxa, e a Brisa precisou ser internada para tratamento na veia.",
+      "falaRuim": "Doutora, a perna inchou até em cima e ela tá com febre de novo..."
+    }
+  ],
+  "resumo": [
+    "No cavalo, a fermentação no ceco e no cólon depende da flora: lincosamidas (clindamicina, lincomicina) podem causar colite grave e fatal.",
+    "Amoxicilina e ampicilina orais são mal absorvidas pelo cavalo adulto; o florfenicol também altera a flora e causa diarreia.",
+    "Sulfonamida + trimetoprim: a sulfa compete com o PABA, e o trimetoprim inibe a di-hidrofolato redutase; juntos, são bactericidas.",
+    "No cavalo, 30 mg/kg da associação por via oral, a cada 12 horas.",
+    "Pus e tecido necrosado reduzem a ação das sulfas: limpar e debridar a ferida. Em toda ferida, conferir a vacina contra o tétano."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}

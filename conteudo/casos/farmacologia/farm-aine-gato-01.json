@@ -1,0 +1,122 @@
+{
+  "id": "farm-aine-gato-01",
+  "materia": "farmacologia",
+  "tema": "AINEs",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Dengo",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "macho castrado",
+    "idade": "13 anos",
+    "pesoKg": 5,
+    "sprite": "gato-preto"
+  },
+  "tutor": { "nome": "Seu Osvaldo", "sprite": "tutor-2" },
+  "chegada": "Doutora, o Dengo não pula mais no sofá e começou a fazer xixi fora da caixa. Pensei em dar o remédio de dor do meu cachorro. Pode?",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "rotina", "rotulo": "O que mudou na rotina dele?", "resultado": "Não sobe mais na janela nem no sofá, e faz xixi do lado da caixa, que tem a borda alta.", "importante": true },
+        { "id": "remedio", "rotulo": "Que remédio você pensou em dar?", "resultado": "O carprofeno do meu cachorro. Também tenho ibuprofeno em casa.", "importante": true },
+        { "id": "exames", "rotulo": "Ele fez exames de sangue há pouco?", "resultado": "Fez check-up mês passado. A doutora disse que rins e fígado estavam normais.", "importante": true },
+        { "id": "agua", "rotulo": "Ele bebe muita água?", "resultado": "Bebe o normal, acho.", "importante": false },
+        { "id": "apetite", "rotulo": "Ele está comendo bem?", "resultado": "Come bem, só tá mais parado.", "importante": false },
+        { "id": "rua", "rotulo": "Ele sai de casa?", "resultado": "Não, é gato de apartamento.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "articulacoes", "ferramenta": "mao", "rotulo": "Palpação das articulações", "resultado": "Cotovelos e joelhos espessados, com dor e crepitação ao dobrar.", "importante": true },
+        { "id": "marcha", "ferramenta": "mao", "rotulo": "Marcha e postura", "resultado": "Anda com passos curtos e hesita muito antes de pular da mesa.", "importante": true },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Bem hidratado: a pele volta rápido.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,3 °C.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Doença articular degenerativa (osteoartrite)", "correta": true, "explicacao": "Gato idoso que deixou de pular e evita a caixa de borda alta, com articulações espessadas, dolorosas e com crepitação. No gato, a osteoartrite aparece mais como mudança de comportamento do que como manqueira." },
+        { "texto": "Doença renal crônica", "correta": false, "explicacao": "Causaria sede e urina aumentadas e perda de peso; os exames do mês passado foram normais." },
+        { "texto": "Cistite idiopática felina", "correta": false, "explicacao": "Faria o gato urinar fora da caixa com idas frequentes e sangue na urina, sem dor nas articulações." },
+        { "texto": "Hipertireoidismo", "correta": false, "explicacao": "Daria perda de peso com muito apetite, agitação e taquicardia, e não dor ao dobrar as articulações." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o gato precisa de doses menores ou intervalos maiores que o cão para muitos AINEs?",
+      "opcoes": [
+        { "texto": "O gato tem pouca capacidade de glicuronidação e elimina esses fármacos mais devagar", "correta": true, "explicacao": "Muitos AINEs são eliminados depois da conjugação com ácido glicurônico, que no gato é deficiente. A meia-vida fica mais longa, e doses de cão acumulam." },
+        { "texto": "O gato tem menos receptores de prostaglandina", "correta": false, "explicacao": "AINEs agem inibindo a enzima COX, e não receptores. A diferença está na eliminação do fármaco." },
+        { "texto": "O intestino do gato absorve menos o AINE", "correta": false, "explicacao": "A absorção oral é boa; o problema é a eliminação lenta." },
+        { "texto": "Os rins do gato eliminam o AINE mais rápido", "correta": false, "explicacao": "É o contrário: o gato elimina muitos AINEs mais devagar que o cão." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Que efeito adverso do AINE mais preocupa num gato idoso como o Dengo?",
+      "opcoes": [
+        { "texto": "Lesão renal, porque as prostaglandinas mantêm o fluxo de sangue no rim", "correta": true, "explicacao": "Quando o gato desidrata ou já tem doença renal, o rim depende das prostaglandinas para manter o fluxo de sangue. Sem elas, pode haver lesão renal aguda. Por isso: hidratação, creatinina e urina sob controle." },
+        { "texto": "Sangramento por falta de vitamina K", "correta": false, "explicacao": "Isso acontece com os raticidas anticoagulantes, e não com os AINEs." },
+        { "texto": "Lesão hepática idiossincrática", "correta": false, "explicacao": "É rara e foi descrita sobretudo em cães com carprofeno. No gato idoso, o risco principal é o renal." },
+        { "texto": "Convulsões", "correta": false, "explicacao": "Não é um efeito típico dos AINEs na dose certa." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Prescrição para casa",
+      "critica": true,
+      "instrucao": "Prescreva o anti-inflamatório do Dengo (5 kg): a dose de manutenção, do segundo dia em diante.",
+      "farmacos": [
+        { "id": "meloxicam", "nome": "Meloxicam", "apresentacao": "Suspensão oral para gatos 0,5 mg/mL", "unidade": "mL", "explicacao": "AINE preferencial da COX-2, aprovado para uso prolongado em gatos, na menor dose eficaz e com a função renal acompanhada." },
+        { "id": "carprofeno", "nome": "Carprofeno", "apresentacao": "Comprimido 25 mg (do cão)", "unidade": "comprimido", "explicacao": "No gato, a meia-vida do carprofeno é longa e muito variável (cerca de 20 horas, contra 8 no cão): doses repetidas acumulam." },
+        { "id": "ibuprofeno", "nome": "Ibuprofeno", "apresentacao": "Gotas 50 mg/mL", "unidade": "mL", "explicacao": "Margem de segurança estreita: em gatos, causa úlcera gastrointestinal e lesão renal mesmo em doses baixas." },
+        { "id": "paracetamol", "nome": "Paracetamol", "apresentacao": "Comprimido 500 mg", "unidade": "comprimido", "explicacao": "Proibido para gatos: sem glicuronidação suficiente, forma um metabólito que causa metemoglobinemia e lesão no fígado." }
+      ],
+      "correto": {
+        "farmaco": "meloxicam",
+        "doseMgKg": 0.05,
+        "concentracao": 0.5,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 24 horas"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Tópica"],
+      "frequencias": ["A cada 8 horas", "A cada 12 horas", "A cada 24 horas", "A cada 7 dias"],
+      "explicacao": "0,05 mg/kg × 5 kg = 0,25 mg; 0,25 mg ÷ 0,5 mg/mL = 0,5 mL por via oral, com comida, a cada 24 horas. No primeiro dia, a dose foi de 0,1 mg/kg. Suspender se ele parar de comer ou vomitar, e repetir creatinina e urinálise em 2 a 4 semanas."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 15 dias",
+      "bom": "Em duas semanas, o Dengo voltou a subir no sofá, e uma caixa de areia de borda baixa resolveu o xixi fora do lugar. A creatinina continuou normal.",
+      "falaBom": "Doutora, o Dengo voltou a dormir na janela! Parece que rejuvenesceu uns cinco anos.",
+      "ruim": "Com o anti-inflamatório errado ou na dose de cão, o Dengo vomitou, parou de comer e chegou com lesão renal aguda.",
+      "falaRuim": "Doutora, ele vomitou a noite toda, não come e quase não faz xixi..."
+    }
+  ],
+  "resumo": [
+    "AINEs inibem a COX e a produção de prostaglandinas: analgesia e ação anti-inflamatória, mas também menos proteção da mucosa gástrica e do fluxo de sangue nos rins.",
+    "O gato tem pouca glicuronidação: muitos AINEs têm meia-vida longa nele e acumulam com doses de cão.",
+    "Em gatos, use AINE aprovado para a espécie, como o meloxicam (0,1 mg/kg no 1º dia e 0,05 mg/kg/dia depois) ou o robenacoxibe, na menor dose eficaz.",
+    "Antes e durante o uso: hidratação, creatinina e urinálise. Evitar em desidratados, com doença renal ou junto com corticoide.",
+    "Paracetamol e ibuprofeno são tóxicos para gatos. A osteoartrite felina aparece como mudança de comportamento: deixar de pular e evitar a caixa de areia."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}
