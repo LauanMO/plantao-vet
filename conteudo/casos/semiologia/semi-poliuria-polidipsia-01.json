@@ -1,0 +1,102 @@
+{
+  "id": "semi-poliuria-polidipsia-01",
+  "materia": "semiologia",
+  "tema": "Anamnese",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Mia",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "fêmea castrada",
+    "idade": "12 anos",
+    "pesoKg": 3.6,
+    "sprite": "gato-cinza"
+  },
+  "tutor": { "nome": "Dona Célia", "sprite": "tutora-2" },
+  "chegada": "Doutora, a Mia vive fazendo xixi! Limpo a caixa de areia e logo tá cheia de novo. Acho que é infecção de urina.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 5,
+      "itens": [
+        { "id": "agua", "rotulo": "Ela tem bebido mais água?", "resultado": "Muito mais! Encho a vasilha duas vezes por dia, e agora ela bebe até na torneira da pia.", "importante": true },
+        { "id": "torroes", "rotulo": "Como são os torrões na areia?", "resultado": "Enormes! Antes eram bolinhas. Agora são torrões do tamanho da minha mão.", "importante": true },
+        { "id": "esforco", "rotulo": "Ela faz força ou chora para urinar?", "resultado": "Não. Entra, faz bastante xixi de uma vez e sai tranquila. Nunca vi sangue.", "importante": true },
+        { "id": "apetite", "rotulo": "Como estão o apetite e o peso?", "resultado": "Come mais do que nunca, mas tá emagrecendo. Dá pra sentir a coluna dela.", "importante": true },
+        { "id": "lugar", "rotulo": "Ela urina fora da caixa?", "resultado": "Não, sempre na caixa. Só preciso limpar muito mais vezes.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "A última foi há uns três anos. Ela não sai de casa.", "importante": false },
+        { "id": "racao", "rotulo": "O que ela come?", "resultado": "Ração seca à vontade e um sachê à noite.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Interpretação da anamnese",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Pela anamnese, como você descreve a queixa urinária da Mia?",
+      "opcoes": [
+        { "texto": "Poliúria e polidipsia: ela urina em grande volume e bebe muito mais água", "correta": true, "explicacao": "Torrões enormes mostram mais volume de urina, e a sede aumentou junto. Sem esforço, dor ou sangue, não parece doença do trato urinário inferior." },
+        { "texto": "Polaciúria: muitas micções de pouco volume, como na cistite", "correta": false, "explicacao": "Na polaciúria o gato vai muitas vezes à caixa e faz pouco xixi de cada vez, formando torrões pequenos. Os torrões da Mia são enormes." },
+        { "texto": "Disúria e estrangúria: dor e esforço para urinar", "correta": false, "explicacao": "Disúria e estrangúria aparecem como esforço, choro e idas à caixa sem resultado. A Mia urina fácil e sai tranquila." },
+        { "texto": "Periúria: ela urina fora da caixa por estresse", "correta": false, "explicacao": "Periúria é urinar fora do lugar certo, muitas vezes por estresse ou problema com a caixa. A Mia usa sempre a caixa." }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "ecc", "ferramenta": "mao", "rotulo": "Escore corporal e massa muscular", "resultado": "Magra: escore 3 de 9, com perda de músculo na coluna e nas coxas.", "importante": true },
+        { "id": "tireoide", "ferramenta": "mao", "rotulo": "Palpação da região da tireoide", "resultado": "Nenhum nódulo palpável no pescoço.", "importante": true },
+        { "id": "bexiga", "ferramenta": "mao", "rotulo": "Palpação da bexiga", "resultado": "Bexiga grande, macia e sem dor.", "importante": true },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Mucosas úmidas e prega cutânea normal.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosadas; TPC de 2 segundos.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração com 180 bpm, sem sopro; pulmões normais.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 200,
+      "itens": [
+        { "id": "glicemia", "rotulo": "Glicemia", "custo": 30, "resultado": "410 mg/dL (referência: 70 a 150 mg/dL).", "importante": true },
+        { "id": "urinalise", "rotulo": "Urinálise", "custo": 60, "resultado": "Densidade 1,025; glicose ++++; sem cetonas, sangue ou bactérias.", "importante": true },
+        { "id": "frutosamina", "rotulo": "Frutosamina", "custo": 80, "resultado": "620 µmol/L (referência: até 350 µmol/L).", "importante": true },
+        { "id": "t4", "rotulo": "T4 total", "custo": 90, "resultado": "2,4 µg/dL: normal.", "importante": false },
+        { "id": "renal", "rotulo": "Ureia e creatinina", "custo": 50, "resultado": "Normais.", "importante": false },
+        { "id": "urocultura", "rotulo": "Urocultura", "custo": 100, "resultado": "Sem crescimento de bactérias.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "A glicose da Mia deu 410 mg/dL. Por que pedir também a frutosamina?",
+      "opcoes": [
+        { "texto": "O estresse da consulta sobe muito a glicose do gato; a frutosamina mostra a média das últimas semanas", "correta": true, "explicacao": "No gato, a hiperglicemia de estresse pode passar de 300 mg/dL. A frutosamina reflete a glicose das últimas 1 a 3 semanas: alta, confirma o diabetes." },
+        { "texto": "Porque a frutosamina mede quanta insulina o pâncreas produz", "correta": false, "explicacao": "A frutosamina é proteína do sangue ligada à glicose; ela não mede insulina." },
+        { "texto": "Porque 410 mg/dL é uma glicemia normal para gatos", "correta": false, "explicacao": "Não é normal (referência de 70 a 150 mg/dL). O problema é que o estresse pode levar a glicose do gato a esse ponto mesmo sem diabetes." },
+        { "texto": "Porque a frutosamina descarta infecção urinária", "correta": false, "explicacao": "Quem investiga infecção é a urinálise com urocultura, que deu negativa. A frutosamina avalia a glicose." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 3 semanas",
+      "bom": "Com a queixa bem caracterizada como poliúria e polidipsia, a investigação chegou ao diabetes. Com insulina e dieta rica em proteína, a Mia passou a beber e urinar menos e ganhou peso.",
+      "falaBom": "Doutora, a caixa de areia voltou ao normal e a Mia engordou um pouquinho! Já aprendi a dar a insulina.",
+      "ruim": "Tratada como infecção urinária, a Mia tomou antibiótico sem melhora, e o diabetes seguiu sem controle até ela chegar com cetoacidose.",
+      "falaRuim": "Doutora, o antibiótico não adiantou. Ela continua no pote de água e agora parou de comer e vomitou..."
+    }
+  ],
+  "resumo": [
+    "A queixa 'faz muito xixi' pode ser poliúria (mais volume) ou polaciúria (mais vezes, pouco volume): a anamnese separa as duas.",
+    "Pistas de poliúria: torrões grandes, caixa que enche rápido e sede maior (polidipsia).",
+    "Pistas de doença do trato urinário inferior: esforço, dor, sangue na urina e idas à caixa sem resultado.",
+    "Poliúria com apetite aumentado e emagrecimento em gato idoso: pensar em diabetes mellitus e hipertireoidismo.",
+    "No gato, o estresse sobe a glicose: a frutosamina alta (ou glicose na urina de forma persistente) confirma o diabetes."
+  ],
+  "referencias": ["Feitosa, Semiologia Veterinária: A Arte do Diagnóstico"],
+  "revisado": false
+}
