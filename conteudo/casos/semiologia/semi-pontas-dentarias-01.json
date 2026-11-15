@@ -1,0 +1,89 @@
+{
+  "id": "semi-pontas-dentarias-01",
+  "materia": "semiologia",
+  "tema": "Anamnese",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Tufão",
+    "especie": "equino",
+    "raca": "Mangalarga Marchador",
+    "sexo": "macho castrado",
+    "idade": "18 anos",
+    "pesoKg": 380,
+    "sprite": "cavalo-tordilho"
+  },
+  "tutor": { "nome": "Seu Ademar", "sprite": "produtor-2" },
+  "chegada": "Doutora, o Tufão vem emagrecendo faz uns meses. Come a mesma ração dos outros cavalos, mas não engorda de jeito nenhum.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 5,
+      "itens": [
+        { "id": "mastiga", "rotulo": "Como ele come?", "resultado": "Bem devagar, de cabeça meio torta. E deixa cair bolos de capim mascado no cocho.", "importante": true },
+        { "id": "fezes", "rotulo": "Como estão as fezes?", "resultado": "Cheias de fiapos compridos de capim e de grãos de milho inteiros.", "importante": true },
+        { "id": "dentes", "rotulo": "Já cuidaram dos dentes dele?", "resultado": "Nunca. Nem sabia que cavalo precisava disso, doutora.", "importante": true },
+        { "id": "outros", "rotulo": "Os outros cavalos estão bem?", "resultado": "Estão gordos. Comem o mesmo capim e a mesma ração que ele.", "importante": true },
+        { "id": "verme", "rotulo": "Quando foi vermifugado?", "resultado": "Faz dois meses, junto com os outros.", "importante": false },
+        { "id": "agua", "rotulo": "Ele bebe água normal?", "resultado": "Bebe normal, no bebedouro do piquete.", "importante": false },
+        { "id": "trabalho", "rotulo": "Ele trabalha muito?", "resultado": "Pouco. Só uma cavalgada no fim de semana.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "boca", "ferramenta": "lanterna", "rotulo": "Boca com abre-boca e lanterna", "resultado": "Pontas afiadas na borda de fora dos molares de cima, com feridas na bochecha.", "importante": true },
+        { "id": "bochecha", "ferramenta": "mao", "rotulo": "Palpação das bochechas", "resultado": "Ele recua de dor ao apertar a bochecha sobre os molares de cima.", "importante": true },
+        { "id": "ecc", "ferramenta": "mao", "rotulo": "Escore corporal", "resultado": "Costelas e espinha bem visíveis: escore 3 de 9.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,8 °C.", "importante": false },
+        { "id": "abdome", "ferramenta": "estetoscopio", "rotulo": "Auscultação do abdome", "resultado": "Ruídos intestinais presentes nos quatro quadrantes.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosadas; TPC de 2 segundos.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Interpretação dos achados",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "O que a anamnese e o exame indicam como causa do emagrecimento do Tufão?",
+      "opcoes": [
+        { "texto": "Mastigação ruim por pontas dentárias, que machucam a bochecha", "correta": true, "explicacao": "Ele come de cabeça torta, derruba comida mascada, as fezes têm fibras longas e grãos inteiros e há pontas afiadas com feridas: o alimento não é triturado nem aproveitado." },
+        { "texto": "Verminose, que rouba os nutrientes", "correta": false, "explicacao": "Ele foi vermifugado há dois meses com os outros, que estão gordos. Verminose não explica derrubar comida nem as fibras longas nas fezes." },
+        { "texto": "Pouca comida: falta ração no cocho", "correta": false, "explicacao": "Os outros cavalos comem o mesmo e estão gordos. O problema do Tufão é aproveitar a comida, não a quantidade." },
+        { "texto": "Obstrução do esôfago (engasgo)", "correta": false, "explicacao": "No engasgo o quadro é agudo, com saliva e comida saindo pelas narinas. O Tufão emagrece há meses e a comida cai da boca." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que as pontas aparecem na borda de fora dos dentes de cima e na de dentro dos de baixo?",
+      "opcoes": [
+        { "texto": "A arcada de cima é mais larga que a de baixo, e essas bordas ficam sem desgaste", "correta": true, "explicacao": "É a anisognatia: a arcada superior é mais larga. Na mastigação, a borda de fora dos dentes de cima e a de dentro dos de baixo não se desgastam e viram pontas." },
+        { "texto": "Porque os dentes do cavalo param de crescer depois dos 5 anos", "correta": false, "explicacao": "Os dentes do cavalo continuam erupcionando por muitos anos e se desgastam na mastigação. O problema é o desgaste irregular." },
+        { "texto": "Por falta de cálcio na ração", "correta": false, "explicacao": "A falta de cálcio afeta os ossos, mas não forma pontas de esmalte nos dentes." },
+        { "texto": "Porque ele mastiga só de um lado", "correta": false, "explicacao": "Mastigar de um lado só piora o desgaste irregular, mas as pontas aparecem dos dois lados pela diferença de largura entre as arcadas." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 2 meses",
+      "bom": "Com as pontas desgastadas na odontoplastia, as feridas da bochecha cicatrizaram. O Tufão voltou a mastigar direito e ganhou peso em 2 meses.",
+      "falaBom": "Doutora, o Tufão já tá redondinho! Agora não sobra nem um fiapo no cocho.",
+      "ruim": "Tratado com mais ração e vermífugo, o Tufão continuou derrubando a comida, as feridas da bochecha pioraram e ele emagreceu mais.",
+      "falaRuim": "Doutora, dobrei a ração e ele continua magro. E agora tá com um cheiro ruim na boca..."
+    }
+  ],
+  "resumo": [
+    "Na anamnese de um cavalo magro, pergunte como ele come, como estão as fezes, se os outros animais estão bem e quando os dentes foram cuidados.",
+    "Sinais de problema dentário: comer devagar, de cabeça torta, derrubar bolos de comida mascada e fezes com fibras longas e grãos inteiros.",
+    "Os dentes do cavalo erupcionam por muitos anos; como a arcada de cima é mais larga, formam pontas na borda de fora dos de cima e na de dentro dos de baixo.",
+    "Exame da boca: abre-boca e lanterna, com sedação se preciso, e palpação das bochechas sobre os molares.",
+    "Prevenção: exame dentário anual, com odontoplastia quando necessário."
+  ],
+  "referencias": ["Feitosa, Semiologia Veterinária: A Arte do Diagnóstico"],
+  "revisado": false
+}

@@ -3,7 +3,7 @@ import { casos, type Materia } from './dados/casos'
 import { carregarProgresso, salvarProgresso } from './dados/progresso'
 import type { Caso } from './modelo/caso'
 import type { ResultadoCaso } from './motor/pontuacao'
-import { TURNO, proximoDoEstudo, proximoDoPlantao, registrar } from './motor/repeticao'
+import { TURNO, casosDoPlantao, proximoDoEstudo, proximoDoPlantao, registrar } from './motor/repeticao'
 import { tocar } from './som/som'
 import { Atendimento } from './telas/Atendimento'
 import { Biblioteca } from './telas/Biblioteca'
@@ -34,7 +34,8 @@ export default function App() {
     setTela({ nome: 'caso', caso, modo, vez: vez.current })
   }
   const proximoPaciente = (anteriores: Paciente[]) => {
-    const { caso, revisao } = proximoDoPlantao(progresso, casos, anteriores.map((p) => p.revisao))
+    const doPlantao = casosDoPlantao(casos, progresso.materiasDoPlantao)
+    const { caso, revisao } = proximoDoPlantao(progresso, doPlantao, anteriores.map((p) => p.revisao))
     setTurno([...anteriores, { caso, revisao }])
     atender(caso, { tipo: 'plantao' })
   }
@@ -62,10 +63,19 @@ export default function App() {
     case 'progresso':
       return <TelaDeProgresso progresso={progresso} trocar={setProgresso} voltar={ir('fachada')} />
     case 'configuracoes':
-      return <Configuracoes nome={progresso.nome ?? ''} mudarNome={(nome) => setProgresso((p) => ({ ...p, nome }))} voltar={ir('fachada')} />
+      return (
+        <Configuracoes
+          nome={progresso.nome ?? ''}
+          mudarNome={(nome) => setProgresso((p) => ({ ...p, nome }))}
+          materiasDoPlantao={progresso.materiasDoPlantao}
+          mudarMateriasDoPlantao={(materiasDoPlantao) => setProgresso((p) => ({ ...p, materiasDoPlantao }))}
+          voltar={ir('fachada')}
+        />
+      )
   }
 
   const { caso, modo } = tela
+  const revisao = caso.revisado ? '' : ' · em revisão'
   // tudo o que ela joga, em qualquer modo, atualiza o progresso e a revisão
   const concluir = (r: ResultadoCaso) => {
     setProgresso((p) => registrar(p, caso, r))
@@ -76,7 +86,7 @@ export default function App() {
   switch (modo.tipo) {
     case 'plantao': {
       const n = turno.length
-      contexto = `Paciente ${n} de ${TURNO}${turno.at(-1)?.revisao ? ' · revisão' : ''}`
+      contexto = `Paciente ${n} de ${TURNO}${turno.at(-1)?.revisao ? ' · revisão' : ''}${revisao}`
       proximo =
         n < TURNO
           ? { texto: `Próximo paciente (${n + 1} de ${TURNO})`, ir: () => proximoPaciente(turno) }
@@ -84,11 +94,11 @@ export default function App() {
       break
     }
     case 'estudo':
-      contexto = `Estudo · ${modo.materia.nome}`
+      contexto = `Estudo · ${modo.materia.nome}${revisao}`
       proximo = { texto: 'Próximo caso', ir: () => estudar(modo.materia) }
       break
     case 'biblioteca':
-      contexto = 'Biblioteca'
+      contexto = `Biblioteca${revisao}`
       proximo = { texto: 'Voltar ao arquivo', ir: ir('biblioteca') }
   }
 

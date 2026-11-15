@@ -11,7 +11,67 @@
       "parado"
     ]
   },
+  "tutora-2": {
+    "largura": 24,
+    "altura": 65,
+    "pe": {
+      "x": 12,
+      "y": 63
+    },
+    "quadros": 2,
+    "estados": [
+      "parado"
+    ]
+  },
+  "tutora-3": {
+    "largura": 24,
+    "altura": 65,
+    "pe": {
+      "x": 12,
+      "y": 63
+    },
+    "quadros": 2,
+    "estados": [
+      "parado"
+    ]
+  },
+  "tutor-1": {
+    "largura": 24,
+    "altura": 65,
+    "pe": {
+      "x": 12,
+      "y": 63
+    },
+    "quadros": 2,
+    "estados": [
+      "parado"
+    ]
+  },
+  "tutor-2": {
+    "largura": 24,
+    "altura": 65,
+    "pe": {
+      "x": 12,
+      "y": 63
+    },
+    "quadros": 2,
+    "estados": [
+      "parado"
+    ]
+  },
   "produtor-1": {
+    "largura": 24,
+    "altura": 65,
+    "pe": {
+      "x": 12,
+      "y": 63
+    },
+    "quadros": 2,
+    "estados": [
+      "parado"
+    ]
+  },
+  "produtor-2": {
     "largura": 24,
     "altura": 65,
     "pe": {
@@ -48,6 +108,58 @@
       "feliz"
     ]
   },
+  "cao-pequeno-preto": {
+    "largura": 38,
+    "altura": 27,
+    "pe": {
+      "x": 16,
+      "y": 24
+    },
+    "quadros": 2,
+    "estados": [
+      "doente",
+      "feliz"
+    ]
+  },
+  "cao-pequeno-branco": {
+    "largura": 38,
+    "altura": 27,
+    "pe": {
+      "x": 16,
+      "y": 24
+    },
+    "quadros": 2,
+    "estados": [
+      "doente",
+      "feliz"
+    ]
+  },
+  "gato-cinza": {
+    "largura": 36,
+    "altura": 27,
+    "pe": {
+      "x": 15,
+      "y": 24
+    },
+    "quadros": 2,
+    "estados": [
+      "doente",
+      "feliz"
+    ]
+  },
+  "gato-preto": {
+    "largura": 36,
+    "altura": 27,
+    "pe": {
+      "x": 15,
+      "y": 24
+    },
+    "quadros": 2,
+    "estados": [
+      "doente",
+      "feliz"
+    ]
+  },
   "vaca-holandesa": {
     "largura": 114,
     "altura": 68,
@@ -58,6 +170,46 @@
     "quadros": 2,
     "estados": [
       "deitado",
+      "doente",
+      "feliz"
+    ]
+  },
+  "bezerro-holandes": {
+    "largura": 60,
+    "altura": 45,
+    "pe": {
+      "x": 26,
+      "y": 42
+    },
+    "quadros": 2,
+    "estados": [
+      "doente",
+      "feliz"
+    ]
+  },
+  "cavalo-alazao": {
+    "largura": 104,
+    "altura": 85,
+    "pe": {
+      "x": 50,
+      "y": 82
+    },
+    "quadros": 2,
+    "estados": [
+      "doente",
+      "feliz"
+    ]
+  },
+  "cavalo-tordilho": {
+    "largura": 104,
+    "altura": 85,
+    "pe": {
+      "x": 50,
+      "y": 82
+    },
+    "quadros": 2,
+    "estados": [
+      "doente",
       "feliz"
     ]
   }

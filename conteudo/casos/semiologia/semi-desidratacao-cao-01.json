@@ -1,0 +1,97 @@
+{
+  "id": "semi-desidratacao-cao-01",
+  "materia": "semiologia",
+  "tema": "Hidratação",
+  "dificuldade": 1,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Max",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "5 anos",
+    "pesoKg": 15,
+    "sprite": "cao-pequeno-branco"
+  },
+  "tutor": { "nome": "Dona Sônia", "sprite": "tutora-3" },
+  "chegada": "Doutora, o Max tá vomitando e com diarreia desde anteontem. Não para nada no estômago, nem água!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "perdas", "rotulo": "Quantas vezes vomitou e evacuou?", "resultado": "Vomitou umas oito vezes desde anteontem, e a diarreia é bem aguada, várias vezes por dia.", "importante": true },
+        { "id": "agua", "rotulo": "Ele está bebendo água?", "resultado": "Bebe, mas vomita logo depois. Hoje nem quis mais.", "importante": true },
+        { "id": "urina", "rotulo": "Como está o xixi?", "resultado": "Quase não fez hoje, e o pouco que fez era bem escuro.", "importante": true },
+        { "id": "lixo", "rotulo": "Ele comeu algo diferente?", "resultado": "Mexeu no lixo do churrasco no domingo.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, tomou a anual em janeiro.", "importante": false },
+        { "id": "vermifugo", "rotulo": "Quando foi vermifugado?", "resultado": "Faz três meses.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 5,
+      "itens": [
+        { "id": "prega", "ferramenta": "gota", "rotulo": "Prega cutânea", "resultado": "A pele do dorso leva uns 3 segundos para voltar.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas secas e pegajosas; TPC de 2,5 segundos.", "importante": true },
+        { "id": "olhos", "ferramenta": "lanterna", "rotulo": "Posição dos olhos", "resultado": "Olhos levemente afundados nas órbitas.", "importante": true },
+        { "id": "pulso", "ferramenta": "mao", "rotulo": "Pulso e extremidades", "resultado": "Pulso femoral forte, 130 bpm; patas e orelhas quentes.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,8 °C.", "importante": false },
+        { "id": "abdome", "ferramenta": "mao", "rotulo": "Palpação abdominal", "resultado": "Desconforto leve e alças com gás e líquido; sem massas.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Grau de desidratação",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Pelos achados do exame físico, qual é o grau de desidratação do Max?",
+      "opcoes": [
+        { "texto": "6 a 8%: moderada", "correta": true, "explicacao": "Prega que demora a voltar, mucosas secas, TPC um pouco prolongado e olhos levemente afundados, mas com pulso forte e extremidades quentes: moderada, sem choque." },
+        { "texto": "Menos de 5%: não detectável no exame", "correta": false, "explicacao": "Abaixo de 5%, o exame físico é normal e só a história sugere a perda. O Max já tem vários sinais." },
+        { "texto": "5 a 6%: leve", "correta": false, "explicacao": "Na leve há só uma discreta perda da elasticidade da pele. Mucosas secas, TPC prolongado e olhos afundados indicam mais que isso." },
+        { "texto": "10 a 12%: grave, com choque", "correta": false, "explicacao": "Na grave a prega não volta, os olhos ficam bem fundos e podem surgir sinais de choque, como pulso fraco e extremidades frias. A prega do Max ainda volta e o pulso está forte." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Déficit de líquido",
+      "pergunta": "O Max pesa 15 kg e você estimou 8% de desidratação. Quantos mL de líquido ele perdeu?",
+      "unidade": "mL",
+      "resposta": 1200,
+      "tolerancia": 0.05,
+      "explicacao": "Déficit = peso (kg) × fração de desidratação × 1.000 = 15 × 0,08 × 1.000 = 1.200 mL, a repor além da manutenção e das perdas que continuam."
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Em qual paciente a prova da prega cutânea engana, fazendo parecer mais desidratado do que está?",
+      "opcoes": [
+        { "texto": "Num cão idoso e muito magro", "correta": true, "explicacao": "Com a idade e a magreza, a pele perde elasticidade e a gordura atrás dos olhos diminui: a prega demora e os olhos afundam mesmo sem desidratação. Nesses casos valem mais mucosas, histórico, hematócrito e proteína total." },
+        { "texto": "Num cão obeso", "correta": false, "explicacao": "No obeso é o contrário: a gordura sob a pele faz a prega voltar mais rápido e pode esconder a desidratação." },
+        { "texto": "Num cão de pelo curto", "correta": false, "explicacao": "O tipo de pelo não muda a elasticidade da pele. Basta fazer a prova sempre no mesmo lugar, como o dorso." },
+        { "texto": "Num cão de porte grande", "correta": false, "explicacao": "O porte não muda a prova. O que engana é a idade, a magreza e a obesidade." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 2 dias",
+      "bom": "Com o soro calculado para repor os 8%, mais a manutenção, o Max parou de vomitar no dia seguinte e voltou a urinar normalmente. Teve alta em 2 dias.",
+      "falaBom": "Doutora, o Max voltou a comer e já tá pedindo passeio! E agora o lixo fica trancado.",
+      "ruim": "Com o grau de desidratação mal avaliado, o soro não repôs o que faltava: o Max continuou desidratado, urinando pouco e com a ureia subindo.",
+      "falaRuim": "Doutora, ele continua prostrado e quase não faz xixi..."
+    }
+  ],
+  "resumo": [
+    "Avalie a hidratação pelo conjunto: prega cutânea, mucosas, TPC, posição dos olhos, pulso e temperatura das extremidades.",
+    "Menos de 5%: exame normal. 5 a 6%: discreta perda de elasticidade da pele. 6 a 8%: prega lenta, mucosas secas, TPC um pouco prolongado e olhos levemente afundados.",
+    "10 a 12%: prega que não volta, olhos fundos e possíveis sinais de choque, como pulso fraco e extremidades frias.",
+    "Déficit (mL) = peso (kg) × fração de desidratação × 1.000 (ex.: 15 × 0,08 × 1.000 = 1.200 mL).",
+    "Idosos e magros parecem mais desidratados na prega; obesos, menos. Hematócrito e proteína total ajudam a confirmar."
+  ],
+  "referencias": ["Feitosa, Semiologia Veterinária: A Arte do Diagnóstico"],
+  "revisado": false
+}

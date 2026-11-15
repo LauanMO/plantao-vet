@@ -1,0 +1,97 @@
+{
+  "id": "semi-colica-equina-01",
+  "materia": "semiologia",
+  "tema": "Parâmetros vitais",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Rajada",
+    "especie": "equino",
+    "raca": "Quarto de Milha",
+    "sexo": "fêmea",
+    "idade": "8 anos",
+    "pesoKg": 450,
+    "sprite": "cavalo-alazao"
+  },
+  "tutor": { "nome": "Seu Valdir", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Rajada amanheceu cavando o chão, deitando e rolando. Olha pra barriga o tempo todo e não comeu nada.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Quando começou?", "resultado": "De madrugada. Às 5 horas ela já tava rolando, e não melhorou mais.", "importante": true },
+        { "id": "remedio", "rotulo": "Deram algum remédio?", "resultado": "Dei dipirona às 7 horas. Ela acalmou meia hora e voltou a rolar.", "importante": true },
+        { "id": "dor", "rotulo": "Como ela mostra a dor?", "resultado": "Cava, deita, rola e se joga no chão. Não fica quieta nem um minuto.", "importante": true },
+        { "id": "comida", "rotulo": "Mudou algo na alimentação?", "resultado": "Nada. O mesmo feno e a mesma ração de sempre.", "importante": false },
+        { "id": "fezes", "rotulo": "Ela fez fezes hoje?", "resultado": "Fez um pouco de madrugada, com cara normal. Depois, mais nada.", "importante": false },
+        { "id": "verme", "rotulo": "Quando foi vermifugada?", "resultado": "Faz três meses.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "pulso", "ferramenta": "mao", "rotulo": "Pulso na artéria facial", "resultado": "Pulso fraco e rápido: 36 batimentos em 30 segundos.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Vermelho-escuras, com halo arroxeado junto aos dentes; TPC de 3 segundos.", "importante": true },
+        { "id": "abdome", "ferramenta": "estetoscopio", "rotulo": "Auscultação do abdome", "resultado": "Silêncio nos quatro quadrantes: nenhum ruído intestinal.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,0 °C (referência: 37,5 a 38,5 °C).", "importante": false },
+        { "id": "fr", "ferramenta": "estetoscopio", "rotulo": "Frequência respiratória", "resultado": "28 movimentos por minuto (referência: 8 a 16).", "importante": false },
+        { "id": "suor", "ferramenta": "mao", "rotulo": "Pele e sudorese", "resultado": "Suor no pescoço e nos flancos; orelhas frias.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Frequência cardíaca",
+      "pergunta": "Na artéria facial, você contou 36 batimentos em 30 segundos. Qual é a frequência cardíaca da Rajada, em batimentos por minuto?",
+      "unidade": "bpm",
+      "resposta": 72,
+      "tolerancia": 0.05,
+      "explicacao": "36 × 2 = 72 bpm. A referência do cavalo adulto é de 28 a 40 bpm. Na cólica, frequência acima de 60 bpm indica dor intensa ou comprometimento da circulação."
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Interpretação dos parâmetros",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "O que os parâmetros vitais e o exame da Rajada indicam?",
+      "opcoes": [
+        { "texto": "Cólica grave, com a circulação comprometida: estabilizar e encaminhar para cirurgia", "correta": true, "explicacao": "FC de 72 bpm, TPC de 3 segundos, mucosas congestas com halo, intestino silencioso e dor que volta logo depois do analgésico: sinais de cólica grave, em geral cirúrgica." },
+        { "texto": "Cólica leve por gases: basta caminhar com ela", "correta": false, "explicacao": "Na cólica leve a dor cede com o analgésico, a FC sobe pouco, as mucosas ficam rosadas e o intestino tem ruídos." },
+        { "texto": "Parâmetros normais para um cavalo com dor", "correta": false, "explicacao": "A dor sobe um pouco a FC, mas 72 bpm é quase o dobro do limite de 40 bpm, e o TPC de 3 segundos com mucosas congestas mostra má circulação." },
+        { "texto": "Febre por infecção: tratar com antibiótico", "correta": false, "explicacao": "A temperatura está normal (38,0 °C). O problema é dor e circulação, não infecção." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Qual é o local de escolha para aferir o pulso no cavalo?",
+      "opcoes": [
+        { "texto": "Na artéria facial, na borda de baixo da mandíbula", "correta": true, "explicacao": "A artéria facial cruza a borda ventral da mandíbula e é fácil de palpar, longe dos cascos. A transversa da face, atrás do canto externo do olho, também serve." },
+        { "texto": "Na artéria femoral, na face de dentro da coxa", "correta": false, "explicacao": "É o local de escolha no cão e no gato. No cavalo, a femoral é difícil de alcançar e expõe quem examina aos coices." },
+        { "texto": "Na artéria coccígea, embaixo da cauda", "correta": false, "explicacao": "É o local mais usado em bovinos. No cavalo, ficar atrás do animal aumenta o risco de coice." },
+        { "texto": "Na veia jugular, no pescoço", "correta": false, "explicacao": "A jugular é veia: serve para coleta de sangue e para ver se está ingurgitada, não para contar o pulso arterial." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Notícias em 10 dias",
+      "bom": "Encaminhada a tempo, a Rajada foi operada: um trecho do intestino delgado estava torcido e foi corrigido. Voltou para casa em 10 dias.",
+      "falaBom": "Doutora, a Rajada voltou pra casa! Tá de repouso, mas comendo bem e com o olho vivo.",
+      "ruim": "Tratada como cólica leve, com caminhada e analgésico, a Rajada piorou: o intestino torcido necrosou e ela entrou em choque.",
+      "falaRuim": "Doutora, ela tá suando frio, tremendo e não levanta mais..."
+    }
+  ],
+  "resumo": [
+    "Referências do cavalo adulto: temperatura de 37,5 a 38,5 °C, FC de 28 a 40 bpm, FR de 8 a 16 movimentos por minuto e TPC de até 2 segundos.",
+    "O pulso é contado na artéria facial, na borda ventral da mandíbula: conte 30 segundos e multiplique por 2.",
+    "Na cólica, a FC é um dos melhores indicadores de gravidade: acima de 60 bpm, pensar em dor intensa ou choque.",
+    "Sinais de cólica grave: dor que não cede com analgésico, mucosas congestas com halo, TPC prolongado e intestino silencioso.",
+    "Cólica grave precisa de estabilização e encaminhamento rápido para um hospital com cirurgia."
+  ],
+  "referencias": ["Feitosa, Semiologia Veterinária: A Arte do Diagnóstico"],
+  "revisado": false
+}

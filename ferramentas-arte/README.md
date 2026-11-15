@@ -20,11 +20,15 @@ O script lê as cores de `conteudo/arte/paleta.json`, salva os PNGs em `public/a
 | `consultorio.png`, `consultorio-porta-aberta.png` | Consultório em primeira pessoa, com a porta fechada e aberta | 320×180 |
 | `fachada.png` | Fachada da clínica à noite (tela de título) | 320×180 |
 | `curral.png` | Curral à noite, com galpão e tronco de contenção | 320×180 |
-| `tutora-1-parado.png` | Tutora em pé | 2 quadros de 24×65 |
-| `produtor-1-parado.png` | Produtor de chapéu de palha | 2 quadros de 24×65 |
+| `tutora-1-parado.png` a `tutora-3-parado.png` | Tutoras em pé; a 2 e a 3 são troca de pele, cabelo e blusa da 1 | 2 quadros de 24×65 |
+| `tutor-1-parado.png`, `tutor-2-parado.png` | Tutores de cabelo curto e camiseta | 2 quadros de 24×65 |
+| `produtor-1-parado.png`, `produtor-2-parado.png` | Produtores de chapéu de palha; o 2 é troca de cores do 1 | 2 quadros de 24×65 |
 | `preceptora-parado.png` | Preceptora de jaleco | 2 quadros de 24×65 |
-| `cao-pequeno-caramelo-doente.png`, `-feliz.png` | Filhote caramelo abatido e recuperado | 2 quadros de 38×27 |
-| `vaca-holandesa-deitado.png`, `-feliz.png` | Vaca deitada de peito, com a cabeça no flanco, e em pé, recuperada | 2 quadros de 114×68 |
+| `cao-pequeno-caramelo-doente.png`, `-feliz.png` | Cão pequeno caramelo abatido e recuperado; `cao-pequeno-preto` e `cao-pequeno-branco` são troca de pelagem | 2 quadros de 38×27 |
+| `gato-cinza-doente.png`, `-feliz.png` | Gato tigrado de rabo baixo e de rabo erguido; `gato-preto` é troca de pelagem | 2 quadros de 36×27 |
+| `vaca-holandesa-deitado.png`, `-doente.png`, `-feliz.png` | Vaca deitada de peito, com a cabeça no flanco; em pé de cabeça baixa; e em pé, recuperada | 2 quadros de 114×68 |
+| `bezerro-holandes-doente.png`, `-feliz.png` | Bezerro de cabeça baixa e de cabeça erguida | 2 quadros de 60×45 |
+| `cavalo-alazao-doente.png`, `-feliz.png` | Cavalo alazão de cabeça baixa e de cabeça erguida; `cavalo-tordilho` é troca de pelagem, com pintas | 2 quadros de 104×85 |
 | `coracao.png` | Coração da tela de retorno | 9×8 |
 | `icone-*.png` | Ferramentas: termômetro, estetoscópio, lanterna, mão, gota | 18×18 |
 | `app-192.png`, `app-512.png` | Ícone do app instalado: a cruz da fachada, desenhada em 32×32 e já ampliada | 192×192 e 512×512 |

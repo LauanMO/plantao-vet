@@ -1,0 +1,122 @@
+{
+  "id": "tera-paracetamol-gato-01",
+  "materia": "terapeutica",
+  "tema": "Emergência",
+  "dificuldade": 3,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Ébano",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "2 anos",
+    "pesoKg": 4,
+    "sprite": "gato-preto"
+  },
+  "tutor": { "nome": "Carla", "sprite": "tutora-2" },
+  "chegada": "Doutora, o Ébano tá com a cara inchada e respirando com a boca aberta! A gengiva dele tá de uma cor estranha, meio marrom.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "remedio", "rotulo": "Ele tomou algum remédio em casa?", "resultado": "Dei meio comprimido do meu paracetamol de 750 mg, porque ele tava mancando.", "importante": true },
+        { "id": "quando", "rotulo": "Quando foi isso?", "resultado": "Ontem à noite, umas 12 horas atrás.", "importante": true },
+        { "id": "urina", "rotulo": "Como está o xixi dele?", "resultado": "Hoje cedo saiu escuro, cor de café.", "importante": true },
+        { "id": "antipulgas", "rotulo": "Usou algum antipulgas recentemente?", "resultado": "Não, o último foi há uns 3 meses.", "importante": false },
+        { "id": "rua", "rotulo": "Ele sai de casa?", "resultado": "Não, vive no apartamento.", "importante": false },
+        { "id": "comida", "rotulo": "Ele está comendo?", "resultado": "Não comeu nada hoje.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas", "resultado": "Gengivas e língua de cor marrom-acinzentada.", "importante": true },
+        { "id": "sangue", "ferramenta": "gota", "rotulo": "Gota de sangue em papel branco", "resultado": "O sangue fica marrom, cor de chocolate, e não avermelha no ar.", "importante": true },
+        { "id": "edema", "ferramenta": "mao", "rotulo": "Palpação da face e das patas", "resultado": "Inchaço mole na face e nas quatro patas, sem dor.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração a 220 bpm; respiração rápida, sem ruídos no pulmão.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,6 °C.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Intoxicação por paracetamol", "correta": true, "explicacao": "Gato que recebeu paracetamol, com mucosas e sangue cor de chocolate (metemoglobinemia), inchaço de face e patas e urina escura. O gato quase não consegue eliminar o paracetamol com segurança." },
+        { "texto": "Asma felina", "correta": false, "explicacao": "Dá falta de ar com chiado, mas não muda a cor do sangue nem incha a face e as patas." },
+        { "texto": "Cardiomiopatia com edema pulmonar", "correta": false, "explicacao": "Causa falta de ar com ruídos no pulmão e mucosas arroxeadas, não sangue marrom nem inchaço na face." },
+        { "texto": "Intoxicação por permetrina", "correta": false, "explicacao": "Vem de antipulgas de cão aplicado no gato e causa tremores e convulsões, não sangue marrom." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "O antídoto do Ébano é injetável e vai na veia. Como aplicar?",
+      "opcoes": [
+        { "texto": "Diluído em soro e aplicado devagar, em cerca de 15 a 20 minutos", "correta": true, "explicacao": "Aplicado puro e rápido, o antídoto pode causar vômito e reações parecidas com alergia num gato que já respira mal." },
+        { "texto": "Puro e rápido, para agir logo", "correta": false, "explicacao": "A pressa não ajuda: a aplicação rápida aumenta o risco de vômito e de reação." },
+        { "texto": "Pela boca, mesmo com ele respirando de boca aberta", "correta": false, "explicacao": "O antídoto pela boca funciona num gato estável, mas um gato com falta de ar pode aspirar o líquido e piorar." },
+        { "texto": "No músculo, dividido em dois pontos", "correta": false, "explicacao": "Não é via deste antídoto: dói, irrita e é absorvido de forma imprevisível." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Dose de ataque",
+      "critica": true,
+      "pergunta": "A dose de ataque do antídoto é 140 mg/kg. O Ébano pesa 4 kg, e a ampola tem 100 mg/mL. Quantos mL?",
+      "unidade": "mL",
+      "resposta": 5.6,
+      "tolerancia": 0.05,
+      "explicacao": "140 mg/kg × 4 kg = 560 mg; 560 mg ÷ 100 mg/mL = 5,6 mL, diluídos e aplicados devagar na veia."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Prescrição na internação",
+      "critica": true,
+      "instrucao": "Prescreva as doses de manutenção do antídoto, que seguem a dose de ataque (Ébano, 4 kg).",
+      "farmacos": [
+        { "id": "acetilcisteina", "nome": "Acetilcisteína", "apresentacao": "Solução injetável 100 mg/mL", "unidade": "mL", "explicacao": "Antídoto: repõe a glutationa, que neutraliza o metabólito tóxico do paracetamol." },
+        { "id": "dipirona", "nome": "Dipirona", "apresentacao": "Solução injetável 500 mg/mL", "unidade": "mL", "explicacao": "Analgésico e antitérmico: não é antídoto e não protege as hemácias nem o fígado." },
+        { "id": "dexametasona", "nome": "Dexametasona", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Corticoide: não neutraliza o metabólito do paracetamol nem reverte a metemoglobina." },
+        { "id": "furosemida", "nome": "Furosemida", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "O inchaço vem da lesão dos vasos, não de excesso de líquido: o diurético não trata e ainda desidrata." }
+      ],
+      "correto": {
+        "farmaco": "acetilcisteina",
+        "doseMgKg": 70,
+        "concentracao": 100,
+        "tolerancia": 0.1,
+        "via": "Intravenosa, diluída e lenta",
+        "frequencia": "A cada 6 horas"
+      },
+      "vias": ["Intravenosa, diluída e lenta", "Intramuscular", "Subcutânea", "Inalatória"],
+      "frequencias": ["Dose única", "A cada 6 horas", "A cada 24 horas", "A cada 72 horas"],
+      "explicacao": "A manutenção é metade do ataque: 70 mg/kg × 4 kg = 280 mg; 280 mg ÷ 100 mg/mL = 2,8 mL, diluídos, na veia, a cada 6 horas, por 7 doses. Junto: oxigênio, fluidoterapia e o mínimo de manuseio."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Alta em 3 dias",
+      "bom": "Com a acetilcisteína, o oxigênio e o soro, a cor das mucosas voltou ao normal em 2 dias e o inchaço sumiu. O Ébano teve alta comendo bem.",
+      "falaBom": "Doutora, a gengiva dele tá rosinha de novo! Nunca mais dou remédio meu pra ele.",
+      "ruim": "Sem o antídoto na dose e no ritmo certos, a metemoglobina continuou alta e o fígado foi lesado. O Ébano precisou de transfusão e ficou em estado grave.",
+      "falaRuim": "Doutora, a gengiva dele continua marrom e agora tá ficando amarelada..."
+    }
+  ],
+  "resumo": [
+    "Paracetamol é tóxico para gatos mesmo em dose pequena: o gato quase não faz a glicuronidação, e sobra um metabólito que lesa as hemácias e o fígado.",
+    "Sinais: mucosas e sangue cor de chocolate (metemoglobinemia), inchaço de face e patas, falta de ar e urina escura.",
+    "Antídoto: acetilcisteína, 140 mg/kg de ataque e depois 70 mg/kg a cada 6 horas por 7 doses, diluída e lenta na veia, ou pela boca se o gato estiver estável.",
+    "Suporte: oxigênio, fluidoterapia e mínimo de manuseio; vitamina C e SAMe podem ajudar.",
+    "Orientar o tutor: nunca dar remédio humano ao gato sem receita."
+  ],
+  "referencias": [
+    "Andrade, Manual de Terapêutica Veterinária",
+    "Viana, Fundamentos de Terapêutica Veterinária"
+  ],
+  "revisado": false
+}

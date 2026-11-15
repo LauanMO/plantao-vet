@@ -1,0 +1,101 @@
+{
+  "id": "semi-liquido-ruminal-01",
+  "materia": "semiologia",
+  "tema": "Exames complementares",
+  "dificuldade": 3,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Flor",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "4 anos",
+    "pesoKg": 550,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Nelson", "sprite": "produtor-2" },
+  "chegada": "Doutora, a Flor amanheceu sem comer, meio bamba e com uma diarreia mole e azeda. Ontem à tarde tava ótima.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "comida", "rotulo": "Ela comeu algo diferente?", "resultado": "Ih, doutora... à noite ela arrombou o depósito e comeu milho moído à vontade.", "importante": true },
+        { "id": "quanto", "rotulo": "Quanto de milho sumiu?", "resultado": "Pelo que sobrou no saco, uns 15 quilos.", "importante": true },
+        { "id": "dieta", "rotulo": "Ela está acostumada a comer grão?", "resultado": "Não. A dieta é pasto e silagem; milho, só um punhado na hora da ordenha.", "importante": true },
+        { "id": "agua", "rotulo": "Ela tem bebido água?", "resultado": "Bebeu bastante hoje cedo.", "importante": false },
+        { "id": "parto", "rotulo": "Quando ela pariu?", "resultado": "Faz dois meses. Tava dando 22 litros.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, sim.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "rumen", "ferramenta": "estetoscopio", "rotulo": "Auscultação do rúmen", "resultado": "Rúmen parado: nenhum movimento em 2 minutos (normal: 2 a 3).", "importante": true },
+        { "id": "balotamento", "ferramenta": "mao", "rotulo": "Balotamento do flanco esquerdo", "resultado": "Rúmen cheio de líquido: faz barulho de chapinhar ao balançar.", "importante": true },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Olhos afundados e prega lenta: cerca de 8% de desidratação.", "importante": true },
+        { "id": "fc", "ferramenta": "estetoscopio", "rotulo": "Frequência cardíaca", "resultado": "100 bpm (referência: 60 a 80 bpm).", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,3 °C.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosadas, um pouco secas; TPC de 2 segundos.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 100,
+      "itens": [
+        { "id": "ph", "rotulo": "pH do líquido ruminal", "custo": 20, "resultado": "4,8 (normal: 5,5 a 7,0, conforme a dieta).", "importante": true },
+        { "id": "protozoarios", "rotulo": "Protozoários ao microscópio", "custo": 30, "resultado": "Quase nenhum, e os poucos estão parados.", "importante": true },
+        { "id": "aspecto", "rotulo": "Cor, odor e consistência", "custo": 10, "resultado": "Leitoso-acinzentado, aquoso e com cheiro azedo.", "importante": true },
+        { "id": "azul", "rotulo": "Prova do azul de metileno", "custo": 25, "resultado": "Demora mais de 10 minutos para descorar: flora pouco ativa.", "importante": false },
+        { "id": "cloretos", "rotulo": "Cloretos no líquido ruminal", "custo": 40, "resultado": "22 mmol/L: normal (abaixo de 30).", "importante": false },
+        { "id": "hematocrito", "rotulo": "Hematócrito e proteína total", "custo": 40, "resultado": "Hematócrito de 50% e proteína de 8,6 g/dL: sangue concentrado.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Interpretação do exame",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "O que o exame do líquido ruminal da Flor indica?",
+      "opcoes": [
+        { "texto": "Acidose ruminal aguda (láctica) por excesso de grão", "correta": true, "explicacao": "pH 4,8, líquido leitoso-acinzentado e azedo e protozoários quase ausentes: o excesso de amido virou ácido láctico e destruiu a flora do rúmen." },
+        { "texto": "Alcalose ruminal por excesso de ureia ou proteína", "correta": false, "explicacao": "Daria pH acima de 7 e cheiro de amônia, muitas vezes com tremores. O pH da Flor está muito baixo." },
+        { "texto": "Refluxo de conteúdo do abomaso para o rúmen", "correta": false, "explicacao": "O refluxo sobe os cloretos do líquido ruminal (acima de 30 mmol/L), como em obstruções e deslocamentos. Na Flor, o problema começou no grão." },
+        { "texto": "Indigestão simples, com a flora preservada", "correta": false, "explicacao": "Na indigestão simples o pH fica perto do normal e os protozoários continuam vivos, só menos ativos." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Na coleta do líquido ruminal por sonda, por que descartar a primeira porção?",
+      "opcoes": [
+        { "texto": "Ela vem misturada com saliva, que é alcalina e falseia o pH para cima", "correta": true, "explicacao": "A saliva do bovino tem pH perto de 8 e muito bicarbonato. Por isso se descarta a primeira porção da sonda; a ruminocentese evita esse problema." },
+        { "texto": "Porque a primeira porção vem do abomaso", "correta": false, "explicacao": "A sonda oro-ruminal chega ao rúmen, não ao abomaso. O líquido do abomaso teria pH bem ácido, de 2 a 4." },
+        { "texto": "Porque ela chega fria demais para o exame", "correta": false, "explicacao": "A temperatura não é o problema. O que importa é examinar logo, em poucos minutos, antes que os protozoários morram e o pH mude." },
+        { "texto": "Porque ela tem protozoários demais", "correta": false, "explicacao": "A primeira porção não tem mais protozoários: está diluída na saliva, o que falseia o pH e a contagem." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 3 dias",
+      "bom": "Com lavagem do rúmen, soro na veia, transfaunação com líquido ruminal de uma vaca sadia e feno à vontade, a Flor voltou a ruminar em 3 dias.",
+      "falaBom": "Doutora, a Flor voltou a ruminar e a comer feno! E o depósito agora tem cadeado.",
+      "ruim": "Sem tratar a acidose, a Flor desidratou mais, teve laminite e passou a ficar muito tempo deitada.",
+      "falaRuim": "Doutora, ela tá mancando das quatro patas e quase não levanta mais..."
+    }
+  ],
+  "resumo": [
+    "O líquido ruminal é colhido por sonda oro-ruminal, descartando a primeira porção, ou por ruminocentese, e examinado em poucos minutos.",
+    "Avalie cor, odor, consistência, pH, protozoários, prova do azul de metileno e, se preciso, cloretos.",
+    "Acidose láctica aguda: pH muito baixo (perto de 5 ou menos), líquido leitoso-acinzentado, cheiro azedo e protozoários mortos ou ausentes.",
+    "Cloretos acima de 30 mmol/L sugerem refluxo do abomaso; pH alto com cheiro de amônia sugere alcalose.",
+    "Prevenção: adaptar a vaca ao concentrado aos poucos e manter o grão trancado."
+  ],
+  "referencias": ["Rosenberger, Exame Clínico dos Bovinos"],
+  "revisado": false
+}

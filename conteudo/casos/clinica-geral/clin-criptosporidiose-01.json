@@ -1,0 +1,132 @@
+{
+  "id": "clin-criptosporidiose-01",
+  "materia": "clinica-geral",
+  "tema": "Neonatos",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Pingo",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "macho",
+    "idade": "8 dias",
+    "pesoKg": 40,
+    "sprite": "bezerro-holandes"
+  },
+  "tutor": { "nome": "Seu Jorge", "sprite": "produtor-1" },
+  "chegada": "Doutora, o Pingo, bezerrinho da Mimosa, amanheceu com uma diarreia amarela e aguada. Mamou, mas menos que ontem.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "idade", "rotulo": "Quantos dias ele tem?", "resultado": "Oito dias. Nasceu forte e mamou bem.", "importante": true },
+        { "id": "colostro", "rotulo": "Ele mamou o colostro logo?", "resultado": "Mamou na mãe, mas só umas 6 horas depois de nascer.", "importante": true },
+        { "id": "outros", "rotulo": "Outros bezerros tiveram diarreia?", "resultado": "Dois da mesma baia tiveram na semana passada.", "importante": true },
+        { "id": "baia", "rotulo": "Como é a baia dos bezerros?", "resultado": "Coletiva, com cama de serragem. Limpo uma vez por semana.", "importante": false },
+        { "id": "leite", "rotulo": "Como ele está sendo alimentado?", "resultado": "Leite da mãe no balde, duas vezes por dia.", "importante": false },
+        { "id": "vacina", "rotulo": "A mãe foi vacinada antes do parto?", "resultado": "Contra diarreia, não. Só as vacinas obrigatórias.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Olhos um pouco afundados e pele lenta: cerca de 6% de desidratação.", "importante": true },
+        { "id": "succao", "ferramenta": "mao", "rotulo": "Reflexo de sucção", "resultado": "Presente e forte: ele chupa o dedo com vontade.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,9 °C.", "importante": true },
+        { "id": "umbigo", "ferramenta": "mao", "rotulo": "Palpação do umbigo", "resultado": "Umbigo seco e fino, sem dor.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 180,
+      "itens": [
+        { "id": "teste", "rotulo": "Teste rápido de diarreia neonatal", "custo": 90, "resultado": "Positivo para Cryptosporidium; negativo para rotavírus, coronavírus e E. coli K99.", "importante": true },
+        { "id": "esfregaco", "rotulo": "Esfregaço de fezes (Ziehl-Neelsen)", "custo": 40, "resultado": "Oocistos de Cryptosporidium corados de vermelho.", "importante": true },
+        { "id": "proteina", "rotulo": "Proteína total no sangue", "custo": 30, "resultado": "4,8 g/dL: o colostro passou poucos anticorpos.", "importante": true },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Hematócrito de 40%: sangue um pouco concentrado.", "importante": false },
+        { "id": "copro", "rotulo": "Coproparasitológico (flutuação)", "custo": 30, "resultado": "Negativo para ovos de vermes.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Criptosporidiose", "correta": true, "explicacao": "Bezerro de 8 dias com diarreia aquosa amarela, outros bezerros da baia afetados e oocistos de Cryptosporidium nas fezes." },
+        { "texto": "Colibacilose (E. coli enterotoxigênica)", "correta": false, "explicacao": "A colibacilose aparece nos primeiros 4 dias de vida, e o teste foi negativo para E. coli K99." },
+        { "texto": "Diarreia por rotavírus", "correta": false, "explicacao": "O rotavírus causa um quadro parecido, na mesma idade, mas o teste rápido deu negativo para ele." },
+        { "texto": "Salmonelose", "correta": false, "explicacao": "A salmonelose costuma dar febre alta, diarreia com sangue e fibrina e bezerros muito abatidos." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Se a diarreia piorar, por que o bezerro fica fraco e para de mamar?",
+      "opcoes": [
+        { "texto": "Ele perde água e bicarbonato nas fezes e fica desidratado e com acidose", "correta": true, "explicacao": "A diarreia leva água, sódio e bicarbonato. A desidratação e a acidose metabólica deixam o bezerro fraco e diminuem o reflexo de sucção." },
+        { "texto": "O parasita ataca os músculos", "correta": false, "explicacao": "O Cryptosporidium fica nas células do intestino; a fraqueza vem da desidratação e da acidose." },
+        { "texto": "Falta ferro no leite da mãe", "correta": false, "explicacao": "A falta de ferro não explica a fraqueza aguda de um bezerro com diarreia." },
+        { "texto": "A febre alta deixa ele fraco", "correta": false, "explicacao": "O Pingo está sem febre; a fraqueza vem da perda de água e de bicarbonato." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Quanto soro ele precisa",
+      "critica": true,
+      "pergunta": "O Pingo pesa 40 kg e está com 6% de desidratação. Quantos litros de soro repõem o que ele perdeu?",
+      "unidade": "L",
+      "resposta": 2.4,
+      "tolerancia": 0.05,
+      "explicacao": "40 kg × 0,06 = 2,4 L para repor o déficit, divididos ao longo do dia, além da manutenção e das perdas da diarreia. Como o reflexo de sucção está forte, o soro pode ser oral, sem tirar o leite."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento no campo",
+      "critica": true,
+      "instrucao": "Prescreva o tratamento contra o Cryptosporidium para o Pingo (40 kg).",
+      "farmacos": [
+        { "id": "halofuginona", "nome": "Lactato de halofuginona", "apresentacao": "Solução oral 0,5 mg/mL", "unidade": "mL", "explicacao": "Antiprotozoário com eficácia comprovada contra o Cryptosporidium em bezerros: reduz a diarreia e a eliminação de oocistos." },
+        { "id": "oxitetraciclina", "nome": "Oxitetraciclina", "apresentacao": "Solução injetável 200 mg/mL", "unidade": "mL", "explicacao": "Antibiótico: não age contra protozoários como o Cryptosporidium." },
+        { "id": "ivermectina", "nome": "Ivermectina", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Age em vermes e ectoparasitas, não no Cryptosporidium." },
+        { "id": "dexametasona", "nome": "Dexametasona", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Corticoide: diminui a imunidade de um neonato que já recebeu poucos anticorpos." }
+      ],
+      "correto": {
+        "farmaco": "halofuginona",
+        "doseMgKg": 0.1,
+        "concentracao": 0.5,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 24 horas"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Intravenosa"],
+      "frequencias": ["Dose única", "A cada 12 horas", "A cada 24 horas", "A cada 7 dias"],
+      "explicacao": "0,1 mg/kg × 40 kg = 4 mg; 4 mg ÷ 0,5 mg/mL = 8 mL por via oral, depois de mamar, a cada 24 horas por 7 dias. A dose precisa ser exata: o dobro já é tóxico. Junto: soro oral, leite em porções menores e baia limpa e seca."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 7 dias",
+      "bom": "Com a halofuginona, o soro oral e o leite mantido, a diarreia do Pingo passou em 5 dias. A baia foi limpa e ganhou cama nova.",
+      "falaBom": "Doutora, o Pingo parou com a diarreia e tá mamando tudo de novo!",
+      "ruim": "Sem repor o que ele perdeu, o Pingo desidratou, ficou com acidose e parou de mamar: precisou de soro na veia.",
+      "falaRuim": "Doutora, ele tá caído na baia, frio, e não quer mais mamar..."
+    }
+  ],
+  "resumo": [
+    "Criptosporidiose: protozoário que causa diarreia aquosa em bezerros de 5 a 15 dias; é zoonose.",
+    "Os oocistos já saem infectantes e resistem no ambiente e a muitos desinfetantes: baia limpa e seca e bezerros separados.",
+    "Diagnóstico: teste rápido de fezes e esfregaço com Ziehl-Neelsen, em que os oocistos ficam vermelhos.",
+    "Tratamento: soro (oral, se o reflexo de sucção estiver bom), manter o leite e halofuginona 0,1 mg/kg a cada 24 horas por 7 dias, com dose exata.",
+    "Prevenção: colostro nas primeiras horas de vida, em quantidade suficiente, e higiene das baias."
+  ],
+  "referencias": ["Constable et al., Clínica Veterinária: Um Tratado de Doenças dos Bovinos, Ovinos, Suínos e Caprinos"],
+  "revisado": false
+}

@@ -75,6 +75,12 @@ function revisao(p: Progresso, candidatos: Caso[]): Caso | undefined {
   }
 }
 
+/** As matérias marcadas para o plantão; se nenhuma marcada tiver casos, o plantão usa todos. */
+export function casosDoPlantao(casos: Caso[], materias?: string[]) {
+  const marcados = materias ? casos.filter((c) => materias.includes(c.materia)) : casos
+  return marcados.length > 0 ? marcados : casos
+}
+
 /**
  * Regra 6: o próximo paciente do plantão. `revisoes` diz, de cada paciente já atendido no turno, se ele foi revisão.
  * `sorteio` devolve um número de 0 a 1, como o Math.random; os testes passam um fixo.

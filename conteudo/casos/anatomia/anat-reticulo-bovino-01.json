@@ -1,0 +1,103 @@
+{
+  "id": "anat-reticulo-bovino-01",
+  "materia": "anatomia",
+  "tema": "Topografia das vísceras",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Pérola",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "5 anos",
+    "pesoKg": 600,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Valdemar", "sprite": "produtor-2" },
+  "chegada": "Doutora, a Pérola quase não come há dois dias e o leite despencou. Ela fica parada, com as costas arqueadas, e geme quando anda.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 3,
+      "itens": [
+        { "id": "cerca", "rotulo": "Teve alguma obra ou reforma por perto?", "resultado": "A gente trocou a cerca do piquete semana passada. Sobrou arame e prego no pasto.", "importante": true },
+        { "id": "inicio", "rotulo": "Como começou?", "resultado": "De repente. Anteontem ela tava normal; ontem já não quis o trato.", "importante": true },
+        { "id": "andar", "rotulo": "Como ela está andando?", "resultado": "Devagar, com os cotovelos abertos, e não quer descer o barranco do bebedouro.", "importante": true },
+        { "id": "parto", "rotulo": "Quando ela pariu?", "resultado": "Faz uns quatro meses.", "importante": false },
+        { "id": "esterco", "rotulo": "Como está o esterco?", "resultado": "Pouco e mais seco que o normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "bastao", "ferramenta": "mao", "rotulo": "Prova de dor com bastão sob o xifoide", "resultado": "Ao levantar o bastão sob o xifoide, ela geme alto e se encolhe.", "importante": true },
+        { "id": "rumen", "ferramenta": "estetoscopio", "rotulo": "Auscultação do rúmen", "resultado": "Rúmen lento: só um movimento fraco em 2 minutos.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,7 °C.", "importante": true },
+        { "id": "coracao", "ferramenta": "estetoscopio", "rotulo": "Auscultação do coração", "resultado": "80 batimentos por minuto, bulhas nítidas; sem abafamento nem ruído de líquido.", "importante": true },
+        { "id": "jugular", "ferramenta": "mao", "rotulo": "Jugulares e barbela", "resultado": "Jugulares sem distensão; barbela sem edema.", "importante": false },
+        { "id": "ping", "ferramenta": "estetoscopio", "rotulo": "Percussão com auscultação no flanco esquerdo", "resultado": "Sem som de 'ping'.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Reticuloperitonite traumática", "correta": true, "explicacao": "Queda súbita de apetite e de leite, febre leve, rúmen lento, dor na prova do bastão, dorso arqueado com cotovelos abertos e arame no pasto." },
+        { "texto": "Reticulopericardite traumática", "correta": false, "explicacao": "É o passo seguinte, quando o corpo estranho chega ao pericárdio: bulhas abafadas, ruído de líquido, jugulares cheias e edema de barbela. O coração da Pérola ainda está normal." },
+        { "texto": "Deslocamento de abomaso à esquerda", "correta": false, "explicacao": "Derruba o apetite e o leite, mas sem febre nem dor na prova do bastão, e dá o som de 'ping' no flanco esquerdo, que não apareceu." },
+        { "texto": "Cetose", "correta": false, "explicacao": "A cetose também derruba o apetite e o leite, mas aparece no começo da lactação, sem febre e sem dor na prova do bastão." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Na prova do bastão, você pressionou a região do retículo. Onde ele fica?",
+      "opcoes": [
+        { "texto": "Na parte cranial e ventral do abdome, sobre o xifoide, na altura da 6ª à 8ª costela, encostado no diafragma", "correta": true, "explicacao": "O retículo é o compartimento mais cranial do estômago: fica sobre a cartilagem xifoide, um pouco à esquerda, colado na face caudal do diafragma." },
+        { "texto": "No flanco esquerdo, na fossa paralombar", "correta": false, "explicacao": "Na fossa paralombar esquerda fica o saco dorsal do rúmen. É ali que se contam os movimentos ruminais." },
+        { "texto": "No lado direito, no terço médio, na altura da 7ª à 11ª costela", "correta": false, "explicacao": "Essa é a região do omaso, que fica à direita, protegido pelas costelas." },
+        { "texto": "No assoalho do abdome, à direita da linha média, entre o xifoide e o umbigo", "correta": false, "explicacao": "Essa é a posição do abomaso, ventral e principalmente à direita, caudal ao retículo." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que um arame preso no retículo pode chegar ao coração da Pérola?",
+      "opcoes": [
+        { "texto": "Porque só o diafragma separa o retículo do pericárdio", "correta": true, "explicacao": "O coração fica entre a 3ª e a 6ª costela, logo à frente do diafragma, e o retículo encosta na face de trás dele. Empurrado pelas contrações do retículo, o arame atravessa o diafragma e chega ao pericárdio." },
+        { "texto": "Porque o arame entra no sangue e é levado até o coração", "correta": false, "explicacao": "O arame não circula no sangue: ele avança perfurando os tecidos, empurrado pelas contrações do retículo." },
+        { "texto": "Porque o esôfago passa por dentro do pericárdio", "correta": false, "explicacao": "O esôfago corre no mediastino, acima da base do coração, fora do pericárdio. O arame é engolido sem problema e só perfura depois, no retículo." },
+        { "texto": "Porque o retículo fica dentro do tórax, ao lado do coração", "correta": false, "explicacao": "O retículo é abdominal, atrás do diafragma. Ele fica sob as costelas porque a cúpula do diafragma avança para a frente dentro do arco das costelas." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 5 dias",
+      "bom": "Com ímã no retículo, antibiótico e repouso com a parte da frente do corpo mais alta, a Pérola voltou a comer em quatro dias. O arame foi recolhido do pasto.",
+      "falaBom": "Doutora, a Pérola voltou a comer e o leite já tá subindo! E a gente catou todo o arame do pasto.",
+      "ruim": "Sem tratamento a tempo, o arame atravessou o diafragma e chegou ao pericárdio. A Pérola desenvolveu pericardite, com edema de barbela, e o prognóstico ficou ruim.",
+      "falaRuim": "Doutora, agora o peito dela tá inchado e as veias do pescoço estão grossas. Ela não come nada..."
+    }
+  ],
+  "resumo": [
+    "O retículo é o compartimento mais cranial: fica sobre a cartilagem xifoide, na altura da 6ª à 8ª costela, encostado no diafragma.",
+    "O coração fica entre a 3ª e a 6ª costela, logo à frente do diafragma: só o diafragma separa o retículo do pericárdio.",
+    "Objetos metálicos engolidos param no retículo, e as contrações dele empurram o objeto através da parede.",
+    "Reticuloperitonite: queda súbita de apetite e de leite, febre leve, dorso arqueado, cotovelos abertos e dor na prova do bastão.",
+    "Bulhas abafadas, ruído de líquido, jugulares cheias e edema de barbela indicam que o corpo estranho chegou ao pericárdio.",
+    "Prevenção: ímã no retículo e recolher arame e prego do pasto e do cocho."
+  ],
+  "referencias": [
+    "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+    "König e Liebich, Anatomia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

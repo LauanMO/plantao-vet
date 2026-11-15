@@ -1,0 +1,122 @@
+{
+  "id": "farm-via-oral-ruminante-01",
+  "materia": "farmacologia",
+  "tema": "Farmacocinética e vias",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Garoa",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "2 anos (novilha)",
+    "pesoKg": 400,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Lauro", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Garoa tá mancando de uma pata de trás, e o pé tá inchado e fedendo. Já pus antibiótico em pó no cocho, mas não melhorou nada.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Desde quando ela manca?", "resultado": "Desde ontem cedo. Hoje ela quase não apoia o pé no chão.", "importante": true },
+        { "id": "curral", "rotulo": "Como está o chão do curral?", "resultado": "Com essas chuvas, a entrada virou um barro só, cheio de pedra.", "importante": true },
+        { "id": "remedio", "rotulo": "Como você deu o antibiótico?", "resultado": "Misturei no cocho o pó que sobrou do tratamento dos bezerros. Já faz dois dias.", "importante": true },
+        { "id": "outras", "rotulo": "Tem outras vacas mancando?", "resultado": "Teve uma no mês passado, mas sarou sozinha.", "importante": false },
+        { "id": "cobertura", "rotulo": "Ela já pariu?", "resultado": "Ainda não, é novilha. Vai ser coberta no mês que vem.", "importante": false },
+        { "id": "comida", "rotulo": "Ela está comendo?", "resultado": "Come menos e passa muito tempo deitada.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,9 °C.", "importante": true },
+        { "id": "pe", "ferramenta": "mao", "rotulo": "Palpação do pé", "resultado": "Inchaço simétrico entre as unhas, quente e muito dolorido.", "importante": true },
+        { "id": "interdigital", "ferramenta": "lanterna", "rotulo": "Inspeção entre as unhas", "resultado": "Fissura na pele entre as unhas, com tecido morto e cheiro fétido.", "importante": true },
+        { "id": "rumen", "ferramenta": "estetoscopio", "rotulo": "Auscultação do rúmen", "resultado": "Movimentos do rúmen normais.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratação normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Pododermatite infecciosa (podridão do casco)", "correta": true, "explicacao": "Claudicação de início rápido num chão de barro e pedra, febre, inchaço simétrico entre as unhas e necrose com cheiro fétido: infecção por Fusobacterium necrophorum." },
+        { "texto": "Dermatite digital", "correta": false, "explicacao": "Causa uma ferida avermelhada, parecida com um morango, acima dos talões, sem inchaço entre as unhas e sem febre." },
+        { "texto": "Laminite", "correta": false, "explicacao": "Costuma afetar vários pés ao mesmo tempo, com dor na pinça do casco, e não causa necrose fétida entre as unhas." },
+        { "texto": "Febre aftosa", "correta": false, "explicacao": "Causaria vesículas na boca e nos pés, salivação e vários animais doentes ao mesmo tempo. É doença de notificação obrigatória." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o antibiótico em pó no cocho não serve para tratar a Garoa?",
+      "opcoes": [
+        { "texto": "No rúmen, o fármaco é diluído e degradado pelos microrganismos, e a absorção fica lenta e imprevisível", "correta": true, "explicacao": "O rúmen é uma grande câmara de fermentação antes do intestino: dilui o fármaco, os microrganismos inativam parte dele e o resto é absorvido devagar. O antibiótico oral ainda desequilibra a flora ruminal." },
+        { "texto": "O antibiótico em pó é sempre mais fraco que o injetável", "correta": false, "explicacao": "A molécula é a mesma. O problema é o caminho até o sangue, e não a potência." },
+        { "texto": "A vaca adulta não absorve nada pelo intestino", "correta": false, "explicacao": "O intestino da vaca absorve, sim. O que atrapalha é o rúmen, que fica antes dele." },
+        { "texto": "A via oral não funciona em nenhum bovino", "correta": false, "explicacao": "No bezerro que mama, a goteira esofágica leva o leite direto ao abomaso, e a via oral funciona. Ela falha é na vaca com rúmen desenvolvido." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que uma só aplicação de oxitetraciclina LA mantém o efeito por cerca de 3 dias?",
+      "opcoes": [
+        { "texto": "O veículo forma um depósito no músculo, e o fármaco é absorvido devagar", "correta": true, "explicacao": "Na formulação de longa ação, quem limita a duração é a absorção lenta a partir do local da injeção. A eliminação é a mesma da oxitetraciclina comum." },
+        { "texto": "A vaca elimina a oxitetraciclina mais devagar que outros animais", "correta": false, "explicacao": "A oxitetraciclina comum, na mesma vaca, precisa ser repetida todo dia. O que muda na LA é a absorção, não a eliminação." },
+        { "texto": "A molécula da LA é diferente e não é metabolizada", "correta": false, "explicacao": "É a mesma oxitetraciclina; muda o veículo da formulação." },
+        { "texto": "O fármaco fica guardado no rúmen e vai sendo liberado", "correta": false, "explicacao": "A LA é injetada no músculo e não passa pelo rúmen." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento no campo",
+      "critica": true,
+      "instrucao": "Prescreva o tratamento da infecção da Garoa (400 kg).",
+      "farmacos": [
+        { "id": "oxitetraciclina-la", "nome": "Oxitetraciclina LA (longa ação)", "apresentacao": "Solução injetável 200 mg/mL", "unidade": "mL", "explicacao": "Tetraciclina injetável de longa ação: chega ao sangue sem passar pelo rúmen, alcança o tecido do pé e age contra o Fusobacterium." },
+        { "id": "oxitetraciclina-po", "nome": "Oxitetraciclina pó solúvel", "apresentacao": "Pó oral 250 mg/g", "unidade": "g", "explicacao": "Mesma molécula, via errada: na vaca adulta, o rúmen dilui e inativa o fármaco, e o antibiótico ainda desequilibra a flora ruminal. É feito para bezerros que mamam, aves e suínos." },
+        { "id": "sulfato-cobre", "nome": "Sulfato de cobre", "apresentacao": "Pó para pedilúvio", "unidade": "g", "explicacao": "Antisséptico de pedilúvio: ajuda a prevenir lesões de casco no rebanho, mas não alcança a infecção dentro do tecido." },
+        { "id": "flunixina", "nome": "Flunixina meglumina", "apresentacao": "Solução injetável 50 mg/mL", "unidade": "mL", "explicacao": "Anti-inflamatório: alivia a dor e a febre, mas não trata a infecção bacteriana." }
+      ],
+      "correto": {
+        "farmaco": "oxitetraciclina-la",
+        "doseMgKg": 20,
+        "concentracao": 200,
+        "tolerancia": 0.1,
+        "via": "Intramuscular",
+        "frequencia": "Dose única"
+      },
+      "vias": ["Oral", "Intramuscular", "Intravenosa", "Tópica"],
+      "frequencias": ["Dose única", "A cada 12 horas", "A cada 24 horas", "A cada 7 dias"],
+      "explicacao": "20 mg/kg × 400 kg = 8.000 mg; 8.000 mg ÷ 200 mg/mL = 40 mL no músculo do pescoço, em 4 pontos de no máximo 10 mL. A LA não vai na veia, e uma aplicação dura cerca de 3 dias. Junto: limpar o pé, retirar o tecido morto e respeitar a carência da bula."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 5 dias",
+      "bom": "A Garoa voltou a apoiar o pé no terceiro dia, e a febre passou. Seu Lauro cascalhou a entrada do curral e passou a usar pedilúvio.",
+      "falaBom": "Doutora, a Garoa já tá andando normal e voltou pro pasto com as outras!",
+      "ruim": "Sem um antibiótico que chegasse ao pé, a infecção avançou para a articulação, e a Garoa ficou manca de vez.",
+      "falaRuim": "Doutora, o pé dela inchou até em cima, e ela quase não levanta pra comer..."
+    }
+  ],
+  "resumo": [
+    "Na vaca adulta, o rúmen dilui e inativa muitos fármacos orais, a absorção fica lenta e imprevisível, e antibióticos orais desequilibram a flora ruminal.",
+    "No bezerro que mama, a goteira esofágica leva o leite direto ao abomaso: a via oral funciona como num monogástrico.",
+    "Formulação de longa ação (LA): o veículo forma um depósito no músculo, e a absorção lenta prolonga o efeito; a eliminação não muda.",
+    "Pododermatite infecciosa: Fusobacterium necrophorum, favorecido por barro e pedra; inchaço simétrico entre as unhas, necrose fétida, febre e claudicação.",
+    "Tratamento: limpeza do pé e antibiótico sistêmico, como a oxitetraciclina LA a 20 mg/kg IM, no máximo 10 mL por ponto. Prevenção: piso seco e pedilúvio."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}

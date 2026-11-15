@@ -1,0 +1,104 @@
+{
+  "id": "semi-reticuloperitonite-01",
+  "materia": "semiologia",
+  "tema": "Exame dos sistemas",
+  "dificuldade": 3,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Princesa",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "5 anos",
+    "pesoKg": 580,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Osvaldo", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Princesa parou de comer de repente e o leite caiu pela metade. Tá andando devagar, toda dura.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Quando começou?", "resultado": "Anteontem, de uma hora pra outra. Ela dava 25 litros e hoje deu 10.", "importante": true },
+        { "id": "jeito", "rotulo": "Como ela anda e deita?", "resultado": "Anda devagar, com as patas da frente abertas, e geme quando vai deitar.", "importante": true },
+        { "id": "cerca", "rotulo": "Teve obra ou cerca nova?", "resultado": "Trocamos a cerca do piquete mês passado. Ficou arame e prego pelo chão.", "importante": true },
+        { "id": "parto", "rotulo": "Quando ela pariu?", "resultado": "Faz quatro meses. Parto normal.", "importante": false },
+        { "id": "dieta", "rotulo": "Mudou a alimentação?", "resultado": "Não, a mesma silagem e a mesma ração de sempre.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Estão. A última foi em maio.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 5,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,6 °C (referência: 38,0 a 39,0 °C).", "importante": true },
+        { "id": "rumen", "ferramenta": "estetoscopio", "rotulo": "Auscultação do rúmen", "resultado": "Só 1 movimento fraco em 2 minutos (normal: 2 a 3).", "importante": true },
+        { "id": "dor", "ferramenta": "mao", "rotulo": "Provas de dor (cernelha e bastão)", "resultado": "Ela geme ao pinçar a cernelha e ao erguer um bastão sob o peito, logo atrás dos cotovelos.", "importante": true },
+        { "id": "coracao", "ferramenta": "estetoscopio", "rotulo": "Coração, jugular e barbela", "resultado": "76 bpm e bulhas nítidas; jugular normal e barbela sem edema.", "importante": true },
+        { "id": "ping", "ferramenta": "estetoscopio", "rotulo": "Auscultação com percussão dos flancos", "resultado": "Sem som metálico ('ping') em nenhum dos lados.", "importante": false },
+        { "id": "fezes", "ferramenta": "mao", "rotulo": "Fezes na palpação retal", "resultado": "Fezes escassas e secas, com fibras mal digeridas.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosadas; TPC de 2 segundos.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 200,
+      "itens": [
+        { "id": "hemograma", "rotulo": "Hemograma e fibrinogênio", "custo": 70, "resultado": "Neutrofilia e fibrinogênio de 1.000 mg/dL (referência: 300 a 700): inflamação.", "importante": true },
+        { "id": "ultrassom", "rotulo": "Ultrassom do retículo", "custo": 120, "resultado": "Retículo com contrações fracas e fibrina entre ele e o diafragma.", "importante": true },
+        { "id": "detector", "rotulo": "Detector de metais", "custo": 30, "resultado": "Apita sobre o retículo, mas apitaria também com um ímã ou um metal inofensivo.", "importante": false },
+        { "id": "bhb", "rotulo": "Beta-hidroxibutirato (BHB)", "custo": 40, "resultado": "0,7 mmol/L: normal (abaixo de 1,2).", "importante": false },
+        { "id": "calcio", "rotulo": "Cálcio sérico", "custo": 50, "resultado": "9,0 mg/dL: normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Pelos achados do exame do sistema digestório, qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Reticuloperitonite traumática (corpo estranho no retículo)", "correta": true, "explicacao": "Início súbito, arame no piquete, postura de dor, gemido nas provas de dor, febre discreta, rúmen lento, fibrinogênio alto e fibrina junto ao retículo." },
+        { "texto": "Pericardite traumática", "correta": false, "explicacao": "É a complicação quando o arame chega ao coração: bulhas abafadas, ruído de chapinhar, jugular cheia e edema de barbela. O coração da Princesa está normal." },
+        { "texto": "Deslocamento de abomaso à esquerda", "correta": false, "explicacao": "Dá o som de 'ping' na auscultação com percussão do flanco esquerdo, sem febre e sem dor nas provas. Aqui não há ping." },
+        { "texto": "Indigestão simples", "correta": false, "explicacao": "Causa falta de apetite e rúmen lento depois de erro na dieta, mas sem febre, sem dor nas provas e sem fibrinogênio alto. A dieta não mudou." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que pinçar a cernelha faz a Princesa gemer?",
+      "opcoes": [
+        { "texto": "Ela é forçada a curvar o dorso para baixo, o que mexe no retículo inflamado", "correta": true, "explicacao": "A vaca sadia abaixa o dorso sem reclamar. Com peritonite no retículo, esse movimento estica e comprime a região inflamada, e ela resiste e geme." },
+        { "texto": "A pele da cernelha fica sensível em toda vaca doente", "correta": false, "explicacao": "A prova não testa a pele: a vaca sadia, ou com outras doenças, abaixa o dorso sem gemer." },
+        { "texto": "O arame lesou a coluna", "correta": false, "explicacao": "O arame fica no retículo, na frente do abdome, encostado no diafragma. A coluna não é atingida." },
+        { "texto": "A prova mostra se o rúmen está cheio de gás", "correta": false, "explicacao": "Gás no rúmen se avalia pela inspeção e pela percussão do flanco esquerdo, não pela prova da cernelha." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 5 dias",
+      "bom": "Com ímã no rúmen, antibiótico, anti-inflamatório e repouso em baia, a Princesa voltou a comer em 4 dias e o leite começou a subir. O piquete foi limpo.",
+      "falaBom": "Doutora, a Princesa voltou a ruminar e já deu 18 litros hoje! Catei todo o arame do piquete.",
+      "ruim": "Sem o diagnóstico, o arame seguiu até o coração: a Princesa desenvolveu pericardite, com a barbela inchada e as veias do pescoço cheias.",
+      "falaRuim": "Doutora, agora o peito dela tá inchado embaixo e as veias do pescoço tão grossas..."
+    }
+  ],
+  "resumo": [
+    "Exame do sistema digestório do bovino: postura, auscultação do rúmen, auscultação com percussão dos flancos, palpação retal e provas de dor.",
+    "Provas de dor para corpo estranho: pinçar a cernelha e erguer um bastão sob o tórax; o gemido indica dor na região do retículo.",
+    "Reticuloperitonite traumática: arame ou prego perfura o retículo; início súbito, queda do leite, cotovelos abertos, febre discreta e rúmen lento.",
+    "Se o corpo estranho chega ao pericárdio: bulhas abafadas, ruído de chapinhar, jugular ingurgitada e edema de barbela.",
+    "Prevenção: ímã no rúmen e cuidado com arame e prego perto de cercas e cochos."
+  ],
+  "referencias": [
+    "Rosenberger, Exame Clínico dos Bovinos",
+    "Feitosa, Semiologia Veterinária: A Arte do Diagnóstico"
+  ],
+  "revisado": false
+}

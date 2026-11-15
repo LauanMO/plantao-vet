@@ -1,0 +1,122 @@
+{
+  "id": "farm-xilazina-vaca-01",
+  "materia": "farmacologia",
+  "tema": "Sistema nervoso autônomo",
+  "dificuldade": 3,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Pandora",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "5 anos",
+    "pesoKg": 500,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Wilson", "sprite": "produtor-2" },
+  "chegada": "Doutora, a Pandora rasgou o couro no arame farpado, um corte feio na paleta. Ela é brava demais e não deixa ninguém chegar perto.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "quando", "rotulo": "Quando ela se cortou?", "resultado": "Hoje cedo, na cerca nova do piquete.", "importante": true },
+        { "id": "prenhe", "rotulo": "Ela está prenhe?", "resultado": "Não. Pariu faz 3 meses e ainda não emprenhou de novo.", "importante": true },
+        { "id": "manejo", "rotulo": "Ela é mansa para manejar?", "resultado": "Brava demais. Já arrebentou a porteira do tronco uma vez.", "importante": true },
+        { "id": "leite", "rotulo": "Ela está comendo e dando leite?", "resultado": "Normal, uns 25 litros por dia.", "importante": false },
+        { "id": "remedio", "rotulo": "Ela tomou algum remédio?", "resultado": "Ainda não, doutora.", "importante": false },
+        { "id": "sedacao", "rotulo": "Ela já foi sedada antes?", "resultado": "Nunca precisou.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 3,
+      "itens": [
+        { "id": "ferida", "ferramenta": "mao", "rotulo": "Inspeção e palpação do corte", "resultado": "Corte de 20 cm na paleta, na pele e no músculo superficial, sangrando pouco.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Coração e rúmen", "resultado": "FC de 72 bpm; rúmen com 2 movimentos por minuto.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,7 °C.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas", "resultado": "Rosadas e úmidas.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratação normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Plano do procedimento",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o plano para suturar o corte da Pandora?",
+      "opcoes": [
+        { "texto": "Sedação leve com a vaca em pé, mais anestesia local na borda do corte", "correta": true, "explicacao": "O corte é superficial e recente: sedação em pé no tronco e bloqueio local com lidocaína permitem a sutura com segurança, sem derrubar a vaca." },
+        { "texto": "Anestesia geral com a vaca deitada", "correta": false, "explicacao": "Desnecessária para um corte de pele, e arriscada no ruminante: timpanismo, regurgitação e aspiração do conteúdo do rúmen." },
+        { "texto": "Anestesia epidural caudal", "correta": false, "explicacao": "Insensibiliza cauda, períneo e parte posterior do corpo, e não a paleta." },
+        { "texto": "Só contenção no tronco, sem sedação", "correta": false, "explicacao": "Numa vaca brava, a sutura seria perigosa para a equipe e dolorosa para o animal." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "No cavalo, a xilazina vai a 1,1 mg/kg na veia. Por que a Pandora precisa de bem menos?",
+      "opcoes": [
+        { "texto": "Bovinos são cerca de 10 vezes mais sensíveis à xilazina que equinos", "correta": true, "explicacao": "A diferença está na resposta aos receptores α2, e não no acúmulo do fármaco. A dose que seda um cavalo em pé deixa uma vaca deitada por horas, com risco de timpanismo e aspiração." },
+        { "texto": "O rúmen absorve parte do fármaco injetado e aumenta o efeito", "correta": false, "explicacao": "A xilazina injetada não passa pelo rúmen. A diferença é de sensibilidade da espécie." },
+        { "texto": "A vaca elimina a xilazina pelo leite e precisa repor menos", "correta": false, "explicacao": "A eliminação pelo leite é pequena e não explica a dose menor." },
+        { "texto": "A vaca tem mais gordura, onde a xilazina se acumula", "correta": false, "explicacao": "Não é acúmulo na gordura: os bovinos respondem mais aos agonistas α2." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Se a Pandora estivesse no fim da gestação, que efeito da xilazina preocuparia?",
+      "opcoes": [
+        { "texto": "Aumento das contrações do útero, com risco de parto prematuro ou aborto", "correta": true, "explicacao": "Nos bovinos, a xilazina tem um efeito parecido com o da ocitocina sobre o útero. No terço final da gestação, prefira outro fármaco ou outra contenção." },
+        { "texto": "Má-formação do bezerro", "correta": false, "explicacao": "No fim da gestação, os órgãos do feto já estão formados; o risco é o parto antes da hora." },
+        { "texto": "Aumento da produção de leite", "correta": false, "explicacao": "A xilazina não aumenta a produção de leite." },
+        { "texto": "Queda da glicose no sangue", "correta": false, "explicacao": "É o contrário: a xilazina reduz a liberação de insulina e aumenta a glicose." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Sedação no tronco",
+      "critica": true,
+      "instrucao": "Prescreva o sedativo para a Pandora (500 kg) ficar quieta e em pé no tronco.",
+      "farmacos": [
+        { "id": "xilazina", "nome": "Xilazina 2%", "apresentacao": "Solução injetável 20 mg/mL", "unidade": "mL", "explicacao": "Agonista α2-adrenérgico: seda, relaxa os músculos e dá analgesia. Nos bovinos, a dose é cerca de um décimo da usada no cavalo." },
+        { "id": "acepromazina", "nome": "Acepromazina 1%", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Fenotiazínico: tranquiliza pouco o bovino, não tem analgesia e baixa a pressão. Não segura uma vaca brava para a sutura." },
+        { "id": "atropina", "nome": "Sulfato de atropina", "apresentacao": "Solução injetável 0,5 mg/mL", "unidade": "mL", "explicacao": "Antagonista muscarínico: não seda e, no ruminante, para o rúmen e deixa a saliva grossa." },
+        { "id": "atipamezol", "nome": "Atipamezol", "apresentacao": "Solução injetável 5 mg/mL", "unidade": "mL", "explicacao": "Antagonista α2: faz o contrário da xilazina e serve para reverter a sedação no fim do procedimento." }
+      ],
+      "correto": {
+        "farmaco": "xilazina",
+        "doseMgKg": 0.05,
+        "concentracao": 20,
+        "tolerancia": 0.1,
+        "via": "Intramuscular",
+        "frequencia": "Dose única"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Tópica"],
+      "frequencias": ["Dose única", "A cada 4 horas", "A cada 12 horas", "A cada 24 horas"],
+      "explicacao": "0,05 mg/kg × 500 kg = 25 mg; 25 mg ÷ 20 mg/mL = 1,25 mL no músculo, dose única, para sedar a vaca em pé. Com a dose do cavalo (1,1 mg/kg), seriam 27,5 mL: a vaca deitaria por horas, com risco de timpanismo e aspiração. Depois, bloqueio local com lidocaína na borda do corte."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 12 dias",
+      "bom": "Sedada em pé e com bloqueio local, a Pandora deixou suturar o corte sem susto. Voltou a ruminar à tarde, e os pontos saíram com a ferida fechada.",
+      "falaBom": "Doutora, nem parecia a Pandora, quietinha no tronco! O corte fechou bonito.",
+      "ruim": "A sedação não saiu como devia: a Pandora caiu de lado no tronco, estufou e precisou de sonda e horas de vigilância. O corte, mal suturado, infeccionou.",
+      "falaRuim": "Doutora, depois daquele dia ela ficou estranha, e o corte abriu e tá cheirando mal..."
+    }
+  ],
+  "resumo": [
+    "Agonistas α2 (xilazina, detomidina) reduzem a liberação de noradrenalina no sistema nervoso central: sedação, relaxamento muscular e analgesia.",
+    "Bovinos são cerca de 10 vezes mais sensíveis à xilazina que equinos: 0,05 mg/kg IM seda a vaca em pé; no cavalo, a dose IV é de 1,1 mg/kg.",
+    "Efeitos adversos: bradicardia, parada do rúmen e timpanismo, salivação, hiperglicemia e aumento da urina.",
+    "No fim da gestação, a xilazina aumenta as contrações uterinas e pode provocar parto prematuro.",
+    "A sedação é revertida com antagonistas α2, como atipamezol, ioimbina ou tolazolina."
+  ],
+  "referencias": ["Spinosa, Górniak e Bernardi, Farmacologia Aplicada à Medicina Veterinária"],
+  "revisado": false
+}

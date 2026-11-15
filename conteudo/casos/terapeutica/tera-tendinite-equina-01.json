@@ -1,0 +1,123 @@
+{
+  "id": "tera-tendinite-equina-01",
+  "materia": "terapeutica",
+  "tema": "Analgesia e anti-inflamatórios",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Tempestade",
+    "especie": "equino",
+    "raca": "Quarto de Milha",
+    "sexo": "fêmea",
+    "idade": "7 anos",
+    "pesoKg": 450,
+    "sprite": "cavalo-tordilho"
+  },
+  "tutor": { "nome": "Seu Valdir", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Tempestade correu o tambor no domingo e voltou mancando da mão esquerda. A canela tá inchada e quente.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Quando ela começou a mancar?", "resultado": "Logo depois da prova de domingo. Já faz dois dias.", "importante": true },
+        { "id": "treino", "rotulo": "Como foi o treino antes da prova?", "resultado": "Ela ficou um mês parada e voltou direto pra competir.", "importante": true },
+        { "id": "remedio", "rotulo": "Ela já tomou algum remédio?", "resultado": "Ainda não. Só passei gelo na perna ontem.", "importante": true },
+        { "id": "prego", "rotulo": "Ela pisou em prego ou pedra?", "resultado": "Que eu tenha visto, não.", "importante": false },
+        { "id": "comida", "rotulo": "Ela está comendo bem?", "resultado": "Come normal, capim e ração.", "importante": false },
+        { "id": "vacinas", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, sim: influenza e tétano.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tendao", "ferramenta": "mao", "rotulo": "Palpação do tendão da canela", "resultado": "Tendão flexor superficial inchado, quente e muito dolorido; a canela ficou com o perfil arqueado.", "importante": true },
+        { "id": "pulso", "ferramenta": "mao", "rotulo": "Pulso digital", "resultado": "Normal nas quatro patas.", "importante": true },
+        { "id": "casco", "ferramenta": "mao", "rotulo": "Pinça de casco", "resultado": "Sem dor ao apertar a sola da mão esquerda.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,8 °C.", "importante": false },
+        { "id": "fc", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração a 40 bpm; intestino com ruídos normais.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas", "resultado": "Róseas e úmidas.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Tendinite do flexor digital superficial", "correta": true, "explicacao": "Manqueira depois de esforço sem preparo, com o tendão inchado, quente e dolorido e a canela arqueada; casco sem dor e pulso digital normal." },
+        { "texto": "Abscesso de casco", "correta": false, "explicacao": "Dá manqueira forte, com pulso digital aumentado e dor quando se aperta a sola com a pinça de casco. A Tempestade não tem nenhum dos dois." },
+        { "texto": "Laminite", "correta": false, "explicacao": "Costuma atingir as duas mãos, com pulso digital forte e o cavalo jogando o peso para trás. A dor da Tempestade está no tendão." },
+        { "texto": "Fratura da canela", "correta": false, "explicacao": "O cavalo quase não apoia o membro, e pode haver crepitação no osso. A Tempestade apoia, e a dor está no tendão." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por quanto tempo usar o anti-inflamatório na tendinite da Tempestade?",
+      "opcoes": [
+        { "texto": "Por poucos dias, cerca de 5, junto com repouso, gelo e volta lenta ao trabalho", "correta": true, "explicacao": "O AINE controla a inflamação dos primeiros dias. O tendão leva meses para cicatrizar, e isso depende de repouso e de volta gradual ao exercício." },
+        { "texto": "Até o tendão cicatrizar, por uns 3 meses", "correta": false, "explicacao": "AINE por meses causa úlceras, colite e lesão nos rins do cavalo. A cicatrização depende do repouso, não do remédio." },
+        { "texto": "Até ela parar de mancar; aí já pode voltar a correr", "correta": false, "explicacao": "O AINE tira a dor antes de o tendão cicatrizar: ela pode forçar a perna e romper mais fibras. A volta ao trabalho é lenta e guiada pelo ultrassom." },
+        { "texto": "Uma dose só: o gelo resolve o resto", "correta": false, "explicacao": "Uma dose não controla a inflamação dos primeiros dias, quando o tendão mais incha e dói." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Dose máxima por dia",
+      "critica": true,
+      "pergunta": "Em uso por vários dias, o anti-inflamatório escolhido não deve passar de 4,4 mg/kg por dia. Para 450 kg, quantos gramas por dia, no máximo?",
+      "unidade": "g",
+      "resposta": 1.98,
+      "tolerancia": 0.05,
+      "explicacao": "4,4 mg/kg × 450 kg = 1.980 mg = 1,98 g, cerca de 2 g por dia. Passar disso aumenta o risco de úlcera, colite e lesão renal."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento no campo",
+      "critica": true,
+      "instrucao": "Prescreva o anti-inflamatório da Tempestade (450 kg) para 5 dias, com 2,2 mg/kg por aplicação.",
+      "farmacos": [
+        { "id": "fenilbutazona", "nome": "Fenilbutazona", "apresentacao": "Solução injetável 200 mg/mL", "unidade": "mL", "explicacao": "AINE de escolha para a dor musculoesquelética do cavalo. Injetável, só pode ir na veia." },
+        { "id": "dexametasona", "nome": "Dexametasona", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Corticoide: atrapalha a cicatrização do tendão e, no cavalo, aumenta o risco de laminite." },
+        { "id": "acepromazina", "nome": "Acepromazina", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Tranquilizante: acalma, mas não tem efeito analgésico nem anti-inflamatório." },
+        { "id": "escopolamina", "nome": "Butilbrometo de escopolamina", "apresentacao": "Solução injetável 20 mg/mL", "unidade": "mL", "explicacao": "Antiespasmódico usado na cólica: relaxa o intestino e não age na inflamação do tendão." }
+      ],
+      "correto": {
+        "farmaco": "fenilbutazona",
+        "doseMgKg": 2.2,
+        "concentracao": 200,
+        "tolerancia": 0.1,
+        "via": "Intravenosa",
+        "frequencia": "A cada 12 horas"
+      },
+      "vias": ["Intravenosa", "Intramuscular", "Subcutânea", "Intra-articular"],
+      "frequencias": ["Dose única", "A cada 4 horas", "A cada 12 horas", "A cada 72 horas"],
+      "explicacao": "2,2 mg/kg × 450 kg = 990 mg; 990 mg ÷ 200 mg/mL ≈ 5 mL na veia, a cada 12 horas, por 5 dias: 4,4 mg/kg por dia, sem passar do limite. Fora da veia, a fenilbutazona causa necrose e abscesso."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 7 dias",
+      "bom": "Com a fenilbutazona por 5 dias, repouso e gelo, o inchaço diminuiu e a dor passou. O ultrassom guiou o plano de volta lenta ao trabalho.",
+      "falaBom": "Doutora, a perna desinchou e ela já pisa firme! Agora é paciência pra voltar a correr.",
+      "ruim": "Sem o anti-inflamatório na dose e no ritmo certos, o tendão continuou inflamado e a lesão aumentou. A Tempestade vai ficar mais tempo parada.",
+      "falaRuim": "Doutora, a canela continua inchada e ela tá mancando ainda mais..."
+    }
+  ],
+  "resumo": [
+    "Tendinite do flexor digital superficial: comum em cavalos de esporte, sobretudo na volta ao esforço sem preparo.",
+    "Sinais: manqueira e tendão inchado, quente e dolorido, com a canela arqueada. O ultrassom mostra o tamanho da lesão.",
+    "Fenilbutazona no cavalo: 2,2 mg/kg a cada 12 horas, na veia ou pela boca, sem passar de 4,4 mg/kg por dia e por poucos dias.",
+    "Nunca no músculo, porque causa necrose. Não associar dois AINEs, nem AINE com corticoide.",
+    "O tendão leva meses para cicatrizar: repouso, gelo e volta gradual ao trabalho."
+  ],
+  "referencias": [
+    "Andrade, Manual de Terapêutica Veterinária",
+    "Viana, Fundamentos de Terapêutica Veterinária"
+  ],
+  "revisado": false
+}

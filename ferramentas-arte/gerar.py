@@ -363,24 +363,33 @@ def pessoa(pele, pele_d, blusa, blusa_d, calca, calca_d, sapato):
     return im, r
 
 
-def tutora():
-    im, r = pessoa('skin', 'skin_d', 'shirt', 'shirt_d', 'pants', 'pants_d', 'shoe')
-    atras(im, 6, 1, 17, 18, 'hair')  # cabelo comprido
-    r(7, 2, 16, 5, 'hair')           # franja
-    r(6, 4, 7, 16, 'hair')
-    r(16, 4, 17, 16, 'hair')
+def tutora(pele='skin', pele_d='skin_d', cabelo='hair', blusa='shirt', blusa_d='shirt_d'):
+    im, r = pessoa(pele, pele_d, blusa, blusa_d, 'pants', 'pants_d', 'shoe')
+    atras(im, 6, 1, 17, 18, cabelo)  # cabelo comprido
+    r(7, 2, 16, 5, cabelo)           # franja
+    r(6, 4, 7, 16, cabelo)
+    r(16, 4, 17, 16, cabelo)
     return contorno(im)
 
 
-def produtor():
-    im, r = pessoa('skin2', 'skin2_d', 'plaid', 'plaid_d', 'khaki', 'khaki_d', 'wood_d')
+def tutor(pele='skin3', pele_d='skin3_d', cabelo='hair', camisa='b4', camisa_d='pants_d'):
+    """Tutor de cabelo curto, de camiseta."""
+    im, r = pessoa(pele, pele_d, camisa, camisa_d, 'khaki', 'khaki_d', 'shoe')
+    r(8, 2, 15, 5, cabelo)           # cabelo curto
+    r(7, 3, 7, 8, cabelo)
+    r(16, 3, 16, 8, cabelo)
+    return contorno(im)
+
+
+def produtor(pele='skin2', pele_d='skin2_d', xadrez='plaid', xadrez_d='plaid_d', bigode='gray'):
+    im, r = pessoa(pele, pele_d, xadrez, xadrez_d, 'khaki', 'khaki_d', 'wood_d')
     for y in (24, 29, 34):           # camisa xadrez
-        r(8, y, 17, y, 'plaid_d')
+        r(8, y, 17, y, xadrez_d)
     for x in (10, 14):
-        r(x, 22, x, 38, 'plaid_d')
-    r(10, 12, 13, 12, 'gray')        # bigode
-    r(7, 6, 7, 10, 'gray')           # costeletas
-    r(16, 6, 16, 10, 'gray')
+        r(x, 22, x, 38, xadrez_d)
+    r(10, 12, 13, 12, bigode)        # bigode
+    r(7, 6, 7, 10, bigode)           # costeletas
+    r(16, 6, 16, 10, bigode)
     r(8, 1, 15, 3, 'straw')          # chapéu de palha
     r(8, 3, 15, 3, 'straw_d')
     r(4, 4, 19, 5, 'straw')
@@ -409,16 +418,22 @@ def preceptora():
     return contorno(im)
 
 
-def pipoca(feliz):
+def pipoca(feliz, fur='fur', fur_d='fur_d', ear='ear', white='white'):
+    """Cão pequeno de perfil. As pelagens são troca de cores do mesmo desenho."""
     im, d = nova_tela(38, 26)
+    # o traço usa os nomes padrão, e cor() troca pela pelagem pedida
+    pelagem = {'fur': fur, 'fur_d': fur_d, 'ear': ear, 'white': white}
+
+    def cor(nome):
+        return rgba(pelagem.get(nome, nome))
 
     def r(x0, y0, x1, y1, c):
-        d.rectangle([x0, y0, x1, y1], fill=rgba(c))
+        d.rectangle([x0, y0, x1, y1], fill=cor(c))
 
     if feliz:
-        d.line([(8, 11), (5, 6), (7, 2)], fill=rgba('fur'), width=2)
+        d.line([(8, 11), (5, 6), (7, 2)], fill=cor('fur'), width=2)
     else:
-        d.line([(8, 12), (5, 19)], fill=rgba('fur_d'), width=2)
+        d.line([(8, 12), (5, 19)], fill=cor('fur_d'), width=2)
     r(7, 10, 25, 17, 'fur')                  # corpo
     r(14, 11, 18, 13, 'ear')                 # mancha
     r(11, 16, 22, 17, 'white')               # barriga
@@ -440,9 +455,9 @@ def pipoca(feliz):
     return contorno(im)
 
 
-def vaca(deitada):
-    """Vaca holandesa de perfil, virada para a direita: em pé, recuperada, ou deitada de peito
-    com a cabeça virada para o flanco. As duas posturas apoiam no chão na mesma linha."""
+def vaca(deitada, doente=False):
+    """Vaca holandesa de perfil, virada para a direita: em pé (recuperada ou doente, de cabeça baixa),
+    ou deitada de peito com a cabeça virada para o flanco. As posturas apoiam no chão na mesma linha."""
     K = 1.3  # o traço é pensado em 88x51 e ampliado aqui, para a vaca ter o tamanho certo perto das pessoas
     im, d = nova_tela(114, 67)
 
@@ -504,6 +519,15 @@ def vaca(deitada):
     r(51, 36, 55, 46, 'white')
     r(15, 47, 19, 49, 'shoe')
     r(51, 47, 55, 49, 'shoe')
+    if doente:
+        poli([(58, 15), (66, 14), (71, 30), (62, 34)], 'white')         # pescoço baixo
+        poli([(64, 18), (71, 18), (79, 31), (78, 38), (71, 38), (64, 27)], 'nose')  # cabeça baixa
+        traco([(71, 19), (76, 31)], 'white')                            # lista branca da cara
+        q(72, 31, 79, 39, 2, 'pink')                                    # focinho
+        r(77, 33, 77, 34, 'pink_d')
+        r(67, 23, 69, 23, 'white_d')                                    # olho meio fechado
+        r(59, 19, 63, 24, 'nose')                                       # orelha caída
+        return contorno(im)
     poli([(58, 14), (68, 9), (73, 22), (62, 33)], 'white')              # pescoço
     poli([(65, 6), (72, 5), (82, 17), (82, 24), (74, 25), (66, 16)], 'nose')  # cabeça
     traco([(72, 6), (80, 17)], 'white')                                 # lista branca da cara
@@ -514,6 +538,144 @@ def vaca(deitada):
     r(70, 10, 70, 10, 'out')
     r(60, 7, 65, 9, 'nose')                                             # orelha erguida
     r(61, 8, 63, 8, 'pink')
+    return contorno(im)
+
+
+def gato(feliz, pelo='gray', pelo_d='line', listra='line', branco='white'):
+    """Gato de perfil, em pé na mesa, virado para a direita: rabo erguido quando está bem;
+    rabo baixo, cabeça baixa e orelhas de lado quando está doente."""
+    im, d = nova_tela(36, 26)
+
+    def r(x0, y0, x1, y1, c):
+        d.rectangle([x0, y0, x1, y1], fill=rgba(c))
+
+    if feliz:
+        d.line([(7, 12), (4, 7), (5, 2)], fill=rgba(pelo), width=2)      # rabo erguido
+    else:
+        d.line([(7, 13), (4, 17), (4, 21)], fill=rgba(pelo_d), width=2)  # rabo baixo
+    r(6, 11, 23, 17, pelo)                   # corpo
+    for x in (10, 14, 18):
+        r(x, 11, x, 14, listra)              # listras
+    r(10, 16, 20, 17, branco)                # barriga
+    for (x, c) in ((7, pelo_d), (10, pelo), (19, pelo_d), (22, pelo)):
+        r(x, 18, x + 1, 22, c)               # patas finas
+        r(x, 22, x + 1, 22, branco)
+    if feliz:
+        r(22, 8, 25, 12, pelo)               # pescoço
+        r(23, 4, 31, 11, pelo)               # cabeça
+        d.polygon([(23, 4), (24, 0), (26, 4)], fill=rgba(pelo))   # orelhas em pé
+        d.polygon([(28, 4), (30, 0), (31, 4)], fill=rgba(pelo))
+        r(29, 9, 32, 11, branco)             # focinho
+        r(31, 8, 32, 8, 'pink')
+        r(28, 6, 28, 7, 'out')               # olho aberto
+    else:
+        r(22, 10, 25, 13, pelo)              # pescoço baixo
+        r(23, 7, 31, 14, pelo)               # cabeça baixa
+        d.polygon([(23, 7), (21, 5), (26, 7)], fill=rgba(pelo))   # orelhas de lado
+        d.polygon([(28, 7), (31, 5), (31, 8)], fill=rgba(pelo))
+        r(29, 12, 32, 14, branco)
+        r(31, 11, 32, 11, 'pink')
+        r(27, 10, 29, 10, 'out')             # olho meio fechado
+    return contorno(im)
+
+
+def bezerro(feliz):
+    """Bezerro holandês de perfil, virado para a direita, de pernas compridas.
+    Doente, fica de cabeça baixa, orelha caída e olho meio fechado."""
+    im, d = nova_tela(60, 44)
+
+    def r(x0, y0, x1, y1, c):
+        d.rectangle([x0, y0, x1, y1], fill=rgba(c))
+
+    def o(x0, y0, x1, y1, c):
+        d.ellipse([x0, y0, x1, y1], fill=rgba(c))
+
+    def poli(pontos, c):
+        d.polygon(pontos, fill=rgba(c))
+
+    d.line([(10, 12), (8, 18), (8, 24)], fill=rgba('white_d'), width=2)  # rabo
+    o(6, 23, 10, 27, 'nose')
+    r(15, 26, 17, 38, 'white_d')             # pernas do outro lado
+    r(38, 26, 40, 38, 'white_d')
+    r(15, 39, 17, 40, 'shoe')
+    r(38, 39, 40, 40, 'shoe')
+    d.rounded_rectangle([10, 10, 44, 27], radius=4, fill=rgba('white'))  # corpo
+    o(12, 11, 22, 20, 'nose')                # malhas
+    o(27, 10, 36, 18, 'nose')
+    o(33, 19, 41, 26, 'nose')
+    r(14, 26, 40, 27, 'white_d')             # barriga
+    r(12, 27, 14, 38, 'white')               # pernas deste lado
+    r(35, 27, 37, 38, 'white')
+    r(12, 39, 14, 40, 'shoe')
+    r(35, 39, 37, 40, 'shoe')
+    if feliz:
+        poli([(40, 12), (47, 8), (50, 17), (43, 22)], 'white')                    # pescoço
+        poli([(46, 4), (52, 4), (58, 13), (57, 18), (51, 18), (46, 11)], 'nose')  # cabeça
+        d.line([(51, 5), (56, 13)], fill=rgba('white'), width=2)                  # lista branca
+        d.rounded_rectangle([53, 13, 58, 19], radius=1, fill=rgba('pink'))       # focinho
+        r(57, 15, 57, 15, 'pink_d')
+        r(49, 8, 49, 8, 'white')                                                  # olho aberto
+        r(42, 6, 46, 8, 'nose')                                                   # orelha erguida
+        r(43, 7, 45, 7, 'pink')
+    else:
+        poli([(40, 13), (46, 12), (49, 22), (42, 24)], 'white')                       # pescoço baixo
+        poli([(45, 15), (51, 15), (56, 25), (55, 30), (49, 30), (45, 22)], 'nose')    # cabeça baixa
+        d.line([(50, 16), (54, 25)], fill=rgba('white'), width=2)
+        d.rounded_rectangle([50, 25, 56, 31], radius=1, fill=rgba('pink'))
+        r(55, 27, 55, 27, 'pink_d')
+        r(47, 19, 49, 19, 'white_d')                                              # olho meio fechado
+        r(41, 16, 44, 21, 'nose')                                                 # orelha caída
+    return contorno(im)
+
+
+def cavalo(feliz, pelo='wood_l', pelo_d='wood', crina='wood_d', malhas=False):
+    """Cavalo de perfil, virado para a direita. Bem, de cabeça erguida e orelhas em pé;
+    doente, de cabeça baixa, orelhas caídas e olho meio fechado. As pelagens são troca de cores."""
+    im, d = nova_tela(104, 84)
+
+    def r(x0, y0, x1, y1, c):
+        d.rectangle([x0, y0, x1, y1], fill=rgba(c))
+
+    def o(x0, y0, x1, y1, c):
+        d.ellipse([x0, y0, x1, y1], fill=rgba(c))
+
+    def poli(pontos, c):
+        d.polygon(pontos, fill=rgba(c))
+
+    d.line([(19, 31), (15, 46), (14, 62)], fill=rgba(crina), width=5)   # cauda
+    r(29, 52, 33, 77, pelo_d)                # pernas do outro lado
+    r(67, 52, 71, 77, pelo_d)
+    r(29, 78, 33, 80, 'shoe')
+    r(67, 78, 71, 80, 'shoe')
+    o(16, 26, 42, 54, pelo)                  # garupa
+    d.rounded_rectangle([24, 30, 76, 54], radius=8, fill=rgba(pelo))  # corpo
+    o(60, 28, 82, 54, pelo)                  # peito
+    r(30, 51, 68, 54, pelo_d)                # barriga
+    if malhas:
+        for (x, y) in ((30, 36), (40, 42), (52, 34), (60, 44), (24, 40), (46, 48)):
+            r(x, y, x + 2, y + 1, pelo_d)    # tordilho pedrês
+    r(22, 50, 27, 77, pelo)                  # pernas deste lado
+    r(73, 50, 78, 77, pelo)
+    r(22, 78, 27, 80, 'shoe')
+    r(73, 78, 78, 80, 'shoe')
+    if feliz:
+        poli([(68, 34), (76, 12), (88, 10), (84, 38)], pelo)                  # pescoço erguido
+        d.line([(70, 30), (78, 10), (84, 8)], fill=rgba(crina), width=4)     # crina
+        poli([(80, 8), (90, 6), (101, 21), (101, 27), (95, 29), (84, 18)], pelo)  # cabeça
+        r(95, 21, 101, 28, pelo_d)           # focinho
+        r(99, 23, 99, 24, 'out')             # narina
+        d.line([(91, 8), (97, 19)], fill=rgba('white'), width=2)              # lista na cara
+        r(87, 11, 88, 12, 'out')             # olho aberto
+        poli([(82, 9), (83, 2), (86, 8)], pelo)                               # orelhas em pé
+    else:
+        poli([(68, 36), (80, 30), (90, 50), (80, 54)], pelo)                  # pescoço baixo
+        d.line([(70, 33), (80, 29), (86, 34)], fill=rgba(crina), width=4)    # crina
+        poli([(84, 44), (92, 44), (100, 62), (99, 69), (92, 69), (86, 56)], pelo)  # cabeça baixa
+        r(93, 62, 100, 69, pelo_d)
+        r(97, 65, 97, 66, 'out')
+        d.line([(91, 46), (96, 60)], fill=rgba('white'), width=2)
+        r(87, 49, 89, 49, 'out')             # olho meio fechado
+        poli([(84, 45), (79, 43), (84, 48)], pelo)                            # orelhas caídas
     return contorno(im)
 
 
@@ -600,10 +762,38 @@ def respirar(im, peito):
 # Cada estado vem com a linha do peito, onde o corpo se divide para respirar.
 PERSONAGENS = {
     'tutora-1': ((12, 62), {'parado': (tutora(), 39)}),
+    'tutora-2': ((12, 62), {'parado': (tutora('skin2', 'skin2_d', 'shoe', 'b2', 'leaf_d'), 39)}),
+    'tutora-3': ((12, 62), {'parado': (tutora('skin3', 'skin3_d', 'hair_r', 'b3', 'straw_d'), 39)}),
+    'tutor-1': ((12, 62), {'parado': (tutor(), 39)}),
+    'tutor-2': ((12, 62), {'parado': (tutor('skin2', 'skin2_d', 'shoe', 'b2', 'leaf_d'), 39)}),
     'produtor-1': ((12, 62), {'parado': (produtor(), 39)}),
+    'produtor-2': ((12, 62), {'parado': (produtor('skin3', 'skin3_d', 'b1', 'shirt_d', 'hair'), 39)}),
     'preceptora': ((12, 62), {'parado': (preceptora(), 39)}),
     'cao-pequeno-caramelo': ((16, 23), {'doente': (pipoca(False), 18), 'feliz': (pipoca(True), 18)}),
-    'vaca-holandesa': ((49, 65), {'deitado': (vaca(True), 52), 'feliz': (vaca(False), 48)}),
+    'cao-pequeno-preto': ((16, 23), {
+        'doente': (pipoca(False, 'hall', 'monitor_d', 'shoe'), 18),
+        'feliz': (pipoca(True, 'hall', 'monitor_d', 'shoe'), 18),
+    }),
+    'cao-pequeno-branco': ((16, 23), {
+        'doente': (pipoca(False, 'white', 'white_d', 'ear'), 18),
+        'feliz': (pipoca(True, 'white', 'white_d', 'ear'), 18),
+    }),
+    'gato-cinza': ((15, 23), {'doente': (gato(False), 17), 'feliz': (gato(True), 17)}),
+    'gato-preto': ((15, 23), {
+        'doente': (gato(False, 'hall', 'monitor_d', 'hall'), 17),
+        'feliz': (gato(True, 'hall', 'monitor_d', 'hall'), 17),
+    }),
+    'vaca-holandesa': ((49, 65), {
+        'deitado': (vaca(True), 52),
+        'doente': (vaca(False, doente=True), 48),
+        'feliz': (vaca(False), 48),
+    }),
+    'bezerro-holandes': ((26, 41), {'doente': (bezerro(False), 26), 'feliz': (bezerro(True), 26)}),
+    'cavalo-alazao': ((50, 81), {'doente': (cavalo(False), 52), 'feliz': (cavalo(True), 52)}),
+    'cavalo-tordilho': ((50, 81), {
+        'doente': (cavalo(False, 'metal', 'metal_d', 'white_d', malhas=True), 52),
+        'feliz': (cavalo(True, 'metal', 'metal_d', 'white_d', malhas=True), 52),
+    }),
 }
 
 

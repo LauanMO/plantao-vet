@@ -1,0 +1,122 @@
+{
+  "id": "clin-traqueobronquite-01",
+  "materia": "clinica-geral",
+  "tema": "Afecções respiratórias",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Bob",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "3 anos",
+    "pesoKg": 10,
+    "sprite": "cao-pequeno-branco"
+  },
+  "tutor": { "nome": "Dona Cida", "sprite": "tutora-1" },
+  "chegada": "Doutora, o Bob tá com uma tosse que parece que vai botar alguma coisa pra fora. Começou depois que ele ficou no hotelzinho.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "hotel", "rotulo": "Ele teve contato com outros cães?", "resultado": "Ficou uma semana num hotel para cães enquanto a gente viajava.", "importante": true },
+        { "id": "tosse", "rotulo": "Como é a tosse?", "resultado": "Seca e alta, parece um ganso. Piora quando ele se agita ou puxa a coleira.", "importante": true },
+        { "id": "apetite", "rotulo": "Ele está comendo?", "resultado": "Comeu menos ontem e hoje, e tá mais paradão.", "importante": true },
+        { "id": "vacina", "rotulo": "Ele tomou vacina contra tosse dos canis?", "resultado": "Só a V10 e a da raiva. Essa da tosse ele nunca tomou.", "importante": false },
+        { "id": "antes", "rotulo": "Ele já tinha tosse antes?", "resultado": "Nunca. Sempre foi muito saudável.", "importante": false },
+        { "id": "osso", "rotulo": "Ele pode ter engasgado com osso?", "resultado": "Não damos osso pra ele, não.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,8 °C.", "importante": true },
+        { "id": "traqueia", "ferramenta": "mao", "rotulo": "Palpação da traqueia", "resultado": "Tosse forte assim que a traqueia é palpada.", "importante": true },
+        { "id": "narinas", "ferramenta": "lanterna", "rotulo": "Narinas e mucosas", "resultado": "Secreção nasal amarelada; mucosas róseas.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Ruídos respiratórios um pouco aumentados; coração sem sopro.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratação normal: a pele volta rápido.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 250,
+      "itens": [
+        { "id": "raiox", "rotulo": "Raio-X de tórax", "custo": 150, "resultado": "Leve padrão bronquial; sem sinais de pneumonia e coração de tamanho normal.", "importante": true },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Leucocitose discreta com neutrofilia.", "importante": true },
+        { "id": "eco", "rotulo": "Ecocardiograma", "custo": 200, "resultado": "Coração normal.", "importante": false },
+        { "id": "copro", "rotulo": "Coproparasitológico", "custo": 40, "resultado": "Negativo.", "importante": false },
+        { "id": "bioquimica", "rotulo": "Bioquímica sérica", "custo": 120, "resultado": "Sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Traqueobronquite infecciosa canina (tosse dos canis)", "correta": true, "explicacao": "Tosse seca e alta depois de um hotel com outros cães, tosse à palpação da traqueia, febre e secreção nasal, com raio-X sem pneumonia." },
+        { "texto": "Colapso de traqueia", "correta": false, "explicacao": "O colapso aparece em cães de raças pequenas de meia-idade, com tosse crônica, sem febre e sem relação com contato com outros cães." },
+        { "texto": "Insuficiência cardíaca", "correta": false, "explicacao": "A tosse cardíaca aparece em cães mais velhos, com sopro e coração aumentado; o coração do Bob está normal." },
+        { "texto": "Cinomose", "correta": false, "explicacao": "A cinomose atinge sobretudo filhotes não vacinados e traz sinais oculares, digestivos e neurológicos; o Bob é adulto e vacinado com a V10." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que palpar a traqueia faz o Bob tossir?",
+      "opcoes": [
+        { "texto": "A mucosa está inflamada, e os receptores da tosse ficaram sensíveis", "correta": true, "explicacao": "Na traqueobronquite, a inflamação deixa os receptores da tosse da traqueia e dos brônquios mais sensíveis: um toque leve já dispara o reflexo." },
+        { "texto": "A traqueia está colapsada", "correta": false, "explicacao": "O colapso também causa tosse à palpação, mas aqui o quadro é agudo, com febre e contato recente com outros cães." },
+        { "texto": "Há líquido nos pulmões", "correta": false, "explicacao": "Líquido no pulmão (edema) dá crepitações e cansaço, não tosse ao palpar a traqueia, e o raio-X não mostrou isso." },
+        { "texto": "Ele engoliu um corpo estranho", "correta": false, "explicacao": "Não há histórico de engasgo, e um corpo estranho daria tosse súbita, sem febre nem contato com outros cães." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Receita",
+      "critica": true,
+      "instrucao": "O Bob tem febre e secreção nasal e comeu menos: prescreva o antibiótico (10 kg).",
+      "farmacos": [
+        { "id": "doxiciclina", "nome": "Doxiciclina", "apresentacao": "Comprimido 50 mg", "unidade": "comprimido", "explicacao": "Tetraciclina de primeira escolha contra a Bordetella e o Mycoplasma da tosse dos canis." },
+        { "id": "prednisolona", "nome": "Prednisolona", "apresentacao": "Comprimido 5 mg", "unidade": "comprimido", "explicacao": "Corticoide: alivia a tosse, mas diminui a defesa contra a infecção e não é indicado com febre." },
+        { "id": "furosemida", "nome": "Furosemida", "apresentacao": "Comprimido 40 mg", "unidade": "comprimido", "explicacao": "Diurético para edema pulmonar de origem cardíaca; o coração do Bob está normal." },
+        { "id": "metoclopramida", "nome": "Metoclopramida", "apresentacao": "Comprimido 10 mg", "unidade": "comprimido", "explicacao": "Antiemético e procinético: não age na tosse nem na infecção." }
+      ],
+      "correto": {
+        "farmaco": "doxiciclina",
+        "doseMgKg": 5,
+        "concentracao": 50,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 12 horas"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Inalatória"],
+      "frequencias": ["Dose única", "A cada 12 horas", "A cada 72 horas", "A cada 7 dias"],
+      "explicacao": "5 mg/kg × 10 kg = 50 mg = 1 comprimido de 50 mg por via oral, a cada 12 horas, por 7 a 10 dias, com comida e um pouco de água depois. Repouso e coleira peitoral, em vez de enforcador, aliviam a tosse."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 7 dias",
+      "bom": "Com a doxiciclina e repouso, a febre passou em 2 dias e a tosse foi diminuindo. O Bob voltou a comer normalmente.",
+      "falaBom": "Doutora, a tosse quase sumiu e ele voltou a comer tudo!",
+      "ruim": "Sem o antibiótico certo, a febre continuou e a infecção desceu para os pulmões: o Bob ficou com broncopneumonia.",
+      "falaRuim": "Doutora, ele tá respirando rápido, com febre, e não quer comer nada..."
+    }
+  ],
+  "resumo": [
+    "Traqueobronquite infecciosa canina: Bordetella bronchiseptica, vírus da parainfluenza e outros agentes, transmitidos onde há muitos cães juntos.",
+    "Tosse seca e alta, como um grasnar de ganso, que piora com exercício, coleira e palpação da traqueia.",
+    "Casos leves melhoram sozinhos em 1 a 2 semanas; com febre, apatia e secreção purulenta, entra antibiótico.",
+    "Doxiciclina 5 mg/kg a cada 12 horas (ou 10 mg/kg a cada 24 horas) por 7 a 10 dias.",
+    "Prevenção: vacina contra Bordetella e parainfluenza para cães que vão a hotéis, creches e exposições."
+  ],
+  "referencias": ["Jericó, Andrade Neto e Kogika, Tratado de Medicina Interna de Cães e Gatos"],
+  "revisado": false
+}

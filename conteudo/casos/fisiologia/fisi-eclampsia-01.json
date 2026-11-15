@@ -1,0 +1,114 @@
+{
+  "id": "fisi-eclampsia-01",
+  "materia": "fisiologia",
+  "tema": "Homeostase do cálcio",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Kiara",
+    "especie": "cão",
+    "raca": "Pinscher",
+    "sexo": "fêmea",
+    "idade": "3 anos",
+    "pesoKg": 3.2,
+    "sprite": "cao-pequeno-preto"
+  },
+  "tutor": { "nome": "Dona Lúcia", "sprite": "tutora-2" },
+  "chegada": "Doutora, a Kiara teve cinco filhotes faz três semanas. Hoje ela começou a tremer inteira, anda toda dura e tá muito ofegante!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "filhotes", "rotulo": "Os filhotes ainda mamam só nela?", "resultado": "Mamam o dia inteiro, os cinco. Ainda não comem ração.", "importante": true },
+        { "id": "suplemento", "rotulo": "Ela tomou suplemento na gestação?", "resultado": "Dei cálcio todo dia na gestação, pra ela ficar forte.", "importante": true },
+        { "id": "inicio", "rotulo": "Como começaram os sinais?", "resultado": "Hoje à tarde ficou inquieta, babando e ofegante. Depois começou a tremer.", "importante": true },
+        { "id": "racao", "rotulo": "Qual ração ela come?", "resultado": "A mesma ração de adulto de sempre. Ela come bem.", "importante": false },
+        { "id": "veneno", "rotulo": "Pode ter comido algum veneno?", "resultado": "Acho que não. Ela não sai de casa, e a gente não usa veneno.", "importante": false },
+        { "id": "convulsao", "rotulo": "Ela já teve convulsão antes?", "resultado": "Nunca. Sempre foi saudável.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "41,3 °C.", "importante": true },
+        { "id": "musculos", "ferramenta": "mao", "rotulo": "Palpação e marcha", "resultado": "Tremores e rigidez nos quatro membros; marcha dura. Está consciente e reage à voz.", "importante": true },
+        { "id": "mamas", "ferramenta": "mao", "rotulo": "Palpação das mamas", "resultado": "Mamas cheias de leite, sem calor, dor ou endurecimento.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração a 190 bpm, ritmo regular; respiração ofegante, pulmões limpos.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e pupilas", "resultado": "Mucosas rosadas; pupilas dilatadas.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 150,
+      "itens": [
+        { "id": "calcio", "rotulo": "Cálcio ionizado", "custo": 60, "resultado": "0,62 mmol/L (referência: 1,25 a 1,45 mmol/L).", "importante": true },
+        { "id": "glicose", "rotulo": "Glicemia", "custo": 20, "resultado": "88 mg/dL, normal.", "importante": true },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Leucograma de estresse; sem anemia.", "importante": false },
+        { "id": "renal", "rotulo": "Ureia e creatinina", "custo": 50, "resultado": "Normais.", "importante": false },
+        { "id": "colinesterase", "rotulo": "Atividade da colinesterase", "custo": 80, "resultado": "Normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Eclâmpsia (tetania puerperal por hipocalcemia)", "correta": true, "explicacao": "Cadela pequena com ninhada grande, três semanas depois do parto, perto do pico da lactação, com tremores, rigidez, hipertermia, consciência preservada e cálcio ionizado muito baixo." },
+        { "texto": "Intoxicação por organofosforado", "correta": false, "explicacao": "Causaria salivação, pupilas contraídas (miose), diarreia e colinesterase baixa. A Kiara tem pupilas dilatadas, colinesterase normal e não teve contato com veneno." },
+        { "texto": "Hipoglicemia puerperal", "correta": false, "explicacao": "Também aparece no pós-parto e pode causar tremores, mas a glicemia da Kiara está normal." },
+        { "texto": "Epilepsia idiopática", "correta": false, "explicacao": "Na crise epiléptica generalizada o cão perde a consciência, e ela nunca teve crise antes. A Kiara está consciente, com tremores e rigidez contínuos." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que o cálcio baixo no sangue faz os músculos da Kiara tremerem e ficarem rígidos?",
+      "opcoes": [
+        { "texto": "Com menos cálcio fora das células, os canais de sódio dos nervos abrem mais fácil, e os nervos disparam sozinhos", "correta": true, "explicacao": "O cálcio do líquido extracelular estabiliza a membrana dos nervos: ele dificulta a abertura dos canais de sódio. Quando ele cai, o limiar de disparo baixa, e os nervos periféricos disparam espontaneamente, causando tremores e tetania." },
+        { "texto": "Com menos cálcio, a junção neuromuscular libera mais acetilcolina", "correta": false, "explicacao": "É o contrário: o cálcio é necessário para liberar acetilcolina. A falta dele na junção causa fraqueza, como na vaca com febre do leite; na cadela, predomina a hiperexcitabilidade dos nervos." },
+        { "texto": "Sem cálcio, o músculo não consegue relaxar depois de cada contração", "correta": false, "explicacao": "O relaxamento depende de o cálcio de dentro da fibra ser bombeado de volta para o retículo sarcoplasmático, e isso continua funcionando. O tremor vem dos nervos disparando sem parar." },
+        { "texto": "A febre alta é que provoca os tremores", "correta": false, "explicacao": "A temperatura alta é consequência, não causa: a atividade muscular intensa produz calor. Ela baixa quando os tremores param com o cálcio." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o cálcio que a Dona Lúcia deu na gestação aumentou o risco de eclâmpsia?",
+      "opcoes": [
+        { "texto": "Cálcio demais na dieta inibe o PTH, e o osso fica com poucos osteoclastos prontos quando a lactação aumenta a demanda", "correta": true, "explicacao": "Com muito cálcio chegando pela dieta, o PTH fica baixo, a calcitonina sobe, e o osso mantém poucos osteoclastos ativos. Na lactação, o PTH até sobe, mas o osso leva dias para aumentar a reabsorção e liberar cálcio para o leite." },
+        { "texto": "O suplemento foi todo para os ossos dos filhotes, e a mãe ficou sem reserva", "correta": false, "explicacao": "Os filhotes usam cálcio da mãe, mas o esqueleto dela é uma reserva grande. O problema é a demora em mobilizar essa reserva, porque o excesso de cálcio deixou o osso com poucos osteoclastos." },
+        { "texto": "O suplemento deixou o leite mais rico em cálcio", "correta": false, "explicacao": "A glândula mamária regula o cálcio do leite, que não depende do suplemento. O que aumenta a perda é o volume de leite para uma ninhada grande." },
+        { "texto": "O excesso de cálcio aumentou a calcitonina, que bloqueia a absorção no intestino", "correta": false, "explicacao": "A calcitonina sobe com o cálcio alto e freia os osteoclastos, o que soma ao PTH baixo, mas ela não bloqueia a absorção de cálcio no intestino." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 7 dias",
+      "bom": "A Kiara recebeu gliconato de cálcio na veia, devagar e com o coração monitorado, e os tremores pararam em minutos. Foi para casa com cálcio oral, e os filhotes passaram a receber leite substituto.",
+      "falaBom": "Doutora, a Kiara tá calminha! Os filhotes tomam leite na mamadeira e ela só amamenta um pouquinho.",
+      "ruim": "Sem repor o cálcio, a tetania evoluiu para convulsões e a temperatura passou de 42 °C. A Kiara precisou de internação intensiva.",
+      "falaRuim": "Doutora, ela teve uma convulsão em casa e tá muito quente..."
+    }
+  ],
+  "resumo": [
+    "Eclâmpsia: hipocalcemia de cadelas pequenas com ninhada grande, em geral de 1 a 4 semanas depois do parto, perto do pico da lactação.",
+    "O cálcio extracelular estabiliza a membrana dos nervos. Quando ele cai, o limiar de disparo baixa e os nervos disparam sozinhos: tremores e tetania.",
+    "A atividade muscular intensa produz calor: a hipertermia melhora com o cálcio, sem antitérmico.",
+    "Suplementar cálcio na gestação inibe o PTH e deixa o osso com poucos osteoclastos; na lactação, ele demora a liberar cálcio.",
+    "Tratamento: gliconato de cálcio na veia, devagar, monitorando o coração; depois cálcio oral e leite substituto para os filhotes."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

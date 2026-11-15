@@ -7,6 +7,8 @@ export const progressoSchema = z.object({
   versao: z.literal(1),
   /** o nome do crachá */
   nome: z.string().max(40).optional(),
+  /** ids das matérias que entram no plantão; sem o campo, entram todas */
+  materiasDoPlantao: z.array(z.string()).optional(),
   /** casos terminados, em qualquer modo */
   jogados: contagem,
   casos: z.record(z.string(), z.object({ vezes: contagem, acertos: contagem, ultimo: contagem, ultimaNota: z.number().min(0).max(1) })),

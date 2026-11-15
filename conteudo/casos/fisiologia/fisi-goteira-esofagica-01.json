@@ -1,0 +1,113 @@
+{
+  "id": "fisi-goteira-esofagica-01",
+  "materia": "fisiologia",
+  "tema": "Digestão dos ruminantes",
+  "dificuldade": 3,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Toddy",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "macho",
+    "idade": "3 semanas",
+    "pesoKg": 50,
+    "sprite": "bezerro-holandes"
+  },
+  "tutor": { "nome": "Seu Tião", "sprite": "produtor-2" },
+  "chegada": "Doutora, o Toddy toma o leite no balde, mas depois de cada mamada a barriga incha do lado esquerdo. Tá magro, e o cocô parece massa de barro.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "sonda", "rotulo": "Ele ficou doente antes?", "resultado": "Teve diarreia faz 10 dias. Não queria mamar, e eu dei o leite por sonda uns 4 dias.", "importante": true },
+        { "id": "balde", "rotulo": "Como ele toma o leite?", "resultado": "No balde aberto, 3 litros de uma vez, bem rápido, em goles grandes.", "importante": true },
+        { "id": "leite", "rotulo": "Como é o leite que ele recebe?", "resultado": "Leite da ordenha da manhã, que às vezes já tá frio quando eu dou.", "importante": true },
+        { "id": "quando", "rotulo": "Quando a barriga incha?", "resultado": "Logo depois do leite. Umas horas depois desincha um pouco.", "importante": false },
+        { "id": "capim", "rotulo": "Ele já come capim ou ração?", "resultado": "Belisca um pouco de feno e de ração de bezerro.", "importante": false },
+        { "id": "outros", "rotulo": "Outros bezerros têm isso?", "resultado": "Não, só ele.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "balotamento", "ferramenta": "mao", "rotulo": "Balotamento do flanco esquerdo", "resultado": "Som de líquido chacoalhando no rúmen, logo depois da mamada.", "importante": true },
+        { "id": "escore", "ferramenta": "mao", "rotulo": "Escore corporal e pelagem", "resultado": "Magro, com costelas aparentes; pelo arrepiado e sem brilho.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,0 °C.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratação normal.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação dos pulmões", "resultado": "Pulmões limpos.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 150,
+      "itens": [
+        { "id": "liquido", "rotulo": "Análise do líquido do rúmen", "custo": 40, "resultado": "pH 5,0, cheiro azedo e coágulos de leite no líquido.", "importante": true },
+        { "id": "gaso", "rotulo": "Hemogasometria", "custo": 100, "resultado": "pH 7,31; bicarbonato 19 mmol/L: acidose metabólica leve.", "importante": false },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Sem alterações importantes.", "importante": false },
+        { "id": "copro", "rotulo": "Coproparasitológico", "custo": 30, "resultado": "Negativo.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Bebedor ruminal: o leite está caindo no rúmen", "correta": true, "explicacao": "Bezerro que recebeu leite por sonda e agora toma leite frio, rápido, em balde aberto; rúmen com líquido depois da mamada, líquido ruminal ácido com coágulos de leite, fezes de barro e emagrecimento." },
+        { "texto": "Timpanismo por obstrução do esôfago", "correta": false, "explicacao": "A obstrução impede o arroto o tempo todo e causa salivação. No Toddy, a barriga incha depois da mamada, e o rúmen tem leite fermentado." },
+        { "texto": "Úlcera de abomaso", "correta": false, "explicacao": "Causa dor abdominal, fezes escuras e às vezes perfuração; não explica leite fermentando no rúmen." },
+        { "texto": "Verminose", "correta": false, "explicacao": "O coproparasitológico deu negativo, e com 3 semanas ele ainda é novo para ter verminose importante." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que o leite que o Toddy toma está indo para o rúmen, e não para o abomaso?",
+      "opcoes": [
+        { "texto": "O reflexo que fecha a goteira esofágica falhou: ele depende da sucção, e a sonda passou por cima dele", "correta": true, "explicacao": "Quando o bezerro mama, estímulos da boca e da faringe chegam ao tronco encefálico, e o nervo vago contrai os lábios da goteira esofágica (sulco reticular). Ela vira um tubo que leva o leite direto ao abomaso. A sonda põe o leite no rúmen sem esse estímulo, e depois o reflexo pode continuar falhando, ainda mais com leite frio e goles grandes." },
+        { "texto": "A goteira esofágica só funciona nos primeiros dias de vida e já se fechou de vez", "correta": false, "explicacao": "O reflexo funciona durante todo o aleitamento e pode continuar até no adulto, se ele seguir tomando leite. Com 3 semanas, o Toddy ainda deveria fechar a goteira." },
+        { "texto": "O rúmen do bezerro já é grande e puxa o leite", "correta": false, "explicacao": "Com 3 semanas, o rúmen ainda é pequeno e não puxa o leite. O caminho do leite depende do fechamento da goteira." },
+        { "texto": "O abomaso está cheio de ração e devolve o leite para o rúmen", "correta": false, "explicacao": "O abomaso recebe o leite pela goteira e esvazia em poucas horas. O leite no rúmen vem da falha no fechamento da goteira, não de refluxo." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o leite no rúmen deixa o líquido ruminal azedo e o Toddy com acidose?",
+      "opcoes": [
+        { "texto": "As bactérias do rúmen fermentam a lactose e produzem ácido lático", "correta": true, "explicacao": "No rúmen, o leite não é digerido como no abomaso: as bactérias fermentam a lactose em ácido lático, inclusive D-lactato. O pH do rúmen cai, o ácido coalha a caseína (os coágulos do exame), e o ácido absorvido causa acidose no sangue." },
+        { "texto": "O leite coalha no rúmen e vira ácido clorídrico", "correta": false, "explicacao": "Quem secreta ácido clorídrico, quimosina e pepsina é o abomaso. O rúmen não secreta ácido: o ácido dele vem da fermentação, e é ele que coalha o leite ali." },
+        { "texto": "A gordura do leite vira corpos cetônicos no rúmen", "correta": false, "explicacao": "A acidez vem da fermentação da lactose em ácido lático, não da gordura." },
+        { "texto": "O rúmen do bezerro ainda não tem bactérias, e o leite apodrece sozinho", "correta": false, "explicacao": "O rúmen é colonizado por bactérias logo nos primeiros dias de vida, e são elas que fermentam o leite." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 3 semanas",
+      "bom": "O leite passou a ser dado morno, em balde com bico, em porções menores. A goteira voltou a fechar, o rúmen parou de inchar, e o Toddy ganhou peso.",
+      "falaBom": "Doutora, com o balde de bico ele mama devagar, e a barriga não incha mais. Já tá ganhando peso!",
+      "ruim": "Com o leite frio no balde aberto, o leite continuou caindo no rúmen e fermentando. O Toddy seguiu com diarreia e acidose e parou de crescer.",
+      "falaRuim": "Doutora, a barriga continua inchando depois do leite, e ele tá cada vez mais magro..."
+    }
+  ],
+  "resumo": [
+    "No bezerro lactente, o leite vai do esôfago ao abomaso pela goteira esofágica (sulco reticular), sem passar pelo rúmen.",
+    "O fechamento da goteira é um reflexo: a sucção estimula receptores da boca e da faringe, e o nervo vago contrai os lábios da goteira.",
+    "No abomaso, a quimosina coagula a caseína, e o leite é digerido aos poucos.",
+    "Leite por sonda, leite frio, goles grandes e estresse atrapalham o reflexo: o leite cai no rúmen e fermenta em ácido lático (bebedor ruminal).",
+    "Prevenção: leite morno, em balde com bico ou mamadeira, em horários regulares; sonda só quando necessário."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

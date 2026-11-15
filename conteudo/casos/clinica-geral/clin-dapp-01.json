@@ -1,0 +1,122 @@
+{
+  "id": "clin-dapp-01",
+  "materia": "clinica-geral",
+  "tema": "Afecções de pele",
+  "dificuldade": 1,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Mel",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "fêmea",
+    "idade": "5 anos",
+    "pesoKg": 10,
+    "sprite": "cao-pequeno-caramelo"
+  },
+  "tutor": { "nome": "Lúcia", "sprite": "tutora-3" },
+  "chegada": "Doutora, a Mel não para de se coçar! Tá com feridas perto do rabo e caiu o pelo. Começou quando esquentou.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "onde", "rotulo": "Onde ela mais se coça?", "resultado": "No fim das costas, perto do rabo, e na parte de trás das coxas.", "importante": true },
+        { "id": "pulgas", "rotulo": "Você já viu pulgas nela?", "resultado": "Vi umas duas... mas acho que pouca pulga não faz isso, né?", "importante": true },
+        { "id": "antipulgas", "rotulo": "Quando ela tomou antipulgas?", "resultado": "Faz uns seis meses. E o gato da casa nunca tomou.", "importante": true },
+        { "id": "racao", "rotulo": "Ela come ração ou comida caseira?", "resultado": "Ração, a mesma há anos.", "importante": false },
+        { "id": "banho", "rotulo": "Com que frequência ela toma banho?", "resultado": "Uma vez por semana, no pet shop.", "importante": false },
+        { "id": "pessoas", "rotulo": "Alguém da casa está com coceira?", "resultado": "Não, só ela.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "pele", "ferramenta": "lanterna", "rotulo": "Inspeção da pele", "resultado": "Falhas de pelo, crostas e pele escurecida no fim das costas e na base da cauda.", "importante": true },
+        { "id": "pente", "ferramenta": "mao", "rotulo": "Pente fino e papel úmido", "resultado": "Saem pontinhos pretos que mancham o papel úmido de vermelho: fezes de pulga.", "importante": true },
+        { "id": "orelhas", "ferramenta": "lanterna", "rotulo": "Orelhas", "resultado": "Condutos limpos, sem vermelhidão nem secreção.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,6 °C.", "importante": false },
+        { "id": "linfonodos", "ferramenta": "mao", "rotulo": "Linfonodos", "resultado": "Poplíteos levemente aumentados.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 150,
+      "itens": [
+        { "id": "raspado", "rotulo": "Raspado cutâneo", "custo": 40, "resultado": "Negativo para ácaros.", "importante": true },
+        { "id": "citologia", "rotulo": "Citologia da pele", "custo": 50, "resultado": "Poucas bactérias, sem pus e sem Malassezia.", "importante": true },
+        { "id": "cultura", "rotulo": "Cultura fúngica", "custo": 90, "resultado": "Negativa.", "importante": false },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Eosinofilia discreta.", "importante": false },
+        { "id": "biopsia", "rotulo": "Biópsia de pele", "custo": 140, "resultado": "Dermatite com eosinófilos ao redor dos vasos.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Dermatite alérgica à picada de pulga (DAPP)", "correta": true, "explicacao": "Coceira intensa no fim das costas e na base da cauda, no calor, com fezes de pulga no pente e sem antipulgas nos animais da casa." },
+        { "texto": "Sarna sarcóptica", "correta": false, "explicacao": "A sarna sarcóptica coça nas bordas das orelhas, cotovelos e jarretes e costuma passar para as pessoas. O raspado negativo não basta para descartá-la, mas a Mel tem lesões no fim das costas e fezes de pulga." },
+        { "texto": "Dermatite atópica", "correta": false, "explicacao": "A atopia começa em cães jovens e pega face, orelhas, patas e axilas; a Mel tem lesões no fim das costas e pulgas." },
+        { "texto": "Dermatofitose", "correta": false, "explicacao": "A micose dá lesões circulares com pouca coceira, e não explica as fezes de pulga." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "A Lúcia acha que poucas pulgas não causam isso. O que você explica para ela?",
+      "opcoes": [
+        { "texto": "Na DAPP, poucas picadas bastam: é uma alergia à saliva da pulga", "correta": true, "explicacao": "É uma hipersensibilidade aos antígenos da saliva da pulga. Num cão alérgico, poucas picadas já mantêm a coceira por dias." },
+        { "texto": "Ela tem razão: só muitas pulgas causam essa coceira", "correta": false, "explicacao": "A quantidade de pulgas importa no cão que não é alérgico; no alérgico, poucas picadas bastam." },
+        { "texto": "A coceira vem da falta de banho", "correta": false, "explicacao": "A Mel toma banho toda semana; a coceira vem da alergia à saliva da pulga." },
+        { "texto": "Basta tratar a Mel, o gato não precisa", "correta": false, "explicacao": "Todos os animais da casa precisam de antipulgas: o gato mantém o ciclo, e a maior parte das pulgas está no ambiente." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Receita",
+      "critica": true,
+      "instrucao": "O antipulgas da Mel e do gato já está na receita. Prescreva o anti-inflamatório para cortar a coceira nos primeiros dias, na menor dose eficaz (10 kg).",
+      "farmacos": [
+        { "id": "prednisolona", "nome": "Prednisolona", "apresentacao": "Comprimido 5 mg", "unidade": "comprimido", "explicacao": "Corticoide em dose anti-inflamatória: corta a coceira por poucos dias enquanto o antipulgas age." },
+        { "id": "cetoconazol", "nome": "Cetoconazol", "apresentacao": "Comprimido 200 mg", "unidade": "comprimido", "explicacao": "Antifúngico: a Mel não tem micose." },
+        { "id": "amoxicilina", "nome": "Amoxicilina", "apresentacao": "Comprimido 250 mg", "unidade": "comprimido", "explicacao": "Antibiótico: a citologia não mostrou infecção que precise de tratamento." },
+        { "id": "ivermectina", "nome": "Ivermectina", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Usada contra ácaros e vermes; o raspado foi negativo, e ela não trata alergia." }
+      ],
+      "correto": {
+        "farmaco": "prednisolona",
+        "doseMgKg": 0.5,
+        "concentracao": 5,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 24 horas"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Tópica"],
+      "frequencias": ["Dose única", "A cada 8 horas", "A cada 24 horas", "A cada 7 dias"],
+      "explicacao": "0,5 mg/kg × 10 kg = 5 mg = 1 comprimido de 5 mg por via oral, a cada 24 horas, por 5 a 7 dias. O que resolve a DAPP é o antipulgas em todos os animais da casa, todo mês, e o controle do ambiente."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 15 dias",
+      "bom": "Com o antipulgas na Mel e no gato, a limpeza da casa e 5 dias de prednisolona, a coceira passou e o pelo começou a crescer.",
+      "falaBom": "Doutora, ela parou de se coçar! E o pelo tá voltando perto do rabo.",
+      "ruim": "Sem cortar a coceira, a Mel continuou se lambendo e se mordendo, e as feridas infeccionaram.",
+      "falaRuim": "Doutora, ela continua se coçando, e agora as feridinhas tão com pus..."
+    }
+  ],
+  "resumo": [
+    "DAPP: hipersensibilidade à saliva da pulga, a dermatopatia alérgica mais comum em cães.",
+    "Coceira intensa na região lombossacra, base da cauda, parte de trás das coxas e abdome, pior no calor.",
+    "As fezes de pulga ficam vermelhas no papel úmido, porque são sangue digerido.",
+    "Tratamento: antipulgas em todos os animais da casa, o ano todo, e controle do ambiente; corticoide só por poucos dias, para cortar a coceira.",
+    "A maior parte da população de pulgas (ovos, larvas e pupas) está no ambiente, não no animal."
+  ],
+  "referencias": ["Jericó, Andrade Neto e Kogika, Tratado de Medicina Interna de Cães e Gatos"],
+  "revisado": false
+}

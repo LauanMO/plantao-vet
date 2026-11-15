@@ -1,0 +1,122 @@
+{
+  "id": "clin-dermatofitose-01",
+  "materia": "clinica-geral",
+  "tema": "Afecções de pele",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Nina",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "fêmea",
+    "idade": "5 meses",
+    "pesoKg": 2,
+    "sprite": "gato-cinza"
+  },
+  "tutor": { "nome": "Bia", "sprite": "tutora-2" },
+  "chegada": "Oi, doutora. A Nina tá com umas falhas de pelo redondinhas na cabeça. E meu filho apareceu com uma mancha no braço...",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "origem", "rotulo": "De onde ela veio?", "resultado": "Adotei num abrigo cheio de gatos, faz um mês.", "importante": true },
+        { "id": "coceira", "rotulo": "Ela se coça muito?", "resultado": "Quase nada. De vez em quando coça a orelha.", "importante": true },
+        { "id": "filho", "rotulo": "Como é a mancha no seu filho?", "resultado": "Redonda, vermelha na borda, e coça. O pediatra disse que é micose.", "importante": true },
+        { "id": "inicio", "rotulo": "Quando apareceram as falhas?", "resultado": "Umas duas semanas depois que ela chegou.", "importante": false },
+        { "id": "outros", "rotulo": "Tem outros animais em casa?", "resultado": "Não, só ela.", "importante": false },
+        { "id": "comida", "rotulo": "O que ela come?", "resultado": "Ração de filhote.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "pele", "ferramenta": "lanterna", "rotulo": "Inspeção da pele", "resultado": "Áreas redondas sem pelo, com descamação, na cabeça e nas orelhas.", "importante": true },
+        { "id": "pelos", "ferramenta": "mao", "rotulo": "Puxar os pelos da borda", "resultado": "Os pelos da borda saem fácil e parecem quebrados.", "importante": true },
+        { "id": "ouvidos", "ferramenta": "lanterna", "rotulo": "Condutos auditivos", "resultado": "Limpos, sem secreção escura.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,7 °C.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 200,
+      "itens": [
+        { "id": "wood", "rotulo": "Lâmpada de Wood", "custo": 30, "resultado": "Pelos com fluorescência verde-maçã nas bordas das lesões.", "importante": true },
+        { "id": "tricograma", "rotulo": "Tricograma", "custo": 40, "resultado": "Hifas e esporos envolvendo a haste dos pelos.", "importante": true },
+        { "id": "cultura", "rotulo": "Cultura fúngica", "custo": 90, "resultado": "Microsporum canis, crescido em 10 dias.", "importante": true },
+        { "id": "raspado", "rotulo": "Raspado cutâneo", "custo": 40, "resultado": "Negativo para ácaros.", "importante": false },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Dermatofitose (Microsporum canis)", "correta": true, "explicacao": "Filhote de abrigo com lesões circulares sem pelo e com descamação, pouca coceira, fluorescência na lâmpada de Wood, esporos no tricograma, cultura positiva e lesão na criança." },
+        { "texto": "Sarna notoédrica", "correta": false, "explicacao": "A sarna do gato coça muito, começa nas bordas das orelhas e na face, e não fluoresce na lâmpada de Wood." },
+        { "texto": "Dermatite alérgica à picada de pulga", "correta": false, "explicacao": "A DAPP coça muito e pega o fim das costas e a base da cauda; não explica as lesões circulares nem a cultura positiva." },
+        { "texto": "Alopecia psicogênica", "correta": false, "explicacao": "Na alopecia psicogênica, o gato arranca o pelo lambendo a barriga e os flancos, sem descamação e sem fungo." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Se a lâmpada de Wood desse negativo, por que isso não descartaria a dermatofitose?",
+      "opcoes": [
+        { "texto": "Nem todo dermatófito fluoresce, e o exame pode dar negativo mesmo com M. canis", "correta": true, "explicacao": "A fluorescência vem de um metabólito do M. canis no pelo infectado. A maioria dos gatos com M. canis sem tratamento fluoresce, mas o Trichophyton não, e exame mal feito ou gato já tratado também dão negativo. Quem confirma é a cultura." },
+        { "texto": "A lâmpada de Wood só mostra ácaros", "correta": false, "explicacao": "A lâmpada de Wood não serve para ácaros; ela mostra a fluorescência de alguns dermatófitos." },
+        { "texto": "O fungo fica no sangue, e a luz não chega lá", "correta": false, "explicacao": "O dermatófito vive na queratina do pelo e da pele, não no sangue." },
+        { "texto": "Filhote de gato não pega fungo", "correta": false, "explicacao": "Ao contrário: filhotes, gatos de abrigo e imunossuprimidos são os mais afetados." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Receita",
+      "critica": true,
+      "instrucao": "Prescreva o tratamento oral para a Nina (2 kg).",
+      "farmacos": [
+        { "id": "itraconazol", "nome": "Itraconazol", "apresentacao": "Solução oral 10 mg/mL", "unidade": "mL", "explicacao": "Antifúngico azólico de escolha para a dermatofitose felina, em semanas alternadas." },
+        { "id": "prednisolona", "nome": "Prednisolona", "apresentacao": "Solução oral 3 mg/mL", "unidade": "mL", "explicacao": "Corticoide: diminui a defesa da pele e piora a infecção por fungo." },
+        { "id": "ivermectina", "nome": "Ivermectina", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Age contra ácaros e vermes, não contra fungos." },
+        { "id": "amoxicilina", "nome": "Amoxicilina", "apresentacao": "Suspensão oral 50 mg/mL", "unidade": "mL", "explicacao": "Antibiótico: não age em fungos." }
+      ],
+      "correto": {
+        "farmaco": "itraconazol",
+        "doseMgKg": 5,
+        "concentracao": 10,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 24 horas"
+      },
+      "vias": ["Oral", "Subcutânea", "Intramuscular", "Tópica"],
+      "frequencias": ["Dose única", "A cada 12 horas", "A cada 24 horas", "A cada 7 dias"],
+      "explicacao": "5 mg/kg × 2 kg = 10 mg; 10 mg ÷ 10 mg/mL = 1 mL por via oral, a cada 24 horas, em semanas alternadas (uma semana sim, uma não). Junto: banho antifúngico duas vezes por semana e limpeza da casa, até duas culturas negativas."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 6 semanas",
+      "bom": "Com o itraconazol em semanas alternadas, os banhos antifúngicos e a limpeza da casa, o pelo da Nina cresceu e as culturas deram negativas. O filho da Bia também sarou.",
+      "falaBom": "Doutora, o pelo dela cresceu todinho! E a mancha do meu filho sumiu também.",
+      "ruim": "Sem o antifúngico certo, as lesões se espalharam pelo corpo da Nina, e a casa continuou cheia de esporos.",
+      "falaRuim": "Doutora, apareceram mais falhas nela, e agora eu também tô com uma mancha no braço..."
+    }
+  ],
+  "resumo": [
+    "Dermatofitose: infecção da queratina por fungos; nos gatos, quase sempre Microsporum canis.",
+    "Lesões circulares com queda de pelo e descamação, com pouca coceira; filhotes e gatos de abrigo são os mais afetados.",
+    "É uma zoonose: lesões redondas nas pessoas da casa são uma pista importante.",
+    "Diagnóstico: lâmpada de Wood (a maioria dos M. canis fluoresce, mas o negativo não descarta), tricograma e cultura fúngica, que confirma.",
+    "Tratamento: antifúngico oral (itraconazol), banho antifúngico e limpeza do ambiente até as culturas darem negativas; os esporos resistem por meses."
+  ],
+  "referencias": ["Jericó, Andrade Neto e Kogika, Tratado de Medicina Interna de Cães e Gatos"],
+  "revisado": false
+}

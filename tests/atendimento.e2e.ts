@@ -1,12 +1,17 @@
 import { expect, test, type Page } from '@playwright/test'
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
+import { join } from 'node:path'
 import type { Caso } from '../src/modelo/caso.ts'
 import { quantidadeCerta } from '../src/motor/pontuacao.ts'
 import { TURNO } from '../src/motor/repeticao.ts'
 
+// Todos os casos do banco, revisados ou não, como no jogo publicado.
 // As respostas certas saem do próprio caso, então o teste não carrega conteúdo veterinário.
-const ler = (id: string): Caso => JSON.parse(readFileSync(`conteudo/casos/clinica-geral/${id}.json`, 'utf8'))
-const CASOS = [ler('clin-parvovirose-01'), ler('clin-hipocalcemia-01')]
+const PASTA = join('conteudo', 'casos')
+const CASOS: Caso[] = readdirSync(PASTA, { recursive: true, encoding: 'utf8' })
+  .filter((arquivo) => arquivo.endsWith('.json'))
+  .sort()
+  .map((arquivo) => JSON.parse(readFileSync(join(PASTA, arquivo), 'utf8')))
 
 const comVirgula = (x: number) => String(Math.round(x * 100) / 100).replace('.', ',')
 const botao = (page: Page, nome: string, exact = false) => page.getByRole('button', { name: nome, exact })
@@ -72,6 +77,8 @@ for (const caso of CASOS) {
     await botao(page, 'Biblioteca').click()
     await botao(page, caso.paciente.nome).click()
     await jogarAcertandoTudo(page, caso)
+    // o caso que ela ainda não conferiu pede, no resultado, o código para ela mandar as correções
+    await expect(page.getByText(caso.id)).toHaveCount(caso.revisado ? 0 : 1)
     await expect(botao(page, 'Voltar ao arquivo')).toBeVisible()
     expect(erros).toEqual([])
   })

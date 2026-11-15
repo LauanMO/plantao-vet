@@ -1,0 +1,122 @@
+{
+  "id": "clin-obstrucao-uretral-01",
+  "materia": "clinica-geral",
+  "tema": "Afecções urinárias",
+  "dificuldade": 3,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Frajola",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "macho castrado",
+    "idade": "4 anos",
+    "pesoKg": 5,
+    "sprite": "gato-preto"
+  },
+  "tutor": { "nome": "Paulo", "sprite": "tutor-2" },
+  "chegada": "Doutora, o Frajola entra na caixa de areia toda hora e não sai nada. Agora tá chorando e vomitou.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "ultima", "rotulo": "Quando ele urinou pela última vez?", "resultado": "Ontem de manhã, eu acho. Desde a noite ele só tenta.", "importante": true },
+        { "id": "racao", "rotulo": "O que ele come e quanto bebe?", "resultado": "Só ração seca. E bebe pouca água.", "importante": true },
+        { "id": "mudanca", "rotulo": "Mudou alguma coisa em casa?", "resultado": "A gente trouxe um gatinho novo semana passada.", "importante": true },
+        { "id": "castrado", "rotulo": "Ele é castrado?", "resultado": "É, desde filhote.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, ele tomou no ano passado.", "importante": false },
+        { "id": "rua", "rotulo": "Ele sai para a rua?", "resultado": "Não, vive dentro de casa.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "bexiga", "ferramenta": "mao", "rotulo": "Palpação abdominal", "resultado": "Bexiga grande, dura e muito dolorida; não esvazia com pressão leve.", "importante": true },
+        { "id": "coracao", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração a 120 batimentos por minuto: lento para um gato com dor.", "importante": true },
+        { "id": "penis", "ferramenta": "lanterna", "rotulo": "Inspeção do pênis", "resultado": "Ponta do pênis arroxeada, com um tampão esbranquiçado.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,5 °C.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Cerca de 6% de desidratação.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 300,
+      "itens": [
+        { "id": "bioquimica", "rotulo": "Bioquímica sérica", "custo": 120, "resultado": "Ureia e creatinina altas; potássio de 7,8 mEq/L (alto).", "importante": true },
+        { "id": "urina", "rotulo": "Urinálise (por cistocentese)", "custo": 60, "resultado": "Sangue e muitos cristais de estruvita.", "importante": true },
+        { "id": "ecg", "rotulo": "Eletrocardiograma", "custo": 80, "resultado": "Bradicardia e ondas T altas e pontudas.", "importante": true },
+        { "id": "raiox", "rotulo": "Raio-X abdominal", "custo": 150, "resultado": "Bexiga muito distendida; sem cálculos visíveis.", "importante": false },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Leucograma de estresse.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Obstrução uretral (doença do trato urinário inferior felino)", "correta": true, "explicacao": "Gato macho e castrado, de ração seca, que tenta urinar sem conseguir, com bexiga grande e dura, tampão no pênis, azotemia e potássio alto." },
+        { "texto": "Cistite idiopática sem obstrução", "correta": false, "explicacao": "Na cistite sem obstrução, o gato urina pouco e várias vezes, mas a bexiga fica pequena; aqui ela está grande e não esvazia." },
+        { "texto": "Constipação", "correta": false, "explicacao": "O gato constipado também força na caixa de areia, mas a palpação mostra fezes duras no cólon, não uma bexiga grande e dura." },
+        { "texto": "Doença renal crônica", "correta": false, "explicacao": "A doença renal crônica aparece em gatos mais velhos, que bebem muito e urinam muito; aqui a urina não sai." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o coração do Frajola está lento?",
+      "opcoes": [
+        { "texto": "O potássio alto atrapalha a condução elétrica do coração", "correta": true, "explicacao": "Com a uretra fechada, o potássio não sai pela urina e se acumula no sangue. A hipercalemia deixa o coração lento e pode pará-lo: é a primeira urgência a corrigir." },
+        { "texto": "A dor deixa o coração lento", "correta": false, "explicacao": "A dor costuma acelerar o coração; coração lento num gato com dor é um alerta para potássio alto." },
+        { "texto": "Ele está desidratado", "correta": false, "explicacao": "A desidratação acelera o coração, para compensar o volume menor de sangue." },
+        { "texto": "Gatos castrados têm o coração mais lento", "correta": false, "explicacao": "A castração não muda a frequência cardíaca; o coração lento vem da hipercalemia." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Receita",
+      "critica": true,
+      "instrucao": "O Frajola já está com acesso venoso para o soro e a desobstrução. Prescreva o analgésico pelo acesso (5 kg).",
+      "farmacos": [
+        { "id": "buprenorfina", "nome": "Buprenorfina", "apresentacao": "Solução injetável 0,3 mg/mL", "unidade": "mL", "explicacao": "Opioide de escolha para dor moderada em gatos, seguro mesmo com azotemia." },
+        { "id": "meloxicam", "nome": "Meloxicam", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "AINE: contraindicado em gato desidratado e com azotemia, pelo risco de lesão nos rins." },
+        { "id": "furosemida", "nome": "Furosemida", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Diurético: com a uretra fechada, produzir mais urina só enche mais a bexiga." },
+        { "id": "dexametasona", "nome": "Dexametasona", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Corticoide: não trata a dor da obstrução e aumenta o risco de infecção urinária." }
+      ],
+      "correto": {
+        "farmaco": "buprenorfina",
+        "doseMgKg": 0.02,
+        "concentracao": 0.3,
+        "tolerancia": 0.1,
+        "via": "Intravenosa",
+        "frequencia": "A cada 8 horas"
+      },
+      "vias": ["Intradérmica", "Subcutânea", "Intravenosa", "Tópica"],
+      "frequencias": ["Dose única", "A cada 8 horas", "A cada 24 horas", "A cada 48 horas"],
+      "explicacao": "0,02 mg/kg × 5 kg = 0,1 mg; 0,1 mg ÷ 0,3 mg/mL ≈ 0,33 mL na veia, a cada 8 horas. O tratamento da obstrução é corrigir o potássio, dar soro na veia e desobstruir a uretra com sonda."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 3 dias",
+      "bom": "Desobstruído, com soro e analgesia, o Frajola voltou a urinar sozinho em 2 dias. Saiu com ração úmida, mais fontes de água e menos estresse em casa.",
+      "falaBom": "Doutora, ele tá fazendo xixi normal e voltou a comer! Já comprei a ração úmida.",
+      "ruim": "Sem analgesia adequada, a dor e o estresse mantiveram a uretra contraída, e o Frajola obstruiu de novo.",
+      "falaRuim": "Doutora, ele voltou a tentar fazer xixi e não sai nada de novo..."
+    }
+  ],
+  "resumo": [
+    "Obstrução uretral: emergência em gatos machos, por tampões de matriz proteica e cristais (como estruvita) ou por cálculos.",
+    "Fatores de risco: macho castrado, obeso, que vive dentro de casa, come ração seca, bebe pouca água e passa por estresse.",
+    "Sinais: tenta urinar sem conseguir, mia de dor, lambe o pênis e vomita; a bexiga fica grande, dura e dolorida.",
+    "O potássio alto causa coração lento e arritmias: corrigir antes de anestesiar.",
+    "Tratamento: analgesia, soro e desobstrução com sonda; depois, ração úmida, mais água e enriquecimento ambiental. Evitar AINE em gato com azotemia."
+  ],
+  "referencias": ["Jericó, Andrade Neto e Kogika, Tratado de Medicina Interna de Cães e Gatos"],
+  "revisado": false
+}

@@ -1,0 +1,123 @@
+{
+  "id": "tera-osteoartrite-01",
+  "materia": "terapeutica",
+  "tema": "Analgesia e anti-inflamatórios",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Zeus",
+    "especie": "cão",
+    "raca": "Labrador",
+    "sexo": "macho",
+    "idade": "10 anos",
+    "pesoKg": 30,
+    "sprite": "cao-pequeno-preto"
+  },
+  "tutor": { "nome": "Fernanda", "sprite": "tutora-2" },
+  "chegada": "Doutora, o Zeus tá com dificuldade pra levantar de manhã e não quer mais subir a escada. Depois que anda um pouco, parece que melhora.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Desde quando ele está assim?", "resultado": "Faz uns 6 meses, e piorou agora no frio.", "importante": true },
+        { "id": "piora", "rotulo": "Quando a dificuldade é maior?", "resultado": "Quando acorda ou depois de ficar muito tempo deitado. Andando, ele vai soltando.", "importante": true },
+        { "id": "remedios", "rotulo": "Toma algum remédio ou tem outra doença?", "resultado": "Não toma nada. Come bem, bebe água e faz xixi normal.", "importante": true },
+        { "id": "vacina", "rotulo": "Ele foi vacinado este ano?", "resultado": "Foi, sim, em março.", "importante": false },
+        { "id": "racao", "rotulo": "O que ele come?", "resultado": "Ração para cão idoso, duas vezes por dia, e uns petiscos.", "importante": false },
+        { "id": "humor", "rotulo": "Ele mudou de comportamento?", "resultado": "Continua carinhoso, só mais preguiçoso para brincar.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "articulacoes", "ferramenta": "mao", "rotulo": "Palpação das articulações", "resultado": "Dor e crepitação ao esticar os quadris; cotovelos um pouco engrossados.", "importante": true },
+        { "id": "musculos", "ferramenta": "mao", "rotulo": "Massa muscular das coxas", "resultado": "Coxas mais finas que os ombros: perda de músculo nos membros de trás.", "importante": true },
+        { "id": "escore", "ferramenta": "mao", "rotulo": "Escore corporal", "resultado": "Acima do peso: escore 7 de 9.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,5 °C.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões normais.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratação normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Osteoartrite (artrose) nos quadris e cotovelos", "correta": true, "explicacao": "Cão idoso, grande e acima do peso, com rigidez ao levantar que melhora com o movimento, dor e crepitação nas articulações e perda de músculo." },
+        { "texto": "Ruptura do ligamento cruzado cranial", "correta": false, "explicacao": "Causa manqueira súbita, em geral de um membro de trás só, com o joelho instável no teste de gaveta. O Zeus piorou aos poucos e nas duas pernas." },
+        { "texto": "Hérnia de disco", "correta": false, "explicacao": "Dá dor na coluna e pode tirar a firmeza ou a sensibilidade das patas. A dor do Zeus está nas articulações." },
+        { "texto": "Hipotireoidismo", "correta": false, "explicacao": "Deixa o cão lento e acima do peso, mas não explica dor e crepitação nas articulações." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "O anti-inflamatório do Zeus vai ser de uso contínuo. Que cuidado é essencial na prescrição?",
+      "opcoes": [
+        { "texto": "Pedir ureia, creatinina e enzimas do fígado e dar o remédio junto com a comida", "correta": true, "explicacao": "Os AINEs podem lesar rim, fígado e estômago: exames antes de começar e de tempos em tempos durante o uso, e o remédio sempre com a comida." },
+        { "texto": "Associar prednisolona para somar o efeito", "correta": false, "explicacao": "AINE com corticoide aumenta muito o risco de úlcera e sangramento no estômago e no intestino. Nunca associar." },
+        { "texto": "Dar em jejum, para absorver melhor", "correta": false, "explicacao": "Com a comida, o estômago fica mais protegido. O anti-inflamatório é dado misturado ao alimento." },
+        { "texto": "Dobrar a dose nos dias frios, quando ele piora", "correta": false, "explicacao": "Passar da dose não traz mais alívio e aumenta a toxicidade. Se a dor escapar, soma-se outro tipo de analgésico, nunca mais AINE." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Dose do primeiro dia",
+      "critica": true,
+      "pergunta": "No primeiro dia, o anti-inflamatório vai em dose dobrada: 0,2 mg/kg. Com 30 kg e a suspensão oral de 1,5 mg/mL, quantos mL?",
+      "unidade": "mL",
+      "resposta": 4,
+      "tolerancia": 0.05,
+      "explicacao": "0,2 mg/kg × 30 kg = 6 mg; 6 mg ÷ 1,5 mg/mL = 4 mL, só no primeiro dia."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Receita para casa",
+      "critica": true,
+      "instrucao": "Prescreva o anti-inflamatório do Zeus (30 kg) a partir do segundo dia, na dose de manutenção.",
+      "farmacos": [
+        { "id": "meloxicam", "nome": "Meloxicam", "apresentacao": "Suspensão oral 1,5 mg/mL", "unidade": "mL", "explicacao": "AINE preferencial da COX-2, com uma dose ao dia: primeira escolha para a dor da artrose no cão." },
+        { "id": "prednisolona", "nome": "Prednisolona", "apresentacao": "Comprimido 20 mg", "unidade": "comprimido", "explicacao": "Corticoide: no uso prolongado causa perda de músculo, o que piora a artrose, além de outros efeitos do excesso de cortisol." },
+        { "id": "dipirona", "nome": "Dipirona", "apresentacao": "Solução oral 500 mg/mL", "unidade": "mL", "explicacao": "Analgésico de ação curta e pouca ação anti-inflamatória: pode ajudar numa crise, mas não é a base do tratamento da artrose." },
+        { "id": "omeprazol", "nome": "Omeprazol", "apresentacao": "Cápsula 20 mg", "unidade": "cápsula", "explicacao": "Protetor gástrico: não trata a dor nem a inflamação da articulação." }
+      ],
+      "correto": {
+        "farmaco": "meloxicam",
+        "doseMgKg": 0.1,
+        "concentracao": 1.5,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 24 horas"
+      },
+      "vias": ["Oral", "Tópica", "Retal", "Intra-articular"],
+      "frequencias": ["Dose única", "A cada 8 horas", "A cada 12 horas", "A cada 24 horas"],
+      "explicacao": "0,1 mg/kg × 30 kg = 3 mg; 3 mg ÷ 1,5 mg/mL = 2 mL pela boca, com a comida, a cada 24 horas. Uso contínuo, com reavaliação e exames de sangue periódicos. Perder peso e fazer exercício leve também tratam a artrose."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 30 dias",
+      "bom": "Com o meloxicam na dose certa, o Zeus voltou a levantar sem dificuldade. Os exames de controle vieram normais, e ele começou a dieta para perder peso.",
+      "falaBom": "Doutora, o Zeus voltou a subir a escada e até busca a bolinha de novo!",
+      "ruim": "Com a prescrição errada, a dor do Zeus não foi controlada. Ele passou a ficar mais tempo deitado e perdeu ainda mais músculo.",
+      "falaRuim": "Doutora, ele continua travado de manhã e agora nem quer sair pra passear..."
+    }
+  ],
+  "resumo": [
+    "Osteoartrite: doença articular degenerativa, comum em cães idosos, grandes e acima do peso.",
+    "Sinais: rigidez ao levantar que melhora com o movimento, dor e crepitação nas articulações e perda de músculo.",
+    "Meloxicam no cão: 0,2 mg/kg no primeiro dia e 0,1 mg/kg a cada 24 horas depois, pela boca e com a comida.",
+    "No uso contínuo de AINE: exames de rim e fígado antes e durante o tratamento. Nunca associar AINE com corticoide ou com outro AINE.",
+    "Perda de peso e exercício controlado fazem parte do tratamento."
+  ],
+  "referencias": [
+    "Andrade, Manual de Terapêutica Veterinária",
+    "Viana, Fundamentos de Terapêutica Veterinária"
+  ],
+  "revisado": false
+}

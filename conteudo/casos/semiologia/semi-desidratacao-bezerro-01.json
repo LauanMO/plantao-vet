@@ -1,0 +1,100 @@
+{
+  "id": "semi-desidratacao-bezerro-01",
+  "materia": "semiologia",
+  "tema": "Hidratação",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Bolinha",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "macho",
+    "idade": "10 dias",
+    "pesoKg": 45,
+    "sprite": "bezerro-holandes"
+  },
+  "tutor": { "nome": "Seu Tião", "sprite": "produtor-2" },
+  "chegada": "Doutora, o Bolinha tá com diarreia faz três dias. Hoje não quis mamar e mal para em pé.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "evolucao", "rotulo": "Como a diarreia evoluiu?", "resultado": "Começou há três dias. Hoje cedo ele ficou deitado e não quis levantar.", "importante": true },
+        { "id": "mamou", "rotulo": "Ele está mamando?", "resultado": "Ontem mamou pouco. Hoje recusou o balde de leite.", "importante": true },
+        { "id": "fezes", "rotulo": "Como são as fezes?", "resultado": "Amareladas, que nem água, escorrendo pelo rabo.", "importante": true },
+        { "id": "colostro", "rotulo": "Ele mamou colostro ao nascer?", "resultado": "Mamou na mãe, mas não sei quanto.", "importante": false },
+        { "id": "outros", "rotulo": "Outro bezerro teve diarreia?", "resultado": "O da baia do lado teve semana passada e melhorou.", "importante": false },
+        { "id": "remedio", "rotulo": "Já deu algum remédio?", "resultado": "Dei um pouco de soro caseiro ontem, mas ele tomou pouco.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 5,
+      "itens": [
+        { "id": "olhos", "ferramenta": "lanterna", "rotulo": "Posição dos olhos", "resultado": "Olhos bem fundos: há um vão de uns 7 mm entre o globo e a pálpebra.", "importante": true },
+        { "id": "prega", "ferramenta": "gota", "rotulo": "Prega cutânea no pescoço", "resultado": "A prega leva uns 6 segundos para se desfazer.", "importante": true },
+        { "id": "boca", "ferramenta": "mao", "rotulo": "Boca e extremidades", "resultado": "Boca seca e fria; orelhas e patas frias.", "importante": true },
+        { "id": "postura", "ferramenta": "mao", "rotulo": "Postura e reflexo de sucção", "resultado": "Só fica em pé com ajuda; sucção fraca, mal chupa o dedo.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,8 °C (referência do bezerro: 38,5 a 39,5 °C).", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração acelerado; pulmões sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Grau de desidratação",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Pelos achados do exame físico, qual é o grau de desidratação do Bolinha?",
+      "opcoes": [
+        { "texto": "Grave, cerca de 10 a 12%", "correta": true, "explicacao": "Vão de uns 7 mm entre o olho e a pálpebra, prega de 6 segundos no pescoço, boca e extremidades frias e dificuldade para ficar em pé: desidratação grave, que pede soro na veia." },
+        { "texto": "Moderada, cerca de 6 a 8%", "correta": false, "explicacao": "Na moderada o olho afunda pouco (uns 2 a 4 mm), a prega volta mais rápido e o bezerro ainda fica em pé, com boca morna e sucção presente." },
+        { "texto": "Leve, abaixo de 6%", "correta": false, "explicacao": "Na leve quase não há sinais no exame: olhos no lugar, prega que volta logo e bezerro mamando." },
+        { "texto": "Não dá para estimar sem exame de sangue", "correta": false, "explicacao": "O exame físico estima bem o grau pelos olhos, prega, boca, extremidades e postura. Hematócrito e proteína total ajudam, mas não substituem." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Déficit de líquido",
+      "pergunta": "O Bolinha pesa 45 kg e você estimou 10% de desidratação. Quantos litros de líquido ele perdeu?",
+      "unidade": "L",
+      "resposta": 4.5,
+      "tolerancia": 0.05,
+      "explicacao": "45 kg × 0,10 = 4,5 L de déficit. Com sucção fraca e extremidades frias, a reposição começa pela veia; o soro oral entra quando ele voltar a mamar."
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a boca e as extremidades frias pesam tanto na avaliação do Bolinha?",
+      "opcoes": [
+        { "texto": "Mostram má perfusão: com pouco sangue circulando, o corpo poupa a periferia", "correta": true, "explicacao": "Com o volume de sangue baixo, os vasos da periferia se contraem para manter cérebro e coração. Boca e patas frias indicam desidratação grave e risco de choque." },
+        { "texto": "Mostram que ele está com febre", "correta": false, "explicacao": "A temperatura retal está baixa (37,8 °C). Boca fria num bezerro com diarreia indica má circulação, não febre." },
+        { "texto": "São normais em bezerros com poucos dias de vida", "correta": false, "explicacao": "Bezerro saudável tem boca quente e úmida e chupa o dedo com força." },
+        { "texto": "Mostram só que a noite foi fria", "correta": false, "explicacao": "Aquecer ajuda, mas o frio na periferia vem da falta de volume circulante, que só melhora com soro." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 2 dias",
+      "bom": "Com soro na veia nas primeiras horas e depois soro oral entre as mamadas, o Bolinha voltou a mamar no dia seguinte e a diarreia passou em 4 dias.",
+      "falaBom": "Doutora, o Bolinha tá mamando o balde todo e pulando na baia!",
+      "ruim": "Com o grau subestimado, ele recebeu só soro oral, mas mal conseguia mamar. Piorou, ficou caído e frio e precisou de socorro de urgência.",
+      "falaRuim": "Doutora, ele não levanta mais e tá gelado..."
+    }
+  ],
+  "resumo": [
+    "No bezerro, a hidratação se avalia pela posição dos olhos, pela prega cutânea no pescoço ou na pálpebra superior, pela boca, pelas extremidades, pela postura e pela sucção.",
+    "Quanto maior o vão entre o globo ocular e a pálpebra, maior a desidratação.",
+    "Boca e extremidades frias, prega lenta e bezerro que não fica em pé indicam desidratação grave (10 a 12%): soro na veia.",
+    "Sucção fraca e apatia também aparecem na acidose metabólica, comum nos bezerros com diarreia.",
+    "Déficit (L) = peso (kg) × fração de desidratação (ex.: 45 × 0,10 = 4,5 L)."
+  ],
+  "referencias": [
+    "Rosenberger, Exame Clínico dos Bovinos",
+    "Feitosa, Semiologia Veterinária: A Arte do Diagnóstico"
+  ],
+  "revisado": false
+}
