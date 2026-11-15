@@ -1,0 +1,102 @@
+{
+  "id": "anat-toracocentese-gato-01",
+  "materia": "anatomia",
+  "tema": "Topografia das vísceras",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Simba",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "3 anos",
+    "pesoKg": 5,
+    "sprite": "gato-cinza"
+  },
+  "tutor": { "nome": "Anderson", "sprite": "tutor-2" },
+  "chegada": "Doutora, o Simba tá respirando com a barriga, rapidinho, e parou de comer. Ele brigou na rua umas semanas atrás.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 3,
+      "itens": [
+        { "id": "briga", "rotulo": "Como foi essa briga?", "resultado": "Voltou com umas mordidas no peito, que sararam sozinhas.", "importante": true },
+        { "id": "inicio", "rotulo": "Quando a respiração ficou difícil?", "resultado": "Faz uns três dias, e só tá piorando.", "importante": true },
+        { "id": "tosse", "rotulo": "Ele tosse?", "resultado": "Não, nunca vi ele tossir.", "importante": false },
+        { "id": "apetite", "rotulo": "Desde quando não come?", "resultado": "Desde ontem. Fica só deitado de peito, quietinho.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Ele só tomou quando era filhote.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "fr", "ferramenta": "estetoscopio", "rotulo": "Frequência e padrão respiratório", "resultado": "64 movimentos por minuto, curtos e rápidos, com esforço da barriga.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação do tórax", "resultado": "Coração e pulmão abafados na metade de baixo do tórax, dos dois lados; normais em cima.", "importante": true },
+        { "id": "percussao", "ferramenta": "mao", "rotulo": "Percussão do tórax", "resultado": "Som maciço na parte de baixo do tórax, dos dois lados, com limite horizontal.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,8 °C.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosa-claras; TPC de 2 segundos.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Cerca de 5% de desidratação.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "O que explica a respiração do Simba?",
+      "opcoes": [
+        { "texto": "Efusão pleural, provavelmente piotórax", "correta": true, "explicacao": "Respiração rápida e curta, sons abafados e percussão maciça só na parte de baixo do tórax, com febre, em gato que brigou: líquido na cavidade pleural, provavelmente pus." },
+        { "texto": "Pneumotórax", "correta": false, "explicacao": "No pneumotórax, o ar sobe: o abafamento fica na parte de cima do tórax, e a percussão fica mais sonora, não maciça." },
+        { "texto": "Asma felina", "correta": false, "explicacao": "A asma causa tosse, chiado e dificuldade para expirar. Não deixa os sons abafados embaixo nem dá febre." },
+        { "texto": "Edema pulmonar por doença do coração", "correta": false, "explicacao": "O edema dá crepitações na auscultação, não abafamento com limite horizontal, e costuma vir com sopro ou ritmo de galope." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Onde introduzir a agulha para tirar o líquido do tórax do Simba?",
+      "opcoes": [
+        { "texto": "No 7º ou 8º espaço intercostal, no terço ventral do tórax", "correta": true, "explicacao": "Ali a agulha fica atrás do coração, que ocupa mais ou menos da 3ª à 6ª costela, e à frente da inserção do diafragma. O líquido se acumula embaixo." },
+        { "texto": "No 4º espaço intercostal, no terço ventral do tórax", "correta": false, "explicacao": "Ali fica o coração. A agulha pode perfurar o coração ou os grandes vasos." },
+        { "texto": "No 7º ou 8º espaço intercostal, no terço dorsal do tórax", "correta": false, "explicacao": "É o lugar para tirar ar, no pneumotórax, porque o ar sobe. O líquido do Simba está embaixo." },
+        { "texto": "No 11º espaço intercostal, no terço ventral do tórax", "correta": false, "explicacao": "Embaixo, nessa altura, a agulha já passa da inserção do diafragma e entra no abdome, com risco de perfurar o fígado." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a agulha deve entrar rente à borda cranial da costela, e não à borda caudal?",
+      "opcoes": [
+        { "texto": "Porque a artéria, a veia e o nervo intercostais correm junto à borda caudal de cada costela", "correta": true, "explicacao": "O feixe intercostal acompanha a borda caudal de cada costela. Entrando rente à borda cranial da costela de trás, a agulha passa longe dele." },
+        { "texto": "Porque a pleura é mais fina junto à borda cranial", "correta": false, "explicacao": "A pleura tem a mesma espessura ao longo do espaço intercostal. O motivo é o feixe de vasos e nervo na borda caudal." },
+        { "texto": "Para não atingir a artéria torácica interna", "correta": false, "explicacao": "A torácica interna corre por dentro do tórax, ao lado do esterno, longe do ponto da punção na parede lateral." },
+        { "texto": "Porque o diafragma se prende na borda caudal de cada costela", "correta": false, "explicacao": "O diafragma se prende por dentro, numa linha oblíqua que vai das cartilagens costais até a última costela, e não na borda de cada costela." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 1 semana",
+      "bom": "A toracocentese no 7º espaço intercostal retirou pus dos dois lados. Com dreno torácico, lavagem e antibiótico, o Simba voltou a respirar tranquilo em uma semana.",
+      "falaBom": "Doutora, o Simba tá respirando tranquilo e voltou a comer! Nem parece o mesmo gato.",
+      "ruim": "A punção no lugar errado não alcançou o líquido e causou sangramento. O Simba piorou e precisou de oxigênio na internação antes de uma nova punção.",
+      "falaRuim": "Doutora, ele tá respirando ainda pior, de boca aberta..."
+    }
+  ],
+  "resumo": [
+    "No cão e no gato, o coração ocupa mais ou menos da 3ª à 6ª costela; atrás dele, a cúpula do diafragma avança dentro do arco das costelas.",
+    "Toracocentese: 7º ou 8º espaço intercostal; terço ventral para líquido, terço dorsal para ar.",
+    "A artéria, a veia e o nervo intercostais correm na borda caudal de cada costela: a agulha entra rente à borda cranial da costela de trás.",
+    "Efusão pleural: respiração rápida e curta, sons abafados e percussão maciça embaixo, com limite horizontal.",
+    "Gato que briga, com febre e efusão pleural: pense em piotórax."
+  ],
+  "referencias": [
+    "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+    "König e Liebich, Anatomia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

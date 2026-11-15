@@ -1,0 +1,102 @@
+{
+  "id": "anat-luxacao-coxofemoral-01",
+  "materia": "anatomia",
+  "tema": "Ossos e articulações no raio-X",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Rex",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "4 anos",
+    "pesoKg": 18,
+    "sprite": "cao-pequeno-preto"
+  },
+  "tutor": { "nome": "Sônia", "sprite": "tutora-3" },
+  "chegada": "Doutora, um carro pegou o Rex agora há pouco! Ele não apoia a pata de trás esquerda e chora quando eu encosto.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 3,
+      "itens": [
+        { "id": "acidente", "rotulo": "Como foi o atropelamento?", "resultado": "O carro bateu de lado na traseira dele. Ele rolou e levantou sozinho, mancando.", "importante": true },
+        { "id": "tempo", "rotulo": "Quanto tempo faz?", "resultado": "Uma hora, no máximo. Vim direto pra cá.", "importante": true },
+        { "id": "xixi", "rotulo": "Ele fez xixi depois do acidente?", "resultado": "Fez, no caminho. Normal, sem sangue.", "importante": true },
+        { "id": "antes", "rotulo": "Ele mancava antes?", "resultado": "Nunca. Corria o dia todo no quintal.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, sim.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "membro", "ferramenta": "mao", "rotulo": "Posição do membro pélvico esquerdo", "resultado": "Mais curto que o direito, com o joelho virado para fora e o tarso para dentro; não apoia.", "importante": true },
+        { "id": "quadril", "ferramenta": "mao", "rotulo": "Palpação do quadril", "resultado": "O trocânter maior esquerdo está mais alto e mais longe do túber isquiático do que o direito.", "importante": true },
+        { "id": "nervos", "ferramenta": "mao", "rotulo": "Sensibilidade e reflexos", "resultado": "Sente a pinça em todo o pé, mexe os dedos e tem reflexo patelar normal.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Rosadas; TPC de 2 segundos.", "importante": false },
+        { "id": "torax", "ferramenta": "estetoscopio", "rotulo": "Auscultação do tórax", "resultado": "Coração e pulmões sem alterações.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,9 °C.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "No raio-X ventrodorsal, a cabeça do fêmur esquerdo está fora do acetábulo, acima e à frente dele, sem fraturas. Qual é o achado?",
+      "opcoes": [
+        { "texto": "Luxação coxofemoral craniodorsal", "correta": true, "explicacao": "A cabeça do fêmur saiu do acetábulo para cima e para a frente, puxada pelos músculos glúteos. É a direção mais comum após trauma e explica o membro curto, com o joelho virado para fora." },
+        { "texto": "Luxação coxofemoral ventral", "correta": false, "explicacao": "Na luxação ventral, a cabeça do fêmur desce e pode ficar presa no forame obturado; o membro fica afastado para fora e parece mais comprido." },
+        { "texto": "Fratura do colo do fêmur", "correta": false, "explicacao": "Na fratura, a cabeça continua dentro do acetábulo e aparece uma linha de fratura no colo. O raio-X não mostrou fratura." },
+        { "texto": "Displasia coxofemoral", "correta": false, "explicacao": "A displasia é uma doença do desenvolvimento, em geral dos dois lados, com acetábulo raso e remodelação dos ossos. Não aparece de repente depois de um trauma." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Que ligamento, dentro da articulação, precisou romper para a cabeça do fêmur do Rex sair do lugar?",
+      "opcoes": [
+        { "texto": "Ligamento da cabeça do fêmur", "correta": true, "explicacao": "Ele liga a fóvea da cabeça do fêmur à fossa do acetábulo. Na luxação traumática, ele rompe junto com a cápsula articular." },
+        { "texto": "Ligamento cruzado cranial", "correta": false, "explicacao": "O cruzado cranial fica no joelho, entre o fêmur e a tíbia; não faz parte da articulação do quadril." },
+        { "texto": "Ligamento colateral lateral do quadril", "correta": false, "explicacao": "O quadril é uma articulação esferoidal e não tem ligamentos colaterais. Eles existem nas articulações em dobradiça, como o cotovelo e o joelho." },
+        { "texto": "Ligamento sacrotuberal", "correta": false, "explicacao": "O sacrotuberal vai do sacro ao túber isquiático, fora da articulação, e forma parte da parede da pelve." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "No raio-X, quais ossos se unem para formar o acetábulo?",
+      "opcoes": [
+        { "texto": "Ílio, ísquio e púbis", "correta": true, "explicacao": "Os três ossos do coxal se encontram no acetábulo. No filhote, um pequeno osso acetabular completa a cavidade entre eles." },
+        { "texto": "Ílio, sacro e ísquio", "correta": false, "explicacao": "O sacro se articula com o ílio na articulação sacroilíaca, mas não entra no acetábulo." },
+        { "texto": "Fêmur, ílio e púbis", "correta": false, "explicacao": "O fêmur se encaixa no acetábulo, mas não faz parte dele." },
+        { "texto": "Somente o ílio", "correta": false, "explicacao": "O ílio forma só uma parte do acetábulo; o ísquio e o púbis completam a cavidade." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 2 semanas",
+      "bom": "Sob anestesia, a cabeça do fêmur foi recolocada no acetábulo, e o membro ficou numa bandagem de Ehmer por 10 dias. O Rex voltou a apoiar a pata.",
+      "falaBom": "Doutora, tiraram a bandagem e o Rex já apoia a pata! Tá até querendo correr.",
+      "ruim": "Tratado como fratura, o quadril ficou fora do lugar por dias. Quando tentaram recolocar, a cabeça do fêmur não parou no acetábulo, e o Rex precisou de cirurgia.",
+      "falaRuim": "Doutora, ele continua sem apoiar a pata e chora quando deita desse lado..."
+    }
+  ],
+  "resumo": [
+    "A coxofemoral é uma articulação esferoidal entre a cabeça do fêmur e o acetábulo, formado pelo ílio, pelo ísquio e pelo púbis.",
+    "Ela se mantém no lugar pelo ligamento da cabeça do fêmur, pela cápsula articular, pelo lábio do acetábulo e pelos músculos ao redor.",
+    "Luxação craniodorsal, a mais comum após trauma: membro mais curto, joelho para fora e tarso para dentro; o trocânter maior fica mais alto e mais longe do túber isquiático.",
+    "No raio-X ventrodorsal, a cabeça do fêmur aparece acima e à frente do acetábulo. Faça sempre duas projeções e procure fraturas associadas.",
+    "Luxação ventral: membro afastado para fora e mais comprido, com a cabeça do fêmur perto do forame obturado."
+  ],
+  "referencias": [
+    "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+    "König e Liebich, Anatomia dos Animais Domésticos"
+  ],
+  "revisado": false
+}
