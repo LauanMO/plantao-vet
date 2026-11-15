@@ -27,7 +27,7 @@ describe('os casos do kit', () => {
       sprites,
     )
     expect(r.erros).toEqual([])
-    expect(r.revisados).toBe(0)
+    expect(r.revisados).toBe(2)
     expect(r.doses).toEqual([
       'clin-parvovirose-01: Maropitant, 1 mg/kg × 5 kg = 5 mg; ÷ 10 mg/mL = 0,5 mL',
       'clin-hipocalcemia-01: Borogluconato de cálcio 23%, 22,2 mg/kg × 500 kg = 11.100 mg; ÷ 21,4 mg/mL = 518,69 mL',
