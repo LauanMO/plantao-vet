@@ -47,9 +47,9 @@
       "orcamento": 400,
       "itens": [
         { "id": "raiox", "rotulo": "Raio-X de tórax", "custo": 100, "resultado": "Átrio esquerdo aumentado e opacidade pulmonar difusa, compatível com edema.", "importante": true },
-        { "id": "eco", "rotulo": "Ecocardiograma", "custo": 180, "resultado": "Parede do ventrículo esquerdo com 8 mm (normal: até 6 mm); átrio esquerdo dilatado.", "importante": true },
+        { "id": "eco", "rotulo": "Ecocardiograma", "custo": 180, "resultado": "Parede do ventrículo esquerdo com 8 mm (normal: menos de 5 mm); átrio esquerdo dilatado.", "importante": true },
         { "id": "t4", "rotulo": "T4 total", "custo": 50, "resultado": "2,1 µg/dL, normal.", "importante": true },
-        { "id": "pressao", "rotulo": "Pressão arterial", "custo": 30, "resultado": "Sistólica de 140 mmHg, normal.", "importante": true },
+        { "id": "pressao", "rotulo": "Pressão arterial", "custo": 30, "resultado": "Sistólica de 130 mmHg, normal.", "importante": true },
         { "id": "probnp", "rotulo": "NT-proBNP", "custo": 80, "resultado": "Alto: sinal de estiramento do coração.", "importante": false },
         { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Sem alterações.", "importante": false }
       ]

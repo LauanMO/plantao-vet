@@ -83,8 +83,8 @@
       "quem": "preceptora",
       "pergunta": "Por que o leite no rúmen deixa o líquido ruminal azedo e o Toddy com acidose?",
       "opcoes": [
-        { "texto": "As bactérias do rúmen fermentam a lactose e produzem ácido lático", "correta": true, "explicacao": "No rúmen, o leite não é coagulado e digerido como no abomaso: as bactérias fermentam a lactose em ácido lático, inclusive D-lactato. O pH do rúmen cai, e o ácido absorvido causa acidose no sangue." },
-        { "texto": "O leite coalha no rúmen e vira ácido clorídrico", "correta": false, "explicacao": "Quem coagula o leite e secreta ácido clorídrico é o abomaso, com quimosina e pepsina. O rúmen não secreta ácido; o ácido dele vem da fermentação." },
+        { "texto": "As bactérias do rúmen fermentam a lactose e produzem ácido lático", "correta": true, "explicacao": "No rúmen, o leite não é digerido como no abomaso: as bactérias fermentam a lactose em ácido lático, inclusive D-lactato. O pH do rúmen cai, o ácido coalha a caseína (os coágulos do exame), e o ácido absorvido causa acidose no sangue." },
+        { "texto": "O leite coalha no rúmen e vira ácido clorídrico", "correta": false, "explicacao": "Quem secreta ácido clorídrico, quimosina e pepsina é o abomaso. O rúmen não secreta ácido: o ácido dele vem da fermentação, e é ele que coalha o leite ali." },
         { "texto": "A gordura do leite vira corpos cetônicos no rúmen", "correta": false, "explicacao": "A acidez vem da fermentação da lactose em ácido lático, não da gordura." },
         { "texto": "O rúmen do bezerro ainda não tem bactérias, e o leite apodrece sozinho", "correta": false, "explicacao": "O rúmen é colonizado por bactérias logo nos primeiros dias de vida, e são elas que fermentam o leite." }
       ]

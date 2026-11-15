@@ -85,7 +85,7 @@
       "pergunta": "Por que resfriar o Duque com água em temperatura ambiente e ventilador, e não com gelo?",
       "opcoes": [
         { "texto": "O gelo contrai os vasos da pele e pode causar tremor, o que segura o calor dentro do corpo", "correta": true, "explicacao": "Para perder calor, o sangue quente do centro do corpo precisa chegar à pele. O gelo causa vasoconstrição na pele e tremor, que reduzem a perda e produzem calor. Água fresca com vento resfria por evaporação e convecção. Pare de resfriar perto de 39,5 °C." },
-        { "texto": "O gelo resfria rápido demais; o certo é baixar a temperatura devagar, em várias horas", "correta": false, "explicacao": "O resfriamento precisa ser rápido. Água fresca com vento resfria mais rápido que gelo, porque mantém os vasos da pele abertos." },
+        { "texto": "O gelo resfria rápido demais; o certo é baixar a temperatura devagar, em várias horas", "correta": false, "explicacao": "O resfriamento precisa ser rápido, logo que o cão chega. O problema do gelo não é a velocidade, e sim a vasoconstrição da pele e o tremor." },
         { "texto": "O gelo esfria só a pele e engana o termômetro", "correta": false, "explicacao": "O termômetro retal mede o centro do corpo, e o gelo na pele não muda a leitura. O problema é a vasoconstrição, que prende o calor dentro." },
         { "texto": "A água gelada faz ele ofegar mais e cansar", "correta": false, "explicacao": "Ofegar ajuda a perder calor. O problema do gelo é a vasoconstrição da pele e o tremor." }
       ]

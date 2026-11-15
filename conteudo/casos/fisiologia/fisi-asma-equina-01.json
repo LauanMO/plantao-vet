@@ -47,7 +47,7 @@
       "orcamento": 300,
       "itens": [
         { "id": "lba", "rotulo": "Lavado broncoalveolar (citologia)", "custo": 150, "resultado": "Neutrófilos 45% (normal: até 5%), muito muco e nenhuma bactéria.", "importante": true },
-        { "id": "gaso", "rotulo": "Gasometria arterial", "custo": 120, "resultado": "PaO2 de 68 mmHg (normal: 85 a 100); PaCO2 de 43 mmHg, normal.", "importante": true },
+        { "id": "gaso", "rotulo": "Gasometria arterial", "custo": 120, "resultado": "PaO2 de 68 mmHg (normal: cerca de 85 a 110); PaCO2 de 43 mmHg, normal.", "importante": true },
         { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Sem alterações.", "importante": false },
         { "id": "endoscopia", "rotulo": "Endoscopia das vias aéreas", "custo": 180, "resultado": "Muco espesso na traqueia; laringe normal.", "importante": false }
       ]
