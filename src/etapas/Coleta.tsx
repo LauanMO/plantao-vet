@@ -31,11 +31,14 @@ export function Coleta({ caso, etapa, resposta, responder, seguir }: PropsEtapa<
 
   return (
     <>
+      {/* .resposta: no celular, a resposta fica por cima da cena, à vista sem rolar a lista (estilo.css) */}
       {item &&
         (anamnese ? (
-          <Fala quem={caso.tutor.nome}>{item.resultado}</Fala>
+          <Fala quem={caso.tutor.nome} className="resposta">
+            {item.resultado}
+          </Fala>
         ) : (
-          <section className="caixa balao" aria-live="polite">
+          <section className="caixa balao resposta" aria-live="polite">
             <span className="rotulo">{item.rotulo}</span>
             <p className="fala">{item.resultado}</p>
           </section>
