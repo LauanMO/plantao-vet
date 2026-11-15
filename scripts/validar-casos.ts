@@ -1,4 +1,5 @@
 // Valida os casos de conteudo/casos/ e imprime a conta de cada dose para alguém conferir. Uso: npm run validar
+// Com --publicar, também falha se nenhum caso estiver revisado: o jogo publicado sairia vazio.
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { validarBanco, type ArquivoCaso } from '../src/modelo/validar.ts'
@@ -22,6 +23,8 @@ const arquivos = readdirSync(pasta, { recursive: true, encoding: 'utf8' })
 const lerJson = (caminho: string): unknown => JSON.parse(readFileSync(join('conteudo', caminho), 'utf8'))
 const resultado = validarBanco(arquivos, lerJson('materias.json'), lerJson(join('arte', 'sprites.json')))
 const erros = [...errosDeJson, ...resultado.erros]
+if (process.argv.includes('--publicar') && resultado.revisados === 0)
+  erros.push('nenhum caso revisado: o jogo publicado leva só os casos com revisado: true')
 
 for (const dose of resultado.doses) console.log(`dose  ${dose}`)
 for (const erro of erros) console.error(`erro  ${erro}`)

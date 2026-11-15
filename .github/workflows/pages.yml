@@ -1,0 +1,58 @@
+name: Pages
+
+# Publica a main no GitHub Pages depois de cada release, ou à mão em Actions > Pages > Run workflow.
+# Merges e tags feitos com o token do Actions não disparam outros workflows, então este espera o Auto-merge
+# terminar. O workflow_run roda na branch padrão (develop), que é a liberada no ambiente github-pages.
+on:
+  workflow_run:
+    workflows: [Auto-merge]
+    types: [completed]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       (startsWith(github.event.workflow_run.head_branch, 'release/') || startsWith(github.event.workflow_run.head_branch, 'hotfix/')))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Pacotes
+        run: npm ci
+      - name: Casos revisados
+        run: npm run validar -- --publicar
+      - name: Build
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v5
