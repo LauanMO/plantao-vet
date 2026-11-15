@@ -1,40 +1,18 @@
 #!/usr/bin/env python3
-"""Gera a pixel art do protótipo 'Plantão Vet — versão jogo'.
+"""Gera toda a pixel art do Plantão Vet, no tamanho original (1x) que o palco usa.
 
-Cenários em 320x180 e sprites pequenos. Por padrão salva no tamanho original (1x),
-que é o que o palco do jogo usa; passe 4 para gerar a versão ampliada do protótipo.
-Uso: python3 gerar.py <pasta_de_saida> [escala]
+Salva os PNGs em public/arte/ e escreve o manifesto conteudo/arte/sprites.json com os
+personagens que os casos citam. As cores vêm de conteudo/arte/paleta.json.
+Uso: python ferramentas-arte/gerar.py
 """
+import json
 import os
-import sys
 
 from PIL import Image, ImageDraw
 
-ESCALA = 4
-
-CORES = {
-    'out': '#1B1A26',
-    'wall': '#BFDCD3', 'wall_d': '#A6C8BE', 'wall_l': '#D4EAE3', 'base': '#7FA89C', 'base_d': '#5F8A7E',
-    'floor': '#C9B79C', 'floor_d': '#B3A086', 'floor_l': '#DCCFB8',
-    'wood': '#8A5A3B', 'wood_d': '#6B4429', 'wood_l': '#A8714C',
-    'metal': '#C7CED4', 'metal_d': '#99A3AB', 'metal_l': '#E3E8EC',
-    'night': '#22264A', 'night2': '#2E3566', 'star': '#F7F3EA', 'moon': '#F2E3A6', 'moon_d': '#D9C682',
-    'frame': '#F7F3EA', 'paper': '#F4EEDC', 'line': '#5C6B73', 'clip': '#9AA4AD',
-    'screen': '#5FD3B8', 'screen_d': '#2F8F7C', 'monitor': '#3A3F4B', 'monitor_d': '#2A2E38',
-    'hall': '#3B3F5C', 'hall_floor': '#575C7A', 'light': '#E3D5BC',
-    'b1': '#E07A5F', 'b2': '#81B29A', 'b3': '#F2CC8F', 'b4': '#3D5A80',
-    'leaf': '#4E8F57', 'leaf_d': '#3B7044', 'pot': '#C0704D',
-    'skin': '#C98E63', 'skin_d': '#A86F49', 'hair': '#3B2A20', 'shirt': '#E07A5F', 'shirt_d': '#C0603F',
-    'pants': '#3D5A80', 'pants_d': '#2C4361', 'shoe': '#2A2433',
-    'fur': '#D9A066', 'fur_d': '#B57E45', 'ear': '#8A5A2B', 'white': '#F2E6D8', 'nose': '#2A2433',
-    'tongue': '#E58C8A', 'heart': '#E4572E', 'heart_l': '#F28C6A',
-    'mug': '#E07A5F', 'key': '#D9DDE1',
-    'sky1': '#1D1F3F', 'sky2': '#262A52', 'sky3': '#33386B', 'city': '#2A2D4F', 'city_win': '#C9A94E',
-    'bwall': '#E9DCC9', 'bwall_d': '#D6C6AE', 'roof': '#4A4E69', 'sign': '#2E9C88', 'sign_d': '#227A6A',
-    'glass': '#7FD1C1', 'glass_d': '#5DB5A4', 'lamp': '#F6D776', 'lamp_d': '#E0B94F', 'cross': '#3FA36B',
-    'walk': '#8C8FA3', 'walk_d': '#777A8F', 'street': '#3A3D55', 'dash': '#C9C2A8', 'pole': '#4A4E69',
-    'water': '#5DA9E9', 'water_l': '#A8D4F5', 'red': '#E4572E', 'blue': '#3D5A80',
-}
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+with open(os.path.join(RAIZ, 'conteudo', 'arte', 'paleta.json'), encoding='utf-8') as f:
+    CORES = json.load(f)
 
 
 def rgb(nome):
@@ -44,12 +22,6 @@ def rgb(nome):
 
 def rgba(nome):
     return rgb(nome) + (255,)
-
-
-def ampliar(im, escala=ESCALA):
-    if escala == 1:
-        return im
-    return im.resize((im.width * escala, im.height * escala), Image.NEAREST)
 
 
 def contorno(im, cor='out'):
@@ -275,6 +247,78 @@ def fachada():
     return im
 
 
+def curral():
+    """Curral à noite, com o galpão à esquerda e o tronco de contenção no centro."""
+    im = Image.new('RGB', (320, 180), rgb('sky1'))
+    d = ImageDraw.Draw(im)
+
+    def r(x0, y0, x1, y1, c, contorno_cor=None):
+        d.rectangle([x0, y0, x1, y1], fill=rgb(c), outline=rgb(contorno_cor) if contorno_cor else None)
+
+    # céu e morros
+    r(0, 44, 319, 89, 'sky2')
+    for x in range(0, 320, 2):
+        im.putpixel((x, 43), rgb('sky2'))
+    for (sx, sy) in ((14, 10), (52, 22), (90, 8), (128, 18), (166, 6), (204, 24), (236, 10), (300, 20), (112, 36),
+                     (186, 40), (250, 34), (70, 38)):
+        im.putpixel((sx, sy), rgb('star'))
+    d.ellipse([268, 12, 286, 30], fill=rgb('moon'))
+    im.putpixel((273, 18), rgb('moon_d'))
+    im.putpixel((280, 24), rgb('moon_d'))
+    for (x0, x1, topo) in ((-60, 130, 58), (90, 250, 66), (210, 390, 54)):
+        d.ellipse([x0, topo, x1, topo + 70], fill=rgb('city'))
+
+    # chão de terra, com a luz do lampião
+    r(0, 90, 319, 179, 'terra')
+    d.ellipse([-10, 112, 120, 160], fill=rgb('terra_l'))
+    for (x0, y0, x1) in ((96, 124, 120), (210, 132, 240), (266, 118, 292), (30, 166, 60), (150, 170, 182),
+                         (250, 160, 274)):
+        r(x0, y0, x1, y0 + 1, 'terra_d')
+    for (sx, sy) in ((40, 140), (44, 141), (58, 136), (110, 150), (190, 158), (214, 146), (286, 140), (300, 164)):
+        r(sx, sy, sx + 2, sy, 'feno')
+
+    # cerca do fundo
+    for y in (70, 82):
+        r(60, y, 319, y + 2, 'wood_l')
+        r(60, y + 3, 319, y + 3, 'wood_d')
+    for x in range(66, 320, 38):
+        r(x, 64, x + 3, 94, 'wood', 'out')
+
+    # galpão com feno
+    d.polygon([(-6, 54), (30, 34), (70, 54)], fill=rgb('roof'), outline=rgb('out'))
+    r(0, 54, 62, 118, 'wood', 'out')
+    for x in range(6, 62, 7):
+        r(x, 55, x, 117, 'wood_d')
+    r(12, 74, 40, 118, 'hall', 'out')
+    for (x0, y0) in ((14, 104), (26, 104), (18, 92)):
+        r(x0, y0, x0 + 11, y0 + 11, 'feno', 'out')
+        r(x0 + 1, y0 + 5, x0 + 10, y0 + 5, 'feno_d')
+    # lampião pendurado no canto do galpão
+    r(62, 60, 70, 60, 'pole')
+    r(68, 61, 68, 63, 'pole')
+    d.rectangle([66, 64, 70, 70], fill=rgb('lamp'), outline=rgb('out'))
+    r(68, 66, 68, 68, 'lamp_d')
+
+    # tronco de contenção: tábuas grossas entre os moirões e a pescoceira de metal na frente
+    for y in range(60, 116, 9):
+        r(126, y, 234, y + 4, 'wood_l', 'out')
+    for x in (126, 164, 202):
+        r(x, 52, x + 5, 124, 'wood', 'out')
+    r(122, 49, 238, 52, 'wood_d', 'out')
+    r(234, 52, 240, 124, 'metal_d', 'out')
+    for x in (242, 247, 252):
+        r(x, 58, x + 1, 120, 'metal', 'out')
+    r(234, 56, 256, 58, 'metal_d', 'out')
+    r(122, 122, 244, 125, 'terra_d')
+
+    # capim no primeiro plano
+    for x in range(2, 320, 11):
+        h = 4 + (x * 7) % 5
+        d.polygon([(x, 179), (x + 3, 179 - h), (x + 6, 179)], fill=rgb('leaf_d'))
+        d.line([(x + 3, 179), (x + 3, 179 - h)], fill=rgb('leaf'))
+    return im
+
+
 # ------------------------------------------------------------------ sprites
 
 def nova_tela(w, h):
@@ -282,35 +326,86 @@ def nova_tela(w, h):
     return im, ImageDraw.Draw(im)
 
 
-def tutora():
+def atras(im, x0, y0, x1, y1, cor):
+    """Pinta só onde ainda está transparente, como se ficasse atrás do que já foi desenhado."""
+    for y in range(y0, y1 + 1):
+        for x in range(x0, x1 + 1):
+            if im.getpixel((x, y))[3] == 0:
+                im.putpixel((x, y), rgba(cor))
+
+
+def pessoa(pele, pele_d, blusa, blusa_d, calca, calca_d, sapato):
+    """Corpo de 24x64, em pé e de frente; cada personagem desenha o cabelo e a roupa por cima."""
     im, d = nova_tela(24, 64)
 
     def r(x0, y0, x1, y1, c):
         d.rectangle([x0, y0, x1, y1], fill=rgba(c))
 
-    r(6, 1, 17, 18, 'hair')          # cabelo atrás
-    r(8, 4, 15, 15, 'skin')          # rosto
+    r(8, 4, 15, 15, pele)            # rosto
+    r(10, 9, 10, 9, 'out')           # olhos
+    r(13, 9, 13, 9, 'out')
+    r(11, 13, 12, 13, pele_d)        # boca
+    r(10, 16, 13, 18, pele)          # pescoço
+    r(6, 19, 17, 38, blusa)          # blusa
+    r(6, 19, 7, 38, blusa_d)
+    r(11, 19, 12, 21, pele)
+    r(3, 20, 5, 35, blusa_d)         # braços
+    r(18, 20, 20, 35, blusa)
+    r(3, 36, 5, 38, pele)            # mãos
+    r(18, 36, 20, 38, pele)
+    r(6, 39, 17, 39, calca_d)        # cinto
+    r(6, 40, 10, 58, calca)          # pernas
+    r(13, 40, 17, 58, calca)
+    r(11, 40, 12, 45, calca)
+    r(9, 46, 10, 58, calca_d)
+    r(5, 59, 10, 61, sapato)         # sapatos
+    r(13, 59, 18, 61, sapato)
+    return im, r
+
+
+def tutora():
+    im, r = pessoa('skin', 'skin_d', 'shirt', 'shirt_d', 'pants', 'pants_d', 'shoe')
+    atras(im, 6, 1, 17, 18, 'hair')  # cabelo comprido
     r(7, 2, 16, 5, 'hair')           # franja
     r(6, 4, 7, 16, 'hair')
     r(16, 4, 17, 16, 'hair')
-    r(10, 9, 10, 9, 'out')           # olhos
-    r(13, 9, 13, 9, 'out')
-    r(11, 13, 12, 13, 'skin_d')      # boca
-    r(10, 16, 13, 18, 'skin')        # pescoço
-    r(6, 19, 17, 38, 'shirt')        # blusa
-    r(6, 19, 7, 38, 'shirt_d')
-    r(11, 19, 12, 21, 'skin')
-    r(3, 20, 5, 35, 'shirt_d')       # braços
-    r(18, 20, 20, 35, 'shirt')
-    r(3, 36, 5, 38, 'skin')          # mãos
-    r(18, 36, 20, 38, 'skin')
-    r(6, 39, 17, 39, 'pants_d')      # cinto
-    r(6, 40, 10, 58, 'pants')        # pernas
-    r(13, 40, 17, 58, 'pants')
-    r(11, 40, 12, 45, 'pants')
-    r(9, 46, 10, 58, 'pants_d')
-    r(5, 59, 10, 61, 'shoe')         # sapatos
-    r(13, 59, 18, 61, 'shoe')
+    return contorno(im)
+
+
+def produtor():
+    im, r = pessoa('skin2', 'skin2_d', 'plaid', 'plaid_d', 'khaki', 'khaki_d', 'wood_d')
+    for y in (24, 29, 34):           # camisa xadrez
+        r(8, y, 17, y, 'plaid_d')
+    for x in (10, 14):
+        r(x, 22, x, 38, 'plaid_d')
+    r(10, 12, 13, 12, 'gray')        # bigode
+    r(7, 6, 7, 10, 'gray')           # costeletas
+    r(16, 6, 16, 10, 'gray')
+    r(8, 1, 15, 3, 'straw')          # chapéu de palha
+    r(8, 3, 15, 3, 'straw_d')
+    r(4, 4, 19, 5, 'straw')
+    r(4, 5, 19, 5, 'straw_d')
+    r(5, 54, 10, 58, 'wood_d')       # canos das botas
+    r(13, 54, 18, 58, 'wood_d')
+    return contorno(im)
+
+
+def preceptora():
+    im, r = pessoa('skin3', 'skin3_d', 'screen', 'screen_d', 'screen', 'screen_d', 'shoe')
+    r(6, 19, 17, 46, 'metal_l')      # jaleco
+    r(6, 19, 7, 46, 'metal')
+    r(10, 19, 13, 24, 'screen')      # pijama cirúrgico no decote
+    r(11, 25, 12, 26, 'screen')
+    r(11, 19, 12, 20, 'skin3')
+    r(3, 20, 5, 35, 'metal')         # mangas
+    r(18, 20, 20, 35, 'metal_l')
+    r(13, 36, 16, 38, 'metal')       # bolso
+    r(9, 19, 9, 26, 'line')          # estetoscópio no pescoço
+    r(14, 19, 14, 26, 'line')
+    r(14, 27, 15, 28, 'metal_d')
+    atras(im, 7, 2, 16, 12, 'hair_r')  # cabelo preso
+    r(7, 3, 16, 5, 'hair_r')
+    r(10, 1, 13, 2, 'hair_r')        # coque
     return contorno(im)
 
 
@@ -342,6 +437,83 @@ def pipoca(feliz):
     else:
         r(24, 4, 26, 11, 'ear')              # orelha caída
         r(29, 6, 30, 6, 'out')               # olho meio fechado
+    return contorno(im)
+
+
+def vaca(deitada):
+    """Vaca holandesa de perfil, virada para a direita: em pé, recuperada, ou deitada de peito
+    com a cabeça virada para o flanco. As duas posturas apoiam no chão na mesma linha."""
+    K = 1.3  # o traço é pensado em 88x51 e ampliado aqui, para a vaca ter o tamanho certo perto das pessoas
+    im, d = nova_tela(114, 67)
+
+    def esc(*v):
+        return [round(n * K) for n in v]
+
+    def r(x0, y0, x1, y1, c):
+        d.rectangle(esc(x0, y0, x1, y1), fill=rgba(c))
+
+    def o(x0, y0, x1, y1, c):
+        d.ellipse(esc(x0, y0, x1, y1), fill=rgba(c))
+
+    def q(x0, y0, x1, y1, raio, c, borda=None):
+        d.rounded_rectangle(esc(x0, y0, x1, y1), radius=round(raio * K), fill=rgba(c), outline=borda and rgba(borda))
+
+    def poli(pontos, c, borda=None):
+        d.polygon([tuple(esc(x, y)) for x, y in pontos], fill=rgba(c), outline=borda and rgba(borda))
+
+    def traco(pontos, c):
+        d.line([tuple(esc(x, y)) for x, y in pontos], fill=rgba(c), width=2)
+
+    if deitada:
+        traco([(14, 34), (8, 42), (8, 46)], 'white_d')                  # rabo no chão
+        o(4, 44, 10, 49, 'nose')
+        q(12, 28, 66, 49, 8, 'white')                                   # corpo
+        o(12, 31, 24, 45, 'nose')                                       # malhas, longe da cabeça
+        o(26, 37, 40, 48, 'nose')
+        o(48, 38, 58, 47, 'nose')
+        r(18, 46, 60, 49, 'white_d')                                    # barriga no chão
+        r(28, 45, 34, 49, 'white_d')                                    # perna de trás dobrada
+        r(32, 46, 36, 49, 'shoe')
+        o(60, 41, 72, 49, 'white')                                      # joelho da frente
+        r(61, 47, 71, 49, 'white_d')
+        poli([(58, 30), (64, 22), (70, 30), (68, 42), (60, 44)], 'white')               # pescoço dobrado
+        poli([(64, 17), (57, 17), (44, 25), (42, 33), (50, 35), (65, 27)], 'nose', 'out')  # cabeça no flanco
+        traco([(59, 19), (47, 27)], 'white')                            # lista branca da cara
+        q(37, 27, 45, 35, 2, 'pink', 'out')                             # focinho
+        r(39, 29, 39, 30, 'pink_d')
+        r(55, 23, 57, 23, 'white_d')                                    # olho fechado
+        r(62, 24, 64, 29, 'nose')                                       # orelha caída
+        return contorno(im)
+
+    traco([(13, 14), (10, 22), (10, 38)], 'white_d')                    # rabo
+    o(8, 37, 12, 44, 'nose')
+    r(22, 34, 25, 46, 'white_d')                                        # pernas do outro lado
+    r(58, 34, 61, 46, 'white_d')
+    r(22, 47, 25, 49, 'shoe')
+    r(58, 47, 61, 49, 'shoe')
+    q(12, 12, 64, 37, 5, 'white')                                       # corpo
+    r(13, 10, 20, 12, 'white')                                          # garupa
+    o(12, 14, 20, 26, 'nose')                                           # malhas
+    o(24, 12, 40, 28, 'nose')
+    o(44, 20, 56, 34, 'nose')
+    r(16, 35, 60, 37, 'white_d')                                        # barriga
+    o(26, 32, 36, 41, 'pink')                                           # úbere
+    r(28, 41, 28, 43, 'pink_d')
+    r(33, 41, 33, 43, 'pink_d')
+    r(15, 36, 19, 46, 'white')                                          # pernas deste lado
+    r(51, 36, 55, 46, 'white')
+    r(15, 47, 19, 49, 'shoe')
+    r(51, 47, 55, 49, 'shoe')
+    poli([(58, 14), (68, 9), (73, 22), (62, 33)], 'white')              # pescoço
+    poli([(65, 6), (72, 5), (82, 17), (82, 24), (74, 25), (66, 16)], 'nose')  # cabeça
+    traco([(72, 6), (80, 17)], 'white')                                 # lista branca da cara
+    q(76, 17, 83, 25, 2, 'pink')                                        # focinho
+    r(81, 19, 81, 20, 'pink_d')
+    r(77, 23, 82, 23, 'pink_d')
+    r(69, 10, 70, 10, 'white')                                          # olho aberto
+    r(70, 10, 70, 10, 'out')
+    r(60, 7, 65, 9, 'nose')                                             # orelha erguida
+    r(61, 8, 63, 8, 'pink')
     return contorno(im)
 
 
@@ -395,38 +567,80 @@ def icone(nome):
     return contorno(im)
 
 
+def icone_do_app():
+    """Ícone do app instalado: a cruz da fachada no céu da noite, em 32x32. O desenho fica no
+    miolo, dentro do círculo que os ícones adaptáveis (maskable) do Android nunca cortam."""
+    im = Image.new('RGB', (32, 32), rgb('sky1'))
+    d = ImageDraw.Draw(im)
+    for (sx, sy) in ((4, 5), (26, 3), (28, 24), (3, 27), (12, 2), (21, 29)):
+        im.putpixel((sx, sy), rgb('star'))
+    d.rectangle([8, 8, 23, 23], fill=rgb('frame'), outline=rgb('out'))
+    d.rectangle([14, 10, 17, 21], fill=rgb('cross'))
+    d.rectangle([10, 14, 21, 17], fill=rgb('cross'))
+    return im
+
+
+def respirar(im, peito):
+    """Folha com os 2 quadros da respiração, lado a lado. No segundo, tudo acima da linha do peito
+    sobe 1 px e a linha do corte se repete, para não abrir buraco. Ganha 1 linha vazia no topo,
+    onde cabe a subida."""
+    w, h = im.size
+    base = Image.new('RGBA', (w, h + 1), (0, 0, 0, 0))
+    base.paste(im, (0, 1))
+    sobe = base.copy()
+    sobe.paste(base.crop((0, 1, w, peito + 2)), (0, 0))
+    folha = Image.new('RGBA', (w * 2, h + 1), (0, 0, 0, 0))
+    folha.paste(base, (0, 0))
+    folha.paste(sobe, (w, 0))
+    return folha
+
+
+# Personagens que os casos citam pelo id. O ponto do pé é o pixel que encosta no chão:
+# é por ele que a cena posiciona o personagem, igual em todos os estados.
+# Cada estado vem com a linha do peito, onde o corpo se divide para respirar.
+PERSONAGENS = {
+    'tutora-1': ((12, 62), {'parado': (tutora(), 39)}),
+    'produtor-1': ((12, 62), {'parado': (produtor(), 39)}),
+    'preceptora': ((12, 62), {'parado': (preceptora(), 39)}),
+    'cao-pequeno-caramelo': ((16, 23), {'doente': (pipoca(False), 18), 'feliz': (pipoca(True), 18)}),
+    'vaca-holandesa': ((49, 65), {'deitado': (vaca(True), 52), 'feliz': (vaca(False), 48)}),
+}
+
+
 def main():
-    saida = sys.argv[1]
-    escala = int(sys.argv[2]) if len(sys.argv) > 2 else 1
-    os.makedirs(saida, exist_ok=True)
+    saida = os.path.join(RAIZ, 'public', 'arte')
     arquivos = {
         'consultorio.png': consultorio(False),
         'consultorio-porta-aberta.png': consultorio(True),
         'fachada.png': fachada(),
-        'tutora.png': tutora(),
-        'pipoca-doente.png': pipoca(False),
-        'pipoca-feliz.png': pipoca(True),
+        'curral.png': curral(),
         'coracao.png': coracao(),
     }
     for nome in ('termometro', 'estetoscopio', 'lanterna', 'mao', 'gota'):
         arquivos['icone-' + nome + '.png'] = icone(nome)
-    for nome, im in arquivos.items():
-        final = ampliar(im, escala)
-        final.save(os.path.join(saida, nome), optimize=True)
-        print(nome, final.size, os.path.getsize(os.path.join(saida, nome)), 'bytes')
+    # o ícone do app já sai ampliado: o celular e o navegador não ampliam com pixels nítidos
+    for lado in (192, 512):
+        arquivos[f'app-{lado}.png'] = icone_do_app().resize((lado, lado), Image.NEAREST)
 
-    # folha de conferência com tudo junto, sempre em 4x
-    folha = Image.new('RGBA', (1280 * 2 + 40, 720 * 2 + 40), (40, 40, 48, 255))
-    folha.paste(ampliar(consultorio(False), 4), (0, 0))
-    folha.paste(ampliar(consultorio(True), 4), (1320, 0))
-    folha.paste(ampliar(fachada(), 4), (0, 760))
-    x = 1320
-    for nome in ('tutora.png', 'pipoca-doente.png', 'pipoca-feliz.png', 'coracao.png',
-                 'icone-termometro.png', 'icone-estetoscopio.png', 'icone-lanterna.png', 'icone-mao.png', 'icone-gota.png'):
-        sp = ampliar(arquivos[nome], 4)
-        folha.alpha_composite(sp, (x, 780))
-        x += sp.width + 24
-    folha.convert('RGB').save(os.path.join(saida, '_folha.png'))
+    manifesto = {}
+    for id_, ((pe_x, pe_y), estados) in PERSONAGENS.items():
+        largura, altura = next(iter(estados.values()))[0].size
+        for estado, (im, peito) in estados.items():
+            assert im.size == (largura, altura), f'{id_}-{estado}: tamanho diferente dos outros estados'
+            assert im.getbbox()[3] - 1 == pe_y, f'{id_}-{estado}: o pé não está na última linha do desenho'
+            arquivos[f'{id_}-{estado}.png'] = respirar(im, peito)
+        # a folha da respiração tem 1 linha a mais no topo, e o pé desce junto
+        manifesto[id_] = {
+            'largura': largura, 'altura': altura + 1, 'pe': {'x': pe_x, 'y': pe_y + 1},
+            'quadros': 2, 'estados': list(estados),
+        }
+
+    for nome, im in arquivos.items():
+        im.save(os.path.join(saida, nome), optimize=True)
+        print(nome, im.size)
+    with open(os.path.join(RAIZ, 'conteudo', 'arte', 'sprites.json'), 'w', encoding='utf-8', newline='\n') as f:
+        json.dump(manifesto, f, ensure_ascii=False, indent=2)
+        f.write('\n')
 
 
 if __name__ == '__main__':
