@@ -1,0 +1,114 @@
+{
+  "id": "fisi-acidose-ruminal-01",
+  "materia": "fisiologia",
+  "tema": "Digestão dos ruminantes",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Amora",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "4 anos",
+    "pesoKg": 550,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Osvaldo", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Amora fugiu de noite e comeu um monte de milho moído no galpão. Hoje tá com diarreia, cambaleando e com a barriga estufada.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "quanto", "rotulo": "Quanto milho ela comeu?", "resultado": "Rasgou um saco de 40 kg e comeu mais da metade.", "importante": true },
+        { "id": "quando", "rotulo": "Quando foi isso?", "resultado": "Ontem à noite. Faz umas 12 horas.", "importante": true },
+        { "id": "costume", "rotulo": "Ela está acostumada a comer milho?", "resultado": "Quase nada. Come pasto e silagem, e só um pouquinho de ração na ordenha.", "importante": true },
+        { "id": "agua", "rotulo": "Ela bebeu água?", "resultado": "Bebeu bastante hoje cedo.", "importante": false },
+        { "id": "fezes", "rotulo": "Como estão as fezes?", "resultado": "Moles, acinzentadas, com cheiro azedo e grão de milho inteiro.", "importante": false },
+        { "id": "vacinas", "rotulo": "As vacinas estão em dia?", "resultado": "Tá tudo em dia.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "rumen", "ferramenta": "estetoscopio", "rotulo": "Auscultação e balotamento do rúmen", "resultado": "Rúmen parado; no flanco esquerdo, som de líquido chacoalhando.", "importante": true },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Olhos afundados e pele lenta para voltar: cerca de 8% de desidratação.", "importante": true },
+        { "id": "coracao", "ferramenta": "estetoscopio", "rotulo": "Auscultação do coração", "resultado": "Frequência cardíaca de 104 bpm; pulso fraco.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,4 °C.", "importante": false },
+        { "id": "cascos", "ferramenta": "mao", "rotulo": "Palpação dos cascos", "resultado": "Cascos mornos, sem dor por enquanto.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 200,
+      "itens": [
+        { "id": "ph", "rotulo": "pH do líquido ruminal", "custo": 30, "resultado": "pH 4,7 (normal: 6 a 7); líquido leitoso e azedo, sem protozoários vivos.", "importante": true },
+        { "id": "gaso", "rotulo": "Hemogasometria", "custo": 100, "resultado": "pH 7,22; bicarbonato 15 mmol/L: acidose metabólica.", "importante": true },
+        { "id": "ht", "rotulo": "Hematócrito e proteína total", "custo": 30, "resultado": "Hematócrito 46% e proteína total 8,6 g/dL: sangue concentrado.", "importante": true },
+        { "id": "bhb", "rotulo": "Beta-hidroxibutirato (BHB)", "custo": 40, "resultado": "0,8 mmol/L, normal.", "importante": false },
+        { "id": "calcio", "rotulo": "Cálcio total", "custo": 60, "resultado": "7,8 mg/dL, um pouco baixo.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Acidose láctica ruminal aguda (sobrecarga de grãos)", "correta": true, "explicacao": "Vaca não adaptada que comeu muito milho de uma vez, com rúmen parado e cheio de líquido, desidratação, pH ruminal abaixo de 5 e acidose metabólica." },
+        { "texto": "Acidose ruminal subaguda", "correta": false, "explicacao": "Acontece em vacas que comem muito concentrado todo dia, com pH ruminal entre 5,2 e 5,6 por várias horas e sinais discretos. A Amora tem pH 4,7 e sinais graves depois de uma ingestão só." },
+        { "texto": "Timpanismo espumoso", "correta": false, "explicacao": "O timpanismo distende o rúmen com gás e espuma, com som timpânico na percussão; o rúmen da Amora está cheio de líquido, com pH muito baixo." },
+        { "texto": "Indigestão simples", "correta": false, "explicacao": "Dá sinais leves e pH ruminal pouco alterado; não causa desidratação grave nem acidose no sangue." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que o milho comido de uma vez derrubou tanto o pH do rúmen da Amora?",
+      "opcoes": [
+        { "texto": "O amido fermenta rápido demais e favorece bactérias que produzem ácido lático, mais forte que os ácidos graxos voláteis", "correta": true, "explicacao": "Com muito amido, o Streptococcus bovis cresce rápido e produz lactato; com o pH caindo, os lactobacilos tomam conta. O ácido lático é mais forte (pKa 3,9, contra cerca de 4,8 dos ácidos graxos voláteis), é absorvido devagar, e as bactérias que o consumiriam morrem com o pH baixo. Numa vaca não adaptada, a flora não dá conta." },
+        { "texto": "Sobem só os ácidos graxos voláteis, e o ácido lático não muda", "correta": false, "explicacao": "Os ácidos graxos voláteis sobem no começo, mas o pH abaixo de 5 vem do ácido lático, que é mais forte e se acumula. Excesso só de ácidos graxos voláteis é o quadro da acidose subaguda." },
+        { "texto": "O milho já é ácido e baixa o pH assim que chega ao rúmen", "correta": false, "explicacao": "O milho não é ácido; o ácido é produzido pela fermentação do amido no rúmen." },
+        { "texto": "O abomaso devolve ácido clorídrico para o rúmen", "correta": false, "explicacao": "O amido é fermentado no próprio rúmen. O refluxo do abomaso acontece em outras doenças, como o deslocamento, e leva a alcalose no sangue, não a acidose ruminal por grãos." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que a Amora está desidratada se o rúmen dela está cheio de líquido?",
+      "opcoes": [
+        { "texto": "O ácido lático e a glicose deixam o conteúdo do rúmen hiperosmótico, e a água sai do sangue para o rúmen", "correta": true, "explicacao": "O lactato e a glicose liberada do amido aumentam a osmolalidade do líquido ruminal. A água do sangue passa para o rúmen por osmose: o rúmen enche, e a vaca desidrata. Isso também agrava a diarreia." },
+        { "texto": "Ela parou de beber água", "correta": false, "explicacao": "Mesmo bebendo, a água fica no rúmen. A desidratação vem da saída de água do sangue para o rúmen." },
+        { "texto": "O ácido destrói a parede dos vasos, e o sangue vaza", "correta": false, "explicacao": "O ácido lesa a parede do rúmen (ruminite), mas a desidratação vem da osmose, não de sangramento." },
+        { "texto": "O milho incha e absorve a água do corpo", "correta": false, "explicacao": "O amido não incha a ponto de desidratar a vaca; quem puxa água é a alta concentração de partículas dissolvidas no rúmen." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 5 dias",
+      "bom": "O rúmen da Amora foi esvaziado e lavado por sonda, ela recebeu soro com bicarbonato na veia e líquido ruminal de uma vaca sadia. Em 5 dias, voltou a ruminar.",
+      "falaBom": "Doutora, a Amora voltou a ruminar e tá comendo feno! O milho agora fica trancado.",
+      "ruim": "Sem esvaziar o rúmen nem repor o líquido, a acidose piorou: a Amora deitou, teve laminite e ficou semanas sem produzir.",
+      "falaRuim": "Doutora, ela deitou e quase não levanta, e quando levanta manca das quatro patas..."
+    }
+  ],
+  "resumo": [
+    "No rúmen, as bactérias fermentam os carboidratos em ácidos graxos voláteis (acético, propiônico e butírico), absorvidos pela parede do rúmen.",
+    "Sobrecarga de amido: Streptococcus bovis e depois lactobacilos produzem ácido lático, mais forte que os ácidos graxos voláteis, e o pH cai abaixo de 5.",
+    "O pH baixo mata protozoários e as bactérias que consomem lactato, e o rúmen para.",
+    "O conteúdo hiperosmótico puxa água do sangue: rúmen cheio de líquido, desidratação, diarreia e acidose metabólica.",
+    "Prevenção: adaptar a vaca ao concentrado aos poucos, em 2 a 3 semanas, e guardar os grãos fora do alcance."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

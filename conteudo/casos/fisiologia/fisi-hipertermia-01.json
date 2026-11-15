@@ -1,0 +1,114 @@
+{
+  "id": "fisi-hipertermia-01",
+  "materia": "fisiologia",
+  "tema": "Termorregulação",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Duque",
+    "especie": "cão",
+    "raca": "Buldogue francês",
+    "sexo": "macho",
+    "idade": "4 anos",
+    "pesoKg": 12,
+    "sprite": "cao-pequeno-branco"
+  },
+  "tutor": { "nome": "Marcelo", "sprite": "tutor-1" },
+  "chegada": "Doutora, levei o Duque pra correr no parque às duas da tarde. Ele começou a babar, a língua ficou roxa e ele caiu! Dei dipirona e nada.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "passeio", "rotulo": "O que ele fez antes de passar mal?", "resultado": "Correu uns 20 minutos atrás da bola, no sol.", "importante": true },
+        { "id": "clima", "rotulo": "Como estava o tempo?", "resultado": "Quente demais, uns 34 graus, e abafado.", "importante": true },
+        { "id": "ronco", "rotulo": "Ele ronca ou cansa fácil?", "resultado": "Ronca alto dormindo e cansa em qualquer subidinha.", "importante": true },
+        { "id": "agua", "rotulo": "Ele bebeu água no passeio?", "resultado": "Levei água, mas ele quase não bebeu.", "importante": false },
+        { "id": "comida", "rotulo": "Ele comeu algo diferente?", "resultado": "Não, só a ração de sempre, de manhã.", "importante": false },
+        { "id": "antes", "rotulo": "Já passou mal assim antes?", "resultado": "Desse jeito, nunca. No verão ele fica bem cansado.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "41,8 °C.", "importante": true },
+        { "id": "respiracao", "ferramenta": "estetoscopio", "rotulo": "Auscultação e respiração", "resultado": "Ofegante, com ronco alto na inspiração e esforço para puxar o ar; FC de 200 bpm.", "importante": true },
+        { "id": "narinas", "ferramenta": "lanterna", "rotulo": "Inspeção das narinas", "resultado": "Narinas muito estreitas, que quase fecham na inspiração.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Gengivas vermelho-tijolo e língua arroxeada; TPC menor que 1 segundo.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Pele volta um pouco devagar: cerca de 5% de desidratação.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Hipertermia por calor (insolação), agravada pela síndrome braquicefálica", "correta": true, "explicacao": "Exercício no sol, num dia quente e abafado, em cão braquicefálico de narinas estreitas: 41,8 °C, mucosas congestas e respiração difícil. A temperatura subiu porque ele não conseguiu perder calor." },
+        { "texto": "Febre por infecção", "correta": false, "explicacao": "A febre vem de infecção ou inflamação, sem relação com o exercício no calor, e o animal com febre tende a conservar calor, não a ofegar sem parar." },
+        { "texto": "Crise convulsiva (epilepsia)", "correta": false, "explicacao": "Uma convulsão longa também esquenta o corpo, mas o Duque não convulsionou: ele desabou depois de correr no calor." },
+        { "texto": "Intoxicação por dipirona", "correta": false, "explicacao": "A dipirona em dose comum não causa hipertermia nem colapso; aqui ela só não teve efeito." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que a dipirona que o Marcelo deu não baixou a temperatura do Duque?",
+      "opcoes": [
+        { "texto": "Na hipertermia, o termostato do hipotálamo está normal; o calor sobra porque ele não consegue perdê-lo", "correta": true, "explicacao": "Antitérmicos inibem a produção de prostaglandina E2, que eleva o ponto de ajuste do hipotálamo na febre. Na hipertermia, o ponto de ajuste está normal: o calor do exercício e do ambiente supera a perda. Não há o que o antitérmico baixar; o tratamento é resfriar." },
+        { "texto": "A dose foi pequena para o peso dele", "correta": false, "explicacao": "Mesmo em dose alta, o antitérmico não age, porque não há ponto de ajuste elevado para baixar. Dose maior só traz risco." },
+        { "texto": "O exercício subiu o ponto de ajuste do hipotálamo, e a dipirona demora a agir", "correta": false, "explicacao": "Exercício não muda o ponto de ajuste; quem faz isso são os pirogênios, na febre. No exercício, o calor produzido pelos músculos é que sobra." },
+        { "texto": "A dipirona só funciona na veia, não pela boca", "correta": false, "explicacao": "A dipirona é bem absorvida pela boca e funciona na febre. Aqui ela falhou pelo mecanismo, não pela via." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o Duque esquenta muito mais que um cão de focinho longo no mesmo passeio?",
+      "opcoes": [
+        { "texto": "O cão perde calor ofegando, e as vias aéreas estreitas do Duque reduzem o fluxo de ar e a evaporação", "correta": true, "explicacao": "Os cães quase não usam o suor para perder calor: ofegando, evaporam água da língua, da boca e dos cornetos nasais. No braquicefálico, narinas estreitas, palato mole longo e cornetos reduzidos diminuem essa troca, e o esforço para respirar ainda produz mais calor." },
+        { "texto": "Os braquicefálicos têm o metabolismo mais alto", "correta": false, "explicacao": "O metabolismo é parecido. A diferença está na via de perda de calor, que depende do ar passando pelas vias aéreas." },
+        { "texto": "Ele sua menos pelas almofadas das patas", "correta": false, "explicacao": "Todo cão sua pouco pelas almofadas, e isso quase não ajuda a perder calor. A diferença está nas vias aéreas." },
+        { "texto": "O pelo curto deixa o sol aquecer mais a pele", "correta": false, "explicacao": "Cães de pelo curto e focinho longo toleram bem o mesmo passeio. O limite do Duque é a respiração." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que resfriar o Duque com água em temperatura ambiente e ventilador, e não com gelo?",
+      "opcoes": [
+        { "texto": "O gelo contrai os vasos da pele e pode causar tremor, o que segura o calor dentro do corpo", "correta": true, "explicacao": "Para perder calor, o sangue quente do centro do corpo precisa chegar à pele. O gelo causa vasoconstrição na pele e tremor, que reduzem a perda e produzem calor. Água fresca com vento resfria por evaporação e convecção. Pare de resfriar perto de 39,5 °C." },
+        { "texto": "O gelo resfria rápido demais; o certo é baixar a temperatura devagar, em várias horas", "correta": false, "explicacao": "O resfriamento precisa ser rápido. Água fresca com vento resfria mais rápido que gelo, porque mantém os vasos da pele abertos." },
+        { "texto": "O gelo esfria só a pele e engana o termômetro", "correta": false, "explicacao": "O termômetro retal mede o centro do corpo, e o gelo na pele não muda a leitura. O problema é a vasoconstrição, que prende o calor dentro." },
+        { "texto": "A água gelada faz ele ofegar mais e cansar", "correta": false, "explicacao": "Ofegar ajuda a perder calor. O problema do gelo é a vasoconstrição da pele e o tremor." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 3 dias",
+      "bom": "O Duque foi resfriado com água em temperatura ambiente e ventilador, recebeu oxigênio e soro e ficou 2 dias internado. Teve alta e foi encaminhado para a cirurgia das vias aéreas.",
+      "falaBom": "Doutora, o Duque tá ótimo! Agora ele só passeia de manhã cedinho, e já marcamos a cirurgia do focinho.",
+      "ruim": "Sem resfriamento eficiente, a temperatura ficou acima de 41 °C por muito tempo: o Duque teve lesão nos rins e distúrbio de coagulação e ficou 5 dias na UTI.",
+      "falaRuim": "Doutora, ele tá fazendo pouco xixi, e apareceram umas manchinhas roxas na barriga..."
+    }
+  ],
+  "resumo": [
+    "Febre: os pirogênios elevam o ponto de ajuste do hipotálamo, via prostaglandina E2; o antitérmico baixa esse ponto.",
+    "Hipertermia: o ponto de ajuste está normal, mas o calor ganho supera o perdido. Antitérmico não funciona; o tratamento é resfriar.",
+    "No calor, o cão perde calor principalmente ofegando: evaporação na língua, na boca e nos cornetos nasais.",
+    "Braquicefálicos têm vias aéreas estreitas e cornetos reduzidos: perdem calor mal e ainda gastam energia para respirar.",
+    "Resfriar com água fresca e ventilação, nunca com gelo, e parar perto de 39,5 °C."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

@@ -1,0 +1,123 @@
+{
+  "id": "fisi-reidratacao-oral-01",
+  "materia": "fisiologia",
+  "tema": "Líquidos corporais",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Paçoca",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "3 dias",
+    "pesoKg": 40,
+    "sprite": "bezerro-holandes"
+  },
+  "tutor": { "nome": "Seu Ademir", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Paçoca nasceu faz três dias e tá com uma diarreia que parece água. Ainda mama, mas tá fraquinha. Dou só água pra ela?",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "colostro", "rotulo": "Ela mamou o colostro logo?", "resultado": "Mamou na mãe em menos de 2 horas, e mamou bastante.", "importante": true },
+        { "id": "fezes", "rotulo": "Como é a diarreia?", "resultado": "Amarela, bem líquida, sem sangue. Ela faz toda hora.", "importante": true },
+        { "id": "mamada", "rotulo": "Ela continua mamando?", "resultado": "Mama, mas menos e mais devagar que ontem.", "importante": true },
+        { "id": "inicio", "rotulo": "Quando começou?", "resultado": "Ontem à tarde. Hoje cedo já tava pior.", "importante": false },
+        { "id": "baia", "rotulo": "Onde ela fica?", "resultado": "Na baia maternidade, que todas as vacas usam pra parir.", "importante": false },
+        { "id": "vacina", "rotulo": "A mãe foi vacinada contra diarreia?", "resultado": "Não, só as vacinas obrigatórias.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Olhos afundados uns 3 mm e pele que demora 3 segundos para voltar: cerca de 7% de desidratação.", "importante": true },
+        { "id": "succao", "ferramenta": "mao", "rotulo": "Reflexo de sucção", "resultado": "Presente, mas fraco. Ela ainda fica de pé sozinha.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,8 °C.", "importante": true },
+        { "id": "umbigo", "ferramenta": "mao", "rotulo": "Palpação do umbigo", "resultado": "Umbigo seco, sem dor nem inchaço.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração a 120 bpm; pulmões limpos.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 250,
+      "itens": [
+        { "id": "teste", "rotulo": "Teste rápido de diarreia neonatal", "custo": 90, "resultado": "Positivo para E. coli K99 (F5); negativo para rotavírus, coronavírus e Cryptosporidium.", "importante": true },
+        { "id": "gaso", "rotulo": "Hemogasometria venosa", "custo": 80, "resultado": "pH 7,26; bicarbonato 17 mmol/L: acidose metabólica.", "importante": true },
+        { "id": "eletrolitos", "rotulo": "Sódio e potássio", "custo": 50, "resultado": "Sódio 131 mmol/L (levemente baixo); potássio 5,6 mmol/L (levemente alto).", "importante": true },
+        { "id": "ht", "rotulo": "Hematócrito e proteína total", "custo": 30, "resultado": "Hematócrito 44% e proteína total 7,0 g/dL: sangue concentrado.", "importante": false },
+        { "id": "glicemia", "rotulo": "Glicemia", "custo": 20, "resultado": "75 mg/dL, normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Diarreia secretora por E. coli, com desidratação moderada e acidose metabólica", "correta": true, "explicacao": "Bezerra de 3 dias com diarreia aquosa e abundante, teste positivo para E. coli K99, 7% de desidratação, bicarbonato baixo e sódio levemente baixo." },
+        { "texto": "Criptosporidiose com desidratação leve", "correta": false, "explicacao": "O Cryptosporidium aparece mais entre 5 e 15 dias de vida, e o teste deu negativo para ele. Além disso, 7% de desidratação já é moderada." },
+        { "texto": "Diarreia por E. coli com alcalose metabólica", "correta": false, "explicacao": "A diarreia leva bicarbonato embora: o resultado é acidose, como mostra a hemogasometria (bicarbonato 17 mmol/L)." },
+        { "texto": "Septicemia por falha na transferência de anticorpos do colostro", "correta": false, "explicacao": "Ela mamou colostro cedo e bastante e está sem febre. A septicemia daria febre ou hipotermia, prostração e outros focos, como umbigo ou articulações." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Por que o soro oral da Paçoca precisa ter glicose junto com o sódio?",
+      "opcoes": [
+        { "texto": "No intestino, glicose e sódio entram juntos pelo mesmo transportador, e a água vai atrás", "correta": true, "explicacao": "A toxina da E. coli faz o intestino secretar cloreto e água, mas não estraga o cotransportador sódio-glicose (SGLT1) das células das vilosidades. Cada glicose absorvida leva sódio junto, e a água segue por osmose. Sem glicose, o sódio do soro é mal absorvido." },
+        { "texto": "A glicose serve só para dar energia à bezerra", "correta": false, "explicacao": "A energia ajuda, mas o soro tem pouca glicose perto do leite. O papel principal dela é puxar o sódio, e com ele a água, para dentro do corpo." },
+        { "texto": "A glicose deixa o soro mais concentrado e puxa a água do intestino para o sangue", "correta": false, "explicacao": "É o contrário: um soro concentrado demais puxa água do sangue para o intestino e piora a diarreia. A água é absorvida porque segue o sódio e a glicose transportados." },
+        { "texto": "A glicose mata as bactérias da diarreia", "correta": false, "explicacao": "A glicose não tem efeito contra bactérias. Ela age no transporte de sódio e água pela parede do intestino." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que dar só água para a Paçoca, sem sal, seria perigoso?",
+      "opcoes": [
+        { "texto": "Ela perdeu água e sódio; só água dilui o sódio do sangue e não devolve o volume do plasma e do interstício", "correta": true, "explicacao": "A diarreia tira líquido com sódio, cloreto e bicarbonato e encolhe o líquido extracelular. Água pura se espalha por todos os compartimentos, inclusive para dentro das células, e baixa ainda mais o sódio. Para devolver volume ao sangue, é preciso repor o sódio junto." },
+        { "texto": "A água tem bactérias e piora a diarreia", "correta": false, "explicacao": "Água limpa não é o problema. O risco é repor só água quando ela perdeu também sódio, bicarbonato e potássio." },
+        { "texto": "Água pura causa alcalose", "correta": false, "explicacao": "A diarreia causa acidose, pela perda de bicarbonato; a água pura não corrige nem causa alcalose. O risco é baixar o sódio." },
+        { "texto": "A água pura não é absorvida pelo intestino", "correta": false, "explicacao": "A água é absorvida, sim, mas sem sódio ela não fica no líquido extracelular: vai também para dentro das células e baixa o sódio do sangue." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Volume do dia",
+      "pergunta": "A Paçoca pesa 40 kg e está 7% desidratada. Somando o déficit à manutenção de 50 mL/kg/dia, quantos litros ela precisa nas próximas 24 horas?",
+      "unidade": "L",
+      "resposta": 4.8,
+      "tolerancia": 0.05,
+      "explicacao": "Déficit = 40 kg × 0,07 = 2,8 L. Manutenção = 40 kg × 50 mL = 2.000 mL = 2 L. Total = 4,8 L, mais o que ela continuar perdendo na diarreia. O leite que ela mama conta na manutenção; o soro oral vai entre as mamadas."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 4 dias",
+      "bom": "Com soro oral com sódio e glicose entre as mamadas e o leite mantido, a Paçoca se reidratou em 2 dias, e a diarreia passou em 4.",
+      "falaBom": "Doutora, a Paçoca tá mamando com vontade, e a diarreia já parou!",
+      "ruim": "Só com água, a Paçoca continuou perdendo sódio e bicarbonato: deitou, ficou com acidose e sódio baixo e precisou de soro na veia.",
+      "falaRuim": "Doutora, dei só a água, como eu pensei, mas ela deitou e não quer mais mamar..."
+    }
+  ],
+  "resumo": [
+    "A diarreia leva água, sódio, cloreto, potássio e bicarbonato: o líquido extracelular encolhe e aparece acidose metabólica.",
+    "Na diarreia secretora por E. coli, a toxina faz o intestino secretar cloreto e água, mas o cotransporte sódio-glicose continua funcionando.",
+    "Por isso o soro oral tem sódio, glicose e um tampão (como bicarbonato ou acetato): a glicose puxa o sódio, e a água vai junto.",
+    "Só água dilui o sódio do sangue e não repõe o volume extracelular.",
+    "Volume do dia = déficit (peso × fração de desidratação) + manutenção + perdas da diarreia. Mantenha o leite e dê o soro entre as mamadas."
+  ],
+  "referencias": [
+    "Cunningham, Tratado de Fisiologia Veterinária",
+    "Reece, Dukes: Fisiologia dos Animais Domésticos"
+  ],
+  "revisado": false
+}
