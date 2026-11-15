@@ -1,0 +1,101 @@
+{
+  "id": "anat-vacina-gato-01",
+  "materia": "anatomia",
+  "tema": "Locais de injeção",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Luna",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "fêmea castrada",
+    "idade": "8 anos",
+    "pesoKg": 4.2,
+    "sprite": "gato-preto"
+  },
+  "tutor": { "nome": "Cláudia", "sprite": "tutora-2" },
+  "chegada": "Doutora, apareceu um caroço nas costas da Luna, logo atrás do pescoço, bem onde ela toma vacina. E ele tá crescendo!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 3,
+      "itens": [
+        { "id": "quando", "rotulo": "Quando o caroço apareceu?", "resultado": "Notei faz uns quatro meses, poucas semanas depois da vacina. Nunca sumiu.", "importante": true },
+        { "id": "cresce", "rotulo": "Ele mudou de tamanho?", "resultado": "Cresceu. No mês passado era do tamanho de uma ervilha; agora parece uma uva grande.", "importante": true },
+        { "id": "vacinas", "rotulo": "Que vacinas ela toma e onde?", "resultado": "Antirrábica e a quádrupla, todo ano, sempre ali atrás do pescoço.", "importante": true },
+        { "id": "rua", "rotulo": "Ela sai de casa ou briga?", "resultado": "Não, ela vive no apartamento e é a única gata.", "importante": false },
+        { "id": "apetite", "rotulo": "Ela está comendo bem?", "resultado": "Come e brinca normalmente.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "nodulo", "ferramenta": "mao", "rotulo": "Palpação do nódulo", "resultado": "Nódulo firme de 3 cm entre as escápulas, preso aos planos profundos, sem dor nem calor.", "importante": true },
+        { "id": "linfonodos", "ferramenta": "mao", "rotulo": "Palpação dos linfonodos", "resultado": "Pré-escapulares e axilares de tamanho normal.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,4 °C.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões sem alterações.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas", "resultado": "Rosadas e úmidas.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é a principal suspeita para o caroço da Luna?",
+      "opcoes": [
+        { "texto": "Sarcoma de aplicação felino", "correta": true, "explicacao": "Nódulo no local de vacina que persiste há mais de 3 meses, tem mais de 2 cm e cresce: pela regra 3-2-1, precisa de biópsia, e a principal suspeita é o sarcoma de aplicação." },
+        { "texto": "Reação inflamatória pós-vacinal (granuloma)", "correta": false, "explicacao": "O granuloma aparece semanas depois da vacina e costuma regredir em até 3 meses. Este nódulo persiste há mais tempo e está crescendo." },
+        { "texto": "Abscesso por mordida", "correta": false, "explicacao": "O abscesso é quente, dolorido e mole, costuma vir com febre e aparece em gato que briga. A Luna não sai de casa, está sem febre e o nódulo é firme e indolor." },
+        { "texto": "Lipoma", "correta": false, "explicacao": "O lipoma é macio, móvel e solto dos planos profundos, e é pouco comum em gatos. Este nódulo é firme e preso." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Onde a Luna e os outros gatos devem receber vacinas e injeções daqui para a frente?",
+      "opcoes": [
+        { "texto": "Na parte distal dos membros, abaixo do cotovelo ou do joelho, ou na cauda", "correta": true, "explicacao": "Se um sarcoma surgir ali, a amputação do membro ou da cauda retira o tumor com margem ampla. Anote na ficha o local de cada dose." },
+        { "texto": "Entre as escápulas, como sempre", "correta": false, "explicacao": "É o local mais associado ao sarcoma de aplicação e o pior para operar: a margem exige retirar processos espinhosos e parte das escápulas." },
+        { "texto": "Na parede lateral do tórax", "correta": false, "explicacao": "Um tumor ali exige retirar parte das costelas para ter margem, uma cirurgia muito maior do que amputar a ponta de um membro." },
+        { "texto": "Nos músculos lombares, junto à coluna", "correta": false, "explicacao": "Um tumor junto à coluna lombar não permite margem ampla sem atingir vértebras e medula." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Que estruturas ficam embaixo da região entre as escápulas e podem ter de sair junto com o tumor da Luna?",
+      "opcoes": [
+        { "texto": "Os processos espinhosos das primeiras vértebras torácicas e a borda dorsal das escápulas", "correta": true, "explicacao": "O sarcoma se infiltra pelas fáscias. Para ter margem de uns 5 cm para os lados e dois planos de fáscia em profundidade, a cirurgia retira junto processos espinhosos e parte das escápulas." },
+        { "texto": "As costelas e os lobos craniais dos pulmões", "correta": false, "explicacao": "Costelas e pulmões ficam mais ventrais e laterais. Embaixo da região entre as escápulas, sob a pele e os músculos, estão os processos espinhosos das vértebras torácicas." },
+        { "texto": "A traqueia e o esôfago", "correta": false, "explicacao": "Traqueia e esôfago passam pela parte ventral do pescoço e pelo mediastino, longe da região dorsal entre as escápulas." },
+        { "texto": "Só a pele e o tecido subcutâneo", "correta": false, "explicacao": "Retirar só a pele e o subcutâneo deixa tumor para trás: o sarcoma se infiltra pelas fáscias e pelos músculos abaixo dele." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 1 ano",
+      "bom": "A biópsia confirmou o sarcoma, e a Luna foi operada com margens amplas. A vacina deste ano foi aplicada na parte distal de um membro, com o local anotado na ficha.",
+      "falaBom": "Doutora, a Luna se recuperou bem da cirurgia! E já anotei: vacina agora só na perninha ou no rabo.",
+      "ruim": "As vacinas continuaram sendo aplicadas entre as escápulas. Um novo nódulo apareceu ali, numa região já operada e ainda mais difícil de retirar com margem.",
+      "falaRuim": "Doutora, apareceu outro caroço nas costas dela, perto da cicatriz..."
+    }
+  ],
+  "resumo": [
+    "Sarcoma de aplicação felino: tumor agressivo que pode surgir meses ou anos depois de vacinas e outras injeções.",
+    "Regra 3-2-1: investigar com biópsia o nódulo que persiste 3 meses após a injeção, passa de 2 cm ou ainda cresce 1 mês depois dela.",
+    "Vacinar na parte distal dos membros (abaixo do cotovelo ou do joelho) ou na cauda, nunca entre as escápulas, e anotar o local de cada dose.",
+    "Entre as escápulas, a margem cirúrgica exige retirar processos espinhosos das vértebras torácicas e parte das escápulas."
+  ],
+  "referencias": [
+    "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+    "König e Liebich, Anatomia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

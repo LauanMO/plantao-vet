@@ -1,0 +1,101 @@
+{
+  "id": "anat-veia-cefalica-01",
+  "materia": "anatomia",
+  "tema": "Vasos para punção",
+  "dificuldade": 1,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Fred",
+    "especie": "cão",
+    "raca": "Poodle",
+    "sexo": "macho castrado",
+    "idade": "7 anos",
+    "pesoKg": 6,
+    "sprite": "cao-pequeno-branco"
+  },
+  "tutor": { "nome": "Rogério", "sprite": "tutor-1" },
+  "chegada": "Doutora, o Fred tá vomitando e com diarreia desde ontem. Não para nada no estômago, nem água, e ele tá bem molinho.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 3,
+      "itens": [
+        { "id": "agua", "rotulo": "Ele consegue beber água?", "resultado": "Bebe e vomita logo em seguida. Desde ontem, nada para.", "importante": true },
+        { "id": "inicio", "rotulo": "Quando começou e quantas vezes vomitou?", "resultado": "Ontem à tarde. Já vomitou umas oito vezes e fez diarreia mole.", "importante": true },
+        { "id": "remedio", "rotulo": "Deu algum remédio em casa?", "resultado": "Dei um chá de boldo, mas ele vomitou também.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, ele toma todo ano.", "importante": false },
+        { "id": "vermifugo", "rotulo": "Ele foi vermifugado?", "resultado": "Foi, faz dois meses.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Pele demora a voltar e boca seca: cerca de 7% de desidratação.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosadas e secas; TPC de 2 segundos.", "importante": true },
+        { "id": "abdome", "ferramenta": "mao", "rotulo": "Palpação abdominal", "resultado": "Abdome um pouco dolorido, com alças cheias de líquido; sem massas.", "importante": true },
+        { "id": "patas", "ferramenta": "mao", "rotulo": "Pele das patas da frente", "resultado": "Pelos curtos, pele íntegra, sem feridas.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,9 °C.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração a 140 batimentos por minuto; pulmões normais.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "O Fred vai receber soro na veia. Qual veia você usa para o cateter e onde ela fica?",
+      "opcoes": [
+        { "texto": "Veia cefálica, na face cranial do antebraço", "correta": true, "explicacao": "É a veia mais usada para cateter no cão: superficial, calibrosa e fácil de conter. Corre pela face cranial (dorsal) do antebraço, do carpo até o cotovelo." },
+        { "texto": "Veia cefálica, na face medial do antebraço", "correta": false, "explicacao": "É assim no cavalo, em que a cefálica sobe pela face medial do antebraço. No cão, ela fica na face cranial." },
+        { "texto": "Veia cefálica, na face caudal do antebraço", "correta": false, "explicacao": "Na face caudal do antebraço ficam os músculos flexores do carpo e dos dedos, sem veia superficial para cateter." },
+        { "texto": "Veia femoral, na face medial da coxa", "correta": false, "explicacao": "A femoral fica no trígono femoral, ao lado da artéria femoral. Não é a escolha para cateter periférico de rotina." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Onde a auxiliar deve apertar para a veia do Fred encher na hora da punção?",
+      "opcoes": [
+        { "texto": "Na altura do cotovelo, proximal ao ponto da punção", "correta": true, "explicacao": "O sangue das veias do membro volta para o coração, de baixo para cima. Apertando proximal ao ponto (mais perto do tronco), o sangue represa e a veia enche onde a agulha vai entrar." },
+        { "texto": "No carpo, distal ao ponto da punção", "correta": false, "explicacao": "Apertar abaixo do ponto bloqueia o sangue que vem do pé: a veia esvazia em vez de encher." },
+        { "texto": "Em cima do próprio ponto da punção", "correta": false, "explicacao": "Com o dedo em cima, a veia fica achatada justamente onde a agulha precisa entrar. O aperto vai proximal ao ponto." },
+        { "texto": "Na axila, com força, para fechar a artéria axilar", "correta": false, "explicacao": "Fechar a artéria corta a chegada de sangue ao membro, e a veia não enche. Basta uma pressão moderada, que fecha só a veia." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Se a cefálica não der, qual veia do membro pélvico serve no cão, e onde ela fica?",
+      "opcoes": [
+        { "texto": "Veia safena lateral, na face lateral da perna, logo acima do tarso", "correta": true, "explicacao": "No cão, ela cruza obliquamente a face lateral da perna, pouco acima do tarso, e fica fácil de ver com o aperto acima dela." },
+        { "texto": "Veia safena lateral, na face caudal da coxa", "correta": false, "explicacao": "Na face caudal da coxa não há veia superficial para punção; ali corre, por baixo dos músculos, o nervo isquiático." },
+        { "texto": "Veia femoral, na face lateral da coxa", "correta": false, "explicacao": "Os vasos femorais correm na face medial da coxa, no trígono femoral, não na lateral." },
+        { "texto": "Veia cefálica, na face cranial da perna", "correta": false, "explicacao": "A cefálica é do membro torácico. No membro pélvico, as veias superficiais usadas para punção são as safenas." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 2 dias",
+      "bom": "Com o cateter na cefálica, o Fred recebeu soro e antiemético na veia. Parou de vomitar no mesmo dia e voltou a comer em 2 dias.",
+      "falaBom": "Doutora, o Fred tá comendo de novo e voltou a fazer bagunça em casa! Obrigado!",
+      "ruim": "Várias tentativas de punção no lugar errado formaram hematomas e atrasaram o soro. O Fred passou a noite vomitando e ficou ainda mais desidratado.",
+      "falaRuim": "Doutora, ele ficou com as patinhas roxas das picadas e continua bem fraquinho..."
+    }
+  ],
+  "resumo": [
+    "Veia cefálica: face cranial do antebraço, do carpo ao cotovelo. É a mais usada para cateter e coleta de sangue no cão e no gato.",
+    "O aperto (garrote) vai proximal à punção, na altura do cotovelo: o sangue das veias volta para o coração e represa antes do aperto.",
+    "Safena lateral (cão): face lateral da perna, logo acima do tarso. No gato, a safena medial, na face medial do membro pélvico, é mais usada.",
+    "No cavalo, a cefálica fica na face medial do antebraço."
+  ],
+  "referencias": [
+    "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+    "König e Liebich, Anatomia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

@@ -1,0 +1,102 @@
+{
+  "id": "anat-nervo-obturatorio-01",
+  "materia": "anatomia",
+  "tema": "Nervos dos membros",
+  "dificuldade": 3,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Belinha",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "2 anos",
+    "pesoKg": 480,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Osmar", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Belinha pariu ontem um bezerro enorme, teve que puxar. Ela levanta, mas as pernas de trás abrem para os lados e ela escorrega.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 3,
+      "itens": [
+        { "id": "parto", "rotulo": "Como foi o parto?", "resultado": "Demorado. O bezerro era enorme e entalou; dois homens puxaram com corda.", "importante": true },
+        { "id": "piso", "rotulo": "Onde ela está ficando?", "resultado": "Na baia de parição, no cimento. O chão fica molhado e liso.", "importante": true },
+        { "id": "comer", "rotulo": "Ela está comendo e ruminando?", "resultado": "Está, comeu bem o trato hoje cedo e tá esperta.", "importante": false },
+        { "id": "partos", "rotulo": "Quantos partos ela já teve?", "resultado": "Esse foi o primeiro. Ela é novilha ainda.", "importante": false },
+        { "id": "vacinas", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, sim. Vacinei o rebanho no começo do ano.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "aducao", "ferramenta": "mao", "rotulo": "Força para juntar as pernas de trás", "resultado": "Afastando cada perna de trás para o lado, ela não consegue puxar de volta.", "importante": true },
+        { "id": "postura", "ferramenta": "mao", "rotulo": "Postura e marcha", "resultado": "Fica com as pernas de trás bem abertas; no piso liso, elas escorregam para os lados.", "importante": true },
+        { "id": "patas", "ferramenta": "mao", "rotulo": "Apoio, reflexos e sensibilidade das patas", "resultado": "Apoia os cascos normalmente, estende o joelho e sente a pinça nas duas patas.", "importante": true },
+        { "id": "retal", "ferramenta": "mao", "rotulo": "Palpação retal", "resultado": "Pelve sem fratura nem crepitação; parede do canal do parto inchada e sensível.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,7 °C.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Rúmen com movimentos normais; coração com 72 batimentos por minuto.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "A Belinha não consegue juntar as pernas de trás. Que músculos fazem esse movimento?",
+      "opcoes": [
+        { "texto": "Os adutores da coxa: adutor, grácil e pectíneo", "correta": true, "explicacao": "Eles ficam na face medial da coxa e puxam o membro para dentro. Sem eles, as pernas abrem para os lados, ainda mais em piso liso." },
+        { "texto": "O quadríceps femoral", "correta": false, "explicacao": "O quadríceps estende o joelho e sustenta o peso. A Belinha apoia e estende o joelho normalmente, então ele está funcionando." },
+        { "texto": "Os glúteos médio e profundo", "correta": false, "explicacao": "Os glúteos estendem o quadril e ajudam a afastar o membro para fora, o movimento oposto ao que ela perdeu." },
+        { "texto": "O gastrocnêmio", "correta": false, "explicacao": "O gastrocnêmio estende o tarso e é inervado pelo tibial. Sem ele, o jarrete ficaria caído, e o da Belinha está normal." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Qual nervo inerva esses músculos e foi lesado no parto da Belinha?",
+      "opcoes": [
+        { "texto": "Nervo obturatório", "correta": true, "explicacao": "Ele nasce das últimas raízes lombares, corre pela face medial do ílio, dentro da pelve, e sai pelo forame obturado para os adutores da coxa." },
+        { "texto": "Nervo femoral", "correta": false, "explicacao": "O femoral inerva o quadríceps: sem ele, o joelho dobra e o animal não sustenta o peso. Em bovinos, é mais lesado no bezerro puxado no parto com os membros esticados." },
+        { "texto": "Nervo fibular", "correta": false, "explicacao": "O fibular é superficial na face lateral do joelho e sofre em vacas deitadas muito tempo. A lesão faz a vaca apoiar com o boleto dobrado para a frente, e a Belinha apoia os cascos normalmente." },
+        { "texto": "Nervo glúteo cranial", "correta": false, "explicacao": "Ele inerva os glúteos médio e profundo, que estendem o quadril e afastam o membro. A lesão daria fraqueza para estender o quadril, não para juntar as pernas." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Em que ponto o bezerro comprimiu esse nervo durante o parto?",
+      "opcoes": [
+        { "texto": "Na face medial do corpo do ílio, dentro da pelve, antes de o nervo sair pelo forame obturado", "correta": true, "explicacao": "Ali o nervo corre encostado no osso, sem proteção, e fica espremido entre o ílio e o bezerro que passa pelo canal do parto. Às vezes a raiz L6 do isquiático é comprimida junto, e a vaca nem levanta." },
+        { "texto": "No forame isquiático maior, junto ao ligamento sacrotuberal largo", "correta": false, "explicacao": "Por ali sai o nervo isquiático, que vai para a face caudal da coxa. O obturatório sai por outra abertura, o forame obturado." },
+        { "texto": "Na região inguinal, junto à artéria femoral", "correta": false, "explicacao": "Ali passam os vasos femorais e o nervo safeno, por fora da pelve, longe do canal do parto." },
+        { "texto": "Dentro do canal vertebral lombar, na medula espinhal", "correta": false, "explicacao": "Uma lesão na medula afetaria vários nervos dos dois membros, com perda de força e de sensibilidade. A Belinha só perdeu a força para juntar as pernas." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 10 dias",
+      "bom": "Com cama de areia no lugar do cimento, uma peia nas pernas de trás, acima dos boletos, e anti-inflamatório, a Belinha parou de escorregar e voltou a andar firme em 10 dias.",
+      "falaBom": "Doutora, com a areia no chão e a peia ela parou de escorregar. Já tá andando firme no piquete!",
+      "ruim": "Sem cuidar do piso nem prender as pernas, a Belinha escorregou no cimento, abriu as pernas de vez e machucou os músculos da coxa. Não conseguiu mais levantar.",
+      "falaRuim": "Doutora, ela escorregou de novo, abriu as pernas de vez e agora não levanta mais..."
+    }
+  ],
+  "resumo": [
+    "O nervo obturatório corre pela face medial do ílio, dentro da pelve, e sai pelo forame obturado para os adutores da coxa (adutor, grácil e pectíneo).",
+    "No parto difícil, principalmente de novilha com bezerro grande, ele é comprimido entre o bezerro e o osso.",
+    "Sinal: as pernas de trás abrem para os lados, sobretudo em piso liso; apoio, sensibilidade e reflexos das patas ficam normais.",
+    "Se a vaca nem consegue levantar, pense também na raiz L6 do isquiático, lesada no mesmo parto.",
+    "Manejo: piso antiderrapante (areia ou terra), peia nas pernas de trás acima dos boletos e anti-inflamatório."
+  ],
+  "referencias": [
+    "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+    "König e Liebich, Anatomia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

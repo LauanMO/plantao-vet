@@ -1,0 +1,89 @@
+{
+  "id": "anat-injecao-bovino-01",
+  "materia": "anatomia",
+  "tema": "Locais de injeção",
+  "dificuldade": 1,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Zeca",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "macho",
+    "idade": "4 meses",
+    "pesoKg": 120,
+    "sprite": "bezerro-holandes"
+  },
+  "tutor": { "nome": "Seu Tião", "sprite": "produtor-1" },
+  "chegada": "Doutora, apareceu um caroço quente na anca do Zeca, bem onde eu dei a injeção. Ele tá mancando dessa perna.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 3,
+      "itens": [
+        { "id": "injecao", "rotulo": "Que injeção ele tomou e onde?", "resultado": "Um antibiótico, faz dez dias, por causa de uma diarreia. Dei na anca, como sempre fiz.", "importante": true },
+        { "id": "agulha", "rotulo": "Como foi feita a aplicação?", "resultado": "Usei a mesma agulha nos bezerros todos e não limpei o lugar.", "importante": true },
+        { "id": "volume", "rotulo": "Quanto foi aplicado de uma vez?", "resultado": "Uns 15 mL, tudo num lugar só.", "importante": true },
+        { "id": "apetite", "rotulo": "Ele está mamando e comendo?", "resultado": "Tá comendo, mas fica mais deitado que os outros.", "importante": false },
+        { "id": "diarreia", "rotulo": "A diarreia melhorou?", "resultado": "Melhorou, já tá com o esterco firme.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "caroco", "ferramenta": "mao", "rotulo": "Palpação do caroço", "resultado": "Aumento de volume quente, dolorido e mole no centro, na região glútea esquerda.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "40,0 °C.", "importante": true },
+        { "id": "marcha", "ferramenta": "mao", "rotulo": "Marcha", "resultado": "Manca do membro pélvico esquerdo, mas apoia o casco normalmente e não arrasta a pinça.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões sem alterações.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas", "resultado": "Rosadas.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Normal: a pele volta rápido.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "Onde aplicar as injeções intramusculares do Zeca e do resto do rebanho?",
+      "opcoes": [
+        { "texto": "Na tábua do pescoço, no triângulo à frente da escápula", "correta": true, "explicacao": "É o local das boas práticas: músculo de menor valor, longe de nervos importantes, e uma lesão ali não estraga os cortes nobres da carcaça." },
+        { "texto": "Na anca, nos músculos glúteos", "correta": false, "explicacao": "Lesões de injeção na anca estragam cortes nobres, como alcatra e picanha, e, no bezerro, a agulha pode atingir o nervo isquiático, que passa por baixo dos glúteos." },
+        { "texto": "Na face caudal da coxa, no coxão", "correta": false, "explicacao": "O coxão também é corte de valor, e o nervo isquiático corre na face caudal da coxa." },
+        { "texto": "No sulco jugular, no meio do pescoço", "correta": false, "explicacao": "O sulco jugular aloja a veia jugular, usada para aplicação na veia. Uma injeção intramuscular ali pode atingir a veia, a carótida e o tronco vagossimpático." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Qual é o limite de baixo desse triângulo do pescoço, e o que fica logo abaixo dele?",
+      "opcoes": [
+        { "texto": "A linha das vértebras cervicais; abaixo dela ficam o sulco jugular, a veia jugular e a carótida", "correta": true, "explicacao": "O triângulo vai do ligamento nucal, em cima, até as vértebras cervicais, embaixo, e termina na borda cranial da escápula. Abaixo dele, o sulco jugular guarda vasos e o tronco vagossimpático." },
+        { "texto": "O ligamento nucal; abaixo dele fica a medula espinhal", "correta": false, "explicacao": "O ligamento nucal é o limite de cima do triângulo. A medula fica dentro do canal vertebral, protegida pelas vértebras." },
+        { "texto": "A borda cranial da escápula; abaixo dela fica o plexo braquial", "correta": false, "explicacao": "A borda cranial da escápula é o limite de trás do triângulo. O plexo braquial é profundo e passa para a face medial do ombro." },
+        { "texto": "A traqueia; abaixo dela fica o esôfago", "correta": false, "explicacao": "A traqueia fica na parte de baixo do pescoço, bem abaixo do triângulo, e o esôfago corre acima dela e à esquerda, não abaixo." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 15 dias",
+      "bom": "O abscesso foi drenado e lavado, e o Zeca parou de mancar. As injeções do rebanho passaram para a tábua do pescoço, até 10 mL por ponto e com agulha limpa.",
+      "falaBom": "Doutora, o Zeca já anda direitinho! Agora só aplico no pescoço, com agulha nova e pouco de cada vez.",
+      "ruim": "As aplicações continuaram na anca: o Zeca teve outro abscesso, e outro bezerro passou a arrastar a pata depois de uma injeção.",
+      "falaRuim": "Doutora, apareceu outro caroço, e o bezerro malhado tá arrastando a pata desde a última injeção..."
+    }
+  ],
+  "resumo": [
+    "Injeção intramuscular em bovinos: na tábua do pescoço, no triângulo limitado pelo ligamento nucal (em cima), pelas vértebras cervicais (embaixo) e pela borda cranial da escápula (atrás).",
+    "Evitar a anca e a coxa: as lesões estragam cortes nobres e, em bezerros, a agulha pode atingir o nervo isquiático.",
+    "Abaixo das vértebras cervicais fica o sulco jugular, com a veia jugular, a carótida e o tronco vagossimpático.",
+    "Até 10 mL por ponto, local limpo e agulha limpa: menos abscessos e menos transmissão de doenças entre os animais."
+  ],
+  "referencias": [
+    "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+    "König e Liebich, Anatomia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

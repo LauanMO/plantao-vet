@@ -1,0 +1,102 @@
+{
+  "id": "anat-nervo-isquiatico-01",
+  "materia": "anatomia",
+  "tema": "Nervos dos membros",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Bidu",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "3 anos",
+    "pesoKg": 14,
+    "sprite": "cao-pequeno-caramelo"
+  },
+  "tutor": { "nome": "Marlene", "sprite": "tutora-1" },
+  "chegada": "Doutora, o Bidu tomou uma injeção na coxa ontem e desde então arrasta a pata de trás. Ele pisa com as costas do pé no chão!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 3,
+      "itens": [
+        { "id": "injecao", "rotulo": "Onde foi aplicada a injeção?", "resultado": "O rapaz da agropecuária aplicou na parte de trás da coxa direita. O Bidu gritou na hora.", "importante": true },
+        { "id": "inicio", "rotulo": "Quando ele começou a arrastar a pata?", "resultado": "Logo depois da injeção. Antes ele andava perfeito.", "importante": true },
+        { "id": "remedio", "rotulo": "Para que era a injeção?", "resultado": "Era um antibiótico, por causa de uma feridinha na orelha.", "importante": false },
+        { "id": "queda", "rotulo": "Ele caiu ou levou alguma pancada?", "resultado": "Não, ele quase não sai de casa e ninguém viu nada.", "importante": false },
+        { "id": "coluna", "rotulo": "Ele parece ter dor nas costas?", "resultado": "Não, sobe no sofá e não reclama quando eu pego no colo.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "marcha", "ferramenta": "mao", "rotulo": "Marcha e apoio", "resultado": "Apoia o peso na pata direita, mas pisa com o dorso dos dedos, e o tarso fica mais baixo que o esquerdo.", "importante": true },
+        { "id": "sensibilidade", "ferramenta": "mao", "rotulo": "Sensibilidade do pé direito", "resultado": "Não sente a pinça no dorso nem na sola do pé; na face medial, sente normalmente.", "importante": true },
+        { "id": "reflexos", "ferramenta": "mao", "rotulo": "Reflexos do membro pélvico direito", "resultado": "Patelar normal. Na retirada, dobra o quadril, mas não dobra o joelho, o tarso nem os dedos.", "importante": true },
+        { "id": "coxa", "ferramenta": "mao", "rotulo": "Palpação da coxa", "resultado": "Ponto dolorido no meio da face caudal da coxa direita, sem inchaço.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,6 °C.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "O Bidu pisa com o dorso dos dedos, não sente a sola nem o dorso do pé e não dobra o joelho na retirada. Qual nervo a injeção lesou?",
+      "opcoes": [
+        { "texto": "Nervo isquiático", "correta": true, "explicacao": "O isquiático inerva os músculos da face caudal da coxa, que dobram o joelho, e se divide em tibial e fibular, que movem o tarso e os dedos e dão a sensibilidade da sola e do dorso do pé." },
+        { "texto": "Nervo femoral", "correta": false, "explicacao": "O femoral inerva o quadríceps, que estende o joelho. Sem ele, o Bidu não sustentaria o peso e o reflexo patelar estaria ausente, mas os dois estão normais." },
+        { "texto": "Nervo fibular", "correta": false, "explicacao": "O fibular sozinho explicaria o pé virado e o dorso do pé sem sensibilidade, mas não a sola sem sensibilidade (tibial) nem o joelho que não dobra. Ele costuma ser lesado na face lateral do joelho, onde é superficial." },
+        { "texto": "Nervo obturatório", "correta": false, "explicacao": "O obturatório inerva os adutores da coxa: a lesão faz o membro escorregar para o lado, sem mudar o apoio do pé nem a sensibilidade." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por onde passa o nervo isquiático na coxa, onde a agulha o atingiu?",
+      "opcoes": [
+        { "texto": "Na face caudal, por baixo do bíceps femoral, entre ele e os músculos semitendinoso e semimembranoso", "correta": true, "explicacao": "Ele sai da pelve pelo forame isquiático maior, passa atrás da articulação do quadril e desce pela face caudal da coxa. Por isso, no cão, prefira aplicar no quadríceps ou nos músculos lombares." },
+        { "texto": "Na face cranial, dentro do quadríceps femoral", "correta": false, "explicacao": "Na face cranial chega o nervo femoral, que entra no quadríceps logo no alto da coxa. O meio do quadríceps é um dos locais indicados para injeção no cão." },
+        { "texto": "Na face medial, no trígono femoral, junto à artéria femoral", "correta": false, "explicacao": "No trígono femoral passam a artéria e a veia femorais e o nervo safeno. É ali que se palpa o pulso femoral, não por onde corre o isquiático." },
+        { "texto": "Logo abaixo da pele da face lateral da coxa", "correta": false, "explicacao": "O isquiático é profundo, coberto pelo bíceps femoral. Logo abaixo da pele da face lateral há só fáscia e pequenos ramos cutâneos." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "O Bidu ainda sente a pinça na face medial do pé. Qual nervo leva essa sensibilidade?",
+      "opcoes": [
+        { "texto": "Nervo safeno, ramo do nervo femoral", "correta": true, "explicacao": "O safeno nasce do femoral e dá a sensibilidade da face medial da coxa, da perna e do pé. Ele desce pela face medial do membro, longe da face caudal da coxa, e escapou da injeção." },
+        { "texto": "Nervo tibial", "correta": false, "explicacao": "O tibial é ramo do isquiático e foi lesado junto com ele. Ele dá a sensibilidade da sola, que o Bidu perdeu." },
+        { "texto": "Nervo cutâneo femoral caudal", "correta": false, "explicacao": "Ele dá a sensibilidade da pele da face caudal da coxa, não do pé." },
+        { "texto": "Nervo obturatório", "correta": false, "explicacao": "O obturatório é motor para os adutores da coxa e, no cão, não leva sensibilidade para o pé." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 2 meses",
+      "bom": "A lesão do isquiático foi parcial. Com fisioterapia e uma botinha para proteger o dorso dos dedos, o Bidu voltou a apoiar o pé direito em cerca de 2 meses.",
+      "falaBom": "Doutora, o Bidu voltou a pisar direitinho! A botinha ajudou muito, e o pé não machucou mais.",
+      "ruim": "Sem reconhecer a lesão do isquiático, o pé continuou sem proteção, arrastando no chão, e o dorso dos dedos ficou com feridas que infeccionaram.",
+      "falaRuim": "Doutora, ele continua arrastando a pata, e agora os dedinhos estão em carne viva..."
+    }
+  ],
+  "resumo": [
+    "O nervo isquiático sai da pelve pelo forame isquiático maior e desce pela face caudal da coxa, coberto pelo bíceps femoral, entre ele e os músculos semitendinoso e semimembranoso.",
+    "Ele inerva os músculos que dobram o joelho e, pelos ramos tibial e fibular, os que movem o tarso e os dedos.",
+    "Lesão do isquiático: o apoio se mantém pelo quadríceps (nervo femoral), mas o pé vira, com o dorso dos dedos no chão, o tarso cai e o pé perde a sensibilidade, menos na face medial (nervo safeno).",
+    "Reflexo patelar presente; na retirada, só o quadril dobra.",
+    "Injeção intramuscular no cão: prefira os músculos lombares ou o quadríceps. Na face caudal da coxa, a agulha pode atingir o isquiático."
+  ],
+  "referencias": [
+    "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+    "König e Liebich, Anatomia dos Animais Domésticos"
+  ],
+  "revisado": false
+}

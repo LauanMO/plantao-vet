@@ -1,0 +1,114 @@
+{
+  "id": "anat-laminite-equino-01",
+  "materia": "anatomia",
+  "tema": "Ossos e articulações no raio-X",
+  "dificuldade": 2,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Lola",
+    "especie": "equino",
+    "raca": "Mangalarga Marchador",
+    "sexo": "fêmea",
+    "idade": "11 anos",
+    "pesoKg": 430,
+    "sprite": "cavalo-tordilho"
+  },
+  "tutor": { "nome": "Seu Zé Carlos", "sprite": "produtor-2" },
+  "chegada": "Doutora, a Lola entrou no depósito anteontem e comeu um saco de milho. Hoje quase não anda e fica com as patas da frente esticadas.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 3,
+      "itens": [
+        { "id": "milho", "rotulo": "O que ela comeu e quanto?", "resultado": "Quase um saco inteiro de milho. Ela arrebentou a porta do depósito.", "importante": true },
+        { "id": "inicio", "rotulo": "Quando ela começou a mancar?", "resultado": "Ontem à noite. Hoje cedo mal saiu do lugar.", "importante": true },
+        { "id": "deita", "rotulo": "Ela tem deitado mais?", "resultado": "Deita bastante e custa a levantar.", "importante": true },
+        { "id": "diarreia", "rotulo": "Ela teve diarreia ou cólica?", "resultado": "Teve uma diarreia mole ontem, que já passou.", "importante": false },
+        { "id": "ferrou", "rotulo": "Quando ela foi ferrada?", "resultado": "Faz um mês, com o ferrador de sempre.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "postura", "ferramenta": "mao", "rotulo": "Postura", "resultado": "Joga o peso para trás, com as patas da frente esticadas à frente, apoiando nos talões.", "importante": true },
+        { "id": "pulso", "ferramenta": "mao", "rotulo": "Pulso digital", "resultado": "Forte e latejante nas duas patas da frente.", "importante": true },
+        { "id": "casco", "ferramenta": "mao", "rotulo": "Pinça de casco", "resultado": "Dor forte ao apertar a sola na frente do casco (região da pinça), nas duas patas da frente.", "importante": true },
+        { "id": "fc", "ferramenta": "estetoscopio", "rotulo": "Frequência cardíaca", "resultado": "60 batimentos por minuto (normal: 28 a 44).", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,2 °C.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosadas; TPC de 2 segundos.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Laminite aguda por sobrecarga de grãos", "correta": true, "explicacao": "Ingestão de muito grão, pulso digital forte, dor na pinça e peso jogado para os talões, nas duas patas da frente." },
+        { "texto": "Abscesso de casco", "correta": false, "explicacao": "O abscesso costuma atingir um casco só, com dor num ponto da sola, e não dá a postura de jogar o peso para trás nas duas patas da frente." },
+        { "texto": "Cólica", "correta": false, "explicacao": "Ela teve diarreia, mas não cava nem olha para o flanco; a dor está nos cascos." },
+        { "texto": "Doença do navicular", "correta": false, "explicacao": "A doença do navicular é crônica, com dor nos talões e manqueira que vai e volta, não um quadro agudo depois de comer milho." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "critica": true,
+      "pergunta": "No raio-X lateromedial da pata, a ponta de um osso dentro do casco desceu em direção à sola e se afastou da parede. Que osso é esse?",
+      "opcoes": [
+        { "texto": "Falange distal, o osso do casco", "correta": true, "explicacao": "A falange distal se prende à parede do casco pelas lâminas. Na laminite, as lâminas se soltam, e a face dorsal do osso deixa de ficar paralela à parede: é a rotação." },
+        { "texto": "Osso navicular (sesamoide distal)", "correta": false, "explicacao": "O navicular fica atrás da articulação entre a falange média e a distal, sob o tendão flexor digital profundo. Não é ele que gira em direção à sola." },
+        { "texto": "Falange média, o osso da coroa", "correta": false, "explicacao": "A falange média fica na transição entre a quartela e o casco e não se prende à parede pelas lâminas." },
+        { "texto": "Sesamoides proximais", "correta": false, "explicacao": "Os sesamoides proximais ficam atrás do boleto, bem acima do casco." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Que estrutura puxa a parte de trás desse osso e faz a ponta girar para baixo quando as lâminas se soltam?",
+      "opcoes": [
+        { "texto": "O tendão flexor digital profundo, que se insere na face flexora da falange distal", "correta": true, "explicacao": "Ele traciona a parte de trás da falange distal. Sem a sustentação das lâminas e com o peso do cavalo, a ponta do osso gira em direção à sola." },
+        { "texto": "O tendão extensor digital comum", "correta": false, "explicacao": "Ele se insere no processo extensor, na frente da falange distal, e puxa a frente do osso para cima, não para baixo." },
+        { "texto": "O tendão flexor digital superficial", "correta": false, "explicacao": "Ele se insere na falange proximal e na média e não chega à falange distal." },
+        { "texto": "O ligamento suspensor do boleto", "correta": false, "explicacao": "O suspensor (músculo interósseo) se prende nos sesamoides proximais e sustenta o boleto; ele não se insere na falange distal." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Onde você palpou o pulso digital forte da Lola?",
+      "opcoes": [
+        { "texto": "De cada lado do boleto, sobre os sesamoides proximais, nas artérias digitais palmares", "correta": true, "explicacao": "As artérias digitais palmares medial e lateral passam sobre a face de fora dos sesamoides proximais, onde o pulso é fácil de sentir. Pulso forte ali indica inflamação no casco." },
+        { "texto": "Na face dorsal da quartela, sobre o tendão extensor", "correta": false, "explicacao": "Na face dorsal da quartela há só o tendão extensor e a pele; as artérias digitais correm pelas laterais, do lado palmar." },
+        { "texto": "Na artéria facial, na borda de baixo da mandíbula", "correta": false, "explicacao": "Ali se conta a frequência cardíaca do cavalo, mas não se avalia o pulso que chega ao casco." },
+        { "texto": "Na face dorsal do carpo", "correta": false, "explicacao": "Na frente do carpo passam os tendões extensores, sem artéria superficial para palpar. O pulso digital é sentido no boleto." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 2 meses",
+      "bom": "Com gelo nos cascos, anti-inflamatório, apoio na sola e repouso em cama macia, a rotação parou de avançar. Em dois meses, a Lola voltou a andar sem dor.",
+      "falaBom": "Doutora, a Lola tá andando solta no piquete de novo! E agora o depósito vive trancado.",
+      "ruim": "Sem reconhecer a rotação, a Lola ficou sem apoio na sola. A falange distal girou mais e passou a forçar a sola por dentro.",
+      "falaRuim": "Doutora, ela quase não levanta mais, e apareceu uma mancha na sola, bem na frente do casco..."
+    }
+  ],
+  "resumo": [
+    "A falange distal (osso do casco) se prende à parede do casco pelas lâminas.",
+    "Na laminite, as lâminas se soltam; o tendão flexor digital profundo, inserido na face flexora da falange distal, e o peso do cavalo fazem a ponta do osso girar em direção à sola.",
+    "No raio-X lateromedial, a face dorsal da falange distal deixa de ficar paralela à parede do casco.",
+    "Pulso digital: artérias digitais palmares, de cada lado do boleto, sobre os sesamoides proximais.",
+    "Sinais: patas da frente esticadas, peso nos talões, pulso digital forte e dor na pinça."
+  ],
+  "referencias": [
+    "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
+    "König e Liebich, Anatomia dos Animais Domésticos"
+  ],
+  "revisado": false
+}
