@@ -98,9 +98,9 @@
         "via": "Intravenosa",
         "frequencia": "Dose única"
       },
-      "vias": ["Subcutânea", "Intramuscular", "Intravenosa", "Tópica"],
+      "vias": ["Subcutânea", "Intra-arterial", "Intravenosa", "Tópica"],
       "frequencias": ["Dose única", "A cada 4 horas", "A cada 72 horas", "A cada 7 dias"],
-      "explicacao": "1,1 mg/kg × 450 kg = 495 mg; 495 mg ÷ 50 mg/mL ≈ 9,9 mL (10 mL) na veia jugular. Dose única e reavaliar: se a dor voltar antes de 8 a 12 horas, pensar em cólica cirúrgica. No cavalo, evite a via intramuscular, que pode causar miosite por clostrídios."
+      "explicacao": "1,1 mg/kg × 450 kg = 495 mg; 495 mg ÷ 50 mg/mL ≈ 9,9 mL (10 mL) na veia jugular, com cuidado para não atingir a carótida, que corre ao lado: a bula alerta para evitar a aplicação intra-arterial. Dose única e reavaliar: se a dor voltar antes de 8 a 12 horas, pensar em cólica cirúrgica. Na cólica, a bula recomenda a veia, que age em até 15 minutos; no cavalo, a via intramuscular ainda pode causar miosite por clostrídios."
     },
     {
       "tipo": "retorno",
