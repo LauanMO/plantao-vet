@@ -28,6 +28,7 @@ O script lê as cores de `conteudo/arte/paleta.json`, salva os PNGs em `public/a
 | `gato-cinza-doente.png`, `-feliz.png` | Gato tigrado de rabo baixo e de rabo erguido; `gato-preto` é troca de pelagem | 2 quadros de 36×27 |
 | `vaca-holandesa-deitado.png`, `-doente.png`, `-feliz.png` | Vaca deitada de peito, com a cabeça no flanco; em pé de cabeça baixa; e em pé, recuperada | 2 quadros de 114×68 |
 | `bezerro-holandes-doente.png`, `-feliz.png` | Bezerro de cabeça baixa e de cabeça erguida | 2 quadros de 60×45 |
+| `cavalo-alazao-doente.png`, `-feliz.png` | Cavalo alazão de cabeça baixa e de cabeça erguida; `cavalo-tordilho` é troca de pelagem, com pintas | 2 quadros de 104×85 |
 | `coracao.png` | Coração da tela de retorno | 9×8 |
 | `icone-*.png` | Ferramentas: termômetro, estetoscópio, lanterna, mão, gota | 18×18 |
 | `app-192.png`, `app-512.png` | Ícone do app instalado: a cruz da fachada, desenhada em 32×32 e já ampliada | 192×192 e 512×512 |

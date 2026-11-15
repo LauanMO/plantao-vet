@@ -628,6 +628,57 @@ def bezerro(feliz):
     return contorno(im)
 
 
+def cavalo(feliz, pelo='wood_l', pelo_d='wood', crina='wood_d', malhas=False):
+    """Cavalo de perfil, virado para a direita. Bem, de cabeça erguida e orelhas em pé;
+    doente, de cabeça baixa, orelhas caídas e olho meio fechado. As pelagens são troca de cores."""
+    im, d = nova_tela(104, 84)
+
+    def r(x0, y0, x1, y1, c):
+        d.rectangle([x0, y0, x1, y1], fill=rgba(c))
+
+    def o(x0, y0, x1, y1, c):
+        d.ellipse([x0, y0, x1, y1], fill=rgba(c))
+
+    def poli(pontos, c):
+        d.polygon(pontos, fill=rgba(c))
+
+    d.line([(19, 31), (15, 46), (14, 62)], fill=rgba(crina), width=5)   # cauda
+    r(29, 52, 33, 77, pelo_d)                # pernas do outro lado
+    r(67, 52, 71, 77, pelo_d)
+    r(29, 78, 33, 80, 'shoe')
+    r(67, 78, 71, 80, 'shoe')
+    o(16, 26, 42, 54, pelo)                  # garupa
+    d.rounded_rectangle([24, 30, 76, 54], radius=8, fill=rgba(pelo))  # corpo
+    o(60, 28, 82, 54, pelo)                  # peito
+    r(30, 51, 68, 54, pelo_d)                # barriga
+    if malhas:
+        for (x, y) in ((30, 36), (40, 42), (52, 34), (60, 44), (24, 40), (46, 48)):
+            r(x, y, x + 2, y + 1, pelo_d)    # tordilho pedrês
+    r(22, 50, 27, 77, pelo)                  # pernas deste lado
+    r(73, 50, 78, 77, pelo)
+    r(22, 78, 27, 80, 'shoe')
+    r(73, 78, 78, 80, 'shoe')
+    if feliz:
+        poli([(68, 34), (76, 12), (88, 10), (84, 38)], pelo)                  # pescoço erguido
+        d.line([(70, 30), (78, 10), (84, 8)], fill=rgba(crina), width=4)     # crina
+        poli([(80, 8), (90, 6), (101, 21), (101, 27), (95, 29), (84, 18)], pelo)  # cabeça
+        r(95, 21, 101, 28, pelo_d)           # focinho
+        r(99, 23, 99, 24, 'out')             # narina
+        d.line([(91, 8), (97, 19)], fill=rgba('white'), width=2)              # lista na cara
+        r(87, 11, 88, 12, 'out')             # olho aberto
+        poli([(82, 9), (83, 2), (86, 8)], pelo)                               # orelhas em pé
+    else:
+        poli([(68, 36), (80, 30), (90, 50), (80, 54)], pelo)                  # pescoço baixo
+        d.line([(70, 33), (80, 29), (86, 34)], fill=rgba(crina), width=4)    # crina
+        poli([(84, 44), (92, 44), (100, 62), (99, 69), (92, 69), (86, 56)], pelo)  # cabeça baixa
+        r(93, 62, 100, 69, pelo_d)
+        r(97, 65, 97, 66, 'out')
+        d.line([(91, 46), (96, 60)], fill=rgba('white'), width=2)
+        r(87, 49, 89, 49, 'out')             # olho meio fechado
+        poli([(84, 45), (79, 43), (84, 48)], pelo)                            # orelhas caídas
+    return contorno(im)
+
+
 def coracao():
     im, d = nova_tela(9, 8)
     desenho = ['.##.##.', '#######', '#######', '.#####.', '..###..', '...#...']
@@ -738,6 +789,11 @@ PERSONAGENS = {
         'feliz': (vaca(False), 48),
     }),
     'bezerro-holandes': ((26, 41), {'doente': (bezerro(False), 26), 'feliz': (bezerro(True), 26)}),
+    'cavalo-alazao': ((50, 81), {'doente': (cavalo(False), 52), 'feliz': (cavalo(True), 52)}),
+    'cavalo-tordilho': ((50, 81), {
+        'doente': (cavalo(False, 'metal', 'metal_d', 'white_d', malhas=True), 52),
+        'feliz': (cavalo(True, 'metal', 'metal_d', 'white_d', malhas=True), 52),
+    }),
 }
 
 
