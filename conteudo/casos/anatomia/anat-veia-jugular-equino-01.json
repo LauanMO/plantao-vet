@@ -60,7 +60,7 @@
       "critica": true,
       "pergunta": "Em que altura do pescoço é mais seguro aplicar o remédio na jugular do Trovão?",
       "opcoes": [
-        { "texto": "No terço cranial, onde o músculo omo-hióideo fica entre a jugular e a artéria carótida", "correta": true, "explicacao": "Na parte cranial do pescoço, o omo-hióideo separa a veia da carótida comum. Se a agulha atravessar a veia, encontra músculo, não a artéria." },
+        { "texto": "No terço cranial, onde o músculo omo-hióideo fica entre a jugular e a artéria carótida", "correta": true, "explicacao": "Na parte cranial do pescoço, o omo-hióideo separa a veia da carótida comum. Se a agulha atravessar a veia, encontra primeiro o músculo, e a artéria fica mais longe." },
         { "texto": "No terço caudal, perto do peito, onde a veia é mais grossa", "correta": false, "explicacao": "Foi o erro da última vez: ali a carótida fica logo abaixo da jugular, sem músculo entre elas. Remédio na carótida vai direto ao cérebro e causa convulsão e queda em segundos." },
         { "texto": "Logo atrás da mandíbula, onde a jugular se forma", "correta": false, "explicacao": "Ali a jugular nasce da união das veias linguofacial e maxilar, junto à glândula parótida. A punção é difícil e pode atingir a glândula." },
         { "texto": "Em qualquer altura, desde que a agulha entre bem funda", "correta": false, "explicacao": "Funda demais é justamente o perigo: a carótida e o tronco vagossimpático ficam por baixo da jugular. A veia é superficial, logo abaixo da pele." }
@@ -80,7 +80,7 @@
     "No terço cranial do pescoço, o omo-hióideo separa a jugular da carótida comum; no terço caudal, a carótida fica logo abaixo da veia.",
     "Remédio injetado na carótida chega ao cérebro em segundos: agitação, convulsão e queda.",
     "O tronco vagossimpático acompanha a carótida: remédio irritante aplicado fora da veia pode causar síndrome de Horner, além de tromboflebite.",
-    "Aperte a base do sulco para a veia encher, punçione no terço cranial e confira que sai sangue escuro, sem jato, antes de injetar."
+    "Aperte a base do sulco para a veia encher, puncione no terço cranial e confira que sai sangue escuro, sem jato, antes de injetar."
   ],
   "referencias": [
     "Dyce, Sack e Wensing, Tratado de Anatomia Veterinária",
