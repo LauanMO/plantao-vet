@@ -122,3 +122,28 @@ test('o progresso sobrevive a recarregar a página e volta igual pelo backup', a
   expect(await salvo()).toEqual(antes)
   expect(erros).toEqual([])
 })
+
+test.describe('jogo instalado', () => {
+  // o build de teste que o playwright.config.ts serve na PORTA_DO_BUILD
+  test.use({ baseURL: 'http://localhost:5198' })
+
+  test('abre e joga sem internet depois da primeira visita', async ({ page, context }) => {
+    const erros = vigiarErros(page)
+    const caso = CASOS[1]
+    await page.goto('/')
+    // o service worker só fica ativo depois de guardar o jogo inteiro. Os trechos que rodam no navegador
+    // vão em texto, porque o tsconfig dos testes é o do Node, sem os tipos do navegador.
+    await page.evaluate('navigator.serviceWorker.ready.then(() => true)')
+
+    await context.setOffline(true)
+    const resposta = await page.reload()
+    expect(resposta?.fromServiceWorker()).toBe(true)
+    await botao(page, 'Biblioteca').click()
+    await botao(page, caso.paciente.nome).click()
+    // imagem que falha não dá erro na página, então o teste confere se cada uma carregou
+    const imagensCarregadas = () => page.evaluate('[...document.images].every((i) => i.naturalWidth > 0)')
+    await expect.poll(imagensCarregadas).toBe(true)
+    await jogarAcertandoTudo(page, caso)
+    expect(erros).toEqual([])
+  })
+})
