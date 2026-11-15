@@ -96,7 +96,7 @@
       },
       "vias": ["Intravenosa, em 4 a 5 minutos", "Oral", "Subcutânea", "Intramuscular"],
       "frequencias": ["Dose única", "A cada 1 hora", "A cada 4 horas", "A cada 8 horas"],
-      "explicacao": "4 mL/kg de NaCl 7,5% = 300 mg de NaCl por kg. 300 mg/kg × 500 kg = 150.000 mg; 150.000 mg ÷ 75 mg/mL = 2.000 mL (2 L) na jugular, em 4 a 5 minutos, em dose única. Logo depois, água à vontade ou uns 20 litros por sonda. Junto: anti-inflamatório, antibiótico e ordenhas frequentes do quarto doente."
+      "explicacao": "A dose é em volume: 4 mL/kg × 500 kg = 2.000 mL (2 L) na jugular, em 4 a 5 minutos, em dose única. Em massa de sal, a conta fecha igual: 4 mL/kg × 75 mg/mL = 300 mg de NaCl por kg; 300 mg/kg × 500 kg = 150.000 mg; 150.000 mg ÷ 75 mg/mL = 2.000 mL. Logo depois, água à vontade ou uns 20 litros por sonda. Junto: anti-inflamatório, antibiótico e ordenhas frequentes do quarto doente."
     },
     {
       "tipo": "retorno",
