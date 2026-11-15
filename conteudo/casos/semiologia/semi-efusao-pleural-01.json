@@ -1,0 +1,100 @@
+{
+  "id": "semi-efusao-pleural-01",
+  "materia": "semiologia",
+  "tema": "Exame dos sistemas",
+  "dificuldade": 3,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Lili",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "fêmea castrada",
+    "idade": "4 anos",
+    "pesoKg": 3.8,
+    "sprite": "gato-preto"
+  },
+  "tutor": { "nome": "Lucas", "sprite": "tutor-2" },
+  "chegada": "Doutora, a Lili tá respirando muito rápido, com a barriga mexendo forte. Ela nem quer sair de debaixo da cama.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Desde quando respira assim?", "resultado": "Faz uns três dias, e hoje piorou muito.", "importante": true },
+        { "id": "rua", "rotulo": "Ela sai de casa?", "resultado": "Sai, sim. Semana passada chegou com uma mordida no ombro, de briga.", "importante": true },
+        { "id": "tosse", "rotulo": "Ela tosse ou chia?", "resultado": "Não, nunca vi ela tossir nem chiar.", "importante": true },
+        { "id": "apetite", "rotulo": "Ela está comendo?", "resultado": "Quase nada desde ontem.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Tomou só quando era filhote.", "importante": false },
+        { "id": "racao", "rotulo": "O que ela come?", "resultado": "Ração seca e um sachê por dia.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "padrao", "ferramenta": "estetoscopio", "rotulo": "Frequência e padrão respiratório", "resultado": "64 movimentos por minuto, curtos e rápidos, com esforço abdominal.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação do tórax", "resultado": "Pulmões e coração abafados na metade de baixo do tórax; sons normais em cima.", "importante": true },
+        { "id": "percussao", "ferramenta": "mao", "rotulo": "Percussão do tórax", "resultado": "Som maciço embaixo, com limite horizontal; som claro em cima.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,8 °C.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas rosa-pálidas; TPC de 2 segundos.", "importante": false },
+        { "id": "abdome", "ferramenta": "mao", "rotulo": "Palpação abdominal", "resultado": "Sem alterações.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Localização do problema",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Pelos achados do exame do tórax, onde está o problema respiratório da Lili?",
+      "opcoes": [
+        { "texto": "No espaço pleural: líquido em volta dos pulmões", "correta": true, "explicacao": "Respiração rápida e curta, sons abafados embaixo e macicez com limite horizontal: o líquido se acumula na parte de baixo do tórax e afasta os pulmões da parede." },
+        { "texto": "Nas vias aéreas de cima (laringe e traqueia)", "correta": false, "explicacao": "A obstrução alta dá ruído forte ao inspirar (estridor), com inspiração lenta e difícil, e os sons do tórax não ficam abafados." },
+        { "texto": "Nos brônquios, como na asma felina", "correta": false, "explicacao": "A asma dá esforço para expirar, sibilos e tosse. A Lili não tosse, e os sons estão abafados, não chiados." },
+        { "texto": "No pulmão, como numa pneumonia", "correta": false, "explicacao": "A pneumonia dá crepitações e sons mais altos na área doente, não abafamento com limite horizontal." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Antes dos exames: por que não levar a Lili direto para o raio-X?",
+      "opcoes": [
+        { "texto": "A contenção em decúbito pode descompensar um gato com falta de ar", "correta": true, "explicacao": "Gato em dispneia tem pouca reserva: estresse e decúbito podem levar à parada. Primeiro oxigênio e mínimo manuseio; ultrassom rápido e toracocentese podem vir antes do raio-X." },
+        { "texto": "Porque o raio-X não mostra líquido no tórax", "correta": false, "explicacao": "Mostra, sim. O problema é o risco de conter a Lili agora, não a capacidade do exame." },
+        { "texto": "Porque gatos não podem fazer raio-X", "correta": false, "explicacao": "Gatos fazem raio-X normalmente, quando estão estáveis." },
+        { "texto": "Porque a radiação piora a infecção", "correta": false, "explicacao": "A dose de um raio-X não interfere na infecção. O risco está em manusear um gato em dispneia." }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exames complementares",
+      "orcamento": 160,
+      "itens": [
+        { "id": "ultrassom", "rotulo": "Ultrassom rápido do tórax", "custo": 60, "resultado": "Líquido em volta dos pulmões, dos dois lados.", "importante": true },
+        { "id": "toracocentese", "rotulo": "Toracocentese e análise do líquido", "custo": 80, "resultado": "Saem 70 mL de líquido turvo e fétido, com muitos neutrófilos e bactérias.", "importante": true },
+        { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Leucocitose com neutrofilia.", "importante": false },
+        { "id": "fivfelv", "rotulo": "Teste de FIV e FeLV", "custo": 90, "resultado": "Negativo para os dois.", "importante": false },
+        { "id": "glicemia", "rotulo": "Glicemia", "custo": 30, "resultado": "Normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 10 dias",
+      "bom": "A toracocentese tirou o pus e aliviou a respiração na hora. Com dreno no tórax, lavagens e antibiótico, a Lili se recuperou do piotórax e teve alta.",
+      "falaBom": "Doutora, a Lili tá respirando tranquila e voltou a pedir sachê!",
+      "ruim": "Tratada como asma, com broncodilatador, a Lili continuou com pus no tórax e chegou com insuficiência respiratória.",
+      "falaRuim": "Doutora, ela tá respirando de boca aberta, deitada de peito..."
+    }
+  ],
+  "resumo": [
+    "Na dispneia, o padrão respiratório e a auscultação localizam o problema antes de qualquer exame.",
+    "Vias aéreas altas: ruído ao inspirar (estridor). Brônquios: esforço para expirar, sibilos e tosse. Pulmão: crepitações.",
+    "Espaço pleural: respiração rápida e curta, sons abafados na parte de baixo e macicez com limite horizontal na percussão.",
+    "Gato em dispneia: oxigênio e mínimo manuseio primeiro; a toracocentese é diagnóstico e tratamento.",
+    "Gato que sai de casa e briga pode ter piotórax: líquido turvo e fétido, com neutrófilos e bactérias."
+  ],
+  "referencias": ["Feitosa, Semiologia Veterinária: A Arte do Diagnóstico"],
+  "revisado": false
+}

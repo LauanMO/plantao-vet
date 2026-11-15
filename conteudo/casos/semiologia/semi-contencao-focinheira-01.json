@@ -1,0 +1,88 @@
+{
+  "id": "semi-contencao-focinheira-01",
+  "materia": "semiologia",
+  "tema": "Contenção",
+  "dificuldade": 1,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Cacau",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "fêmea",
+    "idade": "6 anos",
+    "pesoKg": 18,
+    "sprite": "cao-pequeno-caramelo"
+  },
+  "tutor": { "nome": "Patrícia", "sprite": "tutora-1" },
+  "chegada": "Doutora, a Cacau não para de coçar a orelha e chora quando encosta. Só que ela tá mordendo quem tenta olhar!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 5,
+      "itens": [
+        { "id": "mordeu", "rotulo": "Ela já mordeu alguém?", "resultado": "Já. Ontem mordeu meu marido quando ele foi olhar a orelha dela.", "importante": true },
+        { "id": "respira", "rotulo": "Ela ronca ou cansa para respirar?", "resultado": "Não, respira normal. Nunca teve problema de respiração.", "importante": true },
+        { "id": "vomito", "rotulo": "Ela vomitou ou está enjoada?", "resultado": "Não. Comeu bem hoje de manhã.", "importante": true },
+        { "id": "inicio", "rotulo": "Desde quando coça a orelha?", "resultado": "Faz uns 10 dias. Sacode a cabeça, e o ouvido tá com um cheiro ruim.", "importante": true },
+        { "id": "banho", "rotulo": "Onde ela toma banho?", "resultado": "Em casa, uma vez por mês.", "importante": false },
+        { "id": "passeio", "rotulo": "Ela passeia na rua?", "resultado": "Todo dia, de coleira.", "importante": false },
+        { "id": "racao", "rotulo": "O que ela come?", "resultado": "Ração seca, duas vezes por dia.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Contenção",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Para examinar o ouvido da Cacau com segurança, qual contenção você usa?",
+      "opcoes": [
+        { "texto": "Focinheira de cesto ou de atadura, com um auxiliar contendo o corpo e a cabeça", "correta": true, "explicacao": "Ela já mordeu e o exame dói. Como respira bem e não está vomitando, a focinheira é segura. O auxiliar abraça o corpo e firma a cabeça durante o exame." },
+        { "texto": "A tutora segura a Cacau no colo, sem focinheira, para acalmá-la", "correta": false, "explicacao": "O tutor não deve conter o próprio animal: ele e a equipe correm risco de mordida, e o carinho não impede a reação à dor." },
+        { "texto": "Colar elisabetano, que impede que ela alcance a mão de quem examina", "correta": false, "explicacao": "O colar impede que ela coce ou lamba o corpo, mas cobre a orelha: para examinar, a mão entra no colar, ao alcance da boca." },
+        { "texto": "Anestesia geral antes de qualquer exame", "correta": false, "explicacao": "Para um exame rápido, a contenção física resolve. Sedação ou anestesia ficam para quando ela não basta ou para limpar o ouvido a fundo." }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 3,
+      "itens": [
+        { "id": "otoscopia", "ferramenta": "lanterna", "rotulo": "Otoscopia do ouvido direito", "resultado": "Conduto vermelho e inchado, com cerume marrom-escuro; tímpano íntegro.", "importante": true },
+        { "id": "base", "ferramenta": "mao", "rotulo": "Palpação da base da orelha", "resultado": "Dor ao apertar e barulho de secreção no conduto.", "importante": true },
+        { "id": "esquerdo", "ferramenta": "lanterna", "rotulo": "Otoscopia do ouvido esquerdo", "resultado": "Conduto normal, com pouco cerume claro.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,7 °C.", "importante": false },
+        { "id": "pele", "ferramenta": "mao", "rotulo": "Pele do corpo", "resultado": "Sem lesões, pulgas ou falhas no pelo.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Em qual destes pacientes a focinheira de atadura é contraindicada?",
+      "opcoes": [
+        { "texto": "Um buldogue com falta de ar", "correta": true, "explicacao": "Braquicefálicos e qualquer animal com dificuldade respiratória precisam da boca livre para respirar. Também se evita em quem está vomitando, pelo risco de aspiração." },
+        { "texto": "Um labrador com dor na pata", "correta": false, "explicacao": "A dor é justamente motivo para usar focinheira: animal com dor pode morder até o próprio tutor." },
+        { "texto": "Um vira-lata que morde no banho", "correta": false, "explicacao": "Cão que morde é candidato à focinheira, que protege a equipe e o próprio cão." },
+        { "texto": "Um pastor-alemão para coleta de sangue", "correta": false, "explicacao": "Num cão de focinho longo, que respira bem, a focinheira é segura para a coleta de sangue." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 14 dias",
+      "bom": "Com a contenção certa, o exame foi rápido e ninguém se feriu. A citologia mostrou leveduras (Malassezia), e com limpeza e medicação no ouvido a Cacau parou de coçar.",
+      "falaBom": "Doutora, a Cacau parou de coçar e já deixa eu mexer na orelha dela!",
+      "ruim": "Sem a contenção adequada, a Cacau mordeu durante o exame e ele foi interrompido. A otite ficou sem tratamento e o conduto inflamou mais.",
+      "falaRuim": "Doutora, ela continua chorando de dor e agora não deixa ninguém chegar perto da cabeça..."
+    }
+  ],
+  "resumo": [
+    "Antes de examinar, pergunte se o animal já mordeu e observe o corpo: orelhas para trás, rosnado e dentes à mostra.",
+    "A dor deixa qualquer cão mais propenso a morder: a focinheira protege a equipe, o tutor e o próprio animal.",
+    "Focinheira de atadura ou de cesto: contraindicada em braquicefálicos, em quem tem dificuldade respiratória e em quem está vomitando.",
+    "O tutor não deve conter o animal; quem contém é um auxiliar treinado.",
+    "Sedação fica para quando a contenção física não basta ou o procedimento é mais demorado."
+  ],
+  "referencias": ["Feitosa, Semiologia Veterinária: A Arte do Diagnóstico"],
+  "revisado": false
+}

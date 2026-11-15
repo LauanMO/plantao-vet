@@ -1,0 +1,98 @@
+{
+  "id": "semi-hipertermia-braquicefalico-01",
+  "materia": "semiologia",
+  "tema": "Parâmetros vitais",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Spike",
+    "especie": "cão",
+    "raca": "Buldogue francês",
+    "sexo": "macho",
+    "idade": "3 anos",
+    "pesoKg": 12,
+    "sprite": "cao-pequeno-preto"
+  },
+  "tutor": { "nome": "Rafael", "sprite": "tutor-1" },
+  "chegada": "Doutora, fui correr com o Spike no fim da tarde e ele começou a ofegar demais e a cambalear. Ele tá pelando!",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 5,
+      "itens": [
+        { "id": "inicio", "rotulo": "Quando começou?", "resultado": "Há uns 30 minutos, no meio da corrida. Ele deitou na calçada e não queria levantar.", "importante": true },
+        { "id": "clima", "rotulo": "Como estava o tempo?", "resultado": "Quente e abafado, uns 33 graus. Corremos uns 3 km.", "importante": true },
+        { "id": "ronco", "rotulo": "Ele ronca ou cansa fácil?", "resultado": "Ronca alto dormindo e cansa rápido em qualquer passeio.", "importante": true },
+        { "id": "antes", "rotulo": "Ele estava bem antes da corrida?", "resultado": "Estava ótimo, comendo e brincando. Não tava doente.", "importante": true },
+        { "id": "agua", "rotulo": "Ele bebeu água na corrida?", "resultado": "Não levei água. Ele não parou nenhuma vez.", "importante": false },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, tomou todas.", "importante": false },
+        { "id": "racao", "rotulo": "O que ele come?", "resultado": "Ração seca, duas vezes por dia.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 5,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "41,6 °C (referência: 37,5 a 39,2 °C).", "importante": true },
+        { "id": "pulso", "ferramenta": "mao", "rotulo": "Pulso femoral", "resultado": "Rápido e forte: 50 batimentos em 15 segundos.", "importante": true },
+        { "id": "respiracao", "ferramenta": "estetoscopio", "rotulo": "Respiração e vias aéreas", "resultado": "Ofegante, com ruído alto ao inspirar (estridor) e língua para fora.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Mucosas vermelho-escuras e secas; TPC de 1 segundo.", "importante": true },
+        { "id": "abdome", "ferramenta": "mao", "rotulo": "Palpação abdominal", "resultado": "Sem dor e sem alterações.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Prega cutânea", "resultado": "A pele volta logo ao lugar.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Frequência cardíaca",
+      "pergunta": "No pulso femoral, você contou 50 batimentos em 15 segundos. Qual é a frequência cardíaca do Spike, em batimentos por minuto?",
+      "unidade": "bpm",
+      "resposta": 200,
+      "tolerancia": 0.05,
+      "explicacao": "50 × 4 = 200 bpm. A referência do cão adulto é de 60 a 160 bpm: o Spike está com taquicardia, pelo calor, pelo esforço e pela falta de ar."
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Interpretação dos parâmetros",
+      "quem": "prontuario",
+      "critica": true,
+      "pergunta": "Como você interpreta a temperatura de 41,6 °C do Spike?",
+      "opcoes": [
+        { "texto": "Hipertermia por calor e esforço, não febre: o corpo não consegue perder calor", "correta": true, "explicacao": "Começou de repente, no exercício, num dia quente, num braquicefálico que estava bem. Na febre o hipotálamo sobe o ponto de ajuste; aqui o que falhou foi a perda de calor." },
+        { "texto": "Febre por infecção: dar antitérmico e antibiótico", "correta": false, "explicacao": "Nada indica infecção. Antitérmicos baixam o ponto de ajuste do hipotálamo, que não subiu: não resolvem a hipertermia e ainda podem lesar rins e estômago." },
+        { "texto": "Normal para um cão que acabou de correr", "correta": false, "explicacao": "O exercício sobe um pouco a temperatura, mas 41,6 °C com cambaleio é emergência: acima de 41 °C há lesão de órgãos." },
+        { "texto": "Erro de leitura: medir de novo daqui a 1 hora", "correta": false, "explicacao": "Pulso, respiração e mucosas confirmam o calor excessivo. Esperar 1 hora a 41,6 °C pode causar lesão no cérebro, nos rins e na coagulação." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Por que o Spike, sendo braquicefálico, esquentou mais do que outro cão esquentaria na mesma corrida?",
+      "opcoes": [
+        { "texto": "O cão perde calor ofegando, e as vias aéreas estreitas atrapalham essa troca", "correta": true, "explicacao": "Cães quase não suam: perdem calor pela evaporação nas vias aéreas ao ofegar. Narinas estreitas, palato mole longo e traqueia fina dificultam essa perda." },
+        { "texto": "Porque cães suam pela pele e ele perdeu muito líquido", "correta": false, "explicacao": "Cães só têm glândulas sudoríparas úteis nos coxins; o suor quase não ajuda a perder calor." },
+        { "texto": "Porque braquicefálicos têm a temperatura normal mais alta", "correta": false, "explicacao": "A temperatura de referência é a mesma. Eles só perdem calor com mais dificuldade." },
+        { "texto": "Porque o coração dos braquicefálicos é menor", "correta": false, "explicacao": "O tamanho do coração não explica. O problema está nas vias aéreas, que dificultam o ofegar." }
+      ]
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno no dia seguinte",
+      "bom": "Resfriado na hora com água em temperatura ambiente e ventilador, além de soro na veia e oxigênio, o Spike chegou a 39,4 °C em 30 minutos. Teve alta no dia seguinte.",
+      "falaBom": "Doutora, o Spike tá ótimo! Agora só passeio de manhã cedinho, devagar e levando água.",
+      "ruim": "Tratado como febre, com antitérmico, a temperatura não baixou. O Spike teve convulsão e alteração na coagulação e foi para a terapia intensiva.",
+      "falaRuim": "Doutora, ele piorou, tá tremendo e com umas manchinhas roxas na barriga..."
+    }
+  ],
+  "resumo": [
+    "Temperatura retal do cão: 37,5 a 39,2 °C. Acima disso, a pergunta é: febre ou hipertermia?",
+    "Febre: o hipotálamo sobe o ponto de ajuste, por infecção ou inflamação. Hipertermia: o corpo ganha ou produz mais calor do que consegue perder.",
+    "Intermação: exercício no calor e na umidade, raças braquicefálicas e cães obesos. Acima de 41 °C há lesão de órgãos.",
+    "Para a frequência por minuto, conte 15 segundos e multiplique por 4, ou 30 segundos e multiplique por 2.",
+    "Antitérmico não resolve hipertermia: resfriar com água em temperatura ambiente e ventilação, parando por volta de 39,5 °C."
+  ],
+  "referencias": ["Feitosa, Semiologia Veterinária: A Arte do Diagnóstico"],
+  "revisado": false
+}
