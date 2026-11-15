@@ -34,7 +34,7 @@
       "titulo": "Exame físico",
       "limite": 4,
       "itens": [
-        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Olhos afundados uns 3 mm e pele que demora 3 segundos para voltar: cerca de 7% de desidratação.", "importante": true },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Olhos afundados uns 4 mm e pele que demora 3 segundos para voltar: cerca de 7% de desidratação.", "importante": true },
         { "id": "succao", "ferramenta": "mao", "rotulo": "Reflexo de sucção", "resultado": "Presente, mas fraco. Ela ainda fica de pé sozinha.", "importante": true },
         { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,8 °C.", "importante": true },
         { "id": "umbigo", "ferramenta": "mao", "rotulo": "Palpação do umbigo", "resultado": "Umbigo seco, sem dor nem inchaço.", "importante": false },

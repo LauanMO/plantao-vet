@@ -47,7 +47,7 @@
       "orcamento": 250,
       "itens": [
         { "id": "proteinas", "rotulo": "Proteína total e albumina", "custo": 50, "resultado": "Proteína total 3,1 g/dL; albumina 1,2 g/dL (ref.: 2,6 a 3,3); globulinas também baixas.", "importante": true },
-        { "id": "upc", "rotulo": "Proteína:creatinina na urina", "custo": 60, "resultado": "0,2: sem perda de proteína pela urina (normal: abaixo de 0,5).", "importante": true },
+        { "id": "upc", "rotulo": "Proteína:creatinina na urina", "custo": 60, "resultado": "0,1: sem perda de proteína pela urina (normal: abaixo de 0,2).", "importante": true },
         { "id": "acidos", "rotulo": "Ácidos biliares (função do fígado)", "custo": 80, "resultado": "Normais em jejum e depois da refeição.", "importante": true },
         { "id": "liquido", "rotulo": "Análise do líquido abdominal", "custo": 40, "resultado": "Líquido claro, com 0,9 g/dL de proteína e poucas células: transudato puro.", "importante": false },
         { "id": "hemograma", "rotulo": "Hemograma", "custo": 60, "resultado": "Linfócitos baixos (linfopenia); o resto, normal.", "importante": false }

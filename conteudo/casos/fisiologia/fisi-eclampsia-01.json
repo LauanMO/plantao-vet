@@ -84,10 +84,10 @@
       "quem": "preceptora",
       "pergunta": "Por que o cálcio que a Dona Lúcia deu na gestação aumentou o risco de eclâmpsia?",
       "opcoes": [
-        { "texto": "Cálcio demais na dieta inibe o PTH, e a paratireoide demora a reagir quando a lactação aumenta a demanda", "correta": true, "explicacao": "Com muito cálcio chegando pela dieta, a paratireoide secreta pouco PTH e fica menos ativa. Na lactação, ela demora a aumentar o PTH e, com ele, o calcitriol, que tiram cálcio do osso e aumentam a absorção no intestino." },
-        { "texto": "O suplemento foi todo para os ossos dos filhotes, e a mãe ficou sem reserva", "correta": false, "explicacao": "Os filhotes usam cálcio da mãe, mas o esqueleto dela é uma reserva grande. O problema é a demora em mobilizar essa reserva, porque o PTH estava inibido." },
+        { "texto": "Cálcio demais na dieta inibe o PTH, e o osso fica com poucos osteoclastos prontos quando a lactação aumenta a demanda", "correta": true, "explicacao": "Com muito cálcio chegando pela dieta, o PTH fica baixo, a calcitonina sobe, e o osso mantém poucos osteoclastos ativos. Na lactação, o PTH até sobe, mas o osso leva dias para aumentar a reabsorção e liberar cálcio para o leite." },
+        { "texto": "O suplemento foi todo para os ossos dos filhotes, e a mãe ficou sem reserva", "correta": false, "explicacao": "Os filhotes usam cálcio da mãe, mas o esqueleto dela é uma reserva grande. O problema é a demora em mobilizar essa reserva, porque o excesso de cálcio deixou o osso com poucos osteoclastos." },
         { "texto": "O suplemento deixou o leite mais rico em cálcio", "correta": false, "explicacao": "A glândula mamária regula o cálcio do leite, que não depende do suplemento. O que aumenta a perda é o volume de leite para uma ninhada grande." },
-        { "texto": "O excesso de cálcio aumentou a calcitonina, que bloqueia a absorção no intestino", "correta": false, "explicacao": "A calcitonina sobe com o cálcio alto e reduz a saída de cálcio do osso, mas não bloqueia o intestino. O efeito que pesa é a inibição do PTH." }
+        { "texto": "O excesso de cálcio aumentou a calcitonina, que bloqueia a absorção no intestino", "correta": false, "explicacao": "A calcitonina sobe com o cálcio alto e freia os osteoclastos, o que soma ao PTH baixo, mas ela não bloqueia a absorção de cálcio no intestino." }
       ]
     },
     {
@@ -103,7 +103,7 @@
     "Eclâmpsia: hipocalcemia de cadelas pequenas com ninhada grande, em geral de 1 a 4 semanas depois do parto, perto do pico da lactação.",
     "O cálcio extracelular estabiliza a membrana dos nervos. Quando ele cai, o limiar de disparo baixa e os nervos disparam sozinhos: tremores e tetania.",
     "A atividade muscular intensa produz calor: a hipertermia melhora com o cálcio, sem antitérmico.",
-    "Suplementar cálcio na gestação inibe o PTH; na lactação, a paratireoide demora a responder.",
+    "Suplementar cálcio na gestação inibe o PTH e deixa o osso com poucos osteoclastos; na lactação, ele demora a liberar cálcio.",
     "Tratamento: gliconato de cálcio na veia, devagar, monitorando o coração; depois cálcio oral e leite substituto para os filhotes."
   ],
   "referencias": [
