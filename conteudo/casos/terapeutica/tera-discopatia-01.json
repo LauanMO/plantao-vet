@@ -82,7 +82,7 @@
       "quem": "preceptora",
       "pergunta": "O tramadol é um fármaco controlado. Como fica a receita da Mostarda?",
       "opcoes": [
-        { "texto": "Receita de controle especial, em duas vias: uma fica na farmácia e a outra com a tutora", "correta": true, "explicacao": "O tramadol em cápsulas de até 100 mg é vendido com receita de controle especial em duas vias. A farmácia retém uma delas." },
+        { "texto": "Receita de controle especial, em duas vias: uma fica na farmácia e a outra com a tutora", "correta": true, "explicacao": "Pela Portaria 344 da Anvisa, o tramadol de farmácia humana em cápsulas de até 100 mg é vendido com receita de controle especial em duas vias. A farmácia retém uma delas. O tramadol registrado para uso veterinário segue a regra do MAPA, com notificação de receita veterinária emitida no SIPEAGRO." },
         { "texto": "Receita simples, sem cópia", "correta": false, "explicacao": "A receita simples não serve para fármacos controlados: a farmácia precisa reter uma via para prestar contas à vigilância sanitária." },
         { "texto": "Notificação de receita amarela, como a da morfina", "correta": false, "explicacao": "A notificação amarela (A) é para entorpecentes como morfina e metadona. O tramadol em cápsulas de até 100 mg usa a receita de controle especial." },
         { "texto": "Não precisa de receita: é só um analgésico", "correta": false, "explicacao": "O tramadol é um opioide e só é vendido com receita de controle especial." }
@@ -111,7 +111,7 @@
     "Doença do disco intervertebral: comum em raças condrodistróficas, como Dachshund, Beagle e Shih-tzu; pode haver só dor, sem déficit neurológico.",
     "O cão com dor na coluna anda curvado e parece ter dor na barriga: palpar a coluna e o abdome separadamente.",
     "Grau 1 (só dor): repouso estrito por 4 semanas, anti-inflamatório e um analgésico como o tramadol, 2 a 5 mg/kg pela boca, a cada 8 a 12 horas.",
-    "Tramadol em cápsulas de até 100 mg: receita de controle especial em duas vias. Quantidade escrita também por extenso.",
+    "Tramadol de farmácia humana, em cápsulas de até 100 mg: receita de controle especial em duas vias (Portaria 344). Quantidade escrita também por extenso.",
     "Nunca associar dois AINEs, nem AINE com corticoide."
   ],
   "referencias": [

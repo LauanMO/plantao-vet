@@ -96,7 +96,7 @@
       },
       "vias": ["Intravenosa", "Subcutânea", "Oral", "Intramuscular"],
       "frequencias": ["Em bolus, em 15 minutos", "Em 2 horas", "Em infusão contínua, em 24 horas", "A cada 8 horas"],
-      "explicacao": "960 mL de déficit + 600 mL de manutenção = 1.560 mL (130 mL/kg). Contando em mg de NaCl: 1.170 mg/kg × 12 kg = 14.040 mg; 14.040 mg ÷ 9 mg/mL = 1.560 mL na veia, em infusão contínua de 65 mL/h por 24 horas. O potássio é acrescentado ao soro conforme a dosagem no sangue."
+      "explicacao": "A dose é em volume: 960 mL de déficit + 600 mL de manutenção = 1.560 mL (130 mL/kg) na veia, em infusão contínua de 65 mL/h por 24 horas. Em massa de sal, a conta fecha igual: 130 mL/kg × 9 mg/mL = 1.170 mg de NaCl por kg; 1.170 mg/kg × 12 kg = 14.040 mg; 14.040 mg ÷ 9 mg/mL = 1.560 mL. O potássio é acrescentado ao soro conforme a dosagem no sangue."
     },
     {
       "tipo": "retorno",
