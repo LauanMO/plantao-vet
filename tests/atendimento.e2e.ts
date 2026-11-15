@@ -20,7 +20,11 @@ async function jogarAcertandoTudo(page: Page, caso: Caso) {
     await expect(page.locator('.etapa-atual')).toContainText(etapa.titulo)
     switch (etapa.tipo) {
       case 'coleta':
-        for (const it of etapa.itens.filter((i) => i.importante)) await botao(page, it.rotulo).click()
+        for (const it of etapa.itens.filter((i) => i.importante)) {
+          await botao(page, it.rotulo).click()
+          // a resposta aparece à vista, sem ela precisar rolar a lista de volta até o topo
+          await expect(page.getByText(it.resultado)).toBeInViewport()
+        }
         await botao(page, 'Concluir').click()
         await expect(correcao).toContainText('Achou tudo')
         break
