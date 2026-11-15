@@ -1,0 +1,123 @@
+{
+  "id": "tera-rinotraqueite-felina-01",
+  "materia": "terapeutica",
+  "tema": "Antimicrobianos",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Tigrão",
+    "especie": "gato",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "3 anos",
+    "pesoKg": 5,
+    "sprite": "gato-cinza"
+  },
+  "tutor": { "nome": "Juliana", "sprite": "tutora-3" },
+  "chegada": "Oi, doutora! Adotei o Tigrão num abrigo faz duas semanas. Ele começou a espirrar, tá com o nariz escorrendo e o olho grudando.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Quando começaram os espirros?", "resultado": "Uns 5 dias atrás. Ontem a secreção do nariz ficou amarela e grossa.", "importante": true },
+        { "id": "apetite", "rotulo": "Ele está comendo?", "resultado": "Come pouco, só o sachê. Tá mais quietinho.", "importante": true },
+        { "id": "vacina", "rotulo": "Ele foi vacinado?", "resultado": "Ainda não. Eu ia levar ele para vacinar este mês.", "importante": true },
+        { "id": "abrigo", "rotulo": "Havia gatos doentes no abrigo?", "resultado": "Me falaram que tinha uns gatinhos espirrando lá.", "importante": false },
+        { "id": "rua", "rotulo": "Ele sai de casa?", "resultado": "Não, fica só no apartamento.", "importante": false },
+        { "id": "caixa", "rotulo": "Usa a caixa de areia normalmente?", "resultado": "Usa, xixi e cocô normais.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,8 °C.", "importante": true },
+        { "id": "narinas", "ferramenta": "lanterna", "rotulo": "Narinas e olhos", "resultado": "Secreção amarela e grossa nas duas narinas; conjuntivite com secreção nos dois olhos.", "importante": true },
+        { "id": "pulmao", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Pulmões limpos; só o ruído do nariz entupido.", "importante": true },
+        { "id": "boca", "ferramenta": "lanterna", "rotulo": "Boca", "resultado": "Sem úlceras na língua nem no céu da boca.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Cerca de 5% de desidratação.", "importante": false },
+        { "id": "linfonodos", "ferramenta": "mao", "rotulo": "Linfonodos da cabeça", "resultado": "Submandibulares aumentados.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Complexo respiratório felino com infecção bacteriana secundária", "correta": true, "explicacao": "Gato de abrigo, sem vacina, com espirros, conjuntivite, febre e secreção nasal purulenta. O vírus abre caminho, e bactérias como Chlamydia, Mycoplasma e Bordetella complicam o quadro." },
+        { "texto": "Asma felina", "correta": false, "explicacao": "A asma dá tosse, chiado e falta de ar, sem febre, espirros ou secreção no nariz." },
+        { "texto": "Corpo estranho no nariz", "correta": false, "explicacao": "Costuma dar espirros súbitos e secreção de um lado só, sem febre nem conjuntivite nos dois olhos." },
+        { "texto": "Cardiomiopatia com edema pulmonar", "correta": false, "explicacao": "Causa respiração difícil e ruídos no pulmão, sem espirros, secreção nasal ou febre." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "A doxiciclina em comprimido pede um cuidado especial no gato. Qual?",
+      "opcoes": [
+        { "texto": "Dar uns 5 mL de água ou um pouco de comida logo depois do comprimido", "correta": true, "explicacao": "No gato, o comprimido que fica parado no esôfago causa esofagite e pode deixar o esôfago estreito. A água ou a comida levam o comprimido até o estômago." },
+        { "texto": "Dar o comprimido a seco e em jejum, para absorver melhor", "correta": false, "explicacao": "A seco, o comprimido pode grudar no esôfago. A doxiciclina pode ser dada com comida." },
+        { "texto": "Triturar e colocar o pó direto na boca", "correta": false, "explicacao": "O pó também irrita a mucosa e é muito amargo: o gato baba, cospe, e a dose se perde." },
+        { "texto": "Misturar no leite, para disfarçar o gosto", "correta": false, "explicacao": "O cálcio do leite se liga às tetraciclinas e reduz a absorção do remédio." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Dose por tomada",
+      "critica": true,
+      "pergunta": "O antibiótico vai na dose de 10 mg/kg. Com os 5 kg do Tigrão, quantos mg por dose?",
+      "unidade": "mg",
+      "resposta": 50,
+      "tolerancia": 0.05,
+      "explicacao": "10 mg/kg × 5 kg = 50 mg por dose."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Receita para casa",
+      "critica": true,
+      "instrucao": "Prescreva o antibiótico do Tigrão (5 kg) por 10 dias, na dose de 10 mg/kg.",
+      "farmacos": [
+        { "id": "doxiciclina", "nome": "Doxiciclina", "apresentacao": "Comprimido 50 mg", "unidade": "comprimido", "explicacao": "Tetraciclina de escolha no complexo respiratório felino: age em Chlamydia, Mycoplasma e Bordetella." },
+        { "id": "enrofloxacino", "nome": "Enrofloxacino", "apresentacao": "Comprimido 50 mg", "unidade": "comprimido", "explicacao": "Fluoroquinolona reservada para infecções graves. No gato, doses altas podem causar cegueira por lesão na retina." },
+        { "id": "prednisolona", "nome": "Prednisolona", "apresentacao": "Comprimido 5 mg", "unidade": "comprimido", "explicacao": "Corticoide: baixa a imunidade e pode reativar o herpesvírus felino." },
+        { "id": "metronidazol", "nome": "Metronidazol", "apresentacao": "Comprimido 250 mg", "unidade": "comprimido", "explicacao": "Age em anaeróbios e protozoários; não cobre Chlamydia nem Mycoplasma." }
+      ],
+      "correto": {
+        "farmaco": "doxiciclina",
+        "doseMgKg": 10,
+        "concentracao": 50,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 24 horas"
+      },
+      "vias": ["Oral", "Subcutânea", "Tópica", "Retal"],
+      "frequencias": ["Dose única", "A cada 6 horas", "A cada 24 horas", "A cada 72 horas"],
+      "explicacao": "10 mg/kg × 5 kg = 50 mg; 50 mg ÷ 50 mg/comprimido = 1 comprimido pela boca, a cada 24 horas, por 10 dias, sempre seguido de água. O outro esquema aceito é 5 mg/kg a cada 12 horas."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 10 dias",
+      "bom": "Com a doxiciclina e a limpeza do nariz e dos olhos, a febre passou em 2 dias e a secreção sumiu. O Tigrão voltou a comer e já tem data para vacinar.",
+      "falaBom": "Doutora, ele parou de espirrar e tá comendo tudo! O olhinho abriu de novo.",
+      "ruim": "Com a prescrição errada, a infecção bacteriana continuou. O Tigrão parou de comer e precisou ficar internado com sonda de alimentação.",
+      "falaRuim": "Doutora, o nariz dele continua entupido e ele não quer comer nada..."
+    }
+  ],
+  "resumo": [
+    "Complexo respiratório felino: herpesvírus e calicivírus, muitas vezes complicados por Chlamydia, Mycoplasma e Bordetella; comum em gatos de abrigo e sem vacina.",
+    "Antibiótico só quando há febre, apatia ou secreção purulenta: os vírus não respondem a ele.",
+    "Doxiciclina no gato: 10 mg/kg a cada 24 horas ou 5 mg/kg a cada 12 horas, pela boca, por 7 a 10 dias.",
+    "Sempre dar água ou comida logo depois do comprimido, para evitar esofagite e estreitamento do esôfago.",
+    "Limpar narinas e olhos, oferecer comida aquecida e cheirosa e vacinar depois da cura."
+  ],
+  "referencias": [
+    "Andrade, Manual de Terapêutica Veterinária",
+    "Viana, Fundamentos de Terapêutica Veterinária"
+  ],
+  "revisado": false
+}

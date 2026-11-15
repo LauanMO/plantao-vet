@@ -1,0 +1,123 @@
+{
+  "id": "tera-piodermite-01",
+  "materia": "terapeutica",
+  "tema": "Antimicrobianos",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Billy",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "macho",
+    "idade": "4 anos",
+    "pesoKg": 20,
+    "sprite": "cao-pequeno-branco"
+  },
+  "tutor": { "nome": "Rafael", "sprite": "tutor-1" },
+  "chegada": "Boa tarde, doutora! O Billy tá cheio de bolinhas com pus na barriga e se coça. Passei uma pomada que tinha em casa, mas não resolveu.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "inicio", "rotulo": "Quando apareceram as bolinhas?", "resultado": "Faz umas 3 semanas. Começaram na barriga e foram para as coxas.", "importante": true },
+        { "id": "antipulgas", "rotulo": "Ele usa antipulgas?", "resultado": "Usa, sim: o comprimido, todo mês, certinho.", "importante": true },
+        { "id": "outros", "rotulo": "Alguém em casa tem lesão na pele?", "resultado": "Não, nem a gente nem a outra cachorra.", "importante": true },
+        { "id": "pomada", "rotulo": "Qual pomada você usou?", "resultado": "Uma pomada de antibiótico minha, por uns 3 dias. Melhorou um pouco e voltou.", "importante": false },
+        { "id": "racao", "rotulo": "Mudou a ração?", "resultado": "Não, é a mesma de sempre.", "importante": false },
+        { "id": "banho", "rotulo": "Com que frequência ele toma banho?", "resultado": "Toda semana, com o meu xampu.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "pele", "ferramenta": "lanterna", "rotulo": "Inspeção da pele", "resultado": "Pápulas, pústulas e crostas em anel (colaretes) na barriga e na parte de dentro das coxas.", "importante": true },
+        { "id": "citologia", "ferramenta": "mao", "rotulo": "Lâmina de uma pústula (citologia)", "resultado": "Muitos neutrófilos, com cocos dentro deles.", "importante": true },
+        { "id": "raspado", "ferramenta": "mao", "rotulo": "Raspado de pele profundo", "resultado": "Nenhum ácaro na lâmina.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,7 °C.", "importante": false },
+        { "id": "linfonodos", "ferramenta": "mao", "rotulo": "Linfonodos", "resultado": "Poplíteos levemente aumentados.", "importante": false },
+        { "id": "orelhas", "ferramenta": "lanterna", "rotulo": "Orelhas", "resultado": "Limpas, sem secreção nem vermelhidão.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Piodermite superficial bacteriana", "correta": true, "explicacao": "Pápulas, pústulas e colaretes, sem febre, com cocos dentro dos neutrófilos e raspado negativo. O agente mais comum é o Staphylococcus pseudintermedius." },
+        { "texto": "Demodicose", "correta": false, "explicacao": "Também pode vir com pústulas, mas o raspado profundo mostraria os ácaros, e ele deu negativo." },
+        { "texto": "Dermatofitose", "correta": false, "explicacao": "A micose costuma dar falhas redondas de pelo com descamação, e a citologia não mostraria cocos dentro dos neutrófilos." },
+        { "texto": "Sarna sarcóptica", "correta": false, "explicacao": "Causa coceira muito intensa nas bordas das orelhas e nos cotovelos e passa para outros cães e para as pessoas. Ninguém mais em casa tem lesão." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "O tutor quer parar o antibiótico assim que as bolinhas sumirem. O que orientar?",
+      "opcoes": [
+        { "texto": "Manter no mínimo 3 semanas e até 1 semana depois de a pele ficar boa", "correta": true, "explicacao": "A pele melhora antes de as bactérias acabarem. Na piodermite superficial, o tratamento dura no mínimo 3 semanas e segue por mais 1 semana depois da cura." },
+        { "texto": "Parar quando as bolinhas sumirem, para não usar antibiótico à toa", "correta": false, "explicacao": "Parar na melhora deixa bactérias na pele: a infecção volta, e o risco de resistência cresce." },
+        { "texto": "Dar só 5 dias, como qualquer antibiótico", "correta": false, "explicacao": "Não existe duração padrão para todo antibiótico: cada infecção tem a sua, e a da pele precisa de semanas." },
+        { "texto": "Manter por 3 meses, para nunca mais voltar", "correta": false, "explicacao": "Tempo demais seleciona bactérias resistentes e não evita a recidiva. Se a infecção voltar, é preciso achar a causa de base, como uma alergia." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Receita para casa",
+      "critica": true,
+      "instrucao": "Prescreva o antibiótico do Billy (20 kg), em comprimidos.",
+      "farmacos": [
+        { "id": "cefalexina", "nome": "Cefalexina", "apresentacao": "Comprimido 500 mg", "unidade": "comprimido", "explicacao": "Cefalosporina de primeira geração: primeira escolha contra o estafilococo da piodermite." },
+        { "id": "amoxicilina", "nome": "Amoxicilina", "apresentacao": "Comprimido 500 mg", "unidade": "comprimido", "explicacao": "Sem o clavulanato, é destruída pela betalactamase que a maioria dos estafilococos produz." },
+        { "id": "metronidazol", "nome": "Metronidazol", "apresentacao": "Comprimido 250 mg", "unidade": "comprimido", "explicacao": "Age em bactérias anaeróbias e em protozoários, não no estafilococo da pele." },
+        { "id": "prednisolona", "nome": "Prednisolona", "apresentacao": "Comprimido 20 mg", "unidade": "comprimido", "explicacao": "Corticoide: alivia a coceira, mas baixa a defesa da pele e piora a infecção." }
+      ],
+      "correto": {
+        "farmaco": "cefalexina",
+        "doseMgKg": 25,
+        "concentracao": 500,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 12 horas"
+      },
+      "vias": ["Oral", "Tópica", "Intradérmica", "Retal"],
+      "frequencias": ["Dose única", "A cada 12 horas", "A cada 24 horas", "A cada 48 horas"],
+      "explicacao": "Dose de 22 a 30 mg/kg: 25 mg/kg × 20 kg = 500 mg; 500 mg ÷ 500 mg/comprimido = 1 comprimido pela boca, a cada 12 horas. A cefalexina age pelo tempo acima da concentração mínima, e uma dose por dia não basta. Banhos com xampu de clorexidina ajudam."
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Duração do tratamento",
+      "critica": true,
+      "pergunta": "No retorno, a pele do Billy estava boa no 18º dia de antibiótico. Quantos dias de tratamento ele deve completar ao todo?",
+      "unidade": "dias",
+      "resposta": 25,
+      "tolerancia": 0.05,
+      "explicacao": "A regra é no mínimo 21 dias e até 1 semana depois da cura: 18 + 7 = 25 dias, que já passa dos 21."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno no fim do tratamento",
+      "bom": "O Billy tomou a cefalexina por 25 dias, até 1 semana depois de a pele ficar boa. As lesões sumiram e não voltaram.",
+      "falaBom": "Doutora, a barriga dele tá lisinha e ele parou de se coçar!",
+      "ruim": "Com a prescrição errada, as bactérias não foram eliminadas: as pústulas voltaram em poucos dias, agora mais espalhadas.",
+      "falaRuim": "Doutora, as bolinhas voltaram, e agora tão até nas costas..."
+    }
+  ],
+  "resumo": [
+    "Piodermite superficial: infecção da pele pelo Staphylococcus pseudintermedius, quase sempre secundária a alergia, pulgas ou outra causa de base.",
+    "Sinais: pápulas, pústulas e colaretes; a citologia mostra cocos dentro dos neutrófilos.",
+    "Cefalexina no cão: 22 a 30 mg/kg pela boca, a cada 12 horas.",
+    "Duração: no mínimo 3 semanas e até 1 semana depois da cura clínica. Parar cedo causa recidiva e resistência.",
+    "Banhos com clorexidina ajudam. Se a infecção voltar, investigar a causa de base e fazer cultura com antibiograma."
+  ],
+  "referencias": [
+    "Andrade, Manual de Terapêutica Veterinária",
+    "Viana, Fundamentos de Terapêutica Veterinária"
+  ],
+  "revisado": false
+}
