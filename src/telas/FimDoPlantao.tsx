@@ -12,12 +12,30 @@ export interface Paciente {
   resultado?: ResultadoCaso
 }
 
-/** Resumo do turno: a nota de cada paciente, quantos ela acertou e os temas que estão em revisão. */
-export function FimDoPlantao({ turno, progresso, novo, voltar }: { turno: Paciente[]; progresso: Progresso; novo: () => void; voltar: () => void }) {
-  const acertados = turno.filter((p) => p.resultado?.acertou).length
+/** Os temas que ela errou e ainda não acertou duas vezes seguidas. */
+export function TemasEmRevisao({ progresso }: { progresso: Progresso }) {
   // o nome do tema vem dos casos, porque a chave guarda só o slug
   const nomes = new Map(casos.map((c) => [chaveDoTema(c), `${materias.find((m) => m.id === c.materia)?.nome}: ${c.tema}`]))
   const emRevisao = Object.entries(progresso.temas).filter(([, t]) => t.emRevisao).map(([chave]) => nomes.get(chave) ?? chave)
+  return (
+    <section className="caixa">
+      <span className="rotulo">Temas em revisão</span>
+      {emRevisao.length === 0 ? (
+        <p>Nenhum. Os temas que você errar voltam nos próximos plantões.</p>
+      ) : (
+        <ul>
+          {emRevisao.map((nome) => (
+            <li key={nome}>{nome}</li>
+          ))}
+        </ul>
+      )}
+    </section>
+  )
+}
+
+/** Resumo do turno: a nota de cada paciente, quantos ela acertou e os temas que estão em revisão. */
+export function FimDoPlantao({ turno, progresso, novo, voltar }: { turno: Paciente[]; progresso: Progresso; novo: () => void; voltar: () => void }) {
+  const acertados = turno.filter((p) => p.resultado?.acertou).length
 
   return (
     <NaFachada titulo="Fim do plantão">
@@ -42,18 +60,7 @@ export function FimDoPlantao({ turno, progresso, novo, voltar }: { turno: Pacien
           ))}
         </ul>
       </section>
-      <section className="caixa">
-        <span className="rotulo">Temas em revisão</span>
-        {emRevisao.length === 0 ? (
-          <p>Nenhum. Os temas que você errar voltam nos próximos plantões.</p>
-        ) : (
-          <ul>
-            {emRevisao.map((nome) => (
-              <li key={nome}>{nome}</li>
-            ))}
-          </ul>
-        )}
-      </section>
+      <TemasEmRevisao progresso={progresso} />
       <button type="button" className="principal" onClick={novo}>
         Novo plantão
       </button>

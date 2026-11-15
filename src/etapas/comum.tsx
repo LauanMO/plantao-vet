@@ -1,7 +1,7 @@
-import { useState, type ReactNode } from 'react'
+import { useSyncExternalStore, type ReactNode } from 'react'
 import type { Caso } from '../modelo/caso'
 import type { EtapaDo, RespostaDo } from '../motor/pontuacao'
-import { definirMudo, estaMudo, tocar } from '../som/som'
+import { definirMudo, estaMudo, ouvirMudo, tocar } from '../som/som'
 
 export type TipoPontuado = 'coleta' | 'escolha' | 'calculo' | 'receita'
 
@@ -50,16 +50,9 @@ export function Seguir({ seguir, texto = 'Seguir' }: { seguir: () => void; texto
 
 /** O atalho do mudo, no canto de toda tela. */
 export function BotaoMudo() {
-  const [mudo, setMudo] = useState(estaMudo)
+  const mudo = useSyncExternalStore(ouvirMudo, estaMudo)
   return (
-    <button
-      type="button"
-      aria-pressed={mudo}
-      onClick={() => {
-        definirMudo(!mudo)
-        setMudo(!mudo)
-      }}
-    >
+    <button type="button" aria-pressed={mudo} onClick={() => definirMudo(!mudo)}>
       Mudo
     </button>
   )

@@ -1,29 +1,33 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { casos, type Materia } from './dados/casos'
+import { carregarProgresso, salvarProgresso } from './dados/progresso'
 import type { Caso } from './modelo/caso'
 import type { ResultadoCaso } from './motor/pontuacao'
-import { TURNO, progressoVazio, proximoDoEstudo, proximoDoPlantao, registrar } from './motor/repeticao'
+import { TURNO, proximoDoEstudo, proximoDoPlantao, registrar } from './motor/repeticao'
 import { tocar } from './som/som'
 import { Atendimento } from './telas/Atendimento'
 import { Biblioteca } from './telas/Biblioteca'
+import { Configuracoes } from './telas/Configuracoes'
 import { QuadroDeAvisos } from './telas/Estudo'
 import { Fachada } from './telas/Fachada'
 import { FimDoPlantao, type Paciente } from './telas/FimDoPlantao'
+import { TelaDeProgresso } from './telas/Progresso'
 
 type Modo = { tipo: 'plantao' } | { tipo: 'estudo'; materia: Materia } | { tipo: 'biblioteca' }
+type Menu = 'fachada' | 'quadro' | 'biblioteca' | 'fim-do-plantao' | 'progresso' | 'configuracoes'
 type Tela =
-  | { nome: 'fachada' | 'quadro' | 'biblioteca' | 'fim-do-plantao' }
+  | { nome: Menu }
   /** `vez` remonta o atendimento mesmo quando o próximo caso é o mesmo, num banco pequeno */
   | { nome: 'caso'; caso: Caso; modo: Modo; vez: number }
 
 export default function App() {
-  // shortcut: o progresso fica só na memória e some ao recarregar; a Fase 5 salva no localStorage
-  const [progresso, setProgresso] = useState(progressoVazio)
+  const [progresso, setProgresso] = useState(carregarProgresso)
   const [tela, setTela] = useState<Tela>({ nome: 'fachada' })
   const [turno, setTurno] = useState<Paciente[]>([])
   const vez = useRef(0)
+  useEffect(() => salvarProgresso(progresso), [progresso])
 
-  const ir = (nome: 'fachada' | 'quadro' | 'biblioteca' | 'fim-do-plantao') => () => setTela({ nome })
+  const ir = (nome: Menu) => () => setTela({ nome })
   const atender = (caso: Caso, modo: Modo) => {
     tocar(caso.cenario === 'consultorio' ? 'porta' : 'clique')
     vez.current++
@@ -39,13 +43,26 @@ export default function App() {
 
   switch (tela.nome) {
     case 'fachada':
-      return <Fachada plantao={() => proximoPaciente([])} estudo={ir('quadro')} biblioteca={ir('biblioteca')} />
+      return (
+        <Fachada
+          nome={progresso.nome?.trim() ?? ''}
+          plantao={() => proximoPaciente([])}
+          estudo={ir('quadro')}
+          biblioteca={ir('biblioteca')}
+          progresso={ir('progresso')}
+          configuracoes={ir('configuracoes')}
+        />
+      )
     case 'quadro':
       return <QuadroDeAvisos progresso={progresso} estudar={estudar} voltar={ir('fachada')} />
     case 'biblioteca':
       return <Biblioteca progresso={progresso} abrir={(c) => atender(c, { tipo: 'biblioteca' })} voltar={ir('fachada')} />
     case 'fim-do-plantao':
       return <FimDoPlantao turno={turno} progresso={progresso} novo={() => proximoPaciente([])} voltar={ir('fachada')} />
+    case 'progresso':
+      return <TelaDeProgresso progresso={progresso} trocar={setProgresso} voltar={ir('fachada')} />
+    case 'configuracoes':
+      return <Configuracoes nome={progresso.nome ?? ''} mudarNome={(nome) => setProgresso((p) => ({ ...p, nome }))} voltar={ir('fachada')} />
   }
 
   const { caso, modo } = tela

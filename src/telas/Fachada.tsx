@@ -26,17 +26,23 @@ export function NaFachada({ titulo, children }: { titulo: string; children: Reac
 }
 
 interface PropsFachada {
+  /** o nome do crachá; vazio até ela preencher nas configurações */
+  nome: string
   plantao: () => void
   estudo: () => void
   biblioteca: () => void
+  progresso: () => void
+  configuracoes: () => void
 }
 
-export function Fachada({ plantao, estudo, biblioteca }: PropsFachada) {
+export function Fachada({ nome, plantao, estudo, biblioteca, progresso, configuracoes }: PropsFachada) {
   return (
     <NaFachada titulo="Plantão Vet">
       <section className="caixa">
         <h1 className="titulo">Plantão Vet</h1>
-        <p>A clínica-escola está de plantão. Quem chega hoje?</p>
+        <p>
+          {nome && `Boa noite, ${nome}! `}A clínica-escola está de plantão. Quem chega hoje?
+        </p>
       </section>
       <button type="button" className="principal" onClick={plantao}>
         Começar o plantão
@@ -50,6 +56,16 @@ export function Fachada({ plantao, estudo, biblioteca }: PropsFachada) {
         <button type="button" onClick={biblioteca}>
           <span>
             <strong>Biblioteca</strong> <span className="detalhe">o caso que você escolher</span>
+          </span>
+        </button>
+        <button type="button" onClick={progresso}>
+          <span>
+            <strong>Progresso</strong> <span className="detalhe">acertos, revisão e backup</span>
+          </span>
+        </button>
+        <button type="button" onClick={configuracoes}>
+          <span>
+            <strong>Configurações</strong> <span className="detalhe">nome no crachá e som</span>
           </span>
         </button>
       </div>
