@@ -34,7 +34,7 @@
       "titulo": "Exame físico",
       "limite": 5,
       "itens": [
-        { "id": "olhos", "ferramenta": "lanterna", "rotulo": "Posição dos olhos", "resultado": "Olhos bem fundos: há um vão de uns 6 mm entre o globo e a pálpebra.", "importante": true },
+        { "id": "olhos", "ferramenta": "lanterna", "rotulo": "Posição dos olhos", "resultado": "Olhos bem fundos: há um vão de uns 7 mm entre o globo e a pálpebra.", "importante": true },
         { "id": "prega", "ferramenta": "gota", "rotulo": "Prega cutânea no pescoço", "resultado": "A prega leva uns 6 segundos para se desfazer.", "importante": true },
         { "id": "boca", "ferramenta": "mao", "rotulo": "Boca e extremidades", "resultado": "Boca seca e fria; orelhas e patas frias.", "importante": true },
         { "id": "postura", "ferramenta": "mao", "rotulo": "Postura e reflexo de sucção", "resultado": "Só fica em pé com ajuda; sucção fraca, mal chupa o dedo.", "importante": true },
@@ -49,7 +49,7 @@
       "critica": true,
       "pergunta": "Pelos achados do exame físico, qual é o grau de desidratação do Bolinha?",
       "opcoes": [
-        { "texto": "Grave, cerca de 10 a 12%", "correta": true, "explicacao": "Vão de uns 6 mm entre o olho e a pálpebra, prega de 6 segundos no pescoço, boca e extremidades frias e dificuldade para ficar em pé: desidratação grave, que pede soro na veia." },
+        { "texto": "Grave, cerca de 10 a 12%", "correta": true, "explicacao": "Vão de uns 7 mm entre o olho e a pálpebra, prega de 6 segundos no pescoço, boca e extremidades frias e dificuldade para ficar em pé: desidratação grave, que pede soro na veia." },
         { "texto": "Moderada, cerca de 6 a 8%", "correta": false, "explicacao": "Na moderada o olho afunda pouco (uns 2 a 4 mm), a prega volta mais rápido e o bezerro ainda fica em pé, com boca morna e sucção presente." },
         { "texto": "Leve, abaixo de 6%", "correta": false, "explicacao": "Na leve quase não há sinais no exame: olhos no lugar, prega que volta logo e bezerro mamando." },
         { "texto": "Não dá para estimar sem exame de sangue", "correta": false, "explicacao": "O exame físico estima bem o grau pelos olhos, prega, boca, extremidades e postura. Hematócrito e proteína total ajudam, mas não substituem." }
@@ -81,7 +81,7 @@
       "titulo": "Nova visita em 2 dias",
       "bom": "Com soro na veia nas primeiras horas e depois soro oral entre as mamadas, o Bolinha voltou a mamar no dia seguinte e a diarreia passou em 4 dias.",
       "falaBom": "Doutora, o Bolinha tá mamando o balde todo e pulando na baia!",
-      "ruim": "Com o grau subestimado, ele recebeu só soro oral, que mal conseguia mamar. Piorou, ficou caído e frio e precisou de socorro de urgência.",
+      "ruim": "Com o grau subestimado, ele recebeu só soro oral, mas mal conseguia mamar. Piorou, ficou caído e frio e precisou de socorro de urgência.",
       "falaRuim": "Doutora, ele não levanta mais e tá gelado..."
     }
   ],

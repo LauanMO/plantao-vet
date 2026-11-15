@@ -52,7 +52,7 @@
         { "texto": "6 a 8%: moderada", "correta": true, "explicacao": "Prega que demora a voltar, mucosas secas, TPC um pouco prolongado e olhos levemente afundados, mas com pulso forte e extremidades quentes: moderada, sem choque." },
         { "texto": "Menos de 5%: não detectável no exame", "correta": false, "explicacao": "Abaixo de 5%, o exame físico é normal e só a história sugere a perda. O Max já tem vários sinais." },
         { "texto": "5 a 6%: leve", "correta": false, "explicacao": "Na leve há só uma discreta perda da elasticidade da pele. Mucosas secas, TPC prolongado e olhos afundados indicam mais que isso." },
-        { "texto": "10 a 12%: grave, com choque", "correta": false, "explicacao": "Na grave a prega não volta, os olhos ficam bem fundos e surgem sinais de choque, como pulso fraco e extremidades frias. O pulso do Max está forte." }
+        { "texto": "10 a 12%: grave, com choque", "correta": false, "explicacao": "Na grave a prega não volta, os olhos ficam bem fundos e podem surgir sinais de choque, como pulso fraco e extremidades frias. A prega do Max ainda volta e o pulso está forte." }
       ]
     },
     {
@@ -70,7 +70,7 @@
       "quem": "preceptora",
       "pergunta": "Em qual paciente a prova da prega cutânea engana, fazendo parecer mais desidratado do que está?",
       "opcoes": [
-        { "texto": "Num cão idoso e muito magro", "correta": true, "explicacao": "Com a idade e a perda de gordura sob a pele, a elasticidade cai e a prega demora mesmo sem desidratação. Nesses casos valem mais mucosas, olhos, hematócrito e proteína total." },
+        { "texto": "Num cão idoso e muito magro", "correta": true, "explicacao": "Com a idade e a magreza, a pele perde elasticidade e a gordura atrás dos olhos diminui: a prega demora e os olhos afundam mesmo sem desidratação. Nesses casos valem mais mucosas, histórico, hematócrito e proteína total." },
         { "texto": "Num cão obeso", "correta": false, "explicacao": "No obeso é o contrário: a gordura sob a pele faz a prega voltar mais rápido e pode esconder a desidratação." },
         { "texto": "Num cão de pelo curto", "correta": false, "explicacao": "O tipo de pelo não muda a elasticidade da pele. Basta fazer a prova sempre no mesmo lugar, como o dorso." },
         { "texto": "Num cão de porte grande", "correta": false, "explicacao": "O porte não muda a prova. O que engana é a idade, a magreza e a obesidade." }
@@ -88,7 +88,7 @@
   "resumo": [
     "Avalie a hidratação pelo conjunto: prega cutânea, mucosas, TPC, posição dos olhos, pulso e temperatura das extremidades.",
     "Menos de 5%: exame normal. 5 a 6%: discreta perda de elasticidade da pele. 6 a 8%: prega lenta, mucosas secas, TPC um pouco prolongado e olhos levemente afundados.",
-    "10 a 12%: prega que não volta, olhos fundos e sinais de choque, como pulso fraco e extremidades frias.",
+    "10 a 12%: prega que não volta, olhos fundos e possíveis sinais de choque, como pulso fraco e extremidades frias.",
     "Déficit (mL) = peso (kg) × fração de desidratação × 1.000 (ex.: 15 × 0,08 × 1.000 = 1.200 mL).",
     "Idosos e magros parecem mais desidratados na prega; obesos, menos. Hematócrito e proteína total ajudam a confirmar."
   ],
