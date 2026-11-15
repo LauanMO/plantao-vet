@@ -1,0 +1,122 @@
+{
+  "id": "tera-obstrucao-gastrica-01",
+  "materia": "terapeutica",
+  "tema": "Fluidoterapia",
+  "dificuldade": 3,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Canela",
+    "especie": "cão",
+    "raca": "SRD",
+    "sexo": "fêmea",
+    "idade": "3 anos",
+    "pesoKg": 12,
+    "sprite": "cao-pequeno-caramelo"
+  },
+  "tutor": { "nome": "André", "sprite": "tutor-2" },
+  "chegada": "Doutora, a Canela vomita tudo o que come e bebe desde anteontem. Agora nem levanta da caminha.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "objeto", "rotulo": "Ela pode ter engolido algum objeto?", "resultado": "Ela vive roendo caroço de manga no quintal... e um sumiu.", "importante": true },
+        { "id": "vomito", "rotulo": "Como é o vômito?", "resultado": "Volta a comida e a água pouco depois de engolir. Não sai nada amarelo.", "importante": true },
+        { "id": "diarreia", "rotulo": "Ela teve diarreia?", "resultado": "Não. Nem fez cocô hoje.", "importante": true },
+        { "id": "vacina", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, tomou a anual em janeiro.", "importante": false },
+        { "id": "agua", "rotulo": "Ela bebe muita água?", "resultado": "Bebe bastante, mas vomita logo depois.", "importante": false },
+        { "id": "remedio", "rotulo": "Ela tomou algum remédio?", "resultado": "Nada.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Pele lenta, mucosas secas e olhos um pouco fundos: cerca de 8% de desidratação.", "importante": true },
+        { "id": "abdome", "ferramenta": "mao", "rotulo": "Palpação abdominal", "resultado": "Dor no abdome cranial e uma estrutura firme logo atrás das costelas.", "importante": true },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas e TPC", "resultado": "Rosadas e secas; TPC de 2 segundos.", "importante": true },
+        { "id": "fc", "ferramenta": "estetoscopio", "rotulo": "Frequência cardíaca e pulso", "resultado": "140 bpm, com pulso forte.", "importante": false },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "38,8 °C.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Obstrução gástrica por corpo estranho (caroço de manga)", "correta": true, "explicacao": "Cadela que rói caroço de manga, com vômito de comida e água sem bile, sem diarreia, e uma estrutura firme no abdome cranial. Raio-X ou ultrassom confirmam antes da cirurgia." },
+        { "texto": "Parvovirose", "correta": false, "explicacao": "Cadela adulta e vacinada, sem diarreia nem febre: não combina com parvovirose." },
+        { "texto": "Pancreatite aguda", "correta": false, "explicacao": "Também dá vômito e dor no abdome cranial, mas não explica a estrutura firme palpável nem o caroço que sumiu." },
+        { "texto": "Insuficiência renal aguda", "correta": false, "explicacao": "Pode causar vômito, mas não dor localizada nem uma estrutura firme no abdome." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Vomitando o conteúdo do estômago, que alteração ácido-base a Canela tende a ter?",
+      "opcoes": [
+        { "texto": "Alcalose metabólica, com cloro e potássio baixos", "correta": true, "explicacao": "O suco gástrico é ácido clorídrico: perdê-lo leva embora H+ e cloro, e o sangue fica alcalino. O potássio também cai, pelo vômito e pela urina." },
+        { "texto": "Acidose metabólica, por perda de bicarbonato", "correta": false, "explicacao": "Perde-se bicarbonato na diarreia ou no vômito com conteúdo do intestino, não quando só o estômago se esvazia." },
+        { "texto": "Acidose respiratória", "correta": false, "explicacao": "Vem de respirar mal e acumular CO2, o que não é o caso da Canela." },
+        { "texto": "Nenhuma: vômito não muda o equilíbrio ácido-base", "correta": false, "explicacao": "Vômito persistente muda, sim: perder suco gástrico tira ácido do corpo." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Taxa de infusão",
+      "critica": true,
+      "pergunta": "A Canela tem 12 kg e está 8% desidratada. Repondo o déficit e a manutenção (50 mL/kg/dia) em 24 horas, qual a taxa em mL/h?",
+      "unidade": "mL/h",
+      "resposta": 65,
+      "tolerancia": 0.05,
+      "explicacao": "Déficit = 12 kg × 0,08 × 1.000 = 960 mL. Manutenção = 50 mL/kg × 12 kg = 600 mL. Total = 1.560 mL ÷ 24 h = 65 mL/h."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Prescrição na internação",
+      "critica": true,
+      "instrucao": "Prescreva o fluido da Canela (12 kg) para as próximas 24 horas: déficit de 8% mais manutenção de 50 mL/kg/dia.",
+      "farmacos": [
+        { "id": "nacl", "nome": "Cloreto de sódio 0,9%", "apresentacao": "Solução injetável com 9 mg de NaCl por mL", "unidade": "mL", "explicacao": "Repõe água, sódio e, principalmente, cloro: é o fluido de escolha na alcalose do vômito gástrico." },
+        { "id": "ringer", "nome": "Ringer com lactato", "apresentacao": "Solução injetável", "unidade": "mL", "explicacao": "Serve para a maioria das desidratações, mas tem menos cloro, e o lactato vira bicarbonato, o que piora a alcalose." },
+        { "id": "glicose", "nome": "Glicose 5%", "apresentacao": "Solução injetável com 50 mg de glicose por mL", "unidade": "mL", "explicacao": "Vira água livre: não repõe sódio nem cloro e pouco fica nos vasos." },
+        { "id": "bicarbonato", "nome": "Bicarbonato de sódio 8,4%", "apresentacao": "Solução injetável com 84 mg por mL", "unidade": "mL", "explicacao": "Alcaliniza o sangue: na alcalose da Canela, só pioraria." }
+      ],
+      "correto": {
+        "farmaco": "nacl",
+        "doseMgKg": 1170,
+        "concentracao": 9,
+        "tolerancia": 0.1,
+        "via": "Intravenosa",
+        "frequencia": "Em infusão contínua, em 24 horas"
+      },
+      "vias": ["Intravenosa", "Subcutânea", "Oral", "Intramuscular"],
+      "frequencias": ["Em bolus, em 15 minutos", "Em 2 horas", "Em infusão contínua, em 24 horas", "A cada 8 horas"],
+      "explicacao": "960 mL de déficit + 600 mL de manutenção = 1.560 mL (130 mL/kg). Contando em mg de NaCl: 1.170 mg/kg × 12 kg = 14.040 mg; 14.040 mg ÷ 9 mg/mL = 1.560 mL na veia, em infusão contínua de 65 mL/h por 24 horas. O potássio é acrescentado ao soro conforme a dosagem no sangue."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 7 dias",
+      "bom": "Com o soro fisiológico, a Canela foi reidratada, e o cloro e o potássio se normalizaram. Estável, ela foi operada, e o caroço de manga saiu do estômago.",
+      "falaBom": "Doutora, a Canela já tá comendo ração úmida e abanando o rabo! Caroço de manga, nunca mais.",
+      "ruim": "Com a prescrição errada, a desidratação e a alcalose não foram corrigidas. A Canela foi para a cirurgia instável e teve uma recuperação difícil.",
+      "falaRuim": "Doutora, ela continua fraquinha e vomitando, mesmo com o soro..."
+    }
+  ],
+  "resumo": [
+    "Corpo estranho no estômago, como o caroço de manga, causa vômito de comida e água pouco depois de engolir.",
+    "Vômito do conteúdo do estômago tira ácido clorídrico: alcalose metabólica com cloro e potássio baixos.",
+    "Fluido de escolha: cloreto de sódio 0,9%, que repõe o cloro, com potássio acrescentado conforme a dosagem.",
+    "Volume em 24 horas = déficit (peso × % de desidratação) + manutenção (aqui, 50 mL/kg/dia). Taxa = volume ÷ 24 horas.",
+    "Estabilizar com fluidos antes de operar para retirar o corpo estranho."
+  ],
+  "referencias": [
+    "Andrade, Manual de Terapêutica Veterinária",
+    "Viana, Fundamentos de Terapêutica Veterinária"
+  ],
+  "revisado": false
+}

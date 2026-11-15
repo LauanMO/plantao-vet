@@ -1,0 +1,122 @@
+{
+  "id": "tera-mastite-toxica-01",
+  "materia": "terapeutica",
+  "tema": "Fluidoterapia",
+  "dificuldade": 3,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Safira",
+    "especie": "bovino",
+    "raca": "Holandesa",
+    "sexo": "fêmea",
+    "idade": "5 anos",
+    "pesoKg": 500,
+    "sprite": "vaca-holandesa"
+  },
+  "tutor": { "nome": "Seu Tião", "sprite": "produtor-1" },
+  "chegada": "Doutora, a Safira pariu faz 10 dias e hoje amanheceu triste, sem comer. Uma teta tá dura, e o leite saiu que nem água amarela.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "leite", "rotulo": "Como está o leite?", "resultado": "Saiu um líquido amarelado, aguado, com uns flocos. Só daquela teta.", "importante": true },
+        { "id": "agua", "rotulo": "Ela está bebendo água?", "resultado": "Quase nada hoje. Nem chegou perto do bebedouro.", "importante": true },
+        { "id": "fezes", "rotulo": "Como estão as fezes?", "resultado": "Tá com diarreia, bem mole.", "importante": true },
+        { "id": "inicio", "rotulo": "Quando ela piorou?", "resultado": "Ontem à tarde tava normal. Hoje cedo já não comeu.", "importante": false },
+        { "id": "parto", "rotulo": "O parto foi normal?", "resultado": "Foi, e a placenta saiu no mesmo dia.", "importante": false },
+        { "id": "vacinas", "rotulo": "As vacinas estão em dia?", "resultado": "Estão, sim.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "ubere", "ferramenta": "mao", "rotulo": "Palpação do úbere", "resultado": "Quarto traseiro direito inchado, quente e duro.", "importante": true },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Olhos fundos e prega de pele lenta: cerca de 8% de desidratação.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "40,5 °C.", "importante": true },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração a 100 bpm; rúmen quase parado.", "importante": false },
+        { "id": "mucosas", "ferramenta": "lanterna", "rotulo": "Mucosas", "resultado": "Avermelhadas e secas.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Mastite clínica grave (mastite tóxica por coliformes)", "correta": true, "explicacao": "Vaca no começo da lactação, com um quarto inchado e duro, leite aguado com flocos, febre, diarreia, rúmen parado e desidratação: mastite com toxemia, típica da E. coli." },
+        { "texto": "Hipocalcemia puerperal", "correta": false, "explicacao": "A febre do leite aparece nos primeiros dias depois do parto, com a vaca fria e caída. Não deixa o úbere duro nem muda o leite." },
+        { "texto": "Metrite puerperal", "correta": false, "explicacao": "Daria corrimento vaginal fétido. Aqui a placenta saiu normal, e o problema está no úbere." },
+        { "texto": "Mastite subclínica", "correta": false, "explicacao": "Na subclínica, o leite e a vaca parecem normais; só o CMT ou a contagem de células mostram a inflamação." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "Déficit de hidratação",
+      "critica": true,
+      "pergunta": "A Safira pesa 500 kg e está 8% desidratada. Quantos litros faltam repor?",
+      "unidade": "L",
+      "resposta": 40,
+      "tolerancia": 0.05,
+      "explicacao": "Déficit = peso × fração de desidratação = 500 kg × 0,08 = 40 kg de água, ou 40 litros. Repor tudo isso na veia, no campo, não é prático."
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "A Safira vai receber na veia um fluido que puxa água dos tecidos para os vasos. O que é indispensável logo depois?",
+      "opcoes": [
+        { "texto": "Água: deixar beber à vontade ou dar uns 20 litros por sonda", "correta": true, "explicacao": "O fluido melhora a circulação em minutos, mas só emprestando água dos tecidos. A água de bebida ou por sonda repõe o que falta e mantém o efeito." },
+        { "texto": "Deixar sem água por 6 horas, para o fluido agir", "correta": false, "explicacao": "Sem água, o efeito dura pouco e as células ficam ainda mais desidratadas." },
+        { "texto": "Repetir o mesmo fluido a cada hora até ela urinar", "correta": false, "explicacao": "Repetir eleva demais o sódio do sangue. Uma dose basta, seguida de água." },
+        { "texto": "Dar um diurético para tirar o excesso de sal", "correta": false, "explicacao": "O diurético faz perder mais água, e ela já está desidratada." }
+      ]
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Fluidoterapia no campo",
+      "critica": true,
+      "instrucao": "Prescreva o fluido que vai antes da água por sonda, na dose de 4 mL/kg (Safira, 500 kg).",
+      "farmacos": [
+        { "id": "hipertonica", "nome": "Cloreto de sódio 7,5% (salina hipertônica)", "apresentacao": "Solução injetável com 75 mg de NaCl por mL", "unidade": "mL", "explicacao": "Puxa água dos tecidos para os vasos e melhora a circulação em minutos, com pouco volume." },
+        { "id": "glicose", "nome": "Glicose 5%", "apresentacao": "Solução injetável com 50 mg de glicose por mL", "unidade": "mL", "explicacao": "Vira água livre, que se espalha pelo corpo todo e pouco fica nos vasos: seriam dezenas de litros na veia." },
+        { "id": "furosemida", "nome": "Furosemida", "apresentacao": "Solução injetável 50 mg/mL", "unidade": "mL", "explicacao": "Diurético: faz perder mais água, e a Safira já está desidratada." },
+        { "id": "potassio", "nome": "Cloreto de potássio 19,1%", "apresentacao": "Solução injetável com 191 mg de KCl por mL", "unidade": "mL", "explicacao": "Potássio concentrado: na veia sem diluir, pode parar o coração. Vai sempre diluído no soro ou pela boca." }
+      ],
+      "correto": {
+        "farmaco": "hipertonica",
+        "doseMgKg": 300,
+        "concentracao": 75,
+        "tolerancia": 0.1,
+        "via": "Intravenosa, em 4 a 5 minutos",
+        "frequencia": "Dose única"
+      },
+      "vias": ["Intravenosa, em 4 a 5 minutos", "Oral", "Subcutânea", "Intramuscular"],
+      "frequencias": ["Dose única", "A cada 1 hora", "A cada 4 horas", "A cada 8 horas"],
+      "explicacao": "4 mL/kg de NaCl 7,5% = 300 mg de NaCl por kg. 300 mg/kg × 500 kg = 150.000 mg; 150.000 mg ÷ 75 mg/mL = 2.000 mL (2 L) na jugular, em 4 a 5 minutos, em dose única. Logo depois, água à vontade ou uns 20 litros por sonda. Junto: anti-inflamatório, antibiótico e ordenhas frequentes do quarto doente."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita no dia seguinte",
+      "bom": "Depois da salina hipertônica, a Safira bebeu mais de 30 litros de água. Com o tratamento da mastite, a febre baixou, e no dia seguinte ela já comia e ruminava.",
+      "falaBom": "Doutora, ela bebeu água que não acabava mais, e hoje cedo já tava comendo!",
+      "ruim": "Sem a reposição certa, a desidratação e a toxemia pioraram. A Safira deitou e não levantou mais, e o prognóstico ficou ruim.",
+      "falaRuim": "Doutora, ela deitou e não quer levantar. O olho tá cada vez mais fundo..."
+    }
+  ],
+  "resumo": [
+    "Mastite tóxica: comum no começo da lactação, em geral pela E. coli. Além do úbere, a toxemia causa febre, diarreia, rúmen parado e desidratação.",
+    "Déficit de hidratação = peso × % de desidratação: 500 kg a 8% são 40 litros.",
+    "No campo, a salina hipertônica (7,2 a 7,5%, 4 a 5 mL/kg na veia, em 4 a 5 minutos) melhora a circulação com pouco volume.",
+    "Logo depois, água: à vontade ou cerca de 20 litros por sonda. Sem ela, o efeito é passageiro.",
+    "Junto com os fluidos: anti-inflamatório, antibiótico e ordenha frequente do quarto afetado."
+  ],
+  "referencias": [
+    "Andrade, Manual de Terapêutica Veterinária",
+    "Viana, Fundamentos de Terapêutica Veterinária"
+  ],
+  "revisado": false
+}

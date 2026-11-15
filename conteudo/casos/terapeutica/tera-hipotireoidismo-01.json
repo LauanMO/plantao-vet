@@ -1,0 +1,122 @@
+{
+  "id": "tera-hipotireoidismo-01",
+  "materia": "terapeutica",
+  "tema": "Cálculo de dose",
+  "dificuldade": 2,
+  "cenario": "consultorio",
+  "paciente": {
+    "nome": "Biscoito",
+    "especie": "cão",
+    "raca": "Cocker Spaniel Inglês",
+    "sexo": "macho",
+    "idade": "8 anos",
+    "pesoKg": 15,
+    "sprite": "cao-pequeno-branco"
+  },
+  "tutor": { "nome": "Dona Neide", "sprite": "tutora-1" },
+  "chegada": "Doutora, o Biscoito tá engordando mesmo comendo pouco, vive dormindo e o pelo tá caindo. Trouxe o exame que o outro veterinário pediu.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "exame", "rotulo": "O que diz o exame de sangue?", "resultado": "Tá escrito aqui: T4 livre baixo e TSH alto.", "importante": true },
+        { "id": "frio", "rotulo": "Ele sente mais frio que antes?", "resultado": "Sente! Vive procurando o sol e o cobertor.", "importante": true },
+        { "id": "agua", "rotulo": "Ele bebe muita água?", "resultado": "Não, bebe o mesmo de sempre, e o xixi também é normal.", "importante": true },
+        { "id": "coceira", "rotulo": "Ele se coça muito?", "resultado": "Quase nada. O pelo só cai, e ele nem liga.", "importante": false },
+        { "id": "racao", "rotulo": "Mudou a ração?", "resultado": "Não, é a mesma, e eu até diminuí a quantidade.", "importante": false },
+        { "id": "remedio", "rotulo": "Ele toma algum remédio?", "resultado": "Nenhum.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "fc", "ferramenta": "estetoscopio", "rotulo": "Frequência cardíaca", "resultado": "60 batimentos por minuto: mais lento que o normal.", "importante": true },
+        { "id": "pele", "ferramenta": "lanterna", "rotulo": "Inspeção da pele e do pelo", "resultado": "Falhas de pelo simétricas nos flancos, cauda quase sem pelo e pele grossa e escura.", "importante": true },
+        { "id": "escore", "ferramenta": "mao", "rotulo": "Escore corporal", "resultado": "Obeso: escore 8 de 9.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "37,6 °C, no limite de baixo.", "importante": false },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratação normal.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Hipotireoidismo primário", "correta": true, "explicacao": "Ganho de peso sem comer mais, letargia, busca por calor, alopecia simétrica sem coceira, bradicardia e T4 livre baixo com TSH alto." },
+        { "texto": "Hiperadrenocorticismo (síndrome de Cushing)", "correta": false, "explicacao": "Também dá alopecia simétrica e barriga grande, mas com muita sede, muito xixi e muita fome, que o Biscoito não tem." },
+        { "texto": "Diabetes mellitus", "correta": false, "explicacao": "Causa sede e urina em excesso e perda de peso apesar de comer muito: o oposto do Biscoito." },
+        { "texto": "Dermatite atópica", "correta": false, "explicacao": "É uma doença que coça muito, e o Biscoito quase não se coça. Ela também não explica a letargia nem os hormônios alterados." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "Depois de começar o hormônio, quando dosar o T4 de novo para ajustar a dose?",
+      "opcoes": [
+        { "texto": "Depois de cerca de 4 semanas, de 4 a 6 horas após o comprimido", "correta": true, "explicacao": "O hormônio leva semanas para estabilizar no sangue. Dosado no pico, de 4 a 6 horas depois do comprimido, ele mostra se a dose está alta ou baixa." },
+        { "texto": "No dia seguinte, para ver se já subiu", "correta": false, "explicacao": "Um dia não basta para o T4 se estabilizar: o resultado não serve para ajustar a dose." },
+        { "texto": "Só daqui a 6 meses, quando o pelo voltar", "correta": false, "explicacao": "É tempo demais com uma dose que pode estar alta ou baixa. A pele é a última a melhorar." },
+        { "texto": "Não precisa: a dose pelo peso é sempre a certa", "correta": false, "explicacao": "A absorção e a resposta variam muito de um cão para outro: a dose é ajustada pelo T4 e pelos sinais clínicos." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "De mg para µg",
+      "critica": true,
+      "pergunta": "A dose do hormônio é 0,02 mg/kg. Quantos microgramas (µg) por dose para os 15 kg do Biscoito?",
+      "unidade": "µg",
+      "resposta": 300,
+      "tolerancia": 0.05,
+      "explicacao": "0,02 mg/kg × 15 kg = 0,3 mg. Como 1 mg = 1.000 µg, 0,3 mg = 300 µg."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Receita para casa",
+      "critica": true,
+      "instrucao": "Prescreva o hormônio do Biscoito (15 kg), na dose inicial.",
+      "farmacos": [
+        { "id": "levotiroxina", "nome": "Levotiroxina sódica", "apresentacao": "Comprimido 300 µg (0,3 mg)", "unidade": "comprimido", "explicacao": "Hormônio tireoidiano sintético (T4): repõe o que a tireoide não produz mais." },
+        { "id": "liotironina", "nome": "Liotironina (T3)", "apresentacao": "Comprimido 25 µg", "unidade": "comprimido", "explicacao": "T3 sintético, de efeito curto: não é a primeira escolha. A levotiroxina vira T3 nos tecidos conforme a necessidade." },
+        { "id": "metimazol", "nome": "Metimazol", "apresentacao": "Comprimido 5 mg", "unidade": "comprimido", "explicacao": "Antitireoidiano: bloqueia a produção de hormônio. É usado no hipertireoidismo do gato, o oposto do Biscoito." },
+        { "id": "prednisolona", "nome": "Prednisolona", "apresentacao": "Comprimido 5 mg", "unidade": "comprimido", "explicacao": "Corticoide: não repõe o hormônio e ainda baixa o T4 dosado no sangue." }
+      ],
+      "correto": {
+        "farmaco": "levotiroxina",
+        "doseMgKg": 0.02,
+        "concentracao": 0.3,
+        "tolerancia": 0.1,
+        "via": "Oral",
+        "frequencia": "A cada 12 horas"
+      },
+      "vias": ["Oral", "Subcutânea", "Tópica", "Retal"],
+      "frequencias": ["Dose única", "A cada 6 horas", "A cada 12 horas", "Uma vez por semana"],
+      "explicacao": "0,02 mg/kg × 15 kg = 0,3 mg; 0,3 mg ÷ 0,3 mg/comprimido = 1 comprimido pela boca, a cada 12 horas, por toda a vida. Depois de controlado, alguns cães passam para uma vez ao dia."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Retorno em 8 semanas",
+      "bom": "Com a levotiroxina, o Biscoito ficou mais ativo em poucas semanas. O T4 de controle veio na faixa certa, ele perdeu peso, e o pelo começou a crescer.",
+      "falaBom": "Doutora, ele voltou a brincar e já perdeu peso! E o rabinho tá com pelo de novo.",
+      "ruim": "Com a prescrição errada, o hormônio não foi reposto direito: o Biscoito continuou lento, acima do peso e sem pelo.",
+      "falaRuim": "Doutora, ele continua dormindo o dia todo e não emagreceu nada..."
+    }
+  ],
+  "resumo": [
+    "Hipotireoidismo: comum em cães de meia-idade, de raças como Cocker, Golden e Boxer; quase sempre por destruição da própria tireoide.",
+    "Sinais: letargia, ganho de peso, busca por calor, alopecia simétrica sem coceira, cauda sem pelo e bradicardia.",
+    "Diagnóstico: T4 livre baixo com TSH alto.",
+    "Levotiroxina: 0,02 mg/kg (20 µg/kg) pela boca, a cada 12 horas, por toda a vida. Atenção à conversão: 1 mg = 1.000 µg.",
+    "Dosar o T4 depois de cerca de 4 semanas, de 4 a 6 horas após o comprimido, e ajustar a dose."
+  ],
+  "referencias": [
+    "Andrade, Manual de Terapêutica Veterinária",
+    "Viana, Fundamentos de Terapêutica Veterinária"
+  ],
+  "revisado": false
+}

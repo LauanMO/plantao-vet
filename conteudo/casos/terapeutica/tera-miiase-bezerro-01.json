@@ -1,0 +1,122 @@
+{
+  "id": "tera-miiase-bezerro-01",
+  "materia": "terapeutica",
+  "tema": "Cálculo de dose",
+  "dificuldade": 1,
+  "cenario": "campo",
+  "paciente": {
+    "nome": "Sereno",
+    "especie": "bovino",
+    "raca": "Holandês",
+    "sexo": "macho",
+    "idade": "20 dias",
+    "pesoKg": 50,
+    "sprite": "bezerro-holandes"
+  },
+  "tutor": { "nome": "Seu Geraldo", "sprite": "produtor-2" },
+  "chegada": "Doutora, o umbigo do Sereno tá com bicheira! Tem um buraco com uns bichinhos mexendo e um cheiro ruim.",
+  "etapas": [
+    {
+      "tipo": "coleta",
+      "titulo": "Anamnese",
+      "limite": 4,
+      "itens": [
+        { "id": "umbigo", "rotulo": "Cuidaram do umbigo quando ele nasceu?", "resultado": "Passei iodo só no primeiro dia. Depois esqueci.", "importante": true },
+        { "id": "inicio", "rotulo": "Quando você viu a bicheira?", "resultado": "Ontem à tarde. Hoje o buraco tá maior.", "importante": true },
+        { "id": "mamada", "rotulo": "Ele está mamando?", "resultado": "Mama, mas menos que os outros.", "importante": true },
+        { "id": "outros", "rotulo": "Outros bezerros têm bicheira?", "resultado": "Não, só ele.", "importante": false },
+        { "id": "diarreia", "rotulo": "Ele teve diarreia?", "resultado": "Não, as fezes tão normais.", "importante": false },
+        { "id": "moscas", "rotulo": "Tem muita mosca no bezerreiro?", "resultado": "Nessa época do ano tem bastante.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "coleta",
+      "titulo": "Exame físico",
+      "limite": 4,
+      "itens": [
+        { "id": "ferida", "ferramenta": "lanterna", "rotulo": "Inspeção do umbigo", "resultado": "Ferida de uns 3 cm, com larvas vivas e cheiro forte.", "importante": true },
+        { "id": "palpacao", "ferramenta": "mao", "rotulo": "Palpação das estruturas do umbigo", "resultado": "Cordão fino, sem dor nem aumento por dentro do abdome: a lesão está só na pele.", "importante": true },
+        { "id": "tr", "ferramenta": "termometro", "rotulo": "Temperatura retal", "resultado": "39,2 °C, normal para bezerro.", "importante": true },
+        { "id": "hidratacao", "ferramenta": "gota", "rotulo": "Hidratação", "resultado": "Hidratação normal.", "importante": false },
+        { "id": "ausculta", "ferramenta": "estetoscopio", "rotulo": "Auscultação", "resultado": "Coração e pulmões normais.", "importante": false }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Diagnóstico",
+      "quem": "prontuario",
+      "pergunta": "Qual é o diagnóstico mais provável?",
+      "opcoes": [
+        { "texto": "Miíase umbilical (bicheira)", "correta": true, "explicacao": "Larvas da mosca-da-bicheira (Cochliomyia hominivorax) numa ferida de umbigo mal curado, sem febre e sem infecção das estruturas internas." },
+        { "texto": "Onfaloflebite", "correta": false, "explicacao": "É a infecção da veia umbilical: a palpação acharia um cordão grosso e dolorido em direção ao fígado, muitas vezes com febre." },
+        { "texto": "Hérnia umbilical", "correta": false, "explicacao": "É um aumento de volume mole, que volta para dentro do abdome quando apertado, sem ferida nem larvas." },
+        { "texto": "Abscesso de umbigo", "correta": false, "explicacao": "Forma um aumento de volume firme e quente, cheio de pus, mas sem larvas." }
+      ]
+    },
+    {
+      "tipo": "escolha",
+      "titulo": "Pergunta da preceptora",
+      "quem": "preceptora",
+      "pergunta": "O Sereno é animal de produção. O que não pode faltar na receita dele?",
+      "opcoes": [
+        { "texto": "O período de carência do remédio, para não haver resíduo na carne", "correta": true, "explicacao": "Todo medicamento usado em animal de produção tem carência: o tempo, indicado na bula, entre a última dose e o abate ou o uso do leite." },
+        { "texto": "O nome comercial do remédio, que é obrigatório", "correta": false, "explicacao": "A receita pode trazer só o princípio ativo. O que não pode faltar é dose, via, frequência, duração e, aqui, a carência." },
+        { "texto": "Nada diferente da receita de um cão", "correta": false, "explicacao": "Em animal de produção, o resíduo do remédio pode chegar ao alimento das pessoas. Por isso a receita traz a carência." },
+        { "texto": "A dose para o lote todo, já que um tratamento vale para todos", "correta": false, "explicacao": "A dose é calculada pelo peso de cada animal, e só o Sereno tem bicheira." }
+      ]
+    },
+    {
+      "tipo": "calculo",
+      "titulo": "De porcentagem para mg/mL",
+      "critica": true,
+      "pergunta": "O antiparasitário injetável que vai ser usado é a 1%. Quantos mg dele há em cada mL?",
+      "unidade": "mg/mL",
+      "resposta": 10,
+      "tolerancia": 0.05,
+      "explicacao": "1% = 1 g em 100 mL = 1.000 mg ÷ 100 mL = 10 mg/mL."
+    },
+    {
+      "tipo": "receita",
+      "titulo": "Tratamento no campo",
+      "critica": true,
+      "instrucao": "Depois de tirar as larvas e limpar a ferida, prescreva o antiparasitário do Sereno (50 kg).",
+      "farmacos": [
+        { "id": "ivermectina", "nome": "Ivermectina 1%", "apresentacao": "Solução injetável 10 mg/mL", "unidade": "mL", "explicacao": "Lactona macrocíclica: mata as larvas da bicheira e ajuda a proteger por alguns dias contra novas larvas." },
+        { "id": "oxitetraciclina", "nome": "Oxitetraciclina LA", "apresentacao": "Solução injetável 200 mg/mL", "unidade": "mL", "explicacao": "Antibiótico: não mata as larvas. Seria indicado se houvesse infecção das estruturas do umbigo." },
+        { "id": "dexametasona", "nome": "Dexametasona", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Corticoide: atrasa a cicatrização da ferida e baixa a defesa do bezerro." },
+        { "id": "diminazeno", "nome": "Diaceturato de diminazeno", "apresentacao": "Solução injetável 70 mg/mL", "unidade": "mL", "explicacao": "Babesicida, usado na tristeza parasitária: não age nas larvas." }
+      ],
+      "correto": {
+        "farmaco": "ivermectina",
+        "doseMgKg": 0.2,
+        "concentracao": 10,
+        "tolerancia": 0.1,
+        "via": "Subcutânea",
+        "frequencia": "Dose única"
+      },
+      "vias": ["Subcutânea", "Intravenosa", "Oral", "Tópica"],
+      "frequencias": ["Dose única", "A cada 12 horas", "A cada 24 horas", "A cada 48 horas"],
+      "explicacao": "0,2 mg/kg (200 µg/kg) × 50 kg = 10 mg; 10 mg ÷ 10 mg/mL = 1 mL debaixo da pele, em dose única. Pingar a ivermectina injetável na ferida não substitui a aplicação: a ferida recebe limpeza e larvicida próprio."
+    },
+    {
+      "tipo": "retorno",
+      "titulo": "Nova visita em 5 dias",
+      "bom": "Com as larvas retiradas, a ferida limpa e a ivermectina, o umbigo do Sereno cicatrizou sem novas larvas. Seu Geraldo passou a curar o umbigo dos bezerros com iodo até secar.",
+      "falaBom": "Doutora, o umbigo fechou e ele tá mamando que é uma beleza!",
+      "ruim": "Com a prescrição errada, novas larvas apareceram e a bicheira aprofundou no umbigo, até a infecção chegar por dentro.",
+      "falaRuim": "Doutora, a bicheira voltou e o buraco tá maior. Ele nem quer mamar..."
+    }
+  ],
+  "resumo": [
+    "Miíase (bicheira): larvas da mosca Cochliomyia hominivorax em feridas, como o umbigo mal curado dos bezerros.",
+    "Tratamento: retirar as larvas, limpar, usar larvicida e repelente na ferida e ivermectina 0,2 mg/kg (200 µg/kg) debaixo da pele.",
+    "Cálculo: 1% = 1 g em 100 mL = 10 mg/mL. Na ivermectina 1%, 1 mL trata 50 kg.",
+    "Em animal de produção, a receita traz o período de carência da bula para carne e leite.",
+    "Prevenção: curar o umbigo com iodo até ele secar e controlar as moscas."
+  ],
+  "referencias": [
+    "Andrade, Manual de Terapêutica Veterinária",
+    "Viana, Fundamentos de Terapêutica Veterinária"
+  ],
+  "revisado": false
+}
