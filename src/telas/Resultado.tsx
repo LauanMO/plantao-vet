@@ -44,13 +44,22 @@ export function Resultado({ caso, respostas, proximo, sair }: PropsResultado) {
               : 'Caso para revisar: alguma etapa crítica não ficou certa.'}
         </p>
         <ul className="linhas">
-          {linhas.map((l) => (
-            <li key={l.titulo}>
+          {linhas.map((l, i) => (
+            // duas etapas podem ter o mesmo título, como duas perguntas da preceptora
+            <li key={i}>
               <span>{l.titulo}</span> <span>{l.valor}</span>
             </li>
           ))}
         </ul>
       </section>
+      {!caso.revisado && (
+        <section className="caixa">
+          <span className="rotulo">Caso em revisão</span>
+          <p>
+            Este caso ainda não foi conferido. Achou algo errado? Mande o código <strong>{caso.id}</strong> e o que precisa mudar.
+          </p>
+        </section>
+      )}
       {faltou.length > 0 && (
         <section className="caixa">
           <span className="rotulo">Para a próxima</span>
