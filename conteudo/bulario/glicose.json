@@ -1,0 +1,38 @@
+{
+  "id": "glicose",
+  "nome": "Glicose (dextrose) 5% e 50%",
+  "classe": "Fluidos, eletrólitos e energia",
+  "farmacos": ["glicose"],
+  "comoAge": "Dá energia pronta: a glicose entra nas células e é queimada. A 50% é muito concentrada (hipertônica) e sobe a glicemia em minutos; no ruminante com cetose, também corta a produção de corpos cetônicos, mas só por algumas horas. A 5% chega à veia com concentração parecida com a do plasma, mas a glicose é logo usada e sobra água livre, que se espalha pelo corpo todo e pouco fica nos vasos.",
+  "paraQueServe": [
+    "A 50%: cetose clínica de vacas, sobretudo a forma nervosa, em dose única na veia, seguida de propilenoglicol pela boca.",
+    "A 50%: toxemia da prenhez de ovelhas e cabras com glicose baixa.",
+    "A 50%, diluída: hipoglicemia de cães e gatos, como em filhotes de raças pequenas, excesso de insulina ou insulinoma.",
+    "A 50%, junto com insulina: hipercalemia grave (por exemplo, gato com obstrução uretral), porque leva o potássio para dentro das células.",
+    "A 5%: repor água livre na hipernatremia, diluir medicamentos e compor soro de manutenção."
+  ],
+  "efeitosAdversos": [
+    "A 50% fora da veia ou em veia fina: flebite, trombose e lesão do tecido, porque é muito hiperosmolar.",
+    "Hiperglicemia e glicose na urina, que arrasta água (diurese osmótica), sobretudo se aplicada rápido.",
+    "No insulinoma, glicose demais estimula o tumor a liberar mais insulina, e a glicemia cai de novo (rebote).",
+    "A 5% em grande volume baixa o sódio do sangue (hiponatremia) e leva água para dentro das células, inclusive no cérebro.",
+    "Na cetose, o efeito dura poucas horas, e as recaídas são comuns sem a manutenção com propilenoglicol."
+  ],
+  "cuidados": [
+    "A 5% não serve para choque nem para repor desidratação: não tem sódio e quase nada fica nos vasos.",
+    "A 50% vai só na veia, devagar. Em cães e gatos, dilua antes: concentrada, lesa a veia periférica.",
+    "Glicose pela boca não funciona no ruminante adulto: o rúmen fermenta o açúcar antes de ele ser absorvido.",
+    "A glicose leva potássio para dentro das células e pode baixar o potássio do sangue: acompanhe o potássio em soros com glicose.",
+    "Na toxemia da prenhez, evite repetir bolus de glicose na veia, que pode deixar a resposta à insulina ruim."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Ketosis in Cattle (glicose 50% e propilenoglicol).",
+    "MSD/Merck Veterinary Manual: Pregnancy Toxemia in Sheep and Goats.",
+    "MSD/Merck Veterinary Manual: The Fluid Resuscitation Plan in Animals (fluidos hipotônicos, glicose 5%).",
+    "MSD/Merck Veterinary Manual: Urethral Obstruction in Small Animals (glicose com insulina na hipercalemia).",
+    "AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats (2013): quadro de tipos de fluidos.",
+    "Bula da Dextrose 50% (Pfizer): solução hipertônica, flebite, hiperglicemia com infusão rápida. Bula do cloreto de potássio concentrado (Pfizer): a glicose baixa o potássio.",
+    "Revisões sobre insulinoma canino (Veterinary Ireland Journal; VIN): hipoglicemia de rebote e diluição da glicose 50%."
+  ],
+  "revisado": false
+}

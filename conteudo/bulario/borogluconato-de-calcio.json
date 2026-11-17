@@ -1,0 +1,33 @@
+{
+  "id": "borogluconato-de-calcio",
+  "nome": "Borogluconato de cálcio",
+  "classe": "Fluidos, eletrólitos e energia",
+  "farmacos": ["borogluconato"],
+  "comoAge": "Repõe o cálcio do sangue. O cálcio libera a acetilcolina na junção neuromuscular e faz contrair o músculo esquelético, o músculo liso (rúmen, útero) e o coração. Por isso a vaca com cálcio baixo fica flácida, caída e com o rúmen parado. O ácido bórico deixa o gluconato de cálcio mais solúvel, o que permite uma solução concentrada (23%).",
+  "paraQueServe": [
+    "Hipocalcemia puerperal (febre do leite) da vaca leiteira caída: na veia, devagar. A resposta costuma ser imediata.",
+    "Vaca com hipocalcemia ainda em pé, ou prevenção de recaída: pode ir por via subcutânea, seguida de cálcio pela boca.",
+    "Hipocalcemia de ovelhas e cabras no periparto, inclusive como apoio na toxemia da prenhez."
+  ],
+  "efeitosAdversos": [
+    "Na veia rápido: bradicardia, arritmias e até parada cardíaca. O risco é maior na vaca com endotoxemia, como na mastite tóxica.",
+    "Por via subcutânea, irrita o tecido: pode inchar e formar abscesso, sobretudo sem assepsia ou com muito volume num ponto só.",
+    "A dose na veia deixa o cálcio acima do normal por algumas horas e freia a mobilização de cálcio da própria vaca: parte das vacas volta a cair.",
+    "Trombose da veia ou extravasamento quando a agulha sai do lugar."
+  ],
+  "cuidados": [
+    "Na veia, aplique devagar, auscultando o coração. Se aparecer bradicardia ou arritmia, pare e só recomece quando o ritmo normalizar.",
+    "Vaca em pé, alerta e que engole: prefira cálcio pela boca ou subcutâneo (dividido em pontos, nunca com glicose). Cálcio demais na veia favorece a recaída.",
+    "Não misture com bicarbonato de sódio no mesmo frasco ou equipo: o cálcio precipita.",
+    "Em cães e gatos (eclâmpsia), o sal usado na veia costuma ser o gliconato (gluconato) de cálcio a 10%, com a mesma regra: devagar e com o coração monitorado.",
+    "Carência: as bulas de borogluconato de cálcio para bovinos em geral não exigem carência de leite nem de carne. Confira sempre a bula do produto."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Parturient Paresis in Cows (tratamento, via, velocidade, recaída).",
+    "MSD/Merck Veterinary Manual: Parturient Paresis in Sheep and Goats; Pregnancy Toxemia in Sheep and Goats.",
+    "MSD/Merck Veterinary Manual: Urethral Obstruction in Small Animals (gluconato de cálcio 10% em cães e gatos).",
+    "Bulas de borogluconato de cálcio para bovinos (Turbocálcio, Brasil; produtos registrados em Portugal): aplicação intravenosa lenta e carência.",
+    "Bula do bicarbonato de sódio 8,4% (Hospira/Pfizer): incompatibilidade com soluções que contêm cálcio."
+  ],
+  "revisado": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "sulfato-de-cobre",
+  "nome": "Sulfato de cobre",
+  "classe": "Minerais",
+  "farmacos": ["sulfato-cobre"],
+  "comoAge": "No pedilúvio, os íons de cobre se ligam às proteínas e enzimas das bactérias, alteram a membrana delas e impedem que se multipliquem; também endurecem o casco. Pela boca, em pequena quantidade no sal mineral, é fonte de cobre, mineral de enzimas ligadas ao crescimento, à imunidade, à cor do pelo e à reprodução.",
+  "paraQueServe": [
+    "Pedilúvio em bovinos leiteiros, para prevenir e controlar a dermatite digital e outras lesões de casco do rebanho.",
+    "Pedilúvio em ovinos e caprinos com podridão dos cascos; o sulfato de zinco é mais usado, por ser menos tóxico.",
+    "Fonte de cobre no sal mineral, para prevenir e corrigir a deficiência de cobre em bovinos e caprinos."
+  ],
+  "efeitosAdversos": [
+    "Engolido em quantidade: gastroenterite aguda, com dor abdominal, diarreia, desidratação e choque.",
+    "Acúmulo crônico no fígado, que um dia se libera de uma vez: crise hemolítica com icterícia, urina escura e morte, sobretudo em ovinos.",
+    "Corrói metal e mancha a lã de verde."
+  ],
+  "cuidados": [
+    "O pedilúvio age só na superfície do casco: não trata a infecção dentro do tecido, como no flegmão interdigital, que pede antibiótico sistêmico.",
+    "Ovinos são a espécie mais sensível ao cobre: nunca dê a eles sal mineral de bovinos e não deixe que bebam a solução do pedilúvio.",
+    "Esterco, sujeira e pH alto inativam o cobre: lave os cascos antes e troque a solução com frequência.",
+    "Molibdênio e enxofre na dieta prendem o cobre e aumentam a necessidade dele; com pouco molibdênio e enxofre, o cobre se acumula mais fácil.",
+    "Acumula no solo e prejudica as plantas: não descarte a solução no pasto. Em alguns países, o uso em pedilúvio é proibido."
+  ],
+  "referencias": [
+    "University of Wisconsin-Madison Extension: Footbath Management (sulfato de cobre no pedilúvio).",
+    "AHDB (Reino Unido): Cow footbaths, chemical dilution rate. University of Kentucky: Managing and Controlling Digital Dermatitis.",
+    "MSD/Merck Veterinary Manual: Copper Toxicosis in Animals; Contagious Footrot in Sheep.",
+    "MSD/Merck Veterinary Manual: Nutrient Requirements of Beef Cattle; Nutritional Requirements of Goats.",
+    "Cornell Small Farms Program: Footrot in Sheep (sulfato de cobre x sulfato de zinco).",
+    "Embrapa, Comunicado Técnico 14 (1982): intoxicação acidental de ovinos por cobre. Lentz, UDESC: deficiência de cobre em bovinos em Santa Catarina, com resposta ao sulfato de cobre."
+  ],
+  "revisado": false
+}

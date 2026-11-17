@@ -1,0 +1,30 @@
+{
+  "id": "vitamina-k1",
+  "nome": "Vitamina K1 (fitomenadiona)",
+  "classe": "Antídotos",
+  "farmacos": ["vitamina-k1"],
+  "comoAge": "A vitamina K é o cofator que ativa, no fígado, os fatores de coagulação II, VII, IX e X. Os raticidas anticoagulantes e o dicumarol bloqueiam a enzima que recicla a vitamina K (epóxido redutase), e o animal sangra. A vitamina K1 em dose alta repõe a vitamina pronta, e o fígado volta a produzir fatores ativos, o que leva horas.",
+  "paraQueServe": [
+    "Intoxicação por raticidas anticoagulantes, como varfarina, brodifacoum e bromadiolona, em cães, gatos e equinos.",
+    "Intoxicação de bovinos pelo dicumarol do trevo-doce mofado.",
+    "Distúrbios de coagulação por falta de vitamina K, como na obstrução biliar e na má absorção de gordura."
+  ],
+  "efeitosAdversos": [
+    "Na veia: reações anafilactoides graves. Por isso a via intravenosa não é recomendada.",
+    "Injeção em animal que não coagula: pode formar hematoma no local."
+  ],
+  "cuidados": [
+    "O efeito demora: os fatores novos aparecem em 6 a 12 horas. Se o animal está sangrando, precisa também de plasma fresco congelado ou sangue total.",
+    "Em cães e gatos, prefira a via oral com alimento gorduroso, que aumenta muito a absorção; use a subcutânea até o animal poder comer.",
+    "Os raticidas de segunda geração ficam muito tempo no corpo: o tratamento dura semanas. Meça o tempo de protrombina 2 a 3 dias depois da última dose.",
+    "A vitamina K3 (menadiona) não serve de antídoto e é tóxica para os rins do cavalo.",
+    "Bovinos com dicumarol: a via indicada é a intramuscular, com transfusão de sangue nos casos graves."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Anticoagulant Rodenticide Poisoning in Animals (vias, início do efeito, plasma, duração, tempo de protrombina).",
+    "MSD/Merck Veterinary Manual: Sweet Clover Poisoning in Animals (bovinos, via intramuscular, vitamina K1 x K3).",
+    "The 5-Minute Veterinary Consult: Equine, 3ª ed.: vitamina K3 ineficaz e nefrotóxica em equinos.",
+    "Rebhun et al., 1984: toxicidade renal da vitamina K3 em equinos."
+  ],
+  "revisado": false
+}

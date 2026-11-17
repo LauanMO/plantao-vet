@@ -1,0 +1,32 @@
+{
+  "id": "cloreto-de-potassio",
+  "nome": "Cloreto de potássio",
+  "classe": "Fluidos, eletrólitos e energia",
+  "farmacos": ["potassio"],
+  "comoAge": "Repõe o potássio, o principal íon de dentro das células. O potássio mantém o potencial de repouso de nervos, músculos e coração. Com pouco potássio, há fraqueza muscular (no gato, a cabeça pende para baixo), intestino parado e arritmias; com potássio demais, o coração conduz mal o impulso e pode parar.",
+  "paraQueServe": [
+    "Hipocalemia por vômito, diarreia, falta de apetite, diuréticos ou soro por muitos dias: vai acrescentado ao soro, conforme a dosagem no sangue.",
+    "Cetoacidose diabética e doença renal crônica, sobretudo em gatos, que costumam baixar o potássio.",
+    "Bovinos: hipocalemia em vacas sem comer há dias ou tratadas com isoflupredona. O tratamento de escolha é pela boca."
+  ],
+  "efeitosAdversos": [
+    "Na veia rápido ou sem diluir: hipercalemia, bradicardia, arritmia e parada cardíaca, que pode ser instantânea.",
+    "Potássio alto também causa fraqueza muscular e depressão.",
+    "Concentrado em veia periférica: dor e irritação da veia.",
+    "Pela boca, em doses altas, em bovinos: diarreia, salivação, tremores e excitação."
+  ],
+  "cuidados": [
+    "Nunca puro e nunca em bolus na veia: sempre diluído no soro e infundido devagar, sem passar da velocidade máxima. Sem diluir, pode parar o coração.",
+    "Depois de pôr no frasco ou na bolsa de soro, misture bem: o potássio concentrado pode ficar acumulado numa parte do soro.",
+    "Não use se o potássio estiver alto ou se o animal não urina: obstrução uretral, insuficiência renal sem urina, crise addisoniana.",
+    "Meça o potássio antes e durante o tratamento. Magnésio baixo dificulta a correção do potássio.",
+    "Em bovinos, prefira a via oral; na veia, só na vaca caída com hipocalemia grave, e sempre diluído."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: The Fluid Resuscitation Plan in Animals (cloreto de potássio no soro e velocidade máxima).",
+    "MSD/Merck Veterinary Manual: Hypokalemia in Adult Cattle; Overview of Disorders of Potassium Metabolism in Animals.",
+    "Clinician's Brief: Management of Potassium Disorders (causas de hipocalemia, monitoramento, hipomagnesemia).",
+    "Bula do Potassium Chloride for Injection Concentrate (Pfizer/Hospira): advertência de morte com injeção sem diluir e mistura completa no soro."
+  ],
+  "revisado": false
+}

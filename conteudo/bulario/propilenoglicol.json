@@ -1,0 +1,32 @@
+{
+  "id": "propilenoglicol",
+  "nome": "Propilenoglicol",
+  "classe": "Fluidos, eletrólitos e energia",
+  "farmacos": ["propilenoglicol"],
+  "comoAge": "É um precursor de glicose. Dado pela boca, é absorvido no rúmen e, no fígado, entra na gliconeogênese e vira glicose. A glicose e a insulina sobem, a vaca mobiliza menos gordura, e o fígado produz menos corpos cetônicos. Por isso mantém o efeito da glicose na veia, que dura só algumas horas.",
+  "paraQueServe": [
+    "Cetose (hipercetonemia) de vacas leiteiras: por via oral, por alguns dias. É o tratamento mais eficaz da cetose.",
+    "Manutenção depois da glicose na veia, nos casos clínicos de cetose.",
+    "Prevenção da cetose em vacas de risco no periparto.",
+    "Toxemia da prenhez de ovelhas e cabras, nos casos iniciais."
+  ],
+  "efeitosAdversos": [
+    "Em excesso: depressão, sonolência, ataxia, salivação e respiração superficial.",
+    "Doses altas alteram a fermentação do rúmen e podem parar o rúmen.",
+    "Dado com a vaca deitada, sem engolir ou às pressas, pode ir para o pulmão e causar pneumonia por aspiração."
+  ],
+  "cuidados": [
+    "Equinos: intoxicação grave, com acidose láctica, depressão, ataxia e até morte. Há casos por troca com o óleo mineral, de aspecto parecido.",
+    "Gatos: forma corpúsculos de Heinz e encurta a vida das hemácias. Não use em gatos.",
+    "A apresentação é oral: dê pela boca, com o animal em pé e engolindo. Não aplique na veia.",
+    "Não trata a hipocalcemia e não substitui a glicose na veia na cetose nervosa."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Ketosis in Cattle (propilenoglicol como precursor de glicose e tratamento mais eficaz).",
+    "MSD/Merck Veterinary Manual: Pregnancy Toxemia in Sheep and Goats.",
+    "MSD/Merck Veterinary Manual: Propylene Glycol Toxicosis in Animals (corpúsculos de Heinz em gatos).",
+    "Relatos de caso de intoxicação por propilenoglicol em equinos, inclusive por troca com óleo mineral (1969, 1991 e 1998).",
+    "Estudos com propilenoglicol em vacas no periparto: Acta Scientiarum Animal Sciences (drench de propilenoglicol e cetose subclínica); Journal of Dairy Research, 2017 (doses e efeitos tóxicos); Acta Veterinaria Scandinavica 51:25, 2009 (sinais de intoxicação)."
+  ],
+  "revisado": false
+}
