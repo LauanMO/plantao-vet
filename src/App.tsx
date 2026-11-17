@@ -7,6 +7,7 @@ import { TURNO, casosDoPlantao, proximoDoEstudo, proximoDoPlantao, registrar } f
 import { tocar } from './som/som'
 import { Atendimento } from './telas/Atendimento'
 import { Biblioteca } from './telas/Biblioteca'
+import { Bulario } from './telas/Bulario'
 import { Configuracoes } from './telas/Configuracoes'
 import { QuadroDeAvisos } from './telas/Estudo'
 import { Fachada } from './telas/Fachada'
@@ -14,7 +15,7 @@ import { FimDoPlantao, type Paciente } from './telas/FimDoPlantao'
 import { TelaDeProgresso } from './telas/Progresso'
 
 type Modo = { tipo: 'plantao' } | { tipo: 'estudo'; materia: Materia } | { tipo: 'biblioteca' }
-type Menu = 'fachada' | 'quadro' | 'biblioteca' | 'fim-do-plantao' | 'progresso' | 'configuracoes'
+type Menu = 'fachada' | 'quadro' | 'biblioteca' | 'bulario' | 'fim-do-plantao' | 'progresso' | 'configuracoes'
 type Tela =
   | { nome: Menu }
   /** `vez` remonta o atendimento mesmo quando o próximo caso é o mesmo, num banco pequeno */
@@ -50,6 +51,7 @@ export default function App() {
           plantao={() => proximoPaciente([])}
           estudo={ir('quadro')}
           biblioteca={ir('biblioteca')}
+          bulario={ir('bulario')}
           progresso={ir('progresso')}
           configuracoes={ir('configuracoes')}
         />
@@ -58,6 +60,8 @@ export default function App() {
       return <QuadroDeAvisos progresso={progresso} estudar={estudar} voltar={ir('fachada')} />
     case 'biblioteca':
       return <Biblioteca progresso={progresso} abrir={(c) => atender(c, { tipo: 'biblioteca' })} voltar={ir('fachada')} />
+    case 'bulario':
+      return <Bulario voltar={ir('fachada')} />
     case 'fim-do-plantao':
       return <FimDoPlantao turno={turno} progresso={progresso} novo={() => proximoPaciente([])} voltar={ir('fachada')} />
     case 'progresso':

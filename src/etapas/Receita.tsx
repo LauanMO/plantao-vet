@@ -1,6 +1,9 @@
-import { useState, type ReactNode } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
+import { bulaDoFarmaco } from '../dados/bulario'
+import type { Bula } from '../modelo/bula'
 import { notaDaEtapa, partesDaReceita, quantidadeCerta } from '../motor/pontuacao'
 import { tocar } from '../som/som'
+import { FichaDaBula } from '../telas/Bulario'
 import { Correcao, Seguir, type PropsEtapa } from './comum'
 import { lerNumero, numero } from './texto'
 
@@ -10,6 +13,12 @@ export function Receita({ caso, etapa, resposta, responder, seguir }: PropsEtapa
   const [texto, setTexto] = useState('')
   const [via, setVia] = useState<string>()
   const [frequencia, setFrequencia] = useState<string>()
+  // a bula aberta por cima da receita; o que ela já marcou continua guardado aqui
+  const [bula, setBula] = useState<{ bula: Bula; de: string }>()
+  const [fechada, setFechada] = useState<string>()
+  useEffect(() => {
+    if (!bula && fechada) document.querySelector<HTMLElement>(`[data-bula="${fechada}"]`)?.focus()
+  }, [bula, fechada])
 
   const peso = caso.paciente.pesoKg
   const quantidade = lerNumero(texto)
@@ -41,25 +50,62 @@ export function Receita({ caso, etapa, resposta, responder, seguir }: PropsEtapa
     </section>
   )
 
+  if (bula)
+    return (
+      <>
+        <FichaDaBula bula={bula.bula} />
+        <button
+          type="button"
+          className="principal"
+          onClick={() => {
+            setFechada(bula.de)
+            setBula(undefined)
+          }}
+        >
+          Voltar à receita
+        </button>
+      </>
+    )
+
+  const gaveta = caso.cenario === 'consultorio' ? 'Gaveta de fármacos' : 'Maleta de fármacos'
+
   return (
     <>
       <section className="caixa">
         <span className="rotulo">Receituário</span>
         <h2>{etapa.instrucao}</h2>
       </section>
-      {grupo(
-        caso.cenario === 'consultorio' ? 'Gaveta de fármacos' : 'Maleta de fármacos',
-        etapa.farmacos.map((f) => ({
-          valor: f.id,
-          texto: (
-            <>
-              <strong>{f.nome}</strong> <span className="detalhe">{f.apresentacao}</span>
-            </>
-          ),
-        })),
-        farmaco,
-        setFarmaco,
-      )}
+      <section className="caixa" role="group" aria-label={gaveta}>
+        <span className="rotulo">{gaveta}</span>
+        <div className="opcoes">
+          {etapa.farmacos.map((f) => {
+            const daBula = bulaDoFarmaco.get(f.id)
+            return (
+              <div key={f.id} className="com-bula">
+                <button
+                  type="button"
+                  aria-pressed={f.id === farmaco}
+                  disabled={assinada}
+                  onClick={() => {
+                    tocar('clique')
+                    setFarmaco(f.id)
+                  }}
+                >
+                  <span>
+                    <strong>{f.nome}</strong> <span className="detalhe">{f.apresentacao}</span>
+                  </span>
+                </button>
+                {/* a bula continua aberta para consulta depois de assinar: é para aprender */}
+                {daBula && (
+                  <button type="button" data-bula={f.id} aria-label={`Bula de ${f.nome}`} onClick={() => setBula({ bula: daBula, de: f.id })}>
+                    Bula
+                  </button>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </section>
       <section className="caixa">
         <label className="linha">
           Quantidade por aplicação

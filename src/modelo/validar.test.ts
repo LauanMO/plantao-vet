@@ -4,7 +4,7 @@ import materias from '../../conteudo/materias.json'
 import mimosaJson from '../../conteudo/casos/clinica-geral/clin-hipocalcemia-01.json'
 import pipocaJson from '../../conteudo/casos/clinica-geral/clin-parvovirose-01.json'
 import { casoSchema, type Caso } from './caso.ts'
-import { validarBanco } from './validar.ts'
+import { validarBanco, validarBulario } from './validar.ts'
 
 type Etapa = Caso['etapas'][number]
 
@@ -87,5 +87,44 @@ describe('recusa casos quebrados de propósito', () => {
     const quebrado = { ...sprites, 'tutora-1': { ...sprites['tutora-1'], estados: [] } }
     const r = validarBanco([{ caminho: caminho(pipoca()), conteudo: pipoca() }], materias, quebrado)
     expect(r.erros.join('\n')).toContain('sprites.json: tutora-1.estados')
+  })
+})
+
+describe('bulário', () => {
+  const bula = (id: string, farmacos: string[]) => ({
+    arquivo: `${id}.json`,
+    conteudo: {
+      id,
+      nome: id,
+      classe: 'Antibióticos',
+      farmacos,
+      comoAge: 'Age assim.',
+      paraQueServe: ['Serve para isso.'],
+      efeitosAdversos: ['Pode causar isso.'],
+      cuidados: ['Cuidado com isso.'],
+      referencias: ['Um livro.'],
+      revisado: false,
+    },
+  })
+  const dosCasos = new Set(['amoxicilina', 'oxitetraciclina', 'oxitetraciclina-la'])
+
+  it('aceita uma bula que cobre várias apresentações e avisa o fármaco sem bula', () => {
+    const r = validarBulario([bula('oxitetraciclina', ['oxitetraciclina', 'oxitetraciclina-la'])], dosCasos, false)
+    expect(r.erros).toEqual([])
+    expect(r.semBula).toEqual(['amoxicilina'])
+  })
+
+  it('com a regra completa, fármaco sem bula é erro', () => {
+    const r = validarBulario([bula('oxitetraciclina', ['oxitetraciclina', 'oxitetraciclina-la'])], dosCasos, true)
+    expect(r.erros.join(' | ')).toContain('"amoxicilina" das receitas não tem bula')
+  })
+
+  it.each([
+    ['id diferente do arquivo', [{ ...bula('amoxicilina', ['amoxicilina']), arquivo: 'outra.json' }], 'não bate com o nome do arquivo'],
+    ['fármaco em duas bulas', [bula('amoxicilina', ['amoxicilina']), bula('amoxi', ['amoxicilina'])], 'já está na bula amoxicilina'],
+    ['fármaco que nenhum caso usa', [bula('amoxicilina', ['amoxicilina', 'penicilina'])], '"penicilina" não aparece em nenhuma receita'],
+    ['classe fora da lista', [{ ...bula('amoxicilina', ['amoxicilina']), conteudo: { ...bula('amoxicilina', ['amoxicilina']).conteudo, classe: 'Vacinas' } }], 'classe'],
+  ])('recusa %s', (_nome, arquivos, trecho) => {
+    expect(validarBulario(arquivos, dosCasos, false).erros.join(' | ')).toContain(trecho)
   })
 })
