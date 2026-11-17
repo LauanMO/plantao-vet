@@ -1,0 +1,33 @@
+{
+  "id": "tramadol",
+  "nome": "Tramadol",
+  "classe": "Opioides",
+  "farmacos": ["tramadol"],
+  "comoAge": "Analgésico de ação dupla. É agonista fraco dos receptores µ, e seu metabólito O-desmetiltramadol (M1), formado no fígado, é bem mais potente. Também inibe a recaptação de serotonina e noradrenalina, reforçando as vias que inibem a dor. O gato forma muito M1; o cão forma pouco, e nele o efeito opioide fica fraco.",
+  "paraQueServe": [
+    "Dor leve a moderada em cães e gatos, por via oral em casa, sempre como parte de uma analgesia multimodal.",
+    "No cão, complemento do anti-inflamatório (AINE) em dores como a da hérnia de disco. Não deve ser o único analgésico.",
+    "No gato, dor crônica da osteoartrite: em estudo clínico, melhorou a atividade e a mobilidade."
+  ],
+  "efeitosAdversos": [
+    "Sedação, náusea e vômito.",
+    "No gato: midríase, euforia ou disforia e salivação intensa, porque o fármaco é muito amargo e difícil de dar pela boca.",
+    "Baixa o limiar convulsivo e pode desencadear convulsões.",
+    "Síndrome serotoninérgica (agitação, tremores, hipertermia) em superdosagem ou junto de outros fármacos serotoninérgicos."
+  ],
+  "cuidados": [
+    "Não associe a inibidores da MAO (selegilina), a ISRS (fluoxetina) ou a tricíclicos (clomipramina): risco de síndrome serotoninérgica.",
+    "Evite em animais com epilepsia ou convulsões recentes.",
+    "O gato elimina o tramadol mais devagar que o cão: o intervalo entre as doses é maior no gato.",
+    "No cão, a eficácia é discutida: num estudo de osteoartrite, não superou o placebo. Reavalie a dor e não dependa só dele."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Analgesic Pharmacology (Pain Assessment and Management)",
+    "MSD Veterinary Manual: Pain Management in Small Animals with Lameness",
+    "Budsberg SC et al. Lack of effectiveness of tramadol hydrochloride for the treatment of pain and joint dysfunction in dogs with chronic osteoarthritis. JAVMA, 2018",
+    "Lascelles BDX. Canine and feline pain management: expert insight into practitioners' top questions. Today's Veterinary Practice",
+    "dvm360: Drug interactions, when they're beneficial and when they're harmful (Proceedings)",
+    "BluePearl Pet Hospital: Serotonin syndrome"
+  ],
+  "revisado": false
+}

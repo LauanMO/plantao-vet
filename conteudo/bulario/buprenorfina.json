@@ -1,0 +1,35 @@
+{
+  "id": "buprenorfina",
+  "nome": "Buprenorfina",
+  "classe": "Opioides",
+  "farmacos": ["buprenorfina"],
+  "comoAge": "Agonista parcial dos receptores opioides µ. Liga-se ao receptor com afinidade muito alta e se solta devagar, por isso age mais tempo que a morfina (cerca de 6 a 8 horas no gato). Por ser agonista parcial, dá analgesia moderada: não chega ao efeito de um agonista pleno, como a metadona, na dor intensa.",
+  "paraQueServe": [
+    "Dor leve a moderada em cães e gatos, como no pós-operatório de castração e na obstrução uretral do gato.",
+    "No gato, pode ser pingada na mucosa da boca (via transmucosa): a boca alcalina do gato favorece a absorção, sem agulha nem comprimido.",
+    "Pré-anestesia e protocolos anestésicos injetáveis, associada a sedativos como a dexmedetomidina.",
+    "Nos EUA, há formulações de longa ação só para gatos, uma injetável subcutânea e uma solução transdérmica, que espaçam as aplicações."
+  ],
+  "efeitosAdversos": [
+    "Euforia e dilatação da pupila no gato. Seda pouco nas doses de uso clínico.",
+    "Aumento da temperatura corporal (hipertermia) em gatos após a anestesia, em geral leve e passageiro.",
+    "Depressão respiratória, bradicardia e queda de pressão leves, menos marcantes que com os agonistas plenos."
+  ],
+  "cuidados": [
+    "Difícil de reverter com naloxona, por causa da afinidade alta pelo receptor.",
+    "Ocupa o receptor µ e atrapalha morfina, metadona ou fentanil dados depois. Na dor intensa, como fraturas e grandes cirurgias, prefira um agonista pleno desde o início.",
+    "É metabolizada no fígado e eliminada sobretudo pela bile e fezes: boa opção para o gato com azotemia, mas cuidado no hepatopata.",
+    "No cão, prefira a via injetável: a absorção pela boca e pela pele é bem pior que no gato."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Analgesic Pharmacology (Pain Assessment and Management) e tabela Opioids Used in Emergency Practice",
+    "MSD Veterinary Manual: Pain Management in Small Animals with Lameness",
+    "Clinician's Brief: Buprenorphine (monografia)",
+    "Buprevet 0,3 mg/mL (Virbac), propriedades farmacológicas, NOAH Compendium",
+    "VASG (Veterinary Anesthesia and Analgesia Support Group): Opioid analgesics",
+    "Robertson SA et al. Systemic uptake of buprenorphine by cats after oral mucosal administration. Vet Rec, 2003",
+    "Posner LP et al. Effects of opioids and anesthetic drugs on body temperature in cats. Vet Anaesth Analg, 2010",
+    "Comfortan 10 mg/mL, resumo das características do produto (VMD, Reino Unido, 2023): interação com buprenorfina"
+  ],
+  "revisado": false
+}

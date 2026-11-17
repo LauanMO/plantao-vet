@@ -1,0 +1,32 @@
+{
+  "id": "fentanil",
+  "nome": "Fentanil",
+  "classe": "Opioides",
+  "farmacos": ["fentanil"],
+  "comoAge": "Agonista pleno e seletivo dos receptores µ, cerca de 50 a 100 vezes mais potente que a morfina. Na veia age em minutos, e o efeito de um bolus dura cerca de 30 minutos, porque o fármaco se redistribui rápido para outros tecidos. Por isso, no hospital, é dado em infusão contínua.",
+  "paraQueServe": [
+    "Analgesia de dor intensa durante e depois da cirurgia em cães e gatos, em infusão contínua na veia.",
+    "Reduz a quantidade de anestésico inalatório necessária (efeito poupador de anestésico).",
+    "Adesivo transdérmico, produto de uso humano, para analgesia de alguns dias em paciente internado."
+  ],
+  "efeitosAdversos": [
+    "Depressão respiratória dependente da dose, que pode exigir ventilação assistida durante a anestesia.",
+    "Bradicardia por estímulo vagal, tratável com atropina ou glicopirrolato. Queda passageira da pressão após a injeção na veia.",
+    "Disforia em alguns animais. No gato quase não seda; no cão pode sedar."
+  ],
+  "cuidados": [
+    "O adesivo demora a agir (no gato, de 6 a 24 horas; no cão, de 12 a 24 horas) e a absorção varia muito entre animais. Não corte o adesivo.",
+    "Calor no local, como bolsa térmica, febre ou deitar sobre o adesivo, aumenta a absorção e pode causar superdosagem.",
+    "Risco para pessoas: o adesivo engolido ou manipulado pode intoxicar crianças e outros animais da casa.",
+    "Soma depressão com os anestésicos: monitore respiração e frequência cardíaca. Reverte com naloxona."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Analgesic Pharmacology e tabela Opioids Used in Emergency Practice",
+    "MSD Veterinary Manual: Pain Management in Small Animals with Lameness",
+    "Fentadon 50 µg/mL (fentanil para cães), propriedades farmacológicas, NOAH Compendium",
+    "VASG (Veterinary Anesthesia and Analgesia Support Group): Opioid analgesics",
+    "dvm360: Use of fentanyl as a patch and CRI (Proceedings)",
+    "Mar Vista Animal Medical Center: Fentanyl Patch; VCA Hospitals: Fentanyl"
+  ],
+  "revisado": false
+}

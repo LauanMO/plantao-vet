@@ -1,0 +1,34 @@
+{
+  "id": "morfina",
+  "nome": "Morfina",
+  "classe": "Opioides",
+  "farmacos": ["morfina"],
+  "comoAge": "Protótipo dos opioides: agonista pleno dos receptores µ e, em menor grau, dos κ e δ. Esses receptores são ligados a uma proteína G inibitória. Ativados na medula e no encéfalo, reduzem a liberação de neurotransmissores e a excitabilidade dos neurônios, e menos sinal de dor chega a ser percebido.",
+  "paraQueServe": [
+    "Dor moderada a intensa em cães e gatos internados (trauma, pós-operatório), em bolus ou infusão contínua.",
+    "Via epidural, sem conservante: analgesia longa dos membros pélvicos no pós-operatório, com menos anestésico geral.",
+    "Aplicação intra-articular após artroscopia ou artrotomia em cães e equinos.",
+    "Pré-anestesia: entre os opioides, é o que seda de forma mais constante quando usado sozinho."
+  ],
+  "efeitosAdversos": [
+    "Vômito e defecação, muito comuns em cães e gatos após aplicação IM ou SC, por estímulo da zona de gatilho quimiorreceptora.",
+    "Liberação de histamina se aplicada rápido na veia: vasodilatação e queda da pressão.",
+    "Depressão respiratória e bradicardia, previsíveis com todos os opioides.",
+    "Excitação no gato com aplicação rápida na veia ou dose alta, e hipertermia. No equino, aumenta a atividade locomotora.",
+    "No equino, reduz a motilidade intestinal por horas e já foi associada a cólica."
+  ],
+  "cuidados": [
+    "Pela boca funciona mal: o fígado destrói boa parte antes de chegar ao sangue (efeito de primeira passagem).",
+    "Na veia, aplique devagar, para evitar liberação de histamina e hipotensão.",
+    "No gato e no equino o risco de excitação é maior. No cavalo, costuma-se associar um agonista α2 para evitar a excitação.",
+    "Reverte com naloxona."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Analgesic Pharmacology e tabela Opioids Used in Emergency Practice",
+    "MSD Veterinary Manual: Pain Management in Small Animals with Lameness",
+    "VASG (Veterinary Anesthesia and Analgesia Support Group): Opioid analgesics",
+    "Spotlight on the perioperative use of maropitant citrate. Veterinary Medicine: Research and Reports (Dove Press), 2017: incidência de vômito com opioides",
+    "Estudos de farmacocinética e efeitos comportamentais e intestinais da morfina na veia em equinos (J Vet Pharmacol Ther)"
+  ],
+  "revisado": false
+}

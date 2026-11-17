@@ -1,0 +1,30 @@
+{
+  "id": "escopolamina",
+  "nome": "Butilbrometo de escopolamina (hioscina)",
+  "classe": "Sistema nervoso autônomo",
+  "farmacos": ["escopolamina"],
+  "comoAge": "Antagonista dos receptores muscarínicos, com ação sobretudo na musculatura lisa do trato digestivo e urinário: bloqueia a acetilcolina e relaxa os espasmos (antiespasmódico). Por ser um amônio quaternário, não entra no SNC e é pouco absorvido pela boca. Tem também alguma ação em receptores nicotínicos.",
+  "paraQueServe": [
+    "Cólica espasmódica, cólica por gases e compactação simples em equinos: alivia a dor do espasmo.",
+    "Auxílio diagnóstico nas cólicas mais graves do equino.",
+    "Associado à dipirona: diarreia com dor abdominal em bovinos, equinos e cães, e dor da obstrução urinária em equinos e cães."
+  ],
+  "efeitosAdversos": [
+    "Taquicardia leve e passageira, por cerca de 30 minutos após a aplicação na veia.",
+    "Diminuição dos sons intestinais (borborigmos) por cerca de 30 minutos.",
+    "Dilatação passageira da pupila.",
+    "No produto com dipirona, injeção rápida na veia pode causar choque ou anafilaxia, o que é raro."
+  ],
+  "cuidados": [
+    "Nos 30 minutos após a aplicação, a frequência cardíaca não serve para avaliar a gravidade da dor na cólica.",
+    "Contraindicado na cólica com íleo paralítico, no glaucoma e no equino com instabilidade cardiovascular.",
+    "Só relaxa a musculatura lisa: não é anti-inflamatório e não trata dor de tendão, articulação ou pele.",
+    "No equino, só na veia e devagar: na musculatura causa reação local.",
+    "Carência conforme a bula: no Reino Unido, 12 dias para carne de equino e não liberado para animais que produzem leite. Nos EUA, não pode ser usado em equinos de abate."
+  ],
+  "referencias": [
+    "Buscopan (brometo de N-butilescopolamônio) injetável para equinos: bula americana (NADA 141-228)",
+    "Buscopan Compositum (butilbrometo de escopolamina e metamizol), resumo das características do produto (VMD, Reino Unido, 2026)"
+  ],
+  "revisado": false
+}
