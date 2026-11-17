@@ -1,0 +1,34 @@
+{
+  "id": "furosemida",
+  "nome": "Furosemida",
+  "classe": "Diuréticos",
+  "farmacos": ["furosemida"],
+  "comoAge": "Diurético de alça. Bloqueia a reabsorção de sódio, potássio e cloro na porção espessa da alça de Henle, e a água acompanha esses íons: sai muita urina. Na veia, também dilata as veias e baixa a pressão venosa (a pré-carga do coração) antes mesmo de a diurese começar. Por isso alivia rápido o edema pulmonar cardiogênico.",
+  "paraQueServe": [
+    "Edema pulmonar e insuficiência cardíaca congestiva em cães e gatos; é o diurético mais usado também em bovinos e equinos com insuficiência cardíaca.",
+    "Ascite e edemas de origem cardíaca ou renal.",
+    "Vacas: edema de úbere fisiológico do pós-parto.",
+    "Equinos: edema dos membros e, em cavalos de corrida onde é permitida, redução da hemorragia pulmonar induzida por exercício."
+  ],
+  "efeitosAdversos": [
+    "Desidratação e queda do volume de sangue, com azotemia pré-renal.",
+    "Hipocalemia, hiponatremia, hipomagnesemia e alcalose metabólica.",
+    "Perda de audição (ototoxicidade), sobretudo com doses altas e injeção rápida na veia.",
+    "Pode baixar o cálcio e causar tetania em animais com tendência à hipocalcemia.",
+    "No uso prolongado, o animal pode passar a responder menos (resistência ao diurético)."
+  ],
+  "cuidados": [
+    "Contraindicada na anúria e na obstrução urinária: produzir mais urina sem saída só enche mais a bexiga.",
+    "Não use em animal desidratado ou com edema que não vem de excesso de líquido (inflamação, lesão de vasos): não trata e piora a desidratação.",
+    "Gatos são mais sensíveis que cães, e os efeitos adversos costumam ser mais graves neles.",
+    "Aumenta a oto e a nefrotoxicidade dos aminoglicosídeos; com AINE ou IECA, sobe o risco de azotemia; a hipocalemia aumenta a toxicidade da digoxina.",
+    "Vacas: respeite a carência de carne e leite da bula. Cavalos atletas: o uso em competição segue as regras antidoping."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Diuretics for Use in Animals (sistema cardiovascular).",
+    "MSD/Merck Veterinary Manual: Exercise-Induced Pulmonary Hemorrhage in Horses.",
+    "Bulas Salix (furosemida injetável) dos EUA e do Canadá: indicações em cães, gatos, equinos e bovinos, contraindicações e carência.",
+    "Furosemide 5% 50 mg/ml injetável para bovinos, equinos, cães e gatos: registro na União Europeia (carência)."
+  ],
+  "revisado": false
+}

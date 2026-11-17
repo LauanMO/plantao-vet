@@ -1,0 +1,35 @@
+{
+  "id": "atropina",
+  "nome": "Atropina",
+  "classe": "Sistema nervoso autônomo",
+  "farmacos": ["atropina"],
+  "comoAge": "Antagonista competitivo dos receptores muscarínicos da acetilcolina (parassimpatolítico). Impede a ação do vago e dos nervos parassimpáticos: acelera o coração, seca a saliva e as secreções dos brônquios, dilata os brônquios e a pupila e reduz a motilidade do intestino. Atravessa a barreira hematoencefálica.",
+  "paraQueServe": [
+    "Bradicardia de origem vagal na anestesia e na emergência. Também serve de teste: a resposta à atropina ajuda a entender a bradiarritmia.",
+    "Antídoto dos sinais muscarínicos da intoxicação por organofosforados e carbamatos: salivação, secreção nos brônquios, broncoconstrição, bradicardia, vômito e diarreia.",
+    "Colírio na uveíte: dilata a pupila e relaxa o músculo ciliar, o que alivia a dor (midriático e cicloplégico).",
+    "Pré-anestesia em cães e gatos, quando se quer prevenir bradicardia ou excesso de saliva."
+  ],
+  "efeitosAdversos": [
+    "Taquicardia e arritmias. Em dose baixa na veia, pode piorar a bradicardia e o bloqueio AV por alguns minutos antes de acelerar o coração.",
+    "Boca seca e secreções mais viscosas, difíceis de remover da boca e da faringe.",
+    "Reduz a motilidade gastrointestinal: no equino, íleo e cólica; no ruminante, para o rúmen e favorece o timpanismo.",
+    "Midríase e sensibilidade à luz. Em infusão prolongada ou excesso, agitação e delírio."
+  ],
+  "cuidados": [
+    "Contraindicada no glaucoma: a midríase dificulta a drenagem do humor aquoso.",
+    "Equinos: evite o uso sistêmico de rotina. Até o colírio, se aplicado com muita frequência, pode reduzir a motilidade e causar cólica.",
+    "Ruminantes: deixa a saliva grossa e para o rúmen, por isso costuma ser evitada na pré-anestesia.",
+    "Na intoxicação por organofosforado, não trata os sinais nicotínicos (tremores, fraqueza muscular): para eles, usa-se a pralidoxima.",
+    "Coelhos: muitos têm atropinesterase no sangue, que destrói a atropina rapidamente; prefere-se o glicopirrolato."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Toxic Disorders of the Peripheral Nerves and Neuromuscular Junction in Animals (organofosforados) e Carbamate Toxicosis in Animals",
+    "IDEXX Telemedicine Consultants: The atropine response test",
+    "Estudo sobre atropina tópica em equinos: farmacocinética e efeito na motilidade intestinal (2021)",
+    "Bovine Practitioner/AABP: revisões de anestesia em ruminantes (saliva viscosa, motilidade e timpanismo)",
+    "Loyola University Chicago, Comparative Medicine: anestésicos e analgésicos para coelhos",
+    "e-Safe Anaesthesia: comparação entre atropina e glicopirrolato"
+  ],
+  "revisado": false
+}

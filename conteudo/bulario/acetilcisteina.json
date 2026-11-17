@@ -1,0 +1,32 @@
+{
+  "id": "acetilcisteina",
+  "nome": "Acetilcisteína (N-acetilcisteína)",
+  "classe": "Antídotos",
+  "farmacos": ["acetilcisteina"],
+  "comoAge": "Fornece cisteína, matéria-prima da glutationa, e grupos sulfidrila que se ligam direto ao metabólito tóxico do paracetamol (NAPQI) e ajudam a eliminá-lo. Assim diminui a metemoglobinemia e a lesão do fígado. No muco, quebra as pontes dissulfeto e o deixa mais fino (mucolítico); na córnea, inibe as colagenases que a derretem.",
+  "paraQueServe": [
+    "Antídoto da intoxicação por paracetamol em gatos e cães. Quanto mais cedo começa, melhor o prognóstico.",
+    "Colírio em úlceras de córnea que estão derretendo, em cães, gatos e cavalos.",
+    "Mucolítico por nebulização, como na aspiração de mecônio ou de leite em potros.",
+    "Enema de retenção na impactação de mecônio em potros."
+  ],
+  "efeitosAdversos": [
+    "Pela boca: náusea e vômito. Tem cheiro e gosto ruins, de enxofre.",
+    "Na veia costuma ser bem tolerada, mas a aplicação rápida pode causar reação alérgica e alterar a pressão (descrito em pessoas).",
+    "Por nebulização: irritação das vias aéreas e broncoconstrição, raras."
+  ],
+  "cuidados": [
+    "Na veia, sempre diluída e devagar.",
+    "O carvão ativado diminui a absorção da acetilcisteína oral: dê a primeira dose na veia ou separe os dois no tempo.",
+    "O gato é a espécie mais sensível ao paracetamol, porque conjuga mal o fármaco: o dano às hemácias aparece em poucas horas. No cão, pesa mais a lesão do fígado.",
+    "É o antídoto principal; oxigênio, fluidoterapia e vitamina C são apoio. O azul de metileno só complementa e, no gato, exige cautela.",
+    "Acompanhe a metemoglobina, os corpúsculos de Heinz, a hemólise e as enzimas do fígado."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Toxicoses From Human Analgesics in Animals (acetaminofeno: mecanismo, espécies, acetilcisteína, azul de metileno, vitamina C).",
+    "MSD/Merck Veterinary Manual: Hepatotoxins in Small Animals.",
+    "Wedgewood Pharmacy: monografia da acetilcisteína para cães, gatos e equinos (usos, efeitos adversos, carvão ativado).",
+    "Cornell University College of Veterinary Medicine: caso de intoxicação por paracetamol em gato."
+  ],
+  "revisado": false
+}

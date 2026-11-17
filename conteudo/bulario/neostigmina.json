@@ -1,0 +1,32 @@
+{
+  "id": "neostigmina",
+  "nome": "Neostigmina",
+  "classe": "Sistema nervoso autônomo",
+  "farmacos": ["neostigmina"],
+  "comoAge": "Anticolinesterásico reversível: inibe a acetilcolinesterase, a enzima que destrói a acetilcolina. Com mais acetilcolina nas sinapses, aumentam os efeitos muscarínicos (intestino, bexiga, glândulas, coração mais lento) e os nicotínicos (contração do músculo esquelético). É um amônio quaternário e quase não entra no SNC.",
+  "paraQueServe": [
+    "Reverter, no fim da anestesia, o bloqueio neuromuscular dos relaxantes não despolarizantes, como atracúrio e rocurônio.",
+    "Miastenia gravis em cães: teste diagnóstico e tratamento injetável quando o animal não consegue tomar a piridostigmina pela boca.",
+    "Equinos e bovinos: já foi usada para estimular a motilidade do ceco e do cólon no íleo e na atonia intestinal."
+  ],
+  "efeitosAdversos": [
+    "Efeitos muscarínicos: salivação, vômito, diarreia, cólica e aumento das secreções dos brônquios.",
+    "Bradicardia, que pode ser grave, e broncoconstrição.",
+    "Em excesso, crise colinérgica: tremores, fraqueza muscular e parada respiratória."
+  ],
+  "cuidados": [
+    "Aplique junto com atropina ou glicopirrolato para prevenir a bradicardia ao reverter o bloqueio neuromuscular.",
+    "Contraindicada na obstrução mecânica do intestino ou das vias urinárias e na peritonite.",
+    "Não use na intoxicação por organofosforado ou carbamato: soma o efeito e piora a crise colinérgica.",
+    "Na cólica espasmódica do equino, aumenta as contrações do intestino e piora o quadro.",
+    "Não reverte os relaxantes despolarizantes, como a succinilcolina."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Neuromuscular Blocking Agents for Animals (Agentes bloqueadores neuromusculares)",
+    "MSD Veterinary Manual: Inflammatory Disorders of the Peripheral Nerves and Neuromuscular Junction in Animals (miastenia gravis)",
+    "Neostigmine methylsulfate injection (Bloxiverz): bula americana (FDA)",
+    "In vivo and in vitro effects of neostigmine on gastrointestinal tract motility of horses (University of Kentucky)",
+    "Revisão sobre fármacos que coordenam e restauram a motilidade gastrointestinal em equinos e bovinos (1995)"
+  ],
+  "revisado": false
+}

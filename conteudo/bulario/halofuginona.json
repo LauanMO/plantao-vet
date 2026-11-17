@@ -1,0 +1,30 @@
+{
+  "id": "halofuginona",
+  "nome": "Halofuginona (lactato)",
+  "classe": "Antiparasitários",
+  "farmacos": ["halofuginona"],
+  "comoAge": "Antiprotozoário derivado da quinazolinona. É criptosporidiostático: freia a multiplicação do Cryptosporidium parvum, sem eliminá-lo por completo. Age sobretudo nas formas livres do parasito (esporozoítos e merozoítos), as que passam de uma célula do intestino para outra. Em nível molecular, bloqueia uma enzima que o parasito usa para fazer proteínas (prolil-tRNA sintetase).",
+  "paraQueServe": [
+    "Bezerros recém-nascidos: prevenção da diarreia por Cryptosporidium parvum em fazendas com histórico da doença, começando nas primeiras 24 a 48 horas de vida.",
+    "Bezerros: redução da diarreia por C. parvum já diagnosticada, começando até 24 horas depois do início da diarreia.",
+    "Nos dois usos, reduz a eliminação de oocistos, o que diminui a contaminação das baias para os próximos bezerros."
+  ],
+  "efeitosAdversos": [
+    "Muito raro na dose certa: piora da diarreia.",
+    "Superdose (a partir do dobro da dose): diarreia, sangue nas fezes, queda no consumo de leite, desidratação, apatia e prostração.",
+    "Em quem aplica: irrita a pele e os olhos, e o contato repetido pode causar alergia de pele."
+  ],
+  "cuidados": [
+    "Margem de segurança estreita: sinais de intoxicação podem surgir com o dobro da dose. Pese o bezerro em vez de estimar e meça com seringa calibrada.",
+    "Dê sempre depois da mamada (colostro, leite ou sucedâneo), nunca em jejum. O bezerro sem apetite recebe o produto em solução eletrolítica.",
+    "Não use em diarreia instalada há mais de 24 horas nem em bezerros fracos. Não substitui colostro, hidratação e higiene.",
+    "Carência para carne de 13 dias na bula europeia (Halocur). Aplique de luvas.",
+    "No Brasil, não encontrei registro no MAPA de produto com halofuginona para bezerros: a referência é a bula europeia. Confira a disponibilidade."
+  ],
+  "referencias": [
+    "Halocur 0,5 mg/mL solução oral para bezerros (lactato de halofuginona), MSD Animal Health: resumo das características do medicamento, VMD Reino Unido, revisão de agosto de 2025.",
+    "EMA: EPAR Halocur e EPAR Kriptazen (genérico de halofuginona), União Europeia.",
+    "Jain et al. Structure, 2017: estrutura da prolil-tRNA sintetase de Cryptosporidium parvum ligada à halofuginona (PDB 5XIO)."
+  ],
+  "revisado": false
+}

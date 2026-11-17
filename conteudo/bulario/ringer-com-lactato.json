@@ -1,0 +1,30 @@
+{
+  "id": "ringer-com-lactato",
+  "nome": "Ringer com lactato",
+  "classe": "Fluidos, eletrólitos e energia",
+  "farmacos": ["ringer"],
+  "comoAge": "Solução isotônica balanceada: tem sódio, cloreto, potássio e cálcio em níveis parecidos com os do plasma, mais lactato. Repõe o líquido extracelular perdido; a maior parte vai para o interstício. O lactato é transformado em bicarbonato no fígado e em outros tecidos, o que ajuda a corrigir a acidose metabólica.",
+  "paraQueServe": [
+    "Desidratação e choque hipovolêmico na maioria das espécies, sobretudo quando ainda não se conhecem os eletrólitos do paciente.",
+    "Acidose metabólica leve a moderada, como na diarreia, pelo efeito do lactato.",
+    "Fluido durante a anestesia e na internação, com potássio acrescentado conforme a necessidade."
+  ],
+  "efeitosAdversos": [
+    "Excesso de volume: edema e edema pulmonar, sobretudo em gatos e cardiopatas.",
+    "Piora a alcalose metabólica, porque o lactato vira bicarbonato e há menos cloreto que no soro fisiológico.",
+    "Usado por muitos dias como manutenção, pode alterar os eletrólitos, como subir o sódio."
+  ],
+  "cuidados": [
+    "Tem cálcio: não passe no mesmo equipo que sangue com citrato, pelo risco de coágulos, nem misture com bicarbonato, que precipita.",
+    "Na alcalose do vômito gástrico, prefira o cloreto de sódio 0,9%, que repõe mais cloreto.",
+    "É um pouco hipotônico em relação ao plasma: no trauma craniano e na hipercalcemia, costuma-se preferir o cloreto de sódio 0,9%.",
+    "Na insuficiência hepática grave, a conversão do lactato em bicarbonato pode ser mais lenta."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: The Fluid Resuscitation Plan in Animals (composição e osmolaridade do Ringer com lactato; indicações do soro fisiológico).",
+    "AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats (2013): quadro de tipos de fluidos.",
+    "Bula de Ringer com lactato de uso veterinário (EUA): soluções com cálcio não devem correr no mesmo equipo que sangue.",
+    "Bula do bicarbonato de sódio 8,4% (Hospira/Pfizer): incompatibilidade com soluções que contêm cálcio."
+  ],
+  "revisado": false
+}

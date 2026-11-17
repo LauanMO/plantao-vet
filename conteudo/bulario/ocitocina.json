@@ -1,0 +1,31 @@
+{
+  "id": "ocitocina",
+  "nome": "Ocitocina",
+  "classe": "Hormônios",
+  "farmacos": ["ocitocina"],
+  "comoAge": "É a versão sintética do hormônio que o hipotálamo produz e a neuro-hipófise libera. Liga-se a receptores do músculo liso do útero (miométrio) e provoca contrações. Na glândula mamária, contrai as células mioepiteliais em volta dos alvéolos e empurra o leite para os ductos e a cisterna: é a descida do leite.",
+  "paraQueServe": [
+    "Ajudar a descida do leite quando o reflexo de ejeção falha, nas fêmeas que produzem leite mas não o liberam.",
+    "Auxiliar no tratamento da mastite, ajudando a esvaziar o úbere.",
+    "Inércia uterina no parto de cadelas, gatas, porcas e vacas, só quando o canal do parto está livre.",
+    "Expulsar líquido e membranas fetais logo após o parto. Na égua, é a primeira escolha na retenção de placenta."
+  ],
+  "efeitosAdversos": [
+    "Contrações fortes ou contínuas demais: risco de ruptura do útero e de sofrimento ou morte dos fetos.",
+    "Pode causar o descolamento precoce da placenta durante o parto.",
+    "Na égua, desconforto abdominal parecido com cólica, e doses altas podem até atrapalhar a expulsão da placenta."
+  ],
+  "cuidados": [
+    "Nunca use em distocia obstrutiva (feto grande ou mal posicionado, canal estreito) nem com a cérvix fechada: o útero contrai contra a obstrução e pode romper.",
+    "Com o cálcio baixo, o útero contrai mal: corrija a hipocalcemia. Na cadela com inércia uterina, o cálcio costuma ser dado antes da ocitocina.",
+    "Se não houver resposta após poucas aplicações, o caminho é a cesariana, e não insistir no hormônio.",
+    "A carência para carne e leite muda de um produto para outro (zero em algumas bulas, alguns dias em outras): confira a bula do produto usado."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Overview of Systemic Pharmacotherapeutics of the Reproductive System in Animals.",
+    "MSD/Merck Veterinary Manual: Dystocia in Small Animals.",
+    "Resumos das características de ocitocina 10 UI/mL injetável registrados em Portugal (carência para carne e leite).",
+    "AAEP Proceedings 2019: Conditions and Management of the Peripartum Mare (retenção de placenta na égua)."
+  ],
+  "revisado": false
+}

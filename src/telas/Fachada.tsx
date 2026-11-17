@@ -31,11 +31,12 @@ interface PropsFachada {
   plantao: () => void
   estudo: () => void
   biblioteca: () => void
+  bulario: () => void
   progresso: () => void
   configuracoes: () => void
 }
 
-export function Fachada({ nome, plantao, estudo, biblioteca, progresso, configuracoes }: PropsFachada) {
+export function Fachada({ nome, plantao, estudo, biblioteca, bulario, progresso, configuracoes }: PropsFachada) {
   return (
     <NaFachada titulo="Plantão Vet">
       <section className="caixa">
@@ -56,6 +57,11 @@ export function Fachada({ nome, plantao, estudo, biblioteca, progresso, configur
         <button type="button" onClick={biblioteca}>
           <span>
             <strong>Biblioteca</strong> <span className="detalhe">o caso que você escolher</span>
+          </span>
+        </button>
+        <button type="button" onClick={bulario}>
+          <span>
+            <strong>Bulário</strong> <span className="detalhe">o que cada remédio faz</span>
           </span>
         </button>
         <button type="button" onClick={progresso}>

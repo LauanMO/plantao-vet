@@ -1,0 +1,32 @@
+{
+  "id": "enrofloxacino",
+  "nome": "Enrofloxacino",
+  "classe": "Antibióticos",
+  "farmacos": ["enrofloxacino"],
+  "comoAge": "Fluoroquinolona. Inibe a DNA girase (topoisomerase II) e a topoisomerase IV da bactéria, enzimas que enrolam e separam o DNA; sem elas, a bactéria não se replica e morre. É bactericida e depende da concentração que atinge. Age bem em Gram-negativos, estafilococos e Mycoplasma, mas mal em anaeróbios. No organismo, parte dele vira ciprofloxacino, que também é ativo.",
+  "paraQueServe": [
+    "Cães e gatos: infecções graves ou resistentes, de preferência guiadas por cultura, como as urinárias complicadas, a prostatite e a piodermite profunda.",
+    "Infecções por Gram-negativos, como E. coli, Klebsiella, Proteus e Salmonella.",
+    "Bovinos e suínos: doenças respiratórias, com produtos registrados para essas espécies."
+  ],
+  "efeitosAdversos": [
+    "Gatos: degeneração aguda da retina e cegueira, com risco maior em doses altas e na doença renal.",
+    "Filhotes de cães e gatos e potros em crescimento: lesão da cartilagem das articulações, que pode deixar claudicação permanente.",
+    "Sistema nervoso: excitação e convulsões em doses altas.",
+    "Vômito e diarreia; a injeção intramuscular irrita o tecido."
+  ],
+  "cuidados": [
+    "Reserve para quando a cultura indicar ou não houver alternativa: as fluoroquinolonas são de importância crítica para a saúde humana.",
+    "Gatos: evite; se precisar usar, nunca passe da dose máxima da bula, pelo risco de cegueira.",
+    "Antiácidos, cálcio, magnésio, ferro e sucralfato reduzem a absorção oral: dê em horários separados.",
+    "Aumenta o nível de teofilina no sangue, com risco de efeitos no coração e no sistema nervoso.",
+    "Animais de produção: só produtos registrados para a espécie, respeitando a carência; nos EUA, o uso fora da bula é proibido."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual (versão profissional): Quinolones, Including Fluoroquinolones, Use in Animals.",
+    "MSD/Merck Veterinary Manual (versão profissional): Antibacterials for Integumentary Disease in Animals (fluoroquinolonas como segunda linha).",
+    "Lappin MR et al. Antimicrobial use guidelines for treatment of respiratory tract disease in dogs and cats (ISCAID). J Vet Intern Med, 2017, 31(2):279-294.",
+    "Organização Mundial da Saúde: lista de antimicrobianos de importância médica (fluoroquinolonas entre os de importância crítica e prioridade máxima)."
+  ],
+  "revisado": false
+}

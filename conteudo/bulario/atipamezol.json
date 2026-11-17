@@ -1,0 +1,32 @@
+{
+  "id": "atipamezol",
+  "nome": "Atipamezol",
+  "classe": "Sedativos e reversores",
+  "farmacos": ["atipamezol"],
+  "comoAge": "Antagonista seletivo dos receptores α2-adrenérgicos. Compete com a dexmedetomidina, a medetomidina ou a xilazina pelo receptor e as desloca, revertendo a sedação, a analgesia e os efeitos no coração e na respiração. É muito mais seletivo para α2 do que a ioimbina.",
+  "paraQueServe": [
+    "Reverter a sedação por dexmedetomidina ou medetomidina em cães e gatos no fim do procedimento, acelerando a recuperação.",
+    "Reverter a xilazina em ruminantes, incluindo o decúbito, a bradicardia e a atonia do rúmen (uso fora de bula).",
+    "Tratar a intoxicação por amitraz em cães, que também é um agonista α2."
+  ],
+  "efeitosAdversos": [
+    "Volta da dor: reverte também a analgesia do agonista α2.",
+    "Hipotensão passageira nos primeiros 10 minutos, taquicardia e hiperatividade.",
+    "Raramente vômito, salivação, defecação, ofegação e tremores.",
+    "No gato, risco de hipotermia mesmo depois de acordar."
+  ],
+  "cuidados": [
+    "Se usou cetamina, espere o efeito dela diminuir (no gato, ao menos 30 a 40 minutos) antes de reverter: a cetamina sem o α2 pode causar convulsões.",
+    "Só reverte o agonista α2: não reverte opioides, cetamina nem benzodiazepínicos.",
+    "A bula indica via intramuscular. Deixe o animal acordar em lugar calmo e silencioso.",
+    "Segurança não estabelecida na gestação e na lactação. Em animais de produção, é uso fora de bula."
+  ],
+  "referencias": [
+    "Antisedan 5 mg/mL (atipamezol, Orion), resumo das características do produto (VMD, Reino Unido, 2019)",
+    "VASG (Veterinary Anesthesia and Analgesia Support Group): Alpha-2 agonists",
+    "Antagonistic effect of atipamezole on xylazine-induced sedation, bradycardia, and ruminal atony in calves (AGRIS/FAO)",
+    "Hugnet C et al. Toxicity and kinetics of amitraz in dogs. Am J Vet Res, 1996",
+    "Estudo da UNESP comparando atipamezol e ioimbina na intoxicação por amitraz em cães (repositorio.unesp.br, handle 11449/67316)"
+  ],
+  "revisado": false
+}

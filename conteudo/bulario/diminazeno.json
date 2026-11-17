@@ -1,0 +1,33 @@
+{
+  "id": "diminazeno",
+  "nome": "Diminazeno (diaceturato)",
+  "classe": "Antiparasitários",
+  "farmacos": ["diminazeno"],
+  "comoAge": "Diamidina aromática. Liga-se ao DNA do protozoário, de preferência em trechos ricos em adenina e timina; no tripanossoma, age sobretudo no DNA do cinetoplasto. Isso atrapalha a replicação, e o parasito para de se multiplicar e morre. Age em protozoários do sangue (Babesia, Trypanosoma), e não em bactérias como o Anaplasma.",
+  "paraQueServe": [
+    "Bovinos: babesiose por Babesia bovis e B. bigemina, a parte causada por protozoários da tristeza parasitária bovina.",
+    "Equinos: babesiose (piroplasmose) por Babesia caballi e Theileria equi (antes chamada Babesia equi).",
+    "Tripanossomose: Trypanosoma vivax em bovinos e o mal das cadeiras (Trypanosoma evansi) em equinos."
+  ],
+  "efeitosAdversos": [
+    "Raros na dose da bula: tremores musculares, salivação, queda da pressão arterial e pulso acelerado.",
+    "Irritação no local da injeção: volumes grandes devem ser divididos em mais de um ponto.",
+    "Cães: intoxicação neurológica grave 24 a 48 horas após a injeção, com alteração da consciência, convulsões, rigidez e ataxia, por hemorragia e necrose no tronco encefálico, no cerebelo e no tálamo.",
+    "Lhamas e alpacas são muito sensíveis: há surtos de encefalopatia hemorrágica fatal."
+  ],
+  "cuidados": [
+    "Não trata a anaplasmose, que é bacteriana: nela se usa oxitetraciclina ou imidocarbe. Na tristeza parasitária, confirme o agente no esfregaço de sangue.",
+    "Cães têm margem de segurança estreita e muitos produtos não são registrados para a espécie: há casos brasileiros de lesão cerebral fatal.",
+    "O efeito preventivo é curto e não impede novas infecções; o imidocarbe, em dose preventiva, protege por cerca de 4 semanas.",
+    "Carência: na bula do Beroseg 7%, 34 dias para abate e 21 dias para o leite de bovinos; não use em equinos destinados ao consumo. Confira a bula do produto.",
+    "O tratamento inclui sombra, água, controle do carrapato e transfusão de sangue se a anemia for grave."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Babesiosis in Animals; Anaplasmosis in Ruminants.",
+    "Bula Beroseg 7% (diaceturato de diminazeno solução injetável), Chemitec, registro MAPA SP 000165-0.000030.",
+    "Flores M.M. et al. Intoxicação por aceturato de diminazeno em cães. Pesquisa Veterinária Brasileira, 2014, 34(7):667-674.",
+    "Seixas J.N. et al. Aspectos patológicos da intoxicação por aceturato de diminazeno em camelídeos sul-americanos. Pesquisa Veterinária Brasileira, 2017, 37(12).",
+    "Bastos et al. Comparison of therapeutic efficacy of different drugs against Trypanosoma vivax on experimentally infected cattle. Preventive Veterinary Medicine, 2020."
+  ],
+  "revisado": false
+}

@@ -1,0 +1,32 @@
+{
+  "id": "maropitant",
+  "nome": "Maropitant",
+  "classe": "Antieméticos e digestivos",
+  "farmacos": ["maropitant"],
+  "comoAge": "Bloqueia os receptores NK1 da substância P, o principal neurotransmissor do centro do vômito, no tronco encefálico. Como os estímulos do vômito convergem para esse centro, o maropitant funciona contra causas centrais e periféricas: toxinas no sangue, irritação do trato digestório, quimioterapia e opioides. O efeito dura cerca de 24 horas.",
+  "paraQueServe": [
+    "Tratar e prevenir o vômito agudo em cães e gatos, como o da parvovirose, sempre junto com fluidoterapia e o tratamento da causa.",
+    "Prevenir o vômito da quimioterapia e o causado por opioides, como a morfina, na medicação pré-anestésica.",
+    "Reduzir a náusea no gato e a da quimioterapia no cão, embora sinais como salivação e apatia possam continuar.",
+    "Prevenir o enjoo de viagem (cinetose) em cães, na forma de comprimido. A forma injetável não é recomendada para isso."
+  ],
+  "efeitosAdversos": [
+    "Dor na aplicação subcutânea, muito comum; em cerca de um terço dos gatos ela é moderada a forte. Aplicar a solução gelada diminui a dor.",
+    "Reação no local da injeção: inchaço, pele espessada e dor.",
+    "Salivação, apatia, falta de apetite e diarreia.",
+    "Muito raros: reação anafilática e sinais neurológicos, como ataxia, tremores e convulsão."
+  ],
+  "cuidados": [
+    "O vômito pode ser sinal de obstrução, corpo estranho ou intoxicação: investigue a causa. O antiemético esconde o sinal, mas não trata a doença.",
+    "É metabolizado no fígado: use com cautela em hepatopatas e acompanhe o fígado em tratamentos longos.",
+    "Tem afinidade por canais de cálcio e potássio: cautela em cardiopatas e não associar a bloqueadores de canal de cálcio.",
+    "Mais de 99% fica ligado às proteínas do plasma: pode competir com outros fármacos muito ligados, e a hipoproteinemia pede atenção.",
+    "Segurança não estabelecida em gestantes, lactantes, cães com menos de 8 semanas (16 na bula brasileira do injetável) e gatos com menos de 16 semanas."
+  ],
+  "referencias": [
+    "Bula Cerenia Solução Injetável (citrato de maropitant), Zoetis Brasil, registro MAPA SP 000072-8.000036.",
+    "Cerenia 10 mg/ml solution for injection for dogs and cats: Summary of Product Characteristics, VMD (Reino Unido), revisão de fevereiro de 2024.",
+    "MSD/Merck Veterinary Manual: Drugs Used to Control or Stimulate Vomiting in Monogastric Animals."
+  ],
+  "revisado": false
+}

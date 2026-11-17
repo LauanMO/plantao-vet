@@ -1,0 +1,32 @@
+{
+  "id": "fenilbutazona",
+  "nome": "Fenilbutazona",
+  "classe": "Anti-inflamatórios não esteroides (AINEs)",
+  "farmacos": ["fenilbutazona"],
+  "comoAge": "AINE antigo, derivado pirazolônico, como a dipirona. Inibe a ciclo-oxigenase (COX-1 e COX-2), com pouca seletividade, e reduz as prostaglandinas: alivia dor e inflamação, sobretudo do aparelho locomotor. A margem entre a dose útil e a tóxica é estreita.",
+  "paraQueServe": [
+    "Equinos: dor e inflamação do aparelho locomotor, como tendinite, desmite, artrite e lesões de tecidos moles. É um AINE de escolha nessa função.",
+    "Equinos: alívio da dor na laminite, em tratamentos curtos e na menor dose eficaz."
+  ],
+  "efeitosAdversos": [
+    "Úlceras na boca, no estômago e no intestino. No cavalo, o risco de úlcera é maior que com flunixina ou cetoprofeno.",
+    "Colite dorsal direita no cavalo: perda de proteína pelo intestino, com hipoalbuminemia, diarreia, edema e cólica.",
+    "Necrose da papila renal, sobretudo quando o cavalo está desidratado ou sem água.",
+    "Injeção fora da veia: flebite, necrose e abscesso, porque a solução é muito alcalina e irritante.",
+    "Cão: discrasias sanguíneas e, raramente, supressão irreversível da medula óssea, além de lesão hepática e renal."
+  ],
+  "cuidados": [
+    "Injetável: só na veia. Nunca no músculo nem embaixo da pele.",
+    "Não some a outro AINE, como a flunixina, nem a corticoide: os efeitos tóxicos se somam.",
+    "Potros, cavalos idosos e desidratados têm mais risco de intoxicação. Garanta água e use pelo menor tempo possível.",
+    "Não é aprovada para bovinos: elimina-se devagar e deixa resíduos. Nos rótulos dos EUA, não pode ser usada em cavalos destinados ao consumo.",
+    "Cavalos atletas: é medicação controlada no antidoping da FEI. Respeite o tempo de retirada antes das provas."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Nonsteroidal Anti-inflammatory Drugs in Animals",
+    "Rótulos de Phenylbutazone Injection 20% para equinos (FDA, ANADA 200-371; DailyMed)",
+    "Estudos e revisões sobre toxicidade da fenilbutazona em equinos (necrose de papila renal, colite dorsal direita, hipoproteinemia)",
+    "FEI, Equine Prohibited Substances List (medicações controladas)"
+  ],
+  "revisado": false
+}

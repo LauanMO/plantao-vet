@@ -1,0 +1,33 @@
+{
+  "id": "cetoconazol",
+  "nome": "Cetoconazol",
+  "classe": "Antifúngicos",
+  "farmacos": ["cetoconazol"],
+  "comoAge": "Antifúngico azólico do grupo dos imidazóis. Inibe a enzima do fungo (14-alfa-desmetilase, um citocromo P450) que transforma o lanosterol em ergosterol, o principal esterol da membrana do fungo. A membrana fica defeituosa e o fungo para de crescer: é fungistático e de ação lenta. Também inibe enzimas P450 do próprio animal, o que explica as interações e os efeitos hormonais.",
+  "paraQueServe": [
+    "Cães: dermatite por Malassezia, junto com o tratamento tópico.",
+    "Cães: dermatofitose, como alternativa mais barata ao itraconazol em cães grandes.",
+    "Cães: junto com a ciclosporina, para reduzir a dose dela, porque retarda a sua eliminação.",
+    "Micoses sistêmicas: foi muito usado, mas hoje o itraconazol é preferido, por ser mais eficaz e mais seguro."
+  ],
+  "efeitosAdversos": [
+    "Perda de apetite, náusea e vômito, mais frequentes em doses altas.",
+    "Lesão no fígado: aumento das enzimas hepáticas, icterícia e colangio-hepatite.",
+    "Inibe a produção de cortisol e de testosterona; pode prejudicar a reprodução de cães machos.",
+    "Uso longo: coceira, queda de pelos, clareamento reversível da pelagem e, em cães, catarata."
+  ],
+  "cuidados": [
+    "Gatos: são mais sensíveis à toxicidade (anorexia e lesão no fígado); prefira o itraconazol.",
+    "Gestação e lactação: é teratogênico, não use.",
+    "Precisa de acidez no estômago para ser absorvido: não dê com antiácidos, omeprazol ou ranitidina. Dar com comida reduz a náusea.",
+    "Inibe o metabolismo de muitos fármacos, como ciclosporina, benzodiazepínicos, fentanil e vincristina: avalie as associações.",
+    "Equinos: não é absorvido por via oral."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual, versão em português: Azóis para uso em animais.",
+    "MSD/Merck Veterinary Manual (versão profissional): Antifungals for Integumentary Disease in Animals.",
+    "Merck Veterinary Manual: Dermatophytosis in Dogs and Cats (segue as diretrizes da WAVD, Moriello et al., Vet Dermatol, 2017).",
+    "dvm360: A review of selected systemic antifungal drugs for use in dogs and cats."
+  ],
+  "revisado": false
+}

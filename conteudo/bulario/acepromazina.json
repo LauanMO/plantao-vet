@@ -1,0 +1,34 @@
+{
+  "id": "acepromazina",
+  "nome": "Acepromazina",
+  "classe": "Sedativos e reversores",
+  "farmacos": ["acepromazina"],
+  "comoAge": "Tranquilizante fenotiazínico. Bloqueia receptores de dopamina no SNC, o que acalma o animal sem tirar a dor. Também bloqueia receptores α1-adrenérgicos dos vasos, causando vasodilatação e queda da pressão. Tem ainda efeito antiemético e uma ação anticolinérgica fraca.",
+  "paraQueServe": [
+    "Tranquilização para exame, manejo e transporte em equinos, cães e gatos.",
+    "Pré-anestesia, em geral junto de um opioide (neuroleptoanalgesia): soma a sedação e reduz a quantidade de anestésico geral necessária.",
+    "Em equinos, também é usada pela vasodilatação no tratamento da laminite."
+  ],
+  "efeitosAdversos": [
+    "Hipotensão pelo bloqueio α1, perigosa em animais desidratados, com hemorragia ou em choque.",
+    "Hipotermia, por vasodilatação e depressão da termorregulação.",
+    "Queda do hematócrito, muito comum no cavalo.",
+    "Equinos machos: prolapso do pênis por paralisia do músculo retrator; raramente parafimose ou priapismo.",
+    "Sedação longa e ataxia. Raramente, excitação ou agressividade paradoxal."
+  ],
+  "cuidados": [
+    "Não é analgésica e não tem antagonista: depois de aplicada, o efeito não se reverte.",
+    "Cães com mutação MDR1 (ABCB1), como Collie e Pastor Australiano: sedação mais profunda e longa, com dose reduzida.",
+    "Braquicefálicos: pode aumentar o tônus vagal. Na hipotensão que ela causa, não use adrenalina, que baixa ainda mais a pressão.",
+    "Não use com organofosforados (vermífugos, coleiras, banhos) nem para tratar tremores dessa intoxicação: a acepromazina potencializa a toxicidade.",
+    "Contraindicada em garanhões reprodutores e éguas prenhes. Em bovinos, tranquiliza pouco e é uso fora de bula; no Canadá, carência de 7 dias para carne e 48 horas para leite."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Tranquilizers, Sedatives, and Analgesics for Treatment of Animals",
+    "Tranquinervin 10 mg/mL (acepromazina para equinos, Dechra): advertências e reações adversas, NOAH Compendium",
+    "PromAce (acepromazina comprimidos, Boehringer Ingelheim): bula americana, DailyMed",
+    "Acepran 1% (Vetnil): informações do produto",
+    "Deshpande D et al. The effect of the canine ABCB1-1Δ mutation on sedation after intravenous administration of acepromazine. J Vet Intern Med, 2016"
+  ],
+  "revisado": false
+}

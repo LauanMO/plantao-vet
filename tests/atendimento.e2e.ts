@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test'
-import { readFileSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
+import type { Bula } from '../src/modelo/bula.ts'
 import type { Caso } from '../src/modelo/caso.ts'
 import { quantidadeCerta } from '../src/motor/pontuacao.ts'
 import { TURNO } from '../src/motor/repeticao.ts'
@@ -17,7 +18,7 @@ const comVirgula = (x: number) => String(Math.round(x * 100) / 100).replace('.',
 const botao = (page: Page, nome: string, exact = false) => page.getByRole('button', { name: nome, exact })
 
 /** Da chegada ao resultado, acertando tudo. */
-async function jogarAcertandoTudo(page: Page, caso: Caso) {
+async function jogarAcertandoTudo(page: Page, caso: Caso, naReceita?: (etapa: Extract<Caso['etapas'][number], { tipo: 'receita' }>) => Promise<void>) {
   const correcao = page.getByRole('status')
   await botao(page, 'Atender', true).click()
 
@@ -43,7 +44,9 @@ async function jogarAcertandoTudo(page: Page, caso: Caso) {
         await expect(correcao).toContainText('Certo!')
         break
       case 'receita':
-        await botao(page, etapa.farmacos.find((f) => f.id === etapa.correto.farmaco)!.nome).click()
+        await naReceita?.(etapa)
+        // o botão do fármaco é o que marca; ao lado dele fica o botão da bula
+        await page.locator('button[aria-pressed]', { hasText: etapa.farmacos.find((f) => f.id === etapa.correto.farmaco)!.nome }).click()
         await page.getByLabel('Quantidade por aplicação').fill(comVirgula(quantidadeCerta(etapa, caso.paciente.pesoKg)))
         await botao(page, etapa.correto.via, true).click()
         await botao(page, etapa.correto.frequencia, true).click()
@@ -155,6 +158,45 @@ test.describe('jogo instalado', () => {
     const imagensCarregadas = () => page.evaluate('[...document.images].every((i) => i.naturalWidth > 0)')
     await expect.poll(imagensCarregadas).toBe(true)
     await jogarAcertandoTudo(page, caso)
+    expect(erros).toEqual([])
+  })
+})
+
+const PASTA_DO_BULARIO = join('conteudo', 'bulario')
+const BULAS: Bula[] = (existsSync(PASTA_DO_BULARIO) ? readdirSync(PASTA_DO_BULARIO) : [])
+  .filter((arquivo) => arquivo.endsWith('.json'))
+  .map((arquivo) => JSON.parse(readFileSync(join(PASTA_DO_BULARIO, arquivo), 'utf8')))
+
+test.describe('bulário', () => {
+  test.skip(BULAS.length === 0, 'o banco ainda não tem bulas')
+
+  test('abre uma bula pelo menu e volta para a lista', async ({ page }) => {
+    const erros = vigiarErros(page)
+    const [bula] = BULAS
+    await page.goto('/')
+    await botao(page, 'Bulário').click()
+    await botao(page, bula.nome).click()
+    await expect(page.getByRole('region', { name: `Bula de ${bula.nome}` })).toContainText(bula.comoAge)
+    await botao(page, 'Voltar ao bulário').click()
+    await expect(botao(page, bula.nome)).toBeFocused()
+    expect(erros).toEqual([])
+  })
+
+  test('abre a bula na receita sem perder o fármaco já marcado', async ({ page }) => {
+    const erros = vigiarErros(page)
+    const caso = CASOS.find((c) => c.id === 'clin-parvovirose-01')!
+    await page.goto('/')
+    await botao(page, 'Biblioteca').click()
+    await botao(page, caso.paciente.nome).click()
+    await jogarAcertandoTudo(page, caso, async (etapa) => {
+      const farmaco = etapa.farmacos.find((f) => f.id === etapa.correto.farmaco)!
+      const marcar = page.locator('button[aria-pressed]', { hasText: farmaco.nome })
+      await marcar.click()
+      await botao(page, `Bula de ${farmaco.nome}`).click()
+      await expect(page.getByRole('region', { name: /^Bula de / })).toBeVisible()
+      await botao(page, 'Voltar à receita').click()
+      await expect(marcar).toHaveAttribute('aria-pressed', 'true')
+    })
     expect(erros).toEqual([])
   })
 })

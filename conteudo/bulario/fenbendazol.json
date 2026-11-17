@@ -1,0 +1,31 @@
+{
+  "id": "fenbendazol",
+  "nome": "Fenbendazol",
+  "classe": "Antiparasitários",
+  "farmacos": ["fenbendazol"],
+  "comoAge": "Benzimidazol. Liga-se à beta-tubulina do parasito e impede a montagem dos microtúbulos, que a célula usa para absorver nutrientes, transportar substâncias e se dividir. O parasito morre aos poucos. Liga-se muito mais à tubulina do parasito que à do mamífero, o que explica a margem de segurança ampla. Age em nematódeos, em tênias do gênero Taenia e no protozoário Giardia.",
+  "paraQueServe": [
+    "Cães e gatos: ascarídeos (Toxocara), ancilostomídeos, tricurídeos (Trichuris) e tênias do gênero Taenia.",
+    "Giardíase em cães e gatos: é o tratamento de primeira escolha nas diretrizes europeias (ESCCAP).",
+    "Equinos: em esquema de vários dias seguidos, age nas larvas encistadas dos pequenos estrôngilos (ciatostomíneos), com eficácia parcial.",
+    "Ruminantes, suínos e equinos: nematódeos gastrintestinais."
+  ],
+  "efeitosAdversos": [
+    "Raros. O mais comum em cães é o vômito.",
+    "Supressão da medula óssea (pancitopenia) é rara e imprevisível, ligada sobretudo a uso prolongado; melhora ao suspender o fármaco."
+  ],
+  "cuidados": [
+    "Margem de segurança ampla: a bula do Panacur C (EUA) permite o uso em cadelas prenhes e em filhotes a partir de 6 semanas.",
+    "A bula cobre só tênias do gênero Taenia: para o Dipylidium caninum, a tênia da pulga, use praziquantel.",
+    "Na giardíase, junte banho para tirar os cistos do pelo, limpeza da cama e do ambiente e reteste depois do tratamento; o metronidazol fica para casos que não respondem.",
+    "Os ciatostomíneos dos equinos têm resistência difundida aos benzimidazóis: confirme a eficácia com exame de fezes.",
+    "Em animais de produção há carência para carne e leite: confira a bula do produto."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Safety of Anthelmintics in Animals; Mechanisms of Action of Anthelmintics; Small Strongyles in Horses; Withholding Periods after Anthelmintic Treatment.",
+    "Bula Panacur C (fenbendazol), Merck Animal Health, EUA, e resumo FDA NADA 121-473.",
+    "ESCCAP: Guideline 6, Control of Intestinal Protozoa in Dogs and Cats (giardíase).",
+    "Veterinary Clinical Pharmacology (University of Saskatchewan, livro aberto), cap. 24: Anthelmintics and Parasiticides."
+  ],
+  "revisado": false
+}
