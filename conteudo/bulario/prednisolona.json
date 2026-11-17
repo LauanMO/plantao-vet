@@ -1,0 +1,35 @@
+{
+  "id": "prednisolona",
+  "nome": "Prednisolona",
+  "classe": "Corticoides",
+  "farmacos": ["prednisolona"],
+  "comoAge": "Glicocorticoide sintético de ação intermediária. Entra na célula, liga-se ao receptor de glicocorticoide e muda a leitura de genes: induz a lipocortina, que inibe a fosfolipase A2, e corta a produção de prostaglandinas, leucotrienos e citocinas. Em dose baixa é anti-inflamatória; em dose alta, imunossupressora. A prednisona vira prednisolona no fígado.",
+  "paraQueServe": [
+    "Cão e gato: coceira e inflamação de doenças alérgicas, como dermatite atópica e alergia à picada de pulga, por pouco tempo e tratando a causa.",
+    "Cão e gato: doenças imunomediadas, em dose imunossupressora.",
+    "Gato: asma felina e bronquite alérgica crônica.",
+    "Equinos: asma equina, com prednisolona, e não prednisona, que o cavalo absorve mal."
+  ],
+  "efeitosAdversos": [
+    "Mais sede, mais urina e mais fome; no cão, também ofegação.",
+    "No uso prolongado, hiperadrenocorticismo iatrogênico: perda de músculo, pele fina, pelo ralo, barriga pendular e ganho de peso.",
+    "Fígado: hepatopatia esteroide, com fígado aumentado e fosfatase alcalina alta, sobretudo no cão.",
+    "Imunossupressão: piodermite, infecção urinária, fungos e reativação de infecções latentes, como o herpesvírus felino. Também atrasa a cicatrização.",
+    "Pode desencadear ou piorar o diabetes mellitus e causar úlcera gastrointestinal."
+  ],
+  "cuidados": [
+    "Nunca associe a AINE: o risco de úlcera e de sangramento gastrointestinal aumenta muito.",
+    "Depois de uso prolongado, retire aos poucos: a adrenal atrofia, e a parada brusca pode causar uma crise addisoniana.",
+    "Gato e cavalo: prefira a prednisolona à prednisona, que eles absorvem ou transformam mal.",
+    "Evite em infecções bacterianas, fúngicas ou virais e em diabéticos. Não trata a causa: na coceira por pulga, sarna ou piodermite, trate a causa.",
+    "Altera exames: baixa o T4 total, o que pode simular hipotireoidismo, e aparece como cortisol em muitos exames de cortisol."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Corticosteroids in Animals",
+    "VCA Animal Hospitals: Prednisolone/Prednisone",
+    "Graham-Mize e Rosser, Bioavailability and activity of prednisone and prednisolone in the feline patient, Veterinary Dermatology, 2004",
+    "AAHA 2023 Selected Endocrinopathies of Dogs and Cats Guidelines (fármacos que baixam o T4)",
+    "Michigan State University, Veterinary Diagnostic Laboratory: Adrenal testing in dogs (reação cruzada no ensaio de cortisol)"
+  ],
+  "revisado": false
+}

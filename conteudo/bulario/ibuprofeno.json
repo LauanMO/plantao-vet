@@ -1,0 +1,30 @@
+{
+  "id": "ibuprofeno",
+  "nome": "Ibuprofeno",
+  "classe": "Anti-inflamatórios não esteroides (AINEs)",
+  "farmacos": ["ibuprofeno"],
+  "comoAge": "AINE de uso humano, do grupo dos ácidos propiônicos. Inibe a COX-1 e a COX-2 sem seletividade e reduz as prostaglandinas: alivia dor, febre e inflamação. Sem prostaglandinas, o estômago perde a proteção da mucosa e o rim perde fluxo de sangue. Cães e gatos são muito mais sensíveis a esses efeitos que as pessoas.",
+  "paraQueServe": [
+    "Pessoas: analgésico, antitérmico e anti-inflamatório de venda livre. Por isso, é comum na casa do tutor.",
+    "Cães e gatos: sem indicação. Não é recomendado para nenhuma das duas espécies, e há AINEs veterinários mais seguros.",
+    "Na clínica, aparece como intoxicação: o tutor dá o remédio de casa, ou o animal come os comprimidos."
+  ],
+  "efeitosAdversos": [
+    "Vômito, dor abdominal, úlcera e perfuração gastrointestinal, com vômito com sangue e fezes escuras.",
+    "Lesão renal aguda, que pode evoluir para insuficiência renal.",
+    "Em ingestões grandes, sinais nervosos: apatia, ataxia, convulsões e coma.",
+    "Gatos e furões se intoxicam com quantidades menores que os cães."
+  ],
+  "cuidados": [
+    "Não dê a cães e gatos: a margem de segurança é estreita, e a úlcera aparece mesmo com doses baixas.",
+    "Gato: tem pouca glicuronidação (conjugação com ácido glicurônico), elimina o ibuprofeno devagar e é ainda mais sensível que o cão.",
+    "Na intoxicação: descontaminar cedo (vômito induzido e carvão ativado), fluidos na veia e protetores gástricos, como misoprostol, omeprazol e sucralfato.",
+    "Acompanhe a função renal por alguns dias depois da ingestão.",
+    "Oriente o tutor: remédio de gente não é remédio de bicho, e as cartelas devem ficar fora do alcance."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Nonsteroidal Anti-inflammatory Drugs in Animals",
+    "MSD Veterinary Manual (versão em português): Toxicoses causadas por analgésicos humanos em animais"
+  ],
+  "revisado": false
+}

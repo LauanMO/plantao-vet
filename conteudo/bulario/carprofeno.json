@@ -1,0 +1,31 @@
+{
+  "id": "carprofeno",
+  "nome": "Carprofeno",
+  "classe": "Anti-inflamatórios não esteroides (AINEs)",
+  "farmacos": ["carprofeno"],
+  "comoAge": "AINE do grupo dos ácidos propiônicos, o mesmo do ibuprofeno. Inibe a ciclo-oxigenase (COX) e a produção de prostaglandinas, com preferência pela COX-2 no cão, e assim alivia dor e inflamação. O mecanismo exato não é todo conhecido. A seletividade e a eliminação mudam com a espécie: o que vale para o cão não vale para o gato.",
+  "paraQueServe": [
+    "Cão: dor e inflamação da osteoartrite, inclusive em uso prolongado com exames de controle.",
+    "Cão: dor depois de cirurgias ortopédicas e de tecidos moles.",
+    "Gato: só uma dose injetável, na anestesia, nos países onde há registro para a espécie. Não é para uso repetido."
+  ],
+  "efeitosAdversos": [
+    "Vômito, diarreia, falta de apetite, fezes escuras e úlcera ou sangramento gastrointestinal.",
+    "Lesão renal, sobretudo com desidratação, uso de diurético, anestesia ou doença renal, hepática ou cardíaca.",
+    "Lesão hepática idiossincrática, rara e imprevisível: falta de apetite, vômito e icterícia, em geral de 2 a 4 semanas depois do início. Muitos casos descritos foram em labradores.",
+    "Raramente, anemia hemolítica e queda de plaquetas imunomediadas, e reações de pele."
+  ],
+  "cuidados": [
+    "Gato: a meia-vida é longa e muito variável (cerca de 20 horas, de 9 a 49), contra cerca de 8 a 10 horas no cão. Doses repetidas acumulam. A bula brasileira é só para cães.",
+    "Não associe a corticoide nem a outro AINE: aumenta o risco de úlcera gastrointestinal.",
+    "Evite em cães desidratados, com doença renal, hepática ou cardíaca, ou com distúrbio de coagulação, como a doença de von Willebrand.",
+    "No uso prolongado, faça exames de sangue antes e durante. Suspenda e reavalie se houver vômito, fezes escuras, icterícia ou apatia."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Nonsteroidal Anti-inflammatory Drugs in Animals",
+    "Bula Rimadyl para cães (Zoetis, Brasil)",
+    "Resumos das características do carprofeno injetável para cães e gatos (União Europeia e Reino Unido, NOAH Compendium) e rótulo do Carprieve (EUA)",
+    "MacPhail e colaboradores, Hepatocellular toxicosis associated with administration of carprofen in 21 dogs, JAVMA, 1998"
+  ],
+  "revisado": false
+}

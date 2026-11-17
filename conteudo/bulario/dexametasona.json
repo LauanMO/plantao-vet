@@ -1,0 +1,35 @@
+{
+  "id": "dexametasona",
+  "nome": "Dexametasona",
+  "classe": "Corticoides",
+  "farmacos": ["dexametasona"],
+  "comoAge": "Glicocorticoide sintético de ação longa (cerca de 48 horas ou mais), cerca de 25 vezes mais potente que o cortisol e sem efeito mineralocorticoide: não retém sódio. Age como os outros corticoides: liga-se ao receptor de glicocorticoide, muda a leitura de genes e corta prostaglandinas, leucotrienos e citocinas. Suprime a adrenal mais que a prednisolona.",
+  "paraQueServe": [
+    "Cão e gato: inflamação e alergia graves e doenças imunomediadas, quando se quer um corticoide potente e injetável.",
+    "Cão: teste de supressão com dexametasona em dose baixa, para diagnosticar hiperadrenocorticismo. Ela não é medida como cortisol no exame.",
+    "Equinos: asma equina grave.",
+    "Bovinos: adjuvante na cetose, porque eleva a glicose no sangue, e indução planejada do parto no fim da gestação."
+  ],
+  "efeitosAdversos": [
+    "Os dos corticoides, mais intensos e duradouros: mais sede, urina e fome, imunossupressão, atraso na cicatrização e úlcera gastrointestinal.",
+    "Suprime o eixo hipotálamo-hipófise-adrenal. O uso prolongado causa hiperadrenocorticismo iatrogênico, e a parada brusca, crise addisoniana.",
+    "Vaca no terço final da gestação: parto prematuro ou aborto, com retenção de placenta, metrite e morte do bezerro.",
+    "Cavalo: doses altas podem desencadear ou piorar a laminite.",
+    "Vaca: queda passageira da produção de leite."
+  ],
+  "cuidados": [
+    "Não use em vacas e em outros ruminantes no terço final da gestação, a não ser para induzir o parto de forma planejada: pode provocar aborto.",
+    "Cavalo: evite em animais com risco de laminite, como obesos, com síndrome metabólica ou com laminite anterior.",
+    "Não associe a AINE. Evite em infecções sem tratamento, em neonatos e em feridas: baixa a defesa, atrasa a cicatrização e pode reativar infecções latentes.",
+    "Depois de uso prolongado, retire aos poucos.",
+    "Animais de produção: respeite a carência de carne e de leite da bula do produto."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Corticosteroids in Animals",
+    "MSD Veterinary Manual: Common Medications Used for Treatment of Equine Asthma",
+    "Bulas de dexametasona injetável para ruminantes: Ourofino (Brasil); Dexafarma Retard e Alfadexx (União Europeia)",
+    "Michigan State University, Veterinary Diagnostic Laboratory: Adrenal testing in dogs",
+    "Estudos sobre corticoides no tratamento da cetose em vacas leiteiras (glicemia e produção de leite)"
+  ],
+  "revisado": false
+}

@@ -1,0 +1,31 @@
+{
+  "id": "cetoprofeno",
+  "nome": "Cetoprofeno",
+  "classe": "Anti-inflamatórios não esteroides (AINEs)",
+  "farmacos": ["cetoprofeno"],
+  "comoAge": "AINE do grupo dos ácidos propiônicos. Inibe a COX-1 e a COX-2, sem preferência pela COX-2, e reduz as prostaglandinas: é um analgésico, anti-inflamatório e antitérmico potente. Por inibir a COX-1, também diminui a agregação das plaquetas e a proteção do estômago.",
+  "paraQueServe": [
+    "Cão e gato: dor e inflamação agudas, como traumas, entorses, luxações, artrites e hérnia de disco, em tratamentos curtos.",
+    "Bovinos: dor, inflamação e febre em doenças respiratórias, mastite aguda, edema de úbere, artrites e traumas.",
+    "Equinos: dor e inflamação do aparelho locomotor e dor da cólica.",
+    "Suínos: doença respiratória e síndrome mastite-metrite-agalaxia (MMA), conforme a bula do produto."
+  ],
+  "efeitosAdversos": [
+    "Irritação, úlcera e sangramento gastrointestinal: vômito, diarreia e fezes escuras.",
+    "Lesão renal, sobretudo em animal desidratado, hipotenso ou com doença renal.",
+    "Mais sangramento, pelo efeito nas plaquetas, o que pesa em cirurgias."
+  ],
+  "cuidados": [
+    "Não associe a outro AINE nem a corticoide: o risco de úlcera e de lesão renal se soma.",
+    "Cuidado perto de cirurgias e em animais com distúrbio de coagulação, pelo efeito nas plaquetas.",
+    "Evite em animais desidratados, com úlcera ou com doença renal, hepática ou cardíaca. Em cães e gatos, a bula prevê só tratamentos curtos.",
+    "Bovinos: há registros com carência zero para o leite, mas a carência muda de produto para produto. Siga sempre a bula."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Nonsteroidal Anti-inflammatory Drugs in Animals",
+    "Bula Ketofen comprimidos para cães e gatos",
+    "Bula Ketofen 10% injetável (Ceva, Brasil), bovinos, equinos e suínos",
+    "Bula Ketosol-100, cetoprofeno injetável (Interchemie)"
+  ],
+  "revisado": false
+}

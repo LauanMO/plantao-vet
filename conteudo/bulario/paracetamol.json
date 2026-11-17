@@ -1,0 +1,33 @@
+{
+  "id": "paracetamol",
+  "nome": "Paracetamol (acetaminofeno)",
+  "classe": "Analgésicos não opioides",
+  "farmacos": ["paracetamol"],
+  "comoAge": "Analgésico e antitérmico de uso humano, com pouca ação anti-inflamatória. Age sobretudo no sistema nervoso central, e o mecanismo não é todo conhecido: no cérebro, parte dele vira AM404, que ativa vias que inibem a dor. Inibe pouco a COX nos tecidos inflamados e quase não afeta as plaquetas.",
+  "paraQueServe": [
+    "Pessoas: analgésico e antitérmico de venda livre. Por isso, é comum na casa do tutor.",
+    "Cão: analgésico em alguns protocolos, sob prescrição e na dose certa, às vezes associado à codeína.",
+    "Gato: nenhuma indicação. É proibido em qualquer dose."
+  ],
+  "efeitosAdversos": [
+    "Gato: metemoglobinemia, com mucosas e sangue cor de chocolate, dispneia e cianose; depois, corpúsculos de Heinz e anemia hemolítica.",
+    "Gato: edema de face e patas, urina escura, apatia, vômito e hipotermia.",
+    "Lesão no fígado (necrose hepática e icterícia), mais marcante no cão que no gato. Lesão renal aguda também é possível.",
+    "Cão, em doses altas: também metemoglobinemia, e ceratoconjuntivite seca depois da ingestão."
+  ],
+  "cuidados": [
+    "Nunca dê a gatos: não há dose segura, e meio comprimido pode matar um gato adulto.",
+    "Por que no gato: falta a glicuronidação (o gene UGT1A6 não funciona) e a sulfatação satura rápido. Sobra paracetamol para o citocromo P450, que forma o metabólito tóxico NAPQI.",
+    "O NAPQI esgota a glutationa, oxida a hemoglobina (metemoglobina) e lesa o fígado. A hemoglobina do gato tem mais grupos sulfidrila reativos e se oxida com mais facilidade.",
+    "Antídoto: acetilcisteína, que repõe a glutationa. Somam-se fluidos, ácido ascórbico e, se preciso, transfusão. O carvão ativado só ajuda nas primeiras horas.",
+    "Cão: só na dose prescrita. A superdose lesa o fígado e pode causar metemoglobinemia."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Nonsteroidal Anti-inflammatory Drugs in Animals (acetaminofeno)",
+    "MSD Veterinary Manual (versão em português): Toxicoses causadas por analgésicos humanos em animais",
+    "Court e Greenblatt, Molecular genetic basis for deficient acetaminophen glucuronidation by cats: UGT1A6 is a pseudogene, Pharmacogenetics, 2000",
+    "McConkey e colaboradores, Acetaminophen-induced methemoglobinemia in dogs and cats, Journal of Veterinary Pharmacology and Therapeutics",
+    "Mallet e colaboradores, An updated review on the metabolite (AM404)-mediated central mechanism of action of paracetamol, Journal of Pain Research, 2023"
+  ],
+  "revisado": false
+}

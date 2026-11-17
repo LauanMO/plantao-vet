@@ -1,0 +1,34 @@
+{
+  "id": "meloxicam",
+  "nome": "Meloxicam",
+  "classe": "Anti-inflamatórios não esteroides (AINEs)",
+  "farmacos": ["meloxicam"],
+  "comoAge": "AINE do grupo dos oxicans. Inibe a ciclo-oxigenase (COX), a enzima que produz as prostaglandinas, com preferência pela COX-2, a forma que aumenta na inflamação. Assim reduz dor, inflamação e febre. Poupar em parte a COX-1, que protege o estômago, diminui o risco de úlcera, mas não o elimina, e não protege os rins.",
+  "paraQueServe": [
+    "Cão: dor e inflamação da osteoartrite, inclusive em uso prolongado, e dor depois de cirurgias.",
+    "Gato: dor depois de cirurgias e, com produto e dose felinos, dor musculoesquelética crônica, como a osteoartrite.",
+    "Bovinos: adjuvante na doença respiratória aguda e na mastite aguda (junto com o antibiótico), na diarreia de bezerros (com reidratação) e na dor depois da descorna.",
+    "Suínos e equinos: dor e inflamação do aparelho locomotor, conforme a bula do produto."
+  ],
+  "efeitosAdversos": [
+    "Vômito, diarreia e falta de apetite, os mais comuns.",
+    "Úlcera e sangramento gastrointestinal: fezes escuras (melena) e vômito com sangue.",
+    "Lesão renal aguda, sobretudo em animal desidratado, hipotenso, anestesiado ou com doença renal: sem prostaglandinas, o rim perde fluxo de sangue.",
+    "Raramente, aumento das enzimas do fígado.",
+    "Bovinos: inchaço leve e passageiro no local da injeção subcutânea."
+  ],
+  "cuidados": [
+    "Não associe a corticoide nem a outro AINE: o risco de úlcera e de lesão renal se soma.",
+    "Evite em animal desidratado, hipotenso, com doença renal, hepática ou cardíaca grave, com úlcera ou com distúrbio de coagulação.",
+    "Gato: use só produto e dose felinos, na menor dose eficaz, com hidratação, creatinina e urina sob controle.",
+    "Nos EUA, o rótulo para gatos aprova só uma injeção e alerta para insuficiência renal com doses repetidas. Na Europa, há suspensão oral felina para uso prolongado.",
+    "Bovinos: respeite a carência de carne e de leite da bula, que muda de um produto para outro."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Nonsteroidal Anti-inflammatory Drugs in Animals",
+    "Bula Maxicam Solução Oral (Ourofino Saúde Animal), cães e gatos",
+    "Bula Metacam para Bovinos e Suínos, solução injetável 20 mg/mL (Boehringer Ingelheim, Brasil)",
+    "Ourofino Saúde Animal: Maxicam 2%, bovinos, equinos e suínos"
+  ],
+  "revisado": false
+}

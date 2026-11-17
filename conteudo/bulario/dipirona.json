@@ -1,0 +1,33 @@
+{
+  "id": "dipirona",
+  "nome": "Dipirona (metamizol)",
+  "classe": "Analgésicos não opioides",
+  "farmacos": ["dipirona"],
+  "comoAge": "Analgésico e antitérmico do grupo das pirazolonas, com pouca ação anti-inflamatória. É um pró-fármaco: vira metabólitos ativos, como o 4-MAA. O mecanismo não é todo conhecido: inibe a COX sobretudo no sistema nervoso central e ativa vias que bloqueiam a dor (opioides e canabinoides). Também relaxa a musculatura lisa, o que ajuda nas cólicas.",
+  "paraQueServe": [
+    "Cão e gato: dor leve a moderada e febre. Na dor depois de cirurgias, ajuda junto com outros analgésicos, mas sozinha não basta.",
+    "Equinos: cólica espasmódica e dor visceral, muitas vezes associada ao butilbrometo de escopolamina.",
+    "Bovinos, equinos e suínos: febre e dores musculares e articulares."
+  ],
+  "efeitosAdversos": [
+    "Na veia, se aplicada rápido: queda de pressão e, raramente, choque ou reação anafilática.",
+    "Dor e reação no local da injeção, no cão.",
+    "Vômito, sobretudo em cães no período da cirurgia.",
+    "Agranulocitose (queda grave dos neutrófilos): rara e descrita sobretudo em pessoas. Levou à retirada da dipirona do mercado humano em países como os EUA e o Reino Unido."
+  ],
+  "cuidados": [
+    "Não associe a fenotiazínicos, como a acepromazina e a clorpromazina: risco de hipotermia grave.",
+    "Evite em animais com doença da medula óssea, distúrbio de coagulação ou úlcera gastrointestinal.",
+    "Gato: há poucos estudos. Use com cautela, por pouco tempo, e confira se a bula do produto inclui a espécie.",
+    "Cavalos de competição: respeite o prazo sem aplicação antes das provas indicado na bula.",
+    "Animais de produção: respeite a carência de carne e de leite da bula do produto."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Nonsteroidal Anti-inflammatory Drugs in Animals (dipirona)",
+    "Jasiecka, Maślanka e Jaroszewski, Pharmacological characteristics of metamizole, Polish Journal of Veterinary Sciences, 2014",
+    "Veterinary Evidence: Knowledge Summary sobre o metamizol na dor peroperatória de cães e gatos",
+    "Resumo das características do Spasmium Comp. (metamizol e butilbrometo de escopolamina), NOAH Compendium",
+    "Bula D-500, dipirona sódica injetável (Zoetis, Brasil)"
+  ],
+  "revisado": false
+}
