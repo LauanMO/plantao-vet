@@ -1,0 +1,36 @@
+{
+  "id": "sulfametoxazol-trimetoprim",
+  "nome": "Sulfametoxazol + trimetoprim",
+  "classe": "Antibióticos",
+  "farmacos": ["sulfa-tmp"],
+  "comoAge": "A sulfa imita o PABA e bloqueia a enzima que a bactéria usa para fabricar ácido fólico; o trimetoprim bloqueia a etapa seguinte (di-hidrofolato redutase). É um bloqueio em sequência: juntos, são sinérgicos e bactericidas. Agem em Gram-positivos, Gram-negativos e alguns protozoários (coccídios, Toxoplasma). Funcionam mal no pus e no tecido necrosado, que liberam PABA.",
+  "paraQueServe": [
+    "Equinos: um dos antibióticos orais mais usados, contra bactérias Gram-positivas e Gram-negativas sensíveis.",
+    "Cães e gatos: cistite bacteriana esporádica, como uma das primeiras escolhas das diretrizes da ISCAID.",
+    "Cães: piodermite superficial, como uma das opções de primeira linha.",
+    "Protozoários: coccidiose e toxoplasmose em cães e gatos."
+  ],
+  "efeitosAdversos": [
+    "Cães: ceratoconjuntivite seca (olho seco). Em tratamentos longos, meça a lágrima com o teste de Schirmer.",
+    "Cães: hipersensibilidade em geral após 5 dias a 4 semanas, com febre, poliartrite, lesões de pele, queda de plaquetas ou neutrófilos e lesão no fígado.",
+    "Uso prolongado em cães: hipotireoidismo reversível e anemia por falta de folato.",
+    "Cristais na urina, sobretudo em animais desidratados.",
+    "Equinos: a diarreia é pouco comum, mas qualquer antibiótico pode desencadeá-la em cavalos estressados."
+  ],
+  "cuidados": [
+    "Dobermanns parecem mais predispostos às reações de hipersensibilidade às sulfas.",
+    "Equinos: na veia, junto com a detomidina, pode causar arritmia fatal.",
+    "Garanta água à vontade; na insuficiência renal, a dose deve ser reduzida.",
+    "Em feridas com pus ou tecido morto, limpe e debride: o PABA liberado reduz a ação da sulfa.",
+    "Animais de produção: respeite a carência de carne e leite da bula de cada produto."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual (versão profissional): Sulfonamides and Sulfonamide Combinations Use in Animals.",
+    "MSD/Merck Veterinary Manual (versão profissional): Antibacterials for Integumentary Disease in Animals.",
+    "MSD/Merck Veterinary Manual (versão profissional): Toxoplasmosis in Animals.",
+    "Trepanier LA et al. Clinical findings in 40 dogs with hypersensitivity associated with administration of potentiated sulfonamides. J Vet Intern Med, 2003, 17(5):647-652.",
+    "van Duijkeren E et al. Trimethoprim/sulfonamide combinations in the horse: a review. J Vet Pharmacol Ther, 1994, 17(1):64-73.",
+    "Weese JS et al. ISCAID guidelines for the diagnosis and management of bacterial urinary tract infections in dogs and cats. Vet J, 2019, 247:8-25 (conferido em resumos secundários)."
+  ],
+  "revisado": false
+}

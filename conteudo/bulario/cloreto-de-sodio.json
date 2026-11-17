@@ -1,0 +1,35 @@
+{
+  "id": "cloreto-de-sodio",
+  "nome": "Cloreto de sódio 0,9% e hipertônico",
+  "classe": "Fluidos, eletrólitos e energia",
+  "farmacos": ["nacl", "hipertonica"],
+  "comoAge": "Repõe sódio, cloreto e água no líquido extracelular. A 0,9% (soro fisiológico) é isotônico e não tem tampão; como tem mais cloreto que o plasma, ajuda a corrigir a alcalose com cloro baixo. A hipertônica (7,2 a 7,5%) puxa água dos tecidos para os vasos e aumenta o volume de sangue em minutos, com pouco volume; sem água ou outro fluido depois, o efeito passa em menos de 1 hora.",
+  "paraQueServe": [
+    "0,9%: desidratação com alcalose metabólica e cloro baixo, como no vômito do conteúdo do estômago em cães e nos problemas de abomaso em bovinos.",
+    "0,9%: hiponatremia, hipercalcemia, trauma craniano e hipercalemia (crise addisoniana, gato obstruído), pois não tem potássio.",
+    "0,9%: veículo para diluir medicamentos, como o cloreto de potássio.",
+    "Hipertônica: choque hipovolêmico ou endotoxêmico em bovinos, equinos, cães e gatos. Na vaca com mastite tóxica, vem seguida de muita água por sonda."
+  ],
+  "efeitosAdversos": [
+    "0,9% em grande volume: pode causar ou piorar a acidose metabólica hiperclorêmica.",
+    "Excesso de volume: edema e edema pulmonar, sobretudo em gatos, cardiopatas e animais que urinam pouco.",
+    "Hipertônica rápida demais: hipotensão, arritmia, broncoconstrição, hemólise e urina com hemoglobina.",
+    "Hipertônica no animal desidratado e sem água: sódio e osmolaridade muito altos, com sinais neurológicos e até morte.",
+    "Hipertônica em veia fina: dor e trombose no local."
+  ],
+  "cuidados": [
+    "Hipertônica: não use em desidratação com sede (sódio alto), insuficiência renal ou cardíaca, edema pulmonar ou hemorragia não controlada.",
+    "Hipertônica: deixe água à vontade ou dê água por sonda logo depois (ruminantes), ou siga com fluido isotônico. Sozinha, o efeito é passageiro.",
+    "Hipertônica só na veia. No animal com sódio baixo há muito tempo, subir o sódio depressa pode lesar o cérebro (mielinólise).",
+    "0,9% não tem potássio e pode piorar a hipocalemia: no soro por dias, acrescente cloreto de potássio conforme a dosagem no sangue.",
+    "Carência: a bula da salina hipertônica veterinária traz carência zero para carne e leite."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: The Fluid Resuscitation Plan in Animals (soro fisiológico e salina hipertônica).",
+    "AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats (2013): quadro de tipos de fluidos.",
+    "Hypertonic 72 mg/ml Solution for Infusion (Dechra), resumo das características do produto no NOAH Compendium (Reino Unido): indicações, contraindicações, efeitos adversos e carência.",
+    "Constable et al., 1991: salina hipertônica em bezerros endotoxêmicos; estudos de salina hipertônica a 7,2% em bovinos.",
+    "Today's Veterinary Practice: Evaluation and Management of the Hyperchloremic Patient. VIN: Life-Threatening Hyper- and Hypokalemia."
+  ],
+  "revisado": false
+}

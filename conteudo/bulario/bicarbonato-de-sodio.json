@@ -1,0 +1,34 @@
+{
+  "id": "bicarbonato-de-sodio",
+  "nome": "Bicarbonato de sódio",
+  "classe": "Fluidos, eletrólitos e energia",
+  "farmacos": ["bicarbonato"],
+  "comoAge": "Fornece bicarbonato, a principal base do sangue. O bicarbonato se junta ao H+ e forma ácido carbônico, que vira CO2 e água; o CO2 sai pelos pulmões. Assim o pH do sangue sobe. Ao corrigir a acidose, também leva potássio para dentro das células. A solução a 8,4% é hipertônica.",
+  "paraQueServe": [
+    "Acidose metabólica de bezerros com diarreia, em geral acrescentado ao soro de reidratação. Quanto mais fraco o bezerro (não para em pé, sem reflexo de sucção), maior a acidose.",
+    "Acidose ruminal aguda (sobrecarga de grãos) em bovinos, na veia, junto com fluidos.",
+    "Acidose metabólica grave confirmada na hemogasometria, em cães, gatos e equinos."
+  ],
+  "efeitosAdversos": [
+    "Alcalose metabólica quando se dá demais.",
+    "Hipocalemia e queda do cálcio ionizado, que pode causar tremores ou tetania.",
+    "Excesso de sódio: hipernatremia, hiperosmolaridade e sobrecarga de volume.",
+    "Acidose paradoxal do sistema nervoso com aplicação rápida: o CO2 formado entra no cérebro mais depressa que o bicarbonato.",
+    "Flebite e irritação da veia, porque a solução a 8,4% é hipertônica."
+  ],
+  "cuidados": [
+    "Não use na alcalose metabólica, como no vômito do conteúdo do estômago: só piora.",
+    "Precisa de boa ventilação para eliminar o CO2: cuidado em animais que respiram mal.",
+    "Não misture com soluções que têm cálcio (Ringer com lactato, borogluconato de cálcio): forma precipitado. É incompatível também com catecolaminas, como a noradrenalina.",
+    "Use guiado pela hemogasometria e acompanhe o potássio e o cálcio.",
+    "Aplique devagar ou diluído no soro, nunca em bolus rápido."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Grain Overload in Ruminants (bicarbonato na veia).",
+    "MSD/Merck Veterinary Manual: Urethral Obstruction in Small Animals (bicarbonato na hipercalemia e acidose cerebral paradoxal).",
+    "Today's Veterinary Practice: The Practitioner's Acid-Base Primer (efeitos adversos do bicarbonato).",
+    "Trefz et al., BMC Veterinary Research 8:238, 2012: árvore de decisão para tratar a acidose metabólica de bezerros com diarreia; estudos sobre acidose D-láctica em bezerros.",
+    "Bula do bicarbonato de sódio 8,4% (Hospira/Pfizer): incompatibilidade com cálcio e com noradrenalina e dobutamina."
+  ],
+  "revisado": false
+}

@@ -1,0 +1,31 @@
+{
+  "id": "cefalexina",
+  "nome": "Cefalexina",
+  "classe": "Antibióticos",
+  "farmacos": ["cefalexina"],
+  "comoAge": "Cefalosporina de primeira geração, do grupo dos betalactâmicos. Liga-se às proteínas que montam a parede da bactéria (PBPs) e impede sua formação: a bactéria em crescimento se rompe. É bactericida e age pelo tempo em que fica acima da concentração mínima. Resiste à betalactamase dos estafilococos, por isso age bem contra eles, e é bem absorvida por via oral em cães e gatos.",
+  "paraQueServe": [
+    "Cães: piodermite superficial por Staphylococcus pseudintermedius, como primeira escolha empírica.",
+    "Cães e gatos: infecções de pele, de tecidos moles, de ossos (osteomielite) e de articulações por bactérias Gram-positivas.",
+    "Infecções urinárias por bactérias sensíveis, de preferência guiadas por cultura, porque age pouco contra a E. coli."
+  ],
+  "efeitosAdversos": [
+    "Náusea, vômito e diarreia, os efeitos mais comuns.",
+    "Reações alérgicas, que podem ser cruzadas em animais alérgicos às penicilinas.",
+    "Desequilíbrio da flora, com colite ou superinfecção por Candida ou Pseudomonas."
+  ],
+  "cuidados": [
+    "Não age contra estafilococos resistentes à meticilina (MRSP), enterococos e Pseudomonas: piodermite que não melhora pede cultura.",
+    "Cuidado em animais com alergia conhecida às penicilinas.",
+    "É eliminada pelos rins: na doença renal grave, a dose pode precisar de ajuste.",
+    "Cavalo adulto: a absorção oral é ruim, por isso não é opção por via oral.",
+    "Coelhos e roedores herbívoros: cefalosporinas por via oral podem causar enterotoxemia fatal."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual (versão profissional): Cephalosporins and Cephamycins Use in Animals.",
+    "MSD/Merck Veterinary Manual (versão profissional): Antibacterials for Integumentary Disease in Animals.",
+    "MSD Veterinary Manual, versão em espanhol: Uso de antimicrobianos betalactámicos en animales (mecanismo de ação).",
+    "WikiVet: Antibiotic-Associated Dysbacteriosis (coelhos e roedores)."
+  ],
+  "revisado": false
+}

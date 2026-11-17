@@ -1,0 +1,32 @@
+{
+  "id": "azul-de-metileno",
+  "nome": "Azul de metileno",
+  "classe": "Antídotos",
+  "farmacos": ["azul-metileno"],
+  "comoAge": "É um corante que recebe e doa elétrons. Na hemácia, a metemoglobina redutase que depende de NADPH o transforma em leucoazul de metileno, que devolve o ferro da metemoglobina (Fe3+) ao estado normal (Fe2+). A hemoglobina volta a carregar oxigênio. Essa via costuma ser lenta, e o azul de metileno a acelera várias vezes.",
+  "paraQueServe": [
+    "Metemoglobinemia por nitrato e nitrito em ruminantes, como em pastagens muito adubadas de aveia e azevém.",
+    "Apoio na intoxicação por paracetamol em cães e gatos, para baixar a metemoglobina, sempre junto com a acetilcisteína."
+  ],
+  "efeitosAdversos": [
+    "Anemia hemolítica por corpúsculos de Heinz, sobretudo no gato: o próprio azul de metileno é oxidante.",
+    "Em dose alta, oxida a hemoglobina e piora a metemoglobinemia.",
+    "Deixa a urina azul-esverdeada."
+  ],
+  "cuidados": [
+    "Gato: muito sensível. Só dose baixa, com cautela e como apoio; não protege o fígado e não substitui a acetilcisteína.",
+    "Só os ruminantes toleram as doses mais altas; nas outras espécies, use as doses baixas.",
+    "Equinos: pouco eficaz e pode piorar a anemia por Heinz, como na intoxicação por folhas de bordo-vermelho.",
+    "Na veia, devagar. Se o animal continua absorvendo nitrato, pode ser preciso repetir.",
+    "Vacas de leite ou de corte: não há produto veterinário com carência definida. O uso exige uma carência longa, definida pelo veterinário."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Nitrate and Nitrite Poisoning in Animals (uso em ruminantes e nas outras espécies).",
+    "MSD/Merck Veterinary Manual: Toxicoses From Human Analgesics in Animals (acetaminofeno).",
+    "FDA, 21 CFR 500.27: produtos orais com azul de metileno e anemia por corpúsculos de Heinz em gatos.",
+    "The 5-Minute Veterinary Consult: Equine, 3ª ed.: intoxicação por bordo-vermelho. Tufts University: The truth about red maple leaf toxicity.",
+    "Revisão sobre metemoglobinemia em gatos, Veterinary Sciences 8:243, 2021 (mecanismo da metemoglobina redutase dependente de NADPH).",
+    "Relatos brasileiros de intoxicação por nitrato e nitrito em bovinos tratados com azul de metileno 1% (UDESC; Pesquisa Veterinária Brasileira, 2013)."
+  ],
+  "revisado": false
+}

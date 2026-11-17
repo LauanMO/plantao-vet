@@ -1,0 +1,33 @@
+{
+  "id": "ivermectina",
+  "nome": "Ivermectina",
+  "classe": "Antiparasitários",
+  "farmacos": ["ivermectina"],
+  "comoAge": "Lactona macrocíclica (avermectina). Abre canais de cloreto controlados por glutamato nos nervos e músculos de nematódeos e artrópodes. O cloreto entra, a célula fica hiperpolarizada, e o parasito sofre paralisia flácida e morre. No mamífero, os receptores sensíveis (GABA) ficam no cérebro, e a glicoproteína P da barreira hematoencefálica (gene MDR1/ABCB1) bombeia o fármaco para fora.",
+  "paraQueServe": [
+    "Bovinos: vermes gastrintestinais e pulmonares (Dictyocaulus), berne, piolhos sugadores e sarnas. A solução injetável a 1% é de uso subcutâneo.",
+    "Bovinos: ajuda a tratar e a prevenir por poucos dias a bicheira (larvas de Cochliomyia hominivorax), junto com a limpeza da ferida e o larvicida local.",
+    "Equinos (pasta oral): grandes e pequenos estrôngilos adultos, bernes do estômago (Gasterophilus) e microfilárias de Onchocerca.",
+    "Cães: prevenção da dirofilariose (verme do coração) com doses baixas, em produtos feitos para cães."
+  ],
+  "efeitosAdversos": [
+    "Intoxicação neurológica em cães com mutação MDR1 ou em superdose: midríase, ataxia, tremores e depressão; em doses altas, cegueira, colapso, coma e morte.",
+    "Equinos com muitas microfilárias de Onchocerca: inchaço e coceira logo após o tratamento, pela morte das microfilárias. Passa em poucos dias.",
+    "Bovinos: desconforto passageiro e inchaço leve no local da injeção."
+  ],
+  "cuidados": [
+    "Mutação MDR1 (Collie, Pastor-de-Shetland, Pastor-australiano, Old English Sheepdog, Whippet de pelo longo e mestiços): a dose para dirofilariose é segura, a dose para sarna não. Teste antes.",
+    "Não use produto de bovinos (1%) em cães: é uso fora da bula, concentrado e fácil de errar a dose. Cães também se intoxicam comendo pasta de equinos ou fezes de animais recém-tratados.",
+    "O espinosade (antipulgas) dado junto com ivermectina em dose alta pode desencadear intoxicação grave.",
+    "Não age em tênias, em fascíolas (trematódeos) nem em protozoários (Cryptosporidium, Babesia).",
+    "Carência longa e variável; muitas bulas vetam fêmeas com leite para consumo. A IN MAPA 48/2011 proíbe avermectina com carência acima de 28 dias no gado de corte confinado ou em terminação."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Mechanisms of Action of Anthelmintics; Safety of Anthelmintics in Animals; Antiparasitics for Integumentary Disease.",
+    "Bulas Ivomec injetável (Boehringer Ingelheim, Espanha) e Eqvalan pasta oral (Reino Unido, EUA e Canadá).",
+    "Washington State University, Veterinary Clinical Pharmacology Lab: MDR1 em cães (raças afetadas e medicamentos).",
+    "MAPA: Instrução Normativa SDA nº 48, de 28 de dezembro de 2011 (avermectinas em bovinos de corte).",
+    "Embrapa Pantanal: publicações técnicas sobre ivermectina na prevenção da miíase umbilical de bezerros."
+  ],
+  "revisado": false
+}

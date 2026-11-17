@@ -1,0 +1,32 @@
+{
+  "id": "florfenicol",
+  "nome": "Florfenicol",
+  "classe": "Antibióticos",
+  "farmacos": ["florfenicol"],
+  "comoAge": "Fenicol, derivado do tianfenicol. Liga-se à subunidade 50S do ribossomo e bloqueia a peptidiltransferase, impedindo a síntese de proteínas; em geral é bacteriostático. O flúor da molécula impede que as bactérias o inativem por acetilação. Diferente do cloranfenicol, proibido em animais de produção, não se associa à anemia aplástica irreversível.",
+  "paraQueServe": [
+    "Bovinos: doença respiratória (complexo respiratório bovino) por Mannheimia haemolytica, Pasteurella multocida e Histophilus somni.",
+    "Bovinos: pododermatite infecciosa (podridão do casco) por Fusobacterium necrophorum.",
+    "Suínos e peixes: na ração ou na água. Em cães, aparece em produtos de uso no ouvido."
+  ],
+  "efeitosAdversos": [
+    "Perda de apetite, menor consumo de água e diarreia, passageiros, após a aplicação.",
+    "Inchaço e lesão no local da injeção, que podem durar semanas e levar ao descarte de carne no abate.",
+    "Depressão da medula óssea, reversível e dependente da dose.",
+    "Raramente, reação alérgica e anafilaxia."
+  ],
+  "cuidados": [
+    "Não use em vacas leiteiras em lactação (leite para consumo), em bezerros de vitela ou com menos de 1 mês nem em reprodutores, salvo se a bula do produto permitir.",
+    "Respeite a carência de carne da bula, que é longa e muda com a via (músculo ou subcutânea).",
+    "No músculo, aplique no pescoço e não passe do volume máximo por ponto indicado na bula.",
+    "Equinos: não é indicado; em estudo, todos os cavalos tratados tiveram fezes amolecidas.",
+    "Causou degeneração dos testículos em estudos com cães e roedores; o efeito na reprodução de bovinos não foi avaliado."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual (versão profissional): Phenicols Use in Animals.",
+    "Bula do Nuflor (florfenicol injetável), Merck Animal Health, EUA: indicações, advertências, reações adversas e carência.",
+    "Registros europeus de florfenicol 300 mg/mL injetável (Union Product Database): restrição em fêmeas produtoras de leite para consumo humano.",
+    "McKellar QA, Varma KJ. Pharmacokinetics and tolerance of florfenicol in Equidae. Equine Vet J, 1996, 28(3):209-213."
+  ],
+  "revisado": false
+}

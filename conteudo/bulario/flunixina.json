@@ -1,0 +1,34 @@
+{
+  "id": "flunixina",
+  "nome": "Flunixina meglumina",
+  "classe": "Anti-inflamatórios não esteroides (AINEs)",
+  "farmacos": ["flunixina"],
+  "comoAge": "AINE potente que inibe a ciclo-oxigenase (COX) sem seletividade e reduz as prostaglandinas. Alivia a dor visceral, a inflamação e a febre e reduz os efeitos das prostaglandinas liberadas pela endotoxina das bactérias gram-negativas. Por isso é tão usada na cólica do cavalo e na mastite tóxica da vaca.",
+  "paraQueServe": [
+    "Equinos: dor visceral da cólica e efeitos da endotoxemia; dor e inflamação do aparelho locomotor.",
+    "Bovinos: febre e inflamação na doença respiratória bovina e na mastite tóxica, como adjuvante do antibiótico.",
+    "Bovinos: dor e inflamação musculoesqueléticas, depois de traumas ou de cirurgias.",
+    "Suínos: síndrome mastite-metrite-agalaxia (MMA) e dor do aparelho locomotor."
+  ],
+  "efeitosAdversos": [
+    "Irritação e úlcera gastrointestinal, com vômito, diarreia e gastrite, sobretudo em doses altas ou repetidas.",
+    "Lesão renal, principalmente em animal desidratado ou com pouco fluxo de sangue no rim.",
+    "Cavalo: a injeção no músculo pode causar miosite por clostrídios, grave e às vezes fatal.",
+    "Cavalo: a injeção acidental na artéria causa ataxia, incoordenação e fraqueza, em geral passageiras.",
+    "Vaca: se usada logo depois do parto, exige vigiar retenção de placenta e metrite."
+  ],
+  "cuidados": [
+    "Mascara a dor: no cavalo com cólica, pode esconder por horas uma lesão cirúrgica. Reavalie antes de repetir.",
+    "No cavalo, prefira a veia. No bovino, a via intramuscular deixa lesão e resíduo na carne; nos EUA, o bovino só pode receber na veia.",
+    "Vaca: não use nas 48 horas antes do parto previsto, nem em touros reprodutores. Respeite a carência de carne e leite; alguns produtos não podem ir em vaca em lactação.",
+    "Não associe a outro AINE nem a corticoide. Evite em desidratados e em animais com doença renal, hepática ou úlcera.",
+    "Cão: o uso repetido causa úlcera grave e lesão renal. Prefira os AINEs feitos para cães."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual: Nonsteroidal Anti-inflammatory Drugs in Animals",
+    "Bula Flunixin para bovinos, suínos e equinos (Chemitec, Brasil)",
+    "Rótulo Banamine Injectable Solution (Merck Animal Health, EUA)",
+    "Rótulo flunixin meglumine injection (FDA): infecções por clostrídios após uso intramuscular em equinos"
+  ],
+  "revisado": false
+}

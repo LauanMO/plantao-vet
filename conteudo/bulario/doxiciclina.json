@@ -1,0 +1,32 @@
+{
+  "id": "doxiciclina",
+  "nome": "Doxiciclina",
+  "classe": "Antibióticos",
+  "farmacos": ["doxiciclina"],
+  "comoAge": "Tetraciclina semissintética. Liga-se à subunidade 30S do ribossomo e impede a síntese de proteínas da bactéria; é bacteriostática. É muito lipossolúvel: entra nas células e nos tecidos, por isso age em bactérias intracelulares como Ehrlichia, Anaplasma, Mycoplasma e Chlamydia. Diferente das tetraciclinas antigas, é eliminada sobretudo pelas fezes, e não pela urina.",
+  "paraQueServe": [
+    "Cães: erliquiose monocítica e anaplasmose, como tratamento de escolha.",
+    "Cães: complexo respiratório infeccioso canino (tosse dos canis), como primeira escolha contra Bordetella e Mycoplasma.",
+    "Gatos: complexo respiratório felino com suspeita de Chlamydia felis ou Mycoplasma, como primeira escolha.",
+    "Cães: leptospirose e eliminação da Wolbachia antes do tratamento adulticida da dirofilariose."
+  ],
+  "efeitosAdversos": [
+    "Gatos: o comprimido dado a seco pode parar no esôfago e causar esofagite e estenose.",
+    "Vômito, náusea e perda de apetite.",
+    "Gatos podem ter reação febril ao fármaco, com vômito, diarreia, apatia e falta de apetite."
+  ],
+  "cuidados": [
+    "Gatos: logo depois do comprimido, dê alguns mL de água ou um pouco de comida. Prefira apresentações próprias para gatos.",
+    "Cavalos: nunca pela veia, porque causa arritmia, colapso e morte; por via oral, use com cautela.",
+    "Pode ser usada na doença renal, porque sai principalmente pelas fezes, ao contrário da oxitetraciclina.",
+    "Filhotes e gestantes: as tetraciclinas se ligam ao cálcio e podem manchar dentes em formação; a doxiciclina se liga menos ao cálcio.",
+    "Leite, antiácidos e ferro atrapalham pouco a absorção da doxiciclina, ao contrário do que acontece com as tetraciclinas antigas."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual, versão em português: Uso de tetraciclinas em animais.",
+    "Lappin MR et al. Antimicrobial use guidelines for treatment of respiratory tract disease in dogs and cats (ISCAID). J Vet Intern Med, 2017, 31(2):279-294.",
+    "Neer TM et al. Consensus statement on ehrlichial disease of small animals (ACVIM). J Vet Intern Med, 2002, 16(3):309-315.",
+    "Sykes JE et al. 2010 ACVIM small animal consensus statement on leptospirosis. J Vet Intern Med, 2011, 25(1):1-13."
+  ],
+  "revisado": false
+}

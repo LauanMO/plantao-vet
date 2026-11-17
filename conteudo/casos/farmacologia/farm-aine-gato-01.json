@@ -84,7 +84,7 @@
       "critica": true,
       "instrucao": "Prescreva o anti-inflamatório do Dengo (5 kg): a dose de manutenção, do segundo dia em diante.",
       "farmacos": [
-        { "id": "meloxicam", "nome": "Meloxicam", "apresentacao": "Suspensão oral para gatos 0,5 mg/mL", "unidade": "mL", "explicacao": "AINE preferencial da COX-2, aprovado para uso prolongado em gatos, na menor dose eficaz e com a função renal acompanhada." },
+        { "id": "meloxicam", "nome": "Meloxicam", "apresentacao": "Suspensão oral para gatos 0,5 mg/mL", "unidade": "mL", "explicacao": "AINE preferencial da COX-2 com apresentação oral para gatos; o uso prolongado varia conforme a bula de cada país (no Brasil, a bula oral limita o tempo de uso) e pede a menor dose eficaz e a função renal acompanhada." },
         { "id": "carprofeno", "nome": "Carprofeno", "apresentacao": "Comprimido 25 mg (do cão)", "unidade": "comprimido", "explicacao": "No gato, a meia-vida do carprofeno é longa e muito variável (cerca de 20 horas, contra 8 no cão): doses repetidas acumulam." },
         { "id": "ibuprofeno", "nome": "Ibuprofeno", "apresentacao": "Gotas 50 mg/mL", "unidade": "mL", "explicacao": "Margem de segurança estreita: em gatos, causa úlcera gastrointestinal e lesão renal mesmo em doses baixas." },
         { "id": "paracetamol", "nome": "Paracetamol", "apresentacao": "Comprimido 500 mg", "unidade": "comprimido", "explicacao": "Proibido para gatos: sem glicuronidação suficiente, forma um metabólito que causa metemoglobinemia e lesão no fígado." }

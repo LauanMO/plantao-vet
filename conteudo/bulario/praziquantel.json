@@ -1,0 +1,29 @@
+{
+  "id": "praziquantel",
+  "nome": "Praziquantel",
+  "classe": "Antiparasitários",
+  "farmacos": ["praziquantel"],
+  "comoAge": "Mexe nos canais de cálcio do parasito: o cálcio entra em excesso pelo tegumento (a superfície da tênia), a musculatura se contrai e paralisa, e o tegumento se enche de vacúolos. A tênia perde a defesa contra a digestão do hospedeiro e é digerida no intestino; por isso o tutor raramente vê o verme inteiro nas fezes. Age em cestódeos, não em nematódeos.",
+  "paraQueServe": [
+    "Cães e gatos: tênias como Dipylidium caninum (transmitida pela pulga), Taenia spp. e Mesocestoides.",
+    "Cães: Echinococcus granulosus e E. multilocularis, tênias pequenas cujos ovos causam a hidatidose em pessoas.",
+    "Entra nos vermífugos de amplo espectro junto com fármacos contra nematódeos (pirantel, febantel). Em equinos, vem com ivermectina contra a tênia Anoplocephala."
+  ],
+  "efeitosAdversos": [
+    "Raros por via oral. Em superdose: vômito, salivação, diarreia e apatia.",
+    "Em gatos, salivação e diarreia ocasionais.",
+    "A forma injetável arde e dói no local da aplicação."
+  ],
+  "cuidados": [
+    "Não age em nematódeos (Toxocara, ancilostomídeos), em protozoários (Giardia) nem em ácaros.",
+    "O Dipylidium volta quase com certeza se as pulgas não forem controladas no animal e no ambiente.",
+    "Echinococcus é zoonose grave: o cão pode eliminar ovos logo após o tratamento. Manuseie as fezes com luvas e descarte-as com segurança.",
+    "Filhotes: as bulas indicam a partir de 4 semanas de idade (algumas, para gatos, a partir de 6 semanas). A margem de segurança é ampla."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Mechanisms of Action of Anthelmintics; Tapeworms in Dogs and Cats.",
+    "Bula Droncit (praziquantel comprimidos), Elanco Canadá (DIN 02240073), e bula Droncit felina dos EUA.",
+    "Bula Eqvalan Gold (ivermectina + praziquantel, pasta oral para equinos)."
+  ],
+  "revisado": false
+}

@@ -1,0 +1,33 @@
+{
+  "id": "amoxicilina",
+  "nome": "Amoxicilina",
+  "classe": "Antibióticos",
+  "farmacos": ["amoxicilina"],
+  "comoAge": "Penicilina de amplo espectro (aminopenicilina), do grupo dos betalactâmicos. Liga-se às proteínas que montam a parede da bactéria (PBPs) e impede a formação dessa parede: a bactéria em crescimento se rompe. É bactericida e age pelo tempo em que fica acima da concentração mínima. É destruída pelas betalactamases; o clavulanato protege a amoxicilina dessas enzimas.",
+  "paraQueServe": [
+    "Cães e gatos: cistite bacteriana esporádica, como uma das primeiras escolhas das diretrizes da ISCAID.",
+    "Cães e gatos: infecções respiratórias, como alternativa à doxiciclina quando não se suspeita de Mycoplasma nem de Chlamydia.",
+    "Associada ao clavulanato: infecções de pele e de tecidos moles, porque muitos estafilococos produzem betalactamase."
+  ],
+  "efeitosAdversos": [
+    "Vômito, diarreia e perda de apetite.",
+    "Reações alérgicas: urticária, inchaço da face, febre e, raramente, anafilaxia. Quem reage a uma penicilina pode reagir às outras.",
+    "Por ser de amplo espectro, pode desequilibrar a flora e favorecer outras infecções (superinfecção)."
+  ],
+  "cuidados": [
+    "Coelhos, cobaias, hamsters e chinchilas: por via oral, destrói a flora do intestino e causa enterotoxemia por Clostridium, muitas vezes fatal.",
+    "Cavalo adulto: absorve só cerca de 5 a 10% da amoxicilina oral, que não atinge nível eficaz no sangue e chega ao intestino grosso.",
+    "Sem o clavulanato, não age nos estafilococos produtores de betalactamase, comuns na piodermite do cão.",
+    "Não age em Mycoplasma nem em Chlamydia, que não têm parede celular. Também não age em fungos nem em protozoários.",
+    "Animais de produção: respeite a carência de carne e leite da bula; as penicilinas podem persistir no leite por dias."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual (versão profissional): Penicillins Use in Animals.",
+    "MSD Veterinary Manual, versão em espanhol: Uso de antimicrobianos betalactámicos en animales (mecanismo de ação).",
+    "Lappin MR et al. Antimicrobial use guidelines for treatment of respiratory tract disease in dogs and cats (ISCAID). J Vet Intern Med, 2017, 31(2):279-294.",
+    "Weese JS et al. ISCAID guidelines for the diagnosis and management of bacterial urinary tract infections in dogs and cats. Vet J, 2019, 247:8-25 (conferido em resumos secundários).",
+    "Estudos de biodisponibilidade oral da amoxicilina em equinos: Pharmacokinetics and estimated bioavailability of amoxicillin in mares (Am J Vet Res, 1988); Bioavailability of oral penicillins in the horse (J Vet Pharmacol Ther).",
+    "WikiVet: Antibiotic-Associated Dysbacteriosis (coelhos e roedores)."
+  ],
+  "revisado": false
+}

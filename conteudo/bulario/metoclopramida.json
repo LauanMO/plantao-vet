@@ -1,0 +1,32 @@
+{
+  "id": "metoclopramida",
+  "nome": "Metoclopramida",
+  "classe": "Antieméticos e digestivos",
+  "farmacos": ["metoclopramida"],
+  "comoAge": "Bloqueia os receptores de dopamina na zona quimiorreceptora do gatilho, o que dá o efeito antiemético. No trato digestório alto, aumenta a liberação de acetilcolina e a sensibilidade a ela e estimula receptores 5-HT4: aumenta o tônus do esfíncter do esôfago e coordena o esvaziamento do estômago e do duodeno. Quase não age no cólon.",
+  "paraQueServe": [
+    "Vômito em cães, como o da quimioterapia e o de gastroenterites como a parvovirose, depois de descartar obstrução.",
+    "Refluxo gastroesofágico, porque aumenta o tônus do esfíncter inferior do esôfago.",
+    "Estômago que esvazia devagar e íleo pós-operatório em cães."
+  ],
+  "efeitosAdversos": [
+    "Sinais extrapiramidais: inquietação, tremores, espasmos musculares e agressividade, mais com doses altas ou injeção rápida na veia.",
+    "Nervosismo ou, ao contrário, sonolência e apatia.",
+    "Constipação no uso prolongado.",
+    "Aumento da prolactina, com produção de leite fora da lactação (galactorreia)."
+  ],
+  "cuidados": [
+    "Contraindicada se houver suspeita de obstrução ou perfuração do trato digestório, como corpo estranho ou a intussuscepção do filhote com parvovirose.",
+    "Evite em animais com epilepsia.",
+    "Não associe a fenotiazínicos, como a acepromazina: aumentam os sinais extrapiramidais. Opioides e anticolinérgicos, como a atropina, anulam o efeito procinético.",
+    "No gato é um antiemético fraco, porque os receptores de dopamina da zona do gatilho pesam pouco no vômito dessa espécie.",
+    "Na insuficiência renal o fármaco é eliminado mais devagar, e a dose precisa ser reduzida."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Gastrointestinal Prokinetic Drugs Used in Monogastric Animals.",
+    "MSD/Merck Veterinary Manual: Drugs Used to Control or Stimulate Vomiting in Monogastric Animals.",
+    "Bula Plasivet (metoclopramida), Biovet, cães e gatos.",
+    "Trepanier L. Acute vomiting in cats: rational treatment selection. Journal of Feline Medicine and Surgery, 2010 (doi 10.1016/j.jfms.2010.01.005)."
+  ],
+  "revisado": false
+}

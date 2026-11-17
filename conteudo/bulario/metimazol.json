@@ -1,0 +1,33 @@
+{
+  "id": "metimazol",
+  "nome": "Metimazol",
+  "classe": "Hormônios",
+  "farmacos": ["metimazol"],
+  "comoAge": "Antitireoidiano. Inibe a tireoperoxidase, enzima que incorpora o iodo e une as iodotirosinas, e assim bloqueia a síntese de T4 e T3. Não impede a liberação do hormônio já estocado, por isso o T4 leva algumas semanas para cair. Não destrói a tireoide: o efeito é reversível e some quando o remédio para.",
+  "paraQueServe": [
+    "Hipertireoidismo do gato: controle por toda a vida, por via oral ou em gel aplicado na face interna da orelha.",
+    "Estabilizar o gato hipertireóideo antes da cirurgia (tireoidectomia) ou do iodo radioativo.",
+    "Cão com tumor funcional da tireoide: controla o excesso de hormônio, mas não impede o crescimento do tumor nem a metástase."
+  ],
+  "efeitosAdversos": [
+    "Vômito, falta de apetite e apatia, os mais comuns, em geral nos primeiros meses. O gel na orelha causa menos efeitos digestivos.",
+    "Coceira forte na face, com feridas que o gato faz ao se coçar.",
+    "Lesão no fígado (hepatopatia).",
+    "Alterações no sangue: neutropenia ou agranulocitose e plaquetopenia, com risco de infecção e sangramento.",
+    "Dose excessiva causa hipotireoidismo, que pode piorar a função dos rins."
+  ],
+  "cuidados": [
+    "Nos primeiros meses, acompanhe hemograma, enzimas do fígado, T4 e função renal; depois, a cada poucos meses.",
+    "O hipertireoidismo aumenta o fluxo de sangue nos rins e pode esconder uma doença renal, que aparece quando o T4 normaliza.",
+    "Se houver agranulocitose, plaquetopenia, hepatopatia ou coceira facial grave, suspenda. O carbimazol vira metimazol no corpo e não serve de alternativa.",
+    "Evite em gatos com doença do fígado, alterações no sangue ou doença autoimune.",
+    "Teratogênico em roedores e passa para o leite: evite em gatas prenhes ou lactantes. Gestantes não devem manusear o remédio nem a areia do gato tratado."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Hyperthyroidism in Animals.",
+    "Fracassi F, Kooistra H. Feline Hyperthyroidism: Therapy. FECAVA Guidance Notes.",
+    "Carney HC et al. 2016 AAFP Guidelines for the Management of Feline Hyperthyroidism. Journal of Feline Medicine and Surgery, 2016.",
+    "Felimazole (tiamazol/metimazol): resumos das características do produto na União Europeia."
+  ],
+  "revisado": false
+}

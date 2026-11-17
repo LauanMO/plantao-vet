@@ -1,0 +1,38 @@
+{
+  "id": "xilazina",
+  "nome": "Xilazina",
+  "classe": "Sedativos e reversores",
+  "farmacos": ["xilazina"],
+  "comoAge": "Agonista dos receptores α2-adrenérgicos. No tronco encefálico (locus coeruleus), freia a liberação de noradrenalina e causa sedação; na medula, inibe a transmissão da dor. Também relaxa os músculos por ação central. Nos vasos, ativa receptores α2 que contraem a musculatura lisa, e por isso a pressão sobe no início.",
+  "paraQueServe": [
+    "Sedação e contenção química para exame e pequenos procedimentos em bovinos, equinos, pequenos ruminantes, cães e gatos.",
+    "Analgesia visceral curta na cólica equina, com cautela, porque também reduz a motilidade intestinal.",
+    "Pré-anestesia e anestesia de campo, associada à cetamina ou a opioides.",
+    "No gato, provoca vômito em poucos minutos: às vezes é usada para fazer o gato vomitar após ingerir um tóxico."
+  ],
+  "efeitosAdversos": [
+    "Bradicardia, bloqueio atrioventricular, hipertensão inicial seguida de hipotensão e queda do débito cardíaco.",
+    "Hiperglicemia, porque inibe a secreção de insulina, e aumento do volume de urina.",
+    "Ruminantes: salivação abundante, atonia do rúmen, timpanismo e risco de aspiração quando o animal deita.",
+    "Ovinos: hipoxemia e edema pulmonar, mais graves após aplicação na veia.",
+    "Vômito em cães e gatos. Equinos: ataxia, e o cavalo sedado continua de pé e ainda pode dar coice certeiro."
+  ],
+  "cuidados": [
+    "Ruminantes são cerca de 10 vezes mais sensíveis que o cavalo: a dose do bovino é bem menor. Mantenha o animal deitado em decúbito esternal.",
+    "Útero: aumenta as contrações e reduz o fluxo de sangue uterino. Evite no terço final da gestação, pelo risco de parto prematuro ou aborto.",
+    "Evite em cardiopatas, em choque, na doença pulmonar e na obstrução intestinal ou urinária.",
+    "Reverte com antagonistas α2, como o atipamezol ou a ioimbina.",
+    "Carência varia com o produto: há bula brasileira sem carência para carne e leite bovinos e bula britânica com 14 dias para carne e proibida para leite. Siga a bula usada."
+  ],
+  "referencias": [
+    "Chanazine 2% (xilazina, Chanelle Pharma): contraindicações, advertências e carência, NOAH Compendium",
+    "Anasedan (xilazina, Ceva Saúde Animal): bula brasileira, período de carência",
+    "Xilazina 2% (Virbac Chile): ficha técnica, efeitos em bovinos e obstrução urinária",
+    "VASG (Veterinary Anesthesia and Analgesia Support Group): Alpha-2 agonists",
+    "Muir WW, Robertson JT. Visceral analgesia: effects of xylazine, butorphanol, meperidine, and pentazocine in horses. Am J Vet Res, 1985",
+    "Xylazine for emesis induction in cats. dvm360",
+    "Kästner SBR. A2-agonists in sheep: a review. Vet Anaesth Analg, 2006",
+    "Estudo sobre pressão intrauterina e fluxo sanguíneo uterino após xilazina em cabras prenhes. J Vet Med Sci, 1996"
+  ],
+  "revisado": false
+}

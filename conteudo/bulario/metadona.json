@@ -1,0 +1,30 @@
+{
+  "id": "metadona",
+  "nome": "Metadona",
+  "classe": "Opioides",
+  "farmacos": ["metadona"],
+  "comoAge": "Opioide sintético formado por dois isômeros. Um é agonista pleno dos receptores µ e dá analgesia forte, parecida com a da morfina. O outro bloqueia receptores NMDA e inibe a recaptação de noradrenalina, o que ajuda contra a sensibilização central da dor.",
+  "paraQueServe": [
+    "Dor moderada a intensa em cães e gatos internados: trauma, pós-operatório, hérnia de disco.",
+    "Pré-anestesia e neuroleptoanalgesia, associada à acepromazina, a um agonista α2 ou a um benzodiazepínico.",
+    "Alternativa à morfina quando o vômito é indesejável, pois causa menos vômito que ela."
+  ],
+  "efeitosAdversos": [
+    "Depressão respiratória e bradicardia, comuns e em geral passageiras.",
+    "No cão: ofegação, salivação, lamber os lábios, tremores, hipotermia e, às vezes, urina ou fezes involuntárias na primeira hora.",
+    "No gato: excitação, vocalização, midríase e hipertermia. A pupila continua dilatada depois que a analgesia já passou, então não serve para medir o efeito."
+  ],
+  "cuidados": [
+    "Uso hospitalar: é injetável, e o cão absorve pouco pela boca. Não é remédio para a tutora aplicar em casa.",
+    "Evite na insuficiência respiratória avançada e na doença hepática ou renal grave. É metabolizada no fígado.",
+    "Soma depressão com outros depressores do SNC. Se a buprenorfina foi dada antes, a metadona pode não fazer efeito.",
+    "No gato, doses repetidas pedem cuidado pelo risco de excitação. Galgos podem precisar de mais fármaco para o mesmo efeito.",
+    "Reverte com naloxona."
+  ],
+  "referencias": [
+    "Comfortan 10 mg/mL (metadona), resumo das características do produto (VMD, Reino Unido, 2023)",
+    "MSD Veterinary Manual: Analgesic Pharmacology e tabela Opioids Used in Emergency Practice",
+    "MSD Veterinary Manual: Pain Management in Small Animals with Lameness"
+  ],
+  "revisado": false
+}
