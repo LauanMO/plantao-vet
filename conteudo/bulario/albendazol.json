@@ -1,0 +1,31 @@
+{
+  "id": "albendazol",
+  "nome": "Albendazol",
+  "classe": "Antiparasitários",
+  "farmacos": ["albendazol"],
+  "comoAge": "Benzimidazol. Liga-se à beta-tubulina do verme e impede a montagem dos microtúbulos. Sem eles, as células do parasito não absorvem nutrientes nem se dividem, e ele morre. É mais absorvido que outros benzimidazóis e, no fígado, vira sulfóxido de albendazol, a forma ativa que circula no sangue. Isso ajuda a alcançar vermes pulmonares e a fascíola adulta.",
+  "paraQueServe": [
+    "Bovinos, ovinos e caprinos: vermes do estômago e do intestino (Haemonchus, Ostertagia, Cooperia, Trichostrongylus), inclusive as larvas inibidas de Ostertagia.",
+    "Ruminantes: vermes pulmonares (Dictyocaulus) e tênias (Moniezia).",
+    "Ruminantes: fascíola adulta (Fasciola hepatica). Não é a escolha para as formas jovens que migram pelo fígado."
+  ],
+  "efeitosAdversos": [
+    "Na dose certa, é bem tolerado pelos ruminantes.",
+    "Teratogênico e embriotóxico no início da gestação, por bloquear a divisão celular do embrião: encefalocele, hidrocefalia e fusão de vértebras.",
+    "Em cães e gatos, pode causar supressão da medula óssea (pancitopenia e anemia aplástica), às vezes fatal."
+  ],
+  "cuidados": [
+    "Não use no início da gestação. A bula americana proíbe nos primeiros 45 dias em vacas e nos primeiros 30 dias em ovelhas e cabras; siga o prazo da bula do produto.",
+    "Tem carência para carne e leite, que muda de produto para produto. Algumas bulas proíbem o uso em fêmeas leiteiras com leite para consumo.",
+    "A resistência dos nematódeos aos benzimidazóis é comum, sobretudo em ovinos e caprinos: confirme a eficácia com o teste de redução na contagem de ovos nas fezes.",
+    "Age em helmintos: não trata protozoários do sangue (Babesia) nem bactérias (Anaplasma).",
+    "Em cães e gatos, prefira o fenbendazol, pelo risco do albendazol para a medula óssea."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Safety of Anthelmintics in Animals; Mechanisms of Action of Anthelmintics; Withholding Periods after Anthelmintic Treatment.",
+    "Bula Valbazen (albendazol suspensão oral), Zoetis, EUA (NADA 110-048).",
+    "Relato de caso de supressão da medula óssea associada ao albendazol em cão. J Am Anim Hosp Assoc, 2004, 40(3):224.",
+    "Veterinary Clinical Pharmacology (University of Saskatchewan, livro aberto), cap. 24: Anthelmintics and Parasiticides."
+  ],
+  "revisado": false
+}

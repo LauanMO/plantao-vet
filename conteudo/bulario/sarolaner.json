@@ -1,0 +1,31 @@
+{
+  "id": "sarolaner",
+  "nome": "Sarolaner",
+  "classe": "Antiparasitários",
+  "farmacos": ["sarolaner"],
+  "comoAge": "Isoxazolina. Bloqueia os canais de cloreto ligados ao GABA e ao glutamato nos neurônios de pulgas, carrapatos e ácaros. Sem esse freio, o sistema nervoso do parasito fica hiperexcitado e ele morre. Liga-se muito mais aos receptores dos artrópodes que aos dos mamíferos. Tem meia-vida longa no cão, por isso um comprimido protege por semanas; o parasito morre ao picar ou se alimentar.",
+  "paraQueServe": [
+    "Cães: tratamento e prevenção de pulgas (Ctenocephalides felis) e de carrapatos (Rhipicephalus sanguineus, Amblyomma e outros).",
+    "Cães: sarna sarcóptica (Sarcoptes scabiei), demodicose (Demodex canis) e sarna de ouvido (Otodectes cynotis).",
+    "Parte do controle da dermatite alérgica à picada de pulga (DAPP), junto com o tratamento dos outros animais da casa e do ambiente.",
+    "Opção para tratar sarna em cães com mutação MDR1, em que a ivermectina em dose alta é perigosa."
+  ],
+  "efeitosAdversos": [
+    "Pouco frequentes: vômito, diarreia, letargia e falta de apetite.",
+    "Sinais neurológicos (tremores, ataxia, convulsões) já foram relatados com toda a classe das isoxazolinas, mesmo em cães sem histórico de convulsão."
+  ],
+  "cuidados": [
+    "Cães com epilepsia ou histórico de convulsão: use com cautela ou escolha outra classe.",
+    "Bula brasileira: cães a partir de 8 semanas de idade e 1,3 kg (nos EUA, a partir de 6 meses). Não foi avaliado em cadelas prenhes, lactantes ou reprodutoras.",
+    "O comprimido não é para gatos. Para gatos existe outra apresentação, tópica, de sarolaner com selamectina.",
+    "Seguro em cães com mutação MDR1: Collies MDR1 toleraram bem o fármaco nos estudos de segurança.",
+    "O carrapato precisa se fixar e começar a se alimentar para morrer: o risco de transmissão de doenças cai, mas não some."
+  ],
+  "referencias": [
+    "Bula e folheto técnico Simparic (sarolaner comprimido mastigável), Zoetis Brasil.",
+    "Bula Simparica (sarolaner), Zoetis, EUA (FDA NADA 141-452).",
+    "EMA: resumo das características do medicamento Simparica (União Europeia) e EPAR Stronghold Plus (selamectina + sarolaner).",
+    "MSD/Merck Veterinary Manual: Antiparasitics for Integumentary Disease (isoxazolinas)."
+  ],
+  "revisado": false
+}
