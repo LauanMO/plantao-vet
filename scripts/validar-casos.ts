@@ -5,8 +5,8 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { validarBanco, validarBulario, type ArquivoBula, type ArquivoCaso } from '../src/modelo/validar.ts'
 
-// shortcut: fármaco sem bula só avisa até o bulário ficar completo; depois, vira erro
-const EXIGIR_BULA_DE_TODO_FARMACO = false
+// todo fármaco das receitas precisa de bula: é ela que a estudante abre na receita
+const EXIGIR_BULA_DE_TODO_FARMACO = true
 
 const pasta = join('conteudo', 'casos')
 const errosDeJson: string[] = []
