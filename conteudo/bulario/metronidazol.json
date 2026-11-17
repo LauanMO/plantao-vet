@@ -1,0 +1,32 @@
+{
+  "id": "metronidazol",
+  "nome": "Metronidazol",
+  "classe": "Antibióticos",
+  "farmacos": ["metronidazol"],
+  "comoAge": "Nitroimidazol. Entra na bactéria anaeróbia ou no protozoário e é reduzido por enzimas que só esses organismos usam. O produto reduzido é tóxico: quebra o DNA e mata a célula (é bactericida). As bactérias aeróbias não fazem essa redução, por isso o metronidazol não age nelas. Penetra bem nos tecidos, inclusive em abscessos e no sistema nervoso.",
+  "paraQueServe": [
+    "Infecções por bactérias anaeróbias: abscessos, periodontite, peritonite (junto com outro antibiótico), osteomielite e tecidos necrosados.",
+    "Antiprotozoário: giardíase em cães e gatos; também amebíase e balantidíase.",
+    "Encefalopatia hepática: reduz as bactérias do intestino que produzem amônia.",
+    "Equinos: infecções por bactérias anaeróbias, por via oral."
+  ],
+  "efeitosAdversos": [
+    "Neurotoxicidade em doses altas ou uso longo: ataxia, nistagmo, inclinação da cabeça, tremores e convulsões. Costuma melhorar quando se suspende o fármaco.",
+    "Gosto amargo: salivação e recusa do comprimido. No cavalo, por via oral, perda de apetite e salivação.",
+    "Urina avermelhada ou marrom, sem importância clínica.",
+    "Depressão reversível da medula óssea (rara)."
+  ],
+  "cuidados": [
+    "Proibido em animais de produção nos EUA e na União Europeia, pelo risco de resíduos cancerígenos: não use em animal cujo leite, carne ou ovos vão para consumo.",
+    "Evite na gestação: em camundongos com exposição longa, causou câncer e malformações.",
+    "É metabolizado no fígado: em hepatopatas, a dose deve ser reduzida.",
+    "Se surgirem sinais neurológicos, suspenda; em cães, o diazepam acelera a recuperação.",
+    "Não age em bactérias aeróbias, como o estafilococo da pele: em infecções mistas, associe a outro antibiótico."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual (versão profissional): Nitroimidazoles Use in Animals.",
+    "Evans J et al. Diazepam as a treatment for metronidazole toxicosis in dogs: a retrospective study of 21 cases. J Vet Intern Med, 2003, 17(3):304-310.",
+    "Regulamento (UE) n.º 37/2010, quadro 2: substâncias proibidas em animais produtores de alimentos (inclui o metronidazol)."
+  ],
+  "revisado": false
+}

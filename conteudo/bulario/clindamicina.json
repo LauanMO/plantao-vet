@@ -1,0 +1,32 @@
+{
+  "id": "clindamicina",
+  "nome": "Clindamicina",
+  "classe": "Antibióticos",
+  "farmacos": ["clindamicina"],
+  "comoAge": "Lincosamida. Liga-se à subunidade 50S do ribossomo da bactéria e bloqueia a síntese de proteínas. Conforme a dose e a bactéria, é bacteriostática ou bactericida. Age em Gram-positivos (como os estafilococos), em anaeróbios e no protozoário Toxoplasma; quase não age em Gram-negativos. É lipossolúvel e penetra bem em ossos e abscessos.",
+  "paraQueServe": [
+    "Cães e gatos: infecções dentárias e da boca, abscessos e feridas infectadas.",
+    "Cães e gatos: osteomielite e infecções ortopédicas, pela boa penetração no osso.",
+    "Cães: piodermite superficial, como uma das opções de primeira linha.",
+    "Gatos e cães: toxoplasmose clínica."
+  ],
+  "efeitosAdversos": [
+    "Vômito e diarreia, em todas as espécies.",
+    "Gatos: a cápsula ou o comprimido dado a seco pode parar no esôfago e causar esofagite e estenose.",
+    "Herbívoros: colite grave, muitas vezes fatal, por desequilíbrio da flora e Clostridioides difficile.",
+    "Dor e reação no local da injeção intramuscular."
+  ],
+  "cuidados": [
+    "Contraindicada em cavalos, coelhos, cobaias, hamsters, chinchilas e ruminantes: causa colite que pode matar.",
+    "Gatos: depois da cápsula, dê um pouco de água ou de comida para ela descer até o estômago.",
+    "Não associe a macrolídeos (como a eritromicina) nem a fenicóis: eles disputam o mesmo local de ligação no ribossomo.",
+    "Potencializa o bloqueio neuromuscular de anestésicos e relaxantes musculares; não aplique em bolus rápido na veia."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual, versão em português: Uso de lincosamídeos em animais.",
+    "MSD/Merck Veterinary Manual (versão profissional): Antibacterials for Integumentary Disease in Animals.",
+    "MSD/Merck Veterinary Manual (versão profissional): Toxoplasmosis in Animals.",
+    "Lappin MR et al. Antimicrobial use guidelines for treatment of respiratory tract disease in dogs and cats (ISCAID). J Vet Intern Med, 2017, 31(2):279-294 (esofagite em gatos)."
+  ],
+  "revisado": false
+}

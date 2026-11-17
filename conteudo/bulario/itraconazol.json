@@ -1,0 +1,33 @@
+{
+  "id": "itraconazol",
+  "nome": "Itraconazol",
+  "classe": "Antifúngicos",
+  "farmacos": ["itraconazol"],
+  "comoAge": "Antifúngico azólico do grupo dos triazóis. Inibe a enzima do fungo que fabrica o ergosterol da membrana (14-alfa-desmetilase), e a membrana fica defeituosa. É mais seletivo para a enzima do fungo que o cetoconazol e quase não mexe no cortisol e na testosterona. É lipofílico e se acumula na pele, onde fica mais tempo que no sangue: por isso pode ser dado em pulsos.",
+  "paraQueServe": [
+    "Gatos: dermatofitose (Microsporum canis), como primeira escolha, em semanas alternadas, junto com banho antifúngico e limpeza do ambiente.",
+    "Gatos: esporotricose (Sporothrix brasiliensis), como fármaco de escolha; com muitas lesões, lesão no nariz ou falha do tratamento, associa-se o iodeto de potássio.",
+    "Cães: dermatite por Malassezia e dermatofitose.",
+    "Micoses sistêmicas: criptococose, histoplasmose, blastomicose e aspergilose."
+  ],
+  "efeitosAdversos": [
+    "Perda de apetite, náusea e vômito, dependentes da dose.",
+    "Lesão no fígado, com aumento das enzimas hepáticas; em cães em tratamento longo, em até 1 a cada 10.",
+    "Cães: dermatite ulcerativa por vasculite em doses altas, que regride se o fármaco for suspenso cedo.",
+    "Reduz a força de contração do coração: pode piorar animais com insuficiência cardíaca."
+  ],
+  "cuidados": [
+    "Não use itraconazol manipulado: a absorção é baixa e irregular. Prefira o produto comercial.",
+    "A cápsula deve ser dada inteira e com comida; antiácidos e omeprazol reduzem a absorção.",
+    "Inibe o metabolismo de outros fármacos no fígado, como a ciclosporina, mas menos que o cetoconazol.",
+    "Dermatofitose e esporotricose são zoonoses: manipule o gato com luvas e trate o ambiente."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual, versão em português: Azóis para uso em animais.",
+    "MSD/Merck Veterinary Manual (versão profissional): Antifungals for Integumentary Disease in Animals.",
+    "Merck Veterinary Manual: Dermatophytosis in Dogs and Cats (segue as diretrizes da WAVD, Moriello et al., Vet Dermatol, 2017).",
+    "Gremião IDF et al. Guideline for the management of feline sporotrichosis caused by Sporothrix brasiliensis and literature revision. Braz J Microbiol, 2021, 52(1):107-124.",
+    "dvm360: A review of selected systemic antifungal drugs for use in dogs and cats."
+  ],
+  "revisado": false
+}

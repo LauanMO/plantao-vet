@@ -1,0 +1,35 @@
+{
+  "id": "oxitetraciclina",
+  "nome": "Oxitetraciclina",
+  "classe": "Antibióticos",
+  "farmacos": ["oxitetraciclina", "oxitetraciclina-la", "oxitetraciclina-po"],
+  "comoAge": "Tetraciclina. Liga-se à subunidade 30S do ribossomo e impede a síntese de proteínas da bactéria; é bacteriostática. Tem amplo espectro, inclusive bactérias intracelulares como Anaplasma, Mycoplasma e Chlamydia, mas não age em protozoários (Babesia, Cryptosporidium). As três apresentações têm a mesma molécula: mudam o veículo e a via, e com isso quanto tempo o fármaco fica no sangue.",
+  "paraQueServe": [
+    "Bovinos: anaplasmose (tristeza parasitária causada pelo Anaplasma), pneumonias, pododermatite infecciosa e ceratoconjuntivite infecciosa.",
+    "Convencional: a oxitetraciclina comum tem ação curta, e a injeção precisa ser repetida todo dia.",
+    "Longa ação (LA): no músculo, o veículo forma um depósito que libera o fármaco devagar; uma aplicação mantém o efeito por cerca de 3 dias. A eliminação é a mesma da comum.",
+    "Pó solúvel: vai na água, no leite ou na ração de aves, suínos e bezerros que ainda mamam. Não serve para tratar ruminante adulto."
+  ],
+  "efeitosAdversos": [
+    "Na veia, se aplicada rápido, derruba a pressão e pode causar colapso súbito; a aplicação venosa deve ser lenta.",
+    "Reação no local da injeção intramuscular (inchaço, dor e necrose), quase inevitável.",
+    "Lesão nos rins em doses altas, em bovinos desidratados ou com endotoxemia, e com produto vencido.",
+    "Por via oral no ruminante adulto, desequilibra a flora do rúmen; doses altas podem parar o rúmen.",
+    "Em animais jovens, liga-se ao cálcio e mancha de amarelo os dentes em formação."
+  ],
+  "cuidados": [
+    "Animais de produção: respeite a carência de carne e leite da bula, que muda conforme a apresentação e o produto.",
+    "Não use o pó em ruminante adulto: o rúmen dilui e inativa o fármaco, e a absorção fica lenta e imprevisível.",
+    "Contraindicada na insuficiência renal; mantenha o animal hidratado durante o tratamento.",
+    "Equinos: pode causar diarreia grave, às vezes fatal, sobretudo em animais estressados ou muito doentes.",
+    "Evite associar a antibióticos bactericidas, como as penicilinas."
+  ],
+  "referencias": [
+    "MSD Veterinary Manual, versão em português: Uso de tetraciclinas em animais.",
+    "MSD/Merck Veterinary Manual (versão profissional): Tetracyclines Use in Animals (formulações de longa ação e uso oral em ruminantes).",
+    "Resumo das características do medicamento Terramicina LA 200 mg/mL (Zoetis, registro espanhol na AEMPS): via intramuscular profunda e volume máximo por ponto.",
+    "Bula brasileira de Terramicina Uso Veterinário (oxitetraciclina pó oral, Zoetis), em bula.com.br.",
+    "Registro português de Terramicina 55 mg/g pó oral: indicação em bezerros pré-ruminantes, suínos e aves."
+  ],
+  "revisado": false
+}
