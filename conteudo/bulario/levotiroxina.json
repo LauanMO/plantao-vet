@@ -1,0 +1,31 @@
+{
+  "id": "levotiroxina",
+  "nome": "Levotiroxina sódica",
+  "classe": "Hormônios",
+  "farmacos": ["levotiroxina"],
+  "comoAge": "É o T4 sintético, igual ao hormônio que a tireoide produz. Nos tecidos, o T4 é convertido em T3, a forma mais ativa, que age no núcleo das células e acelera o metabolismo: consumo de energia, temperatura, crescimento do pelo e função do coração. Repõe o hormônio que falta no hipotireoidismo, e os próprios tecidos regulam quanto T3 formam.",
+  "paraQueServe": [
+    "Hipotireoidismo do cão: é o tratamento de escolha, para a vida toda.",
+    "Gato com hipotireoidismo depois do tratamento do hipertireoidismo, como a retirada das duas tireoides ou o iodo radioativo.",
+    "Equinos: uso extrabula para ajudar a perda de peso de cavalos obesos com síndrome metabólica equina. O hipotireoidismo verdadeiro é raro no cavalo adulto."
+  ],
+  "efeitosAdversos": [
+    "Excesso de hormônio (tireotoxicose), raro no cão: sede e urina em excesso, perda de peso, ofegação, agitação e taquicardia.",
+    "Pode piorar uma doença cardíaca, porque aumenta o trabalho do coração.",
+    "Raros: reações alérgicas (coceira, urticária, inchaço da face) e aumento das enzimas do fígado."
+  ],
+  "cuidados": [
+    "Não use no hipoadrenocorticismo (doença de Addison) sem tratamento: corrija a adrenal primeiro.",
+    "Cardiopatas e diabéticos: comece com cautela e acompanhe de perto. A necessidade de insulina pode mudar.",
+    "Dê sempre do mesmo jeito, com ou sem comida. Antiácidos, sucralfato e ferro reduzem a absorção.",
+    "Corticoides, fenobarbital e sulfas baixam o T4 dosado e podem imitar hipotireoidismo. O T4 de controle é medido 4 a 6 horas depois do comprimido.",
+    "A dose do cão é muito maior que a da pessoa: na farmácia, não confunda com o comprimido de uso humano."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Hypothyroidism in Animals.",
+    "Bula Thyro-Tabs Canine (levothyroxine sodium), DailyMed/FDA.",
+    "VCA Animal Hospitals: Levothyroxine (precauções e interações).",
+    "Vet Times: Latest thinking on endocrine disorders in equine patients (levotiroxina na síndrome metabólica equina)."
+  ],
+  "revisado": false
+}

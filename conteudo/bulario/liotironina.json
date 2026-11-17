@@ -1,0 +1,29 @@
+{
+  "id": "liotironina",
+  "nome": "Liotironina (T3)",
+  "classe": "Hormônios",
+  "farmacos": ["liotironina"],
+  "comoAge": "É o T3 sintético, a forma ativa do hormônio da tireoide. Age direto nos receptores do núcleo das células, sem precisar ser convertido como a levotiroxina (T4). Por isso é mais potente e age rápido, mas tem efeito curto e pula o controle que os tecidos fazem ao converter T4 em T3 conforme a necessidade.",
+  "paraQueServe": [
+    "Teste de supressão com T3 no gato: ajuda a confirmar o hipertireoidismo leve quando o T4 está dentro da referência.",
+    "Cão com hipotireoidismo que não respondeu à levotiroxina, depois de rever o diagnóstico e a absorção. É uso raro."
+  ],
+  "efeitosAdversos": [
+    "Excesso de hormônio (tireotoxicose): taquicardia e arritmias, agitação e ofegação.",
+    "No uso prolongado em excesso: fome, sede e urina em excesso e perda de peso.",
+    "Pode revelar ou piorar uma doença cardíaca."
+  ],
+  "cuidados": [
+    "Não é a primeira escolha no hipotireoidismo: a levotiroxina é preferida.",
+    "O controle é feito pelo T3 e pela clínica: durante o uso, o T4 do paciente fica baixo, porque o T3 suprime a produção de T4.",
+    "Não use em tireotoxicose nem no hipoadrenocorticismo sem tratamento, e use com cautela em cardiopatas.",
+    "No teste de supressão, o gato precisa engolir todos os comprimidos. Se não engolir, o T4 não cai e um gato normal parece hipertireóideo."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Hypothyroidism in Animals e Hyperthyroidism in Animals.",
+    "Peterson ME. Confirming the diagnosis of hyperthyroidism: the T3 suppression test. Animal Endocrine Clinic, 2011.",
+    "Peterson ME, Graves TK, Gamble DA. Triiodothyronine (T3) suppression test: an aid in the diagnosis of mild hyperthyroidism in cats. Journal of Veterinary Internal Medicine, 1990.",
+    "Monografia de liotironina baseada no BSAVA Small Animal Formulary (vet-ebooks.com)."
+  ],
+  "revisado": false
+}

@@ -1,0 +1,29 @@
+{
+  "id": "omeprazol",
+  "nome": "Omeprazol",
+  "classe": "Antieméticos e digestivos",
+  "farmacos": ["omeprazol"],
+  "comoAge": "Inibidor da bomba de prótons. Concentra-se nas células parietais do estômago e bloqueia de forma irreversível a H+/K+-ATPase, a bomba que lança o ácido no estômago. A secreção só volta quando a célula fabrica bombas novas. O efeito máximo leva alguns dias para aparecer. É só protetor gástrico: não trata dor nem inflamação.",
+  "paraQueServe": [
+    "Tratar úlceras e erosões do estômago e do duodeno em cães e gatos, como as causadas por AINE. É o protetor gástrico mais eficaz para isso.",
+    "Esofagite por refluxo, como a que pode surgir após a anestesia: não impede o refluxo, mas deixa menos ácido o líquido que volta.",
+    "Equinos: tratar e prevenir a síndrome da úlcera gástrica equina, com a pasta oral."
+  ],
+  "efeitosAdversos": [
+    "Costuma ser bem tolerado. Em cães, a diarreia é o efeito mais relatado.",
+    "Acidez de rebote quando é suspenso de repente depois de um uso longo.",
+    "Muda a microbiota do intestino (disbiose), o que pode aumentar a lesão intestinal causada por AINE."
+  ],
+  "cuidados": [
+    "Não use sem motivo: em gastrite sem erosão, pancreatite, doença hepática ou renal sem sangramento ou úlcera, o benefício não foi demonstrado.",
+    "Depois de mais de 3 a 4 semanas de uso, retire aos poucos para evitar a acidez de rebote.",
+    "Não parta nem triture a forma com revestimento entérico: o ácido do estômago destrói o fármaco antes da absorção.",
+    "Atrapalha a absorção de fármacos que precisam de meio ácido, como cetoconazol, itraconazol e ferro. Dado junto com famotidina, perde efeito."
+  ],
+  "referencias": [
+    "Marks SL et al. ACVIM consensus statement: support for rational administration of gastrointestinal protectants to dogs and cats. Journal of Veterinary Internal Medicine, 2018.",
+    "GastroGard (omeprazol pasta oral para equinos): bulas dos EUA e Canadá e Summary of Product Characteristics da União Europeia.",
+    "MSD/Merck Veterinary Manual: Drugs Used to Control or Stimulate Vomiting in Monogastric Animals."
+  ],
+  "revisado": false
+}

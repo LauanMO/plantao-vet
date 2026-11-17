@@ -1,0 +1,31 @@
+{
+  "id": "loperamida",
+  "nome": "Loperamida",
+  "classe": "Antieméticos e digestivos",
+  "farmacos": ["loperamida"],
+  "comoAge": "Opioide sintético que age nos receptores opioides do intestino. Diminui as contrações que empurram o conteúdo e aumenta as de segmentação, deixando o trânsito mais lento, e aumenta a absorção de água e eletrólitos. No cão normal, a glicoproteína P da barreira hematoencefálica impede que ela chegue ao cérebro.",
+  "paraQueServe": [
+    "Controle dos sinais da diarreia aguda em cães, quando não há suspeita de infecção ou toxina. É uso extrabula.",
+    "Reduzir a perda de água e eletrólitos nas fezes, porque também aumenta a absorção no intestino. Não trata a causa da diarreia."
+  ],
+  "efeitosAdversos": [
+    "Constipação e distensão abdominal, os efeitos mais comuns no cão.",
+    "Sonolência.",
+    "Raros: íleo paralítico, megacólon tóxico e pancreatite.",
+    "No cão com mutação MDR1, entra no cérebro: salivação, ofegação, ataxia, sedação profunda e decúbito, com doses que não afetam outros cães.",
+    "No gato, pode causar excitação."
+  ],
+  "cuidados": [
+    "Cães com mutação MDR1 (gene ABCB1), comum em Collie, Pastor-australiano, Old English Sheepdog e mestiços: não use sem o teste genético.",
+    "Na intoxicação, a naloxona reverte os sinais por pouco tempo, e a emulsão lipídica na veia é antídoto.",
+    "Contraindicada na diarreia infecciosa, como parvovirose e giardíase, e na causada por toxinas: o trânsito lento pode aumentar a absorção de toxinas bacterianas.",
+    "No gato o uso é controverso pela excitação: evite ou use com extremo cuidado.",
+    "Cetoconazol e itraconazol aumentam o risco de efeitos adversos quando dados junto."
+  ],
+  "referencias": [
+    "MSD/Merck Veterinary Manual: Drugs Used to Treat Diarrhea in Monogastric Animals.",
+    "Clinician's Brief: How Should I Treat Dogs & Cats with MDR1 Mutation?",
+    "VCA Animal Hospitals: Loperamide (informações de uso em cães e gatos)."
+  ],
+  "revisado": false
+}
