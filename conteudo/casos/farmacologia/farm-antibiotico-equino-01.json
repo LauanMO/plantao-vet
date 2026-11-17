@@ -85,7 +85,7 @@
       "instrucao": "Prescreva o antibiótico que o Seu Moacir vai dar à Brisa (450 kg) em casa.",
       "farmacos": [
         { "id": "sulfa-tmp", "nome": "Sulfametoxazol + trimetoprim", "apresentacao": "Comprimido 800 mg + 160 mg (960 mg)", "unidade": "comprimido", "explicacao": "Associação bactericida, bem absorvida por via oral no cavalo e com baixo risco de colite: é o antibiótico oral mais usado na espécie." },
-        { "id": "clindamicina", "nome": "Clindamicina", "apresentacao": "Cápsula 300 mg", "unidade": "cápsula", "explicacao": "Lincosamida: no cavalo, desequilibra a flora do intestino grosso e pode causar colite fatal. Também é contraindicada para coelhos e roedores." },
+        { "id": "clindamicina", "nome": "Clindamicina", "apresentacao": "Cápsula 300 mg", "unidade": "cápsula", "explicacao": "Lincosamida: no cavalo, desequilibra a flora do intestino grosso e pode causar colite fatal. Também é contraindicada para coelhos e roedores herbívoros, como cobaias, hamsters e chinchilas." },
         { "id": "amoxicilina", "nome": "Amoxicilina", "apresentacao": "Comprimido 500 mg", "unidade": "comprimido", "explicacao": "O cavalo adulto absorve muito pouco da amoxicilina oral: ela não atinge nível no sangue, e o resto chega ao intestino grosso." },
         { "id": "florfenicol", "nome": "Florfenicol", "apresentacao": "Solução injetável 300 mg/mL", "unidade": "mL", "explicacao": "Feito para bovinos e suínos. No cavalo, altera a flora intestinal e pode causar diarreia." }
       ],

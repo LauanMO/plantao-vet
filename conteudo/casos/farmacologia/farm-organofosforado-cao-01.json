@@ -87,7 +87,7 @@
         { "id": "atropina", "nome": "Sulfato de atropina", "apresentacao": "Solução injetável 0,5 mg/mL", "unidade": "mL", "explicacao": "Antagonista competitivo dos receptores muscarínicos: seca a saliva e as secreções dos brônquios e corrige a bradicardia. Na intoxicação, a dose é cerca de 10 vezes a pré-anestésica." },
         { "id": "neostigmina", "nome": "Neostigmina", "apresentacao": "Solução injetável 0,5 mg/mL", "unidade": "mL", "explicacao": "Também inibe a acetilcolinesterase: somaria o efeito do organofosforado e pioraria a crise colinérgica." },
         { "id": "acepromazina", "nome": "Acepromazina 0,2%", "apresentacao": "Solução injetável 2 mg/mL", "unidade": "mL", "explicacao": "Fenotiazínico contraindicado na intoxicação por organofosforado: não trata os sinais muscarínicos e baixa a pressão." },
-        { "id": "metoclopramida", "nome": "Metoclopramida", "apresentacao": "Solução injetável 5 mg/mL", "unidade": "mL", "explicacao": "Procinético que aumenta a ação da acetilcolina no trato digestório: pioraria a diarreia e não trata a causa." }
+        { "id": "metoclopramida", "nome": "Metoclopramida", "apresentacao": "Solução injetável 5 mg/mL", "unidade": "mL", "explicacao": "Procinético que aumenta a ação da acetilcolina no esôfago, no estômago e no duodeno: somaria ao excesso de acetilcolina, pioraria o vômito e as cólicas e não trata a causa." }
       ],
       "correto": {
         "farmaco": "atropina",

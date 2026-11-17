@@ -87,7 +87,7 @@
       },
       "vias": ["Oral", "Tópica", "Intradérmica", "Retal"],
       "frequencias": ["Dose única", "A cada 12 horas", "A cada 24 horas", "A cada 48 horas"],
-      "explicacao": "Dose de 22 a 30 mg/kg: 25 mg/kg × 20 kg = 500 mg; 500 mg ÷ 500 mg/comprimido = 1 comprimido pela boca, a cada 12 horas. A cefalexina age pelo tempo acima da concentração mínima, e uma dose por dia não basta. Banhos com xampu de clorexidina ajudam."
+      "explicacao": "Dose de 22 a 30 mg/kg: 25 mg/kg × 20 kg = 500 mg; 500 mg ÷ 500 mg/comprimido = 1 comprimido pela boca, a cada 12 horas. A cefalexina age pelo tempo acima da concentração mínima, por isso o padrão é dividir a dose a cada 12 horas. Banhos com xampu de clorexidina ajudam."
     },
     {
       "tipo": "calculo",
