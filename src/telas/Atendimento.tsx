@@ -12,6 +12,7 @@ import type { Caso } from '../modelo/caso'
 import { resultadoDoCaso, type Resposta, type ResultadoCaso } from '../motor/pontuacao'
 import { Palco } from '../palco/Palco'
 import { tocar } from '../som/som'
+import { ConsultaAoBulario } from './Bulario'
 import { Resultado } from './Resultado'
 
 interface PropsAtendimento {
@@ -30,8 +31,11 @@ export function Atendimento({ caso, contexto, concluir, proximo, sair }: PropsAt
   // -1 é a chegada, depois cada etapa, e o passo depois da última é o resultado
   const [passo, setPasso] = useState(-1)
   const [respostas, setRespostas] = useState<(Resposta | undefined)[]>(() => caso.etapas.map(() => undefined))
-  const [vendoProntuario, setVendoProntuario] = useState(false)
+  // o prontuário ou o bulário, abertos por cima da etapa
+  const [painel, setPainel] = useState<'prontuario' | 'bulario'>()
+  const alternar = (p: 'prontuario' | 'bulario') => setPainel(painel === p ? undefined : p)
   const titulo = useRef<HTMLParagraphElement>(null)
+  const botaoDoBulario = useRef<HTMLButtonElement>(null)
 
   // a cada passo, o foco vai para o nome da etapa: o leitor de tela anuncia, e em retrato a interface volta ao topo
   useEffect(() => {
@@ -45,7 +49,7 @@ export function Atendimento({ caso, contexto, concluir, proximo, sair }: PropsAt
   const seguir = () => {
     if (passo + 1 === caso.etapas.length) concluir(resultadoDoCaso(caso, respostas))
     if (caso.etapas[passo + 1]?.tipo === 'retorno' && caso.cenario === 'consultorio') tocar('porta')
-    setVendoProntuario(false)
+    setPainel(undefined)
     setPasso(passo + 1)
   }
   const comum = { caso, responder, seguir }
@@ -110,20 +114,35 @@ export function Atendimento({ caso, contexto, concluir, proximo, sair }: PropsAt
         </p>
         <div className="acoes">
           {passo >= 0 && (
-            <button type="button" aria-pressed={vendoProntuario} onClick={() => setVendoProntuario(!vendoProntuario)}>
+            <button type="button" aria-pressed={painel === 'prontuario'} onClick={() => alternar('prontuario')}>
               Prontuário
             </button>
           )}
+          <button type="button" ref={botaoDoBulario} aria-pressed={painel === 'bulario'} onClick={() => alternar('bulario')}>
+            Bulário
+          </button>
           <BotaoMudo />
           <button type="button" onClick={sair}>
             Sair
           </button>
         </div>
       </header>
-      {vendoProntuario && <Prontuario caso={caso} respostas={respostas} fechar={() => setVendoProntuario(false)} />}
+      {painel === 'prontuario' && <Prontuario caso={caso} respostas={respostas} fechar={() => setPainel(undefined)} />}
+      {painel === 'bulario' && (
+        <div className="conteudo">
+          <ConsultaAoBulario
+            fechar={() => {
+              setPainel(undefined)
+              // o foco volta para o botão que abriu o bulário
+              botaoDoBulario.current?.focus()
+            }}
+            textoFechar="Voltar ao atendimento"
+          />
+        </div>
+      )}
       {/* escondida, e não desmontada, para não perder o que ela já marcou na etapa */}
       {/* a key zera o estado da etapa quando duas etapas seguidas são do mesmo tipo */}
-      <div className="conteudo" hidden={vendoProntuario} key={passo}>
+      <div className="conteudo" hidden={painel !== undefined} key={passo}>
         {conteudo}
       </div>
     </Palco>

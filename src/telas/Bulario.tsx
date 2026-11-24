@@ -38,10 +38,18 @@ export function FichaDaBula({ bula }: { bula: Bula }) {
   )
 }
 
-/** O bulário da clínica: as bulas por classe, e uma de cada vez aberta. */
-export function Bulario({ voltar }: { voltar: () => void }) {
+/**
+ * O bulário da clínica: as bulas por classe, e uma de cada vez aberta. Serve tanto à tela da fachada quanto ao
+ * atendimento, onde abre por cima da etapa; `fechar` volta para quem abriu.
+ */
+export function ConsultaAoBulario({ fechar, textoFechar }: { fechar: () => void; textoFechar: string }) {
   const [aberta, setAberta] = useState<Bula>()
   const [ultima, setUltima] = useState<string>()
+  const titulo = useRef<HTMLHeadingElement>(null)
+  // ao abrir o bulário, o foco vai para o título dele
+  useEffect(() => {
+    titulo.current?.focus()
+  }, [])
   // ao fechar a bula, o foco volta para o botão dela na lista
   useEffect(() => {
     if (!aberta && ultima) document.querySelector<HTMLElement>(`[data-bula="${ultima}"]`)?.focus()
@@ -49,18 +57,20 @@ export function Bulario({ voltar }: { voltar: () => void }) {
 
   if (aberta)
     return (
-      <NaFachada titulo="Bulário">
+      <>
         <FichaDaBula bula={aberta} />
         <button type="button" onClick={() => setAberta(undefined)}>
           Voltar ao bulário
         </button>
-      </NaFachada>
+      </>
     )
 
   return (
-    <NaFachada titulo="Bulário">
+    <>
       <section className="caixa">
-        <h2>O que cada remédio faz</h2>
+        <h2 ref={titulo} tabIndex={-1}>
+          O que cada remédio faz
+        </h2>
         <p>Como age, para que serve, efeitos adversos e cuidados. As doses ficam para a conta da receita.</p>
       </section>
       {bulasPorClasse.map(({ classe, bulas }) => (
@@ -86,9 +96,18 @@ export function Bulario({ voltar }: { voltar: () => void }) {
           </div>
         </section>
       ))}
-      <button type="button" onClick={voltar}>
-        Voltar à fachada
+      <button type="button" onClick={fechar}>
+        {textoFechar}
       </button>
+    </>
+  )
+}
+
+/** A tela do bulário, aberta pela fachada. */
+export function Bulario({ voltar }: { voltar: () => void }) {
+  return (
+    <NaFachada titulo="Bulário">
+      <ConsultaAoBulario fechar={voltar} textoFechar="Voltar à fachada" />
     </NaFachada>
   )
 }
