@@ -251,6 +251,9 @@ button:focus-visible {
 
 .cabecalho .acoes {
   display: flex;
+  /* no celular estreito, os atalhos quebram de linha em vez de sair da tela */
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 8px;
   margin-left: auto;
 }
