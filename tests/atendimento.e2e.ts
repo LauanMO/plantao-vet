@@ -199,4 +199,25 @@ test.describe('bulário', () => {
     })
     expect(erros).toEqual([])
   })
+
+  test('abre o bulário no meio do atendimento e volta para a mesma etapa', async ({ page }) => {
+    const erros = vigiarErros(page)
+    const caso = CASOS.find((c) => c.id === 'clin-parvovirose-01')!
+    const anamnese = caso.etapas[0] as Extract<Caso['etapas'][number], { tipo: 'coleta' }>
+    const [bula] = BULAS
+    await page.goto('/')
+    await botao(page, 'Biblioteca').click()
+    await botao(page, caso.paciente.nome).click()
+    await botao(page, 'Atender', true).click()
+    const pergunta = botao(page, anamnese.itens[0].rotulo)
+    await pergunta.click()
+    await botao(page, 'Bulário', true).click()
+    await botao(page, bula.nome).click()
+    await expect(page.getByRole('region', { name: `Bula de ${bula.nome}` })).toBeVisible()
+    await botao(page, 'Voltar ao bulário').click()
+    await botao(page, 'Voltar ao atendimento').click()
+    await expect(pergunta).toHaveAttribute('aria-pressed', 'true')
+    await expect(botao(page, 'Bulário', true)).toBeFocused()
+    expect(erros).toEqual([])
+  })
 })
